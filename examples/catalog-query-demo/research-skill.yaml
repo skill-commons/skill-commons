@@ -1,0 +1,72 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: example
+  name: catalog-query-demo
+  version: 1.0.0
+  license: MIT
+  source:
+    repository: https://example.invalid/skill-commons-fixtures
+    revision: 0123456789abcdef0123456789abcdef01234567
+    path: examples/catalog-query-demo
+authorship:
+  status: verified
+  contributors:
+    - name: Skill Commons contributors
+      role: author
+  creation_mode: human
+research:
+  disciplines: []
+  methods: [metadata-query]
+  software: []
+  data_sources: []
+  intended_uses: [client-integration-testing]
+  excluded_uses: [production-research]
+  assumptions: [local-catalog-fixture]
+  known_failure_modes: [stale-fixture]
+  keywords: [catalog, metadata, synthetic]
+relations:
+  implements_tasks: [task:commons/catalog-query-demo]
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to: []
+compatibility:
+  clients: []
+  operating_systems: []
+  architectures: []
+  python: null
+dependencies:
+  completeness: complete
+  python: []
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+    - path_class: package
+      access: read
+  network: []
+  processes: []
+  named_secrets: []
+  external_side_effects: []
+  paid_services: []
+validation:
+  contracts: []
+  network_required: false
+  maximum_runtime_seconds: 30
+  stochastic: false
+license_evidence:
+  - kind: package-file
+    expression: MIT
+    path: LICENSE
+    digest: sha256:c0b37a20fd3587274aca6819504d4f9a62d36c50f5e000da7694c040a0c4cee4
+    applies_to: ['**']
+provenance:
+  origin: native
+  source_state: active
+  population_claims:
+    - issuer: urn:skill-commons:project
+      scheme: fixture-kind
+      value: synthetic
+      evidence: examples/catalog-query-demo
+  upstreams: []

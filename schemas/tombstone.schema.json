@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:tombstone:0.1.0-draft",
+  "title": "Skill Commons negative-state payload (Phase 0 stretch sketch)",
+  "description": "Unsigned negative-state payload. It can target an identity, a version, or one immutable artifact; signing and appeal workflows are not yet operational.",
+  "$comment": "NON-NORMATIVE PHASE 0 STRETCH SKETCH: signature-envelope, advisory-range, delegation, and catalog-enforcement semantics remain to be exercised.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sequence",
+    "kind",
+    "effect",
+    "severity",
+    "target",
+    "reason",
+    "issued_at",
+    "expires_at",
+    "authority",
+    "replacement",
+    "advisory_links",
+    "appeal",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "kind": { "enum": ["advisory", "yank", "tombstone", "revocation"] },
+    "effect": {
+      "enum": ["inform", "deprecate", "block-discovery", "block-install", "revoke-trust"]
+    },
+    "severity": { "enum": ["informational", "low", "medium", "high", "critical"] },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate"],
+      "properties": {
+        "coordinate": { "$ref": "#/$defs/coordinate" },
+        "version": { "$ref": "#/$defs/semver" },
+        "artifact_digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "reason": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "summary"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "summary": { "type": "string", "minLength": 1 },
+        "details": { "type": "string" }
+      }
+    },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": ["string", "null"], "format": "date-time" },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer", "policy", "decision_digest"],
+      "properties": {
+        "issuer": { "type": "string", "minLength": 1 },
+        "policy": { "type": "string", "minLength": 1 },
+        "decision_digest": { "$ref": "#/$defs/digest" }
+      }
+    },
+    "replacement": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["coordinate", "version", "artifact_digest"],
+          "properties": {
+            "coordinate": { "$ref": "#/$defs/coordinate" },
+            "version": { "$ref": "#/$defs/semver" },
+            "artifact_digest": { "$ref": "#/$defs/digest" }
+          }
+        }
+      ]
+    },
+    "advisory_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "url", "digest"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "url": { "type": ["string", "null"], "format": "uri" },
+          "digest": {
+            "oneOf": [
+              { "$ref": "#/$defs/digest" },
+              { "type": "null" }
+            ]
+          }
+        }
+      }
+    },
+    "appeal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "url", "updated_at"],
+      "properties": {
+        "state": {
+          "enum": ["not-applicable", "open", "under-review", "upheld", "modified", "withdrawn"]
+        },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "updated_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/digest" },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "coordinate": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*/[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

@@ -1,0 +1,36 @@
+schema_version: 0.1.0-draft
+license: Apache-2.0
+filesystem:
+  path_classes:
+    - package
+    - workspace
+    - home
+    - temporary
+    - external
+  access:
+    - read
+    - write
+    - read-write
+network:
+  protocols:
+    - https
+    - http
+    - ssh
+    - s3
+    - tap
+    - websocket
+processes:
+  guidance: Declare executable families, not arbitrary command lines.
+secrets:
+  guidance: Declare symbolic names only; manifests never contain values.
+external_side_effects:
+  examples:
+    - create-remote-resource
+    - modify-remote-resource
+    - delete-remote-resource
+    - send-message
+    - publish-content
+    - submit-compute-job
+paid_services:
+  guidance: Name services whose use may incur a charge.
+extension_rule: Extensions may refine activation or UI behavior but may not reduce core declarations.

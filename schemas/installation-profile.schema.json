@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:installation-profile:0.1.0-draft",
+  "title": "Skill Commons installation profile (Phase 0 stretch sketch)",
+  "description": "Proposed digest-pinned local policy profile. It restricts requested package capabilities; it never grants a package additional capability.",
+  "$comment": "NON-NORMATIVE PHASE 0 STRETCH SKETCH: update-policy, environment-resolution, and policy-broker semantics remain to be exercised with a client.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "name",
+    "version",
+    "owner",
+    "scope",
+    "collections",
+    "releases",
+    "policy",
+    "update_behavior",
+    "target_environment"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "name": { "$ref": "#/$defs/name" },
+    "version": { "$ref": "#/$defs/semver" },
+    "owner": { "type": "string", "minLength": 1 },
+    "scope": { "$ref": "#/$defs/scope" },
+    "collections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pinnedObject" }
+    },
+    "releases": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pinnedObject" }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum_risk",
+        "network",
+        "named_secrets",
+        "external_side_effects",
+        "paid_services",
+        "approval"
+      ],
+      "properties": {
+        "maximum_risk": { "enum": ["R0", "R1", "R2", "R3", "R4"] },
+        "network": { "enum": ["deny", "declared-only"] },
+        "named_secrets": { "enum": ["deny", "declared-only"] },
+        "external_side_effects": { "enum": ["deny", "declared-only"] },
+        "paid_services": { "enum": ["deny", "declared-only"] },
+        "approval": { "enum": ["always", "risk-based", "institutional-policy"] }
+      }
+    },
+    "update_behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "on_local_divergence"],
+      "properties": {
+        "mode": { "enum": ["pinned", "notify", "review-required"] },
+        "on_local_divergence": { "const": "refuse-overwrite" }
+      }
+    },
+    "target_environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["client", "operating_system", "architecture", "python", "resolution_digest"],
+      "properties": {
+        "client": { "type": "string", "minLength": 1 },
+        "operating_system": { "type": "string", "minLength": 1 },
+        "architecture": { "type": "string", "minLength": 1 },
+        "python": { "type": ["string", "null"] },
+        "resolution_digest": {
+          "oneOf": [
+            { "$ref": "#/$defs/digest" },
+            { "type": "null" }
+          ]
+        }
+      }
+    }
+  },
+  "anyOf": [
+    { "properties": { "collections": { "minItems": 1 } } },
+    { "properties": { "releases": { "minItems": 1 } } }
+  ],
+  "$defs": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "coordinate": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*/[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "scope": {
+      "enum": ["personal", "workspace", "research-group", "institutional", "fleet-baked"]
+    },
+    "pinnedObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "version", "digest"],
+      "properties": {
+        "coordinate": { "$ref": "#/$defs/coordinate" },
+        "version": { "$ref": "#/$defs/semver" },
+        "digest": { "$ref": "#/$defs/digest" }
+      }
+    }
+  }
+}

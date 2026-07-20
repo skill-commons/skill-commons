@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:research-skill-lock:0.1.0-draft",
+  "title": "Skill Commons dependency resolution lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "package", "manifest_digest", "resolutions"],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "version"],
+      "properties": {
+        "coordinate": { "type": "string", "pattern": "^[a-z0-9._-]+/[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "version": { "$ref": "#/$defs/semver" }
+      }
+    },
+    "manifest_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "resolutions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/resolution" },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "target", "resolver", "requirements_digest", "python", "system", "containers"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["operating_system", "architecture", "python_implementation", "python_version"],
+          "properties": {
+            "operating_system": { "type": "string", "minLength": 1 },
+            "architecture": { "type": "string", "minLength": 1 },
+            "python_implementation": { "type": "string", "minLength": 1 },
+            "python_version": { "type": "string", "minLength": 1 }
+          }
+        },
+        "resolver": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "version"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "version": { "type": "string", "minLength": 1 }
+          }
+        },
+        "requirements_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "python": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "version", "direct", "source", "artifact"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "version": { "type": "string", "minLength": 1 },
+              "direct": { "type": "boolean" },
+              "source": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "url"],
+                "properties": {
+                  "kind": { "enum": ["index", "url", "vcs"] },
+                  "url": { "type": "string", "format": "uri" },
+                  "revision": { "type": "string", "minLength": 7 }
+                },
+                "allOf": [
+                  {
+                    "if": { "properties": { "kind": { "const": "vcs" } }, "required": ["kind"] },
+                    "then": { "required": ["revision"] }
+                  }
+                ]
+              },
+              "artifact": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["url", "sha256"],
+                "properties": {
+                  "url": { "type": "string", "format": "uri" },
+                  "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+                }
+              }
+            }
+          }
+        },
+        "system": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "version", "manager"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "version": { "type": "string", "minLength": 1 },
+              "manager": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "containers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["image", "digest"],
+            "properties": {
+              "image": { "type": "string" },
+              "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

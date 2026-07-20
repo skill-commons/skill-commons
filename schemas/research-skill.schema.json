@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:research-skill:0.1.0-draft",
+  "title": "Skill Commons research skill manifest",
+  "description": "Structural schema for research-skill.yaml. Publication policy is enforced separately.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package",
+    "authorship",
+    "research",
+    "relations",
+    "compatibility",
+    "dependencies",
+    "capabilities",
+    "validation",
+    "license_evidence",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "package": { "$ref": "#/$defs/package" },
+    "authorship": { "$ref": "#/$defs/authorship" },
+    "research": { "$ref": "#/$defs/research" },
+    "relations": { "$ref": "#/$defs/relations" },
+    "compatibility": { "$ref": "#/$defs/compatibility" },
+    "dependencies": { "$ref": "#/$defs/dependencies" },
+    "capabilities": { "$ref": "#/$defs/capabilities" },
+    "validation": { "$ref": "#/$defs/validation" },
+    "license_evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/licenseEvidence" }
+    },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "extensions": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9]+(?:[.-][a-z0-9-]+)*\\.[a-z0-9-]+(?:\\.[a-z0-9-]+)*$" },
+      "additionalProperties": { "$ref": "#/$defs/extension" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "safePackagePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "safePackageGlob": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "stringSet": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["namespace", "name", "version", "license", "source"],
+      "properties": {
+        "namespace": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$", "maxLength": 64 },
+        "name": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 64 },
+        "aliases": { "$ref": "#/$defs/stringSet" },
+        "version": { "$ref": "#/$defs/semver" },
+        "license": { "type": "string", "minLength": 1 },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "revision", "path"],
+          "properties": {
+            "repository": { "type": "string", "format": "uri" },
+            "revision": { "type": "string", "pattern": "^[0-9a-fA-F]{7,64}$" },
+            "path": {
+              "type": "string",
+              "description": "Repository-relative path to the package root directory.",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)SKILL\\.md$).+$"
+            }
+          }
+        }
+      }
+    },
+    "authorship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "contributors", "creation_mode"],
+      "properties": {
+        "status": { "enum": ["verified", "asserted", "unresolved"] },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "role"],
+            "properties": {
+              "name": { "$ref": "#/$defs/nonEmptyString" },
+              "orcid": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$" },
+              "role": { "enum": ["author", "maintainer", "curator", "reviewer"] }
+            }
+          }
+        },
+        "creation_mode": { "enum": ["human", "agent", "mixed", "unknown"] },
+        "agent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["client"],
+          "properties": {
+            "client": { "$ref": "#/$defs/nonEmptyString" },
+            "model_family": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        },
+        "validation_receipts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "digest"],
+            "properties": {
+              "kind": { "$ref": "#/$defs/nonEmptyString" },
+              "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+            }
+          }
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disciplines", "methods", "software", "data_sources", "intended_uses", "excluded_uses", "assumptions", "known_failure_modes", "keywords"],
+      "properties": {
+        "disciplines": { "$ref": "#/$defs/stringSet" },
+        "methods": { "$ref": "#/$defs/stringSet" },
+        "software": { "$ref": "#/$defs/stringSet" },
+        "data_sources": { "$ref": "#/$defs/stringSet" },
+        "intended_uses": { "$ref": "#/$defs/stringSet" },
+        "excluded_uses": { "$ref": "#/$defs/stringSet" },
+        "assumptions": { "$ref": "#/$defs/stringSet" },
+        "known_failure_modes": { "$ref": "#/$defs/stringSet" },
+        "keywords": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["implements_tasks", "derived_from", "supersedes", "compatible_with", "related_to"],
+      "properties": {
+        "implements_tasks": { "$ref": "#/$defs/stringSet" },
+        "derived_from": { "$ref": "#/$defs/stringSet" },
+        "supersedes": { "$ref": "#/$defs/stringSet" },
+        "compatible_with": { "$ref": "#/$defs/stringSet" },
+        "related_to": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clients", "operating_systems", "architectures", "python"],
+      "properties": {
+        "clients": { "$ref": "#/$defs/stringSet" },
+        "operating_systems": { "$ref": "#/$defs/stringSet" },
+        "architectures": { "$ref": "#/$defs/stringSet" },
+        "python": { "type": ["string", "null"] }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completeness", "python", "system", "containers"],
+      "properties": {
+        "completeness": { "enum": ["complete", "partial", "unknown"] },
+        "python": { "$ref": "#/$defs/stringSet" },
+        "system": { "$ref": "#/$defs/stringSet" },
+        "containers": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completeness", "filesystem", "network", "processes", "named_secrets", "external_side_effects", "paid_services"],
+      "properties": {
+        "completeness": { "enum": ["complete", "partial", "unknown"] },
+        "filesystem": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path_class", "access"],
+            "properties": {
+              "path_class": { "enum": ["package", "workspace", "home", "temporary", "external"] },
+              "access": { "enum": ["read", "write", "read-write"] }
+            }
+          }
+        },
+        "network": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["host", "protocols"],
+            "properties": {
+              "host": { "$ref": "#/$defs/nonEmptyString" },
+              "protocols": { "$ref": "#/$defs/stringSet" }
+            }
+          }
+        },
+        "processes": { "$ref": "#/$defs/stringSet" },
+        "named_secrets": { "$ref": "#/$defs/stringSet" },
+        "external_side_effects": { "$ref": "#/$defs/stringSet" },
+        "paid_services": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contracts", "network_required", "maximum_runtime_seconds", "stochastic"],
+      "properties": {
+        "contracts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "input", "expected", "tolerance"],
+            "properties": {
+              "id": { "$ref": "#/$defs/nonEmptyString" },
+              "input": { "$ref": "#/$defs/safePackagePath" },
+              "expected": { "$ref": "#/$defs/safePackagePath" },
+              "tolerance": { "$ref": "#/$defs/nonEmptyString" }
+            }
+          }
+        },
+        "network_required": { "type": ["boolean", "null"] },
+        "maximum_runtime_seconds": { "type": ["integer", "null"], "minimum": 1 },
+        "stochastic": { "type": ["boolean", "null"] }
+      }
+    },
+    "licenseEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "expression", "applies_to"],
+      "properties": {
+        "kind": { "enum": ["package-file", "repository-file", "upstream-declaration", "publisher-attestation"] },
+        "expression": { "$ref": "#/$defs/nonEmptyString" },
+        "path": { "$ref": "#/$defs/safePackagePath" },
+        "url": { "type": "string", "format": "uri" },
+        "revision": { "type": "string", "pattern": "^[0-9a-fA-F]{7,64}$" },
+        "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "applies_to": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/safePackageGlob" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "package-file" } }, "required": ["kind"] },
+          "then": { "required": ["path", "digest"] },
+          "else": { "required": ["url", "revision", "digest"] }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "source_state", "population_claims", "upstreams"],
+      "properties": {
+        "origin": { "enum": ["native", "migrated", "derived", "mirror", "unknown"] },
+        "source_state": { "enum": ["active", "parked", "removed", "unknown"] },
+        "population_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["issuer", "scheme", "value", "evidence"],
+            "properties": {
+              "issuer": { "$ref": "#/$defs/nonEmptyString" },
+              "scheme": { "$ref": "#/$defs/nonEmptyString" },
+              "value": { "$ref": "#/$defs/nonEmptyString" },
+              "evidence": { "$ref": "#/$defs/nonEmptyString" }
+            }
+          }
+        },
+        "upstreams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["repository", "revision", "path", "digest", "relation"],
+            "properties": {
+              "repository": { "type": "string", "format": "uri" },
+              "revision": { "type": "string", "pattern": "^[0-9a-fA-F]{7,64}$" },
+              "path": { "$ref": "#/$defs/safePackagePath" },
+              "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+              "relation": { "enum": ["source", "derived-from", "mirrored-from"] }
+            }
+          }
+        }
+      }
+    },
+    "extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "required", "data"],
+      "properties": {
+        "schema": { "type": "string", "format": "uri" },
+        "required": { "type": "boolean" },
+        "data": { "type": "object" }
+      }
+    }
+  }
+}

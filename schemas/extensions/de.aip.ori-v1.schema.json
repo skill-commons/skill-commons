@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:extension:de.aip.ori:1",
+  "title": "Ori client extension profile v1",
+  "description": "Migration bridge for Ori activation and configuration semantics. Core capabilities and dependencies remain authoritative.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requires_toolsets": { "$ref": "#/$defs/stringSet" },
+        "requires_tools": { "$ref": "#/$defs/stringSet" },
+        "fallback_for_toolsets": { "$ref": "#/$defs/stringSet" },
+        "fallback_for_tools": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "config": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key"],
+        "properties": {
+          "key": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "default": {},
+          "prompt": { "type": ["string", "boolean"] }
+        }
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tags": { "$ref": "#/$defs/stringSet" },
+        "legacy_category": { "type": "string" },
+        "related_skill_candidates": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "unmapped": {
+      "type": "object",
+      "description": "Loss-accounting quarantine for unrecognized legacy Hermes fields. Blocks publication until reviewed."
+    }
+  },
+  "$defs": {
+    "stringSet": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}

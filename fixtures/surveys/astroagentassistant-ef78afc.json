@@ -1,0 +1,4040 @@
+{
+  "fixture_schema_version": "0.1.0-draft",
+  "generator": {
+    "name": "skill-commons",
+    "version": "0.1.0.dev0"
+  },
+  "observations": [
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 18,
+      "description_length": 89,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "agents/astroagent-concept/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "d3b35f13a0b4d5a3eb23445b96797073637d08eb",
+      "skill_md_sha256": "sha256:04f7ee3493bbd72ab6ac58c6bdc588b76142a6d0fab5d0e8f1c16d5e2b3990c3",
+      "skill_tree_git_oid": "d2d6a6dcc685f1c341a34011410f201598fb7e13",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 168,
+      "description_length": 239,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/astro-catalog-plotting-cache/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "2e2667954f56ce1ed97cf498e32444f96de0b35c",
+      "skill_md_sha256": "sha256:29f1ff5e19e3cdaf72a005eb0d6a3112579ed15fcc1102cf2a05d025b51ac182",
+      "skill_tree_git_oid": "b161c92a1efaba21304c4a5b39366654ac19e55b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 118,
+      "description_length": 231,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/astro-data-access-umbrella/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "37c9116b424250739f7625215d376bb555013b06",
+      "skill_md_sha256": "sha256:cb6c121f00d6963006ae29dc5e7df5d9a3117b94c5ddf66bf7988f5fabc270fb",
+      "skill_tree_git_oid": "88d3fc11445d0de5aef7cdfae0fed47785b115b5",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 48,
+      "description_length": 173,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/data-aip-de-s3/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "0efa19e1d47023a06132b91a2b0d03eeb5f57786",
+      "skill_md_sha256": "sha256:c097c4c6d3082e9efdb32478c1155eea492553c0a978c95fbceea9faae09d02d",
+      "skill_tree_git_oid": "8812caea7d9ccbcd1fa0dbd68d890014b73ce991",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 625,
+      "description_length": 229,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "platforms",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "platforms": "list",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/drphub-cards/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "af026cf315075ab2f72f7db241162a580e763d0f",
+      "skill_md_sha256": "sha256:318cf3208973fe6255a1b13de1723e748c08ed2cfc315151d7ac21d3c75c8ec6",
+      "skill_tree_git_oid": "c9819e4e69215f4cb64f9c2129802507680dd091",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 120,
+      "description_length": 264,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/gaia-dr3-daiquiri-rest/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "0a2b89bb1c3a245b15639f538d7a93b9b157068a",
+      "skill_md_sha256": "sha256:234af50149930c63c5c4621bdee33aca3b03be58bba6a2ae7cee820ede532a33",
+      "skill_tree_git_oid": "6ef8ea3a1aed6e5952a7e23025b6fd1cb8abfed1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 80,
+      "description_length": 232,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/gaia-dr3-plot-with-dust/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "1d360f86bbb33673e6860fdcded9faf5e85bbaa3",
+      "skill_md_sha256": "sha256:42a1ead6ff4ee5b5450b0cbed1f90677218f78a7fec6edf0ac11e0c1c7e30432",
+      "skill_tree_git_oid": "1be906c31c81e4666fb63a2cdf643e723155359d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 98,
+      "description_length": 205,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/gaia-dr3-tap-query/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "06adce202097f51168e0b5c716bea4cec12c5c4d",
+      "skill_md_sha256": "sha256:8bda0d881b0c83e27be198d2664f0cd456f03c715154da77bee14534795d205c",
+      "skill_tree_git_oid": "6dd2e789ca5631a6ce62d2b5f95ea8538edf9ea4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 192,
+      "description_length": 203,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-3d-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "aa3e7607d9b6a011e1e69fec30431ea5476f4e90",
+      "skill_md_sha256": "sha256:849d2e9b0582ab292e4bd76bfba791153a34d46c048d40edb0e39fb68fe9b63e",
+      "skill_tree_git_oid": "afac092c874616142630b3e624992df1e8e4eeeb",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 175,
+      "description_length": 94,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-3d-public-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "8405fc65b5cf0cf2e985273d5a2ecff2897beee0",
+      "skill_md_sha256": "sha256:fcbad3b4287a787a1128e6ad5464ce941062388008f8fa586f9c8dff54beec77",
+      "skill_tree_git_oid": "ef09ce9742a76ef54d511c313777e41a9ed21d38",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 92,
+      "description_length": 150,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-nearest-100-plot/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "129bf769fee919e572fe8d5f535f3f6b2ecb51ab",
+      "skill_md_sha256": "sha256:c07f3cbbcf649289ce9f0801cc22aa366b812277ad5a0fe882055233b8d71355",
+      "skill_tree_git_oid": "445bfe172d926eadc4327fca387bbadf2f09d84f",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 77,
+      "description_length": 159,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-public-talk-visualizations/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "770eb4750209b8de8483baef0de19ffeece43492",
+      "skill_md_sha256": "sha256:471bb9b7b40bd7d9257b03f3eba9d92a5c95d2a69e7357c111ee4ffac34b9b02",
+      "skill_tree_git_oid": "82df2f041fa4aa9ac35c64a03c620f2920f0504f",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 114,
+      "description_length": 244,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-recent-observations-plot/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "1f874f9394cb7f45d024e1850eec6870341b8090",
+      "skill_md_sha256": "sha256:871dbac5f71049a02382f39f3febe68f0b3237f239f5982b8ffa63db688db496",
+      "skill_tree_git_oid": "6ec8f0de2193b64dda78008197fe0d7601e9d36d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 132,
+      "description_length": 75,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "tags"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "tags": "list"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-shboost-distance-query/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "ea4a6db7cfa378e3564fe00afbf7644bc5015269",
+      "skill_md_sha256": "sha256:54cc20cfa042ef9f5f550ec8ce34005434b7685bf624eb512990dcbdcb880911",
+      "skill_tree_git_oid": "6e99e8e526e872948dd3fda666093e2e05eb8c32",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 91,
+      "description_length": 88,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6-starhorse-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "5f2d5236f478300ba7538d208e18a4435ccecc11",
+      "skill_md_sha256": "sha256:62e18b2a1ac157ff304693043c7c0dec9847c3275ae8a79f1a5636f80d7156e5",
+      "skill_tree_git_oid": "ac990c00b7bb5da392d4138a760e733b85b2a4c6",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 130,
+      "description_length": 254,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/rave-dr6/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "5aca356e70d3fa49e5becd86cbfc06d5e69c2318",
+      "skill_md_sha256": "sha256:ed8e47d7e250a4c8f0af2e24f04ca9a5c28b6cc5e46988ed7ff5dc967ccb1374",
+      "skill_tree_git_oid": "3606d2bb4822842b1cfa07edcee1d731497760db",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 117,
+      "description_length": 100,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/starhorse-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "d157c31de056467b9253b1aae4e12e45ece450eb",
+      "skill_md_sha256": "sha256:8bbb4647190eb4a8eac973586e1d90669a068488ec3380778e468709f8813d28",
+      "skill_tree_git_oid": "8073fa63a7399601b46fef0b8d06952e89336931",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 158,
+      "description_length": 216,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "astronomy/tap-pyvo-adql-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "3e90eee1b53f6b91779358cbb5639d707e7f8359",
+      "skill_md_sha256": "sha256:7fdc287fc87aac3257468627b7d5d4ef203f4ad65b2f1d1034aaa4aeb5809b2d",
+      "skill_tree_git_oid": "185f29ff6708486f06cb8fdedfef7ac9557f6c17",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 267,
+      "description_length": 175,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "autonomous-ai-agents/kanban-codex-lane/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "bffd2033007d743c8a90cbfd3f97f470cd0b23cb",
+      "skill_md_sha256": "sha256:ca946e1f7968f767a7b235a12c7847d2befe4c1121e2ba4b2c0f0ab309ae6dfe",
+      "skill_tree_git_oid": "5d8b0a91e425c99de51ca9e28d0e081b293cd8f6",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 81,
+      "description_length": 223,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/4most-spectrograph-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a004477b8582d2390be8aa92d200487b96efd69d",
+      "skill_md_sha256": "sha256:98a45f097bc63360ae348f09bcb53ea9f37cd76f60f7db8bd62006e121ae3e79",
+      "skill_tree_git_oid": "b81e28d0a6c7f31f12d555c6a77d8cfb13961d8e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 94,
+      "description_length": 192,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/animate-sine-cosine-matplotlib/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "6845e2c45312567f34131d3783511e03d03fecdb",
+      "skill_md_sha256": "sha256:12dbb995925570405059143a19b773e6bf53dbb8733c248e7d717a6be4ed47c5",
+      "skill_tree_git_oid": "225e19ffc60b4372ef9382786dbb788404ebd9a4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 85,
+      "description_length": 198,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fourmost-educational-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "31fd7c7f47a3cee675257929762b3eeddea5468b",
+      "skill_md_sha256": "sha256:bbbc35b3a29f89d1d5edb18b3d731684b804db2df567334dcf19739e7b622bb6",
+      "skill_tree_git_oid": "0bc3969684d965a941ee6ee1184875e441bdef1f",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 104,
+      "description_length": 315,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "title",
+        "triggers"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "triggers": "list"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fourmost-spectrograph-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "3f25d7955bd014339af203ac813474eac8777208",
+      "skill_md_sha256": "sha256:f1f62c97790b677e788c053dda925aeed0eee228beee204d8e3b8b7e1a2abf9c",
+      "skill_tree_git_oid": "c854ad42c854a24341106302cad5238d2186958e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 132,
+      "description_length": 115,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fourmost-spectrograph-schematic/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "666b9e324b925746153e6423345ef96cdf74aaac",
+      "skill_md_sha256": "sha256:a4b1a4da61d5c57be0311d7c339c85ec7fce3f56879a750aef766dc28efb5d3f",
+      "skill_tree_git_oid": "b5de37e4da917f15cbee8880973dff4325984eca",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 98,
+      "description_length": 161,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "created",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "created": "date",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fractal-edm-showcase/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "13ab0e9b8b31a135ee0abcfcb2a8cb0191f5abcb",
+      "skill_md_sha256": "sha256:fef028f1abc884b4e1404730969141aac773c358dcffc2ec864c0fd6d7c494a6",
+      "skill_tree_git_oid": "375b341e0a01b73b8970c1a577cd5be589218933",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 239,
+      "description_length": 346,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fractal-showcase-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "70a325983b4f55bf0aed23cb70f9192b0b777ac4",
+      "skill_md_sha256": "sha256:5884f100396db2fa7a5e729d2742b2ef438e7c3c37c6f16b3e9237f9c96d7040",
+      "skill_tree_git_oid": "8c6d9c034531663fb8574ff5796d59fd7b46f831",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 115,
+      "description_length": 170,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "creative/fractals-edm-showcase/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "69b29af3d826ca8466c3a43afbe1cf951b64b919",
+      "skill_md_sha256": "sha256:d30284af8916c787cc7260c2232bbe117e3ce6f2ce6c0769c5054b9e57fb1fb9",
+      "skill_tree_git_oid": "2ae54ce460f87307f6a9d2c1cc70ff0832fd08ff",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 199,
+      "description_length": 160,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/galaxy-formation-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "4d09d7da975940d414d8306ff57e1ddbbfd03691",
+      "skill_md_sha256": "sha256:da98f187720975eb8c97126bdee9eff133e8259fcb3c0ab5412346901b96bbe4",
+      "skill_tree_git_oid": "33bdb1aa0d66b60dbc545c8f46b5bfd0e8851698",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 367,
+      "description_length": 126,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "tags",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "tags": "list",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/manim-020-gotchas/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a93ff7fd49763e86f0036fad2495f3e567ca0a06",
+      "skill_md_sha256": "sha256:448172402f5b046b252e9a025cbc493e598b7acc78d28f9b25d1170a03ed98ea",
+      "skill_tree_git_oid": "ca4bf660bba52ef0c362fe5d82ed8d178c6c1903",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 128,
+      "description_length": 197,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/manim-educational-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "9a2d71b022054407533b72257686ad4347e650ff",
+      "skill_md_sha256": "sha256:a944d4adc2893f3b9033e9d2411c6b3070d594e414ea86b4d6d9f1981fadf78b",
+      "skill_tree_git_oid": "b59ded08d34ddde52892103b03bb9bb219ebaa98",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 134,
+      "description_length": 155,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/manim-tts-narration/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "3308e9087bb1ba3003850b60dcaa831a32d3cd66",
+      "skill_md_sha256": "sha256:a6e231bf7e723c5c49e0d754c0c7486bba5daaff043474071916c99037b0738e",
+      "skill_tree_git_oid": "1a85ef1f41235f3d18a7d5b42813d5e7f615fc1b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 77,
+      "description_length": 137,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/plot-sine-cosine-matplotlib/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "3a99cc6cb7d10254ed36016c616a59087726edb8",
+      "skill_md_sha256": "sha256:ac6067dc0ab9e0a467dd5da70c7ce9116f08e89a3348e77934996a3930c91bff",
+      "skill_tree_git_oid": "af8157885cd873026887e54a2380a296e0d62cbb",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 131,
+      "description_length": 222,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "creative/sin-unit-circle-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "31beb6e95e653bea26e41b41f930d17b4a2bc8ca",
+      "skill_md_sha256": "sha256:1c3c2db31ec64aa0f90f1cb79c5e5f69975e0b1c0aac7b60d1086554d5da744e",
+      "skill_tree_git_oid": "8500e4a5e2c2a81fd08b53930ac99ae903a4aaab",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 116,
+      "description_length": 239,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "data-science/datashader-019-pipeline/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "b9f24a64345dc1d5dab33224fc7f684f727f85ee",
+      "skill_md_sha256": "sha256:60307ca3621970ec49149e2e28cf6d204577241f0b08198ffb2187e2bfd98a0c",
+      "skill_tree_git_oid": "ffba83cd14e033ee14d79438b5db9110eb4c7bbe",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 130,
+      "description_length": 248,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/api-server-local-image-support/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "356459b13235559a0bd7bfc8f606dc7daf165b16",
+      "skill_md_sha256": "sha256:63082d1437fd1e36de841d41618a0b7696cf5bda1e11bf3d67f7925bf7c40512",
+      "skill_tree_git_oid": "0d84ece192b4aea99529983e6f04de146a3864cd",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 44,
+      "description_length": 108,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/docker-access-group-reload/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "7b5b1353568b356e69163bd2b4c3c3a654efe241",
+      "skill_md_sha256": "sha256:7f1ec42ec04a9495447b1b35fbdfad4e396b5c12f9764dc040efb54587f3a991",
+      "skill_tree_git_oid": "d368624e84fe4b3db7a16dea9c5fc1df2f0c1644",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 44,
+      "description_length": 59,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/docker-access/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "e49e18754a88eff39e614d146ed7a51d8c307d3a",
+      "skill_md_sha256": "sha256:1c2a8218db636df6c6cd0fa4db308f0b14f77f9c1fdf8dd92c971660a9653002",
+      "skill_tree_git_oid": "275d2a306cc4cf13d2e703fdc179579388a2463d",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 156,
+      "description_length": 300,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "tags",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "tags": "list",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/kanban-worker/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "ddfaa08e383be41f40eeb81f03aee7edb5ff8b99",
+      "skill_md_sha256": "sha256:61502765df08692a6ff018116498bd945e683c1f3bc77d2e66fbf76bd5e876df",
+      "skill_tree_git_oid": "04c3644ea4764d38bda0f55333b1bca67060897e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 88,
+      "description_length": 231,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/manim-headless-rendering/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "eecc40f53d68d00b21449678491a408cf3946098",
+      "skill_md_sha256": "sha256:d0882f54d2c186c90de3ad7702ffc2318ae24b5c27ff536dd56a7388a5fb6136",
+      "skill_tree_git_oid": "57fb363d2f79b1fd102ff7f6c319e6035528755c",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 111,
+      "description_length": 191,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/manim-telegram-animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "1c0eba595a5325820a0468c5df012578eff1b77f",
+      "skill_md_sha256": "sha256:2d4a38748bda8d84c6fc1c50cc7cfa1efe49b1f157c98b4614a9b3482f092ff9",
+      "skill_tree_git_oid": "2fe859d9c4c0c46ea8985aee0f1b07df57e820bb",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 108,
+      "description_length": 301,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/manim-telegram-delivery/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "e2da2dd582398279d6ef5b76836bdaff1f518667",
+      "skill_md_sha256": "sha256:51b778ee73bb202325e53706292e83adf481ca39b62b28e2c0c771b1154bc844",
+      "skill_tree_git_oid": "c51a331529fec021dacf4e3eee4875d6cc299e92",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 108,
+      "description_length": 157,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/manim-video-audio/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "6fa7e019756a0a118f04a7251e896de58b27ae08",
+      "skill_md_sha256": "sha256:af1db40d40720a2f486266ba93a2838727ff082cdaaf0fe3f52971eb8615ed92",
+      "skill_tree_git_oid": "7d17a2042090be28070671f856feeb04e58fde2d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 73,
+      "description_length": 294,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/paperclip-oss120b-external/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "8f538bc91b0af98addba679eb7fbe48d2b63a0c7",
+      "skill_md_sha256": "sha256:52d90457164c7012ed36c5eb76fd405ba23d3a8260c3c854209064be82af1c88",
+      "skill_tree_git_oid": "ff2139b0ad3bcdd476e17a744ac06d51acd2a8b4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 97,
+      "description_length": 122,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "devops/telegram-auth-troubleshooting/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "f25e2dea9c88018037ee762de6865b2b676af729",
+      "skill_md_sha256": "sha256:233d5261ce095f2deb708b7fa1e2140cdfdff3b16aeaf7656ecf6daaf277de2d",
+      "skill_tree_git_oid": "47828d0b5252f537739e9f259e02aa1acd8feb83",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 122,
+      "description_length": 76,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/api-server-media-display/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "3085245b385fd453031f1cc2edbf356c6d526a81",
+      "skill_md_sha256": "sha256:56817a77a177d9d52a0773054fb266cc6f6069566cae6598fb8dd7305daa9efc",
+      "skill_tree_git_oid": "f596cf9eb10ce77389f9d465dd13cea172cbf6f4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 250,
+      "description_length": 246,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/docs-mcp-at-aip/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "1b5e361d8eeedc44f4f9639a08c84b3113aa6640",
+      "skill_md_sha256": "sha256:0e35af96463efb5d3f5e19ca2d656b361cf5dbf42f549d219e75a3f80b678d6a",
+      "skill_tree_git_oid": "322ad085fa1d6f16a154c4644e8721355281be38",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 20,
+      "description_length": 96,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/hermes-api-server/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "131036a2935e6c983c35ffc43ab3da679ce2e763",
+      "skill_md_sha256": "sha256:5e32bd971c79b685f8329bcc676b744d0f23ec38f1e22fa6145cbc071e2f1366",
+      "skill_tree_git_oid": "e88bbe5e8392b78ef4c1bd22a665272eab31b33a",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 120,
+      "description_length": 170,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/hermes-native-mcp/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "374a308fb550ad708631b50f0b8178cef5b3f498",
+      "skill_md_sha256": "sha256:01ffccf32a544952ededaf7960c80824850d4055f040c2c3dc41f71178b28d13",
+      "skill_tree_git_oid": "6d90dd30d15e8cbb09221da430bab631f95f31cf",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 81,
+      "description_length": 135,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/mcporter-cli/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "e35bde3bcd0391f0abf8aa6f21cd2949b5c3f14e",
+      "skill_md_sha256": "sha256:c789f1b74cf587fdc608b5323f2fa2791279f4712814aa7cb4354c94963c249d",
+      "skill_tree_git_oid": "9f93f44dad63879b92827bff44401ffb175506c1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 20,
+      "description_length": 115,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/openwebui-hermes/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "ef93ab6f69c0173ed98a2e486cf3d25995715551",
+      "skill_md_sha256": "sha256:0f870c91dc9629245f4dde20cc1bbe762ec42ac42ef705912dc08aef72a167f3",
+      "skill_tree_git_oid": "45c82ed73036a100c71667558ed829e0643b8623",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 98,
+      "description_length": 136,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "trigger"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "trigger": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/openwebui-media-via-s3/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "55f99298fe6b0bc212b8ecec27460a058e1de148",
+      "skill_md_sha256": "sha256:2cdf6f12a41ad258f2b9d96ba2a88fa859e9cb2244c20c29966df64b2a8e6e26",
+      "skill_tree_git_oid": "b07ae1610cf6ff9d7ca9571933069e002b1f6d7b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 62,
+      "description_length": 198,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "infrastructure/workspace-backup/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "eba8c8f311591df780566d1e2a0d7c8215f934d0",
+      "skill_md_sha256": "sha256:4bf7e4a36ea55e69eb55d2130e0c33abe630c695fa7b56ddea0c34da6138e96c",
+      "skill_tree_git_oid": "c2dd25ec88ce9e6d9cf0bb2125d9f1afb4ffb442",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 78,
+      "description_length": 185,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "leisure/find-nearby/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "704b47ad498d22223a504471364f2ceef7a53f7d",
+      "skill_md_sha256": "sha256:64edf35b404352e3ca762f3981d96efd8b4d6b0710f74cc877415f53f5b0b5ed",
+      "skill_tree_git_oid": "303509a0316994646becb024bf3a1be39f25ac39",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 93,
+      "description_length": 221,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "tags",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "tags": "list",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "media/ffmpeg-ambient-audio/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "6e7522898ae7b4b4ead586e956c696618969380e",
+      "skill_md_sha256": "sha256:636e01bc5f1722b15a8f273540e02a1f1404e8dbfcbe7a31e65a730ade2160aa",
+      "skill_tree_git_oid": "d00f17182cdc35f265481906b20336cf4626b7f4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 22,
+      "description_length": 352,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "media/fractal-preference-mandelbrot-elephant/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "5d5fa1876dab9c61de11c0fa3055691d3bc94840",
+      "skill_md_sha256": "sha256:0a5006f2312c3197881a262f0aa46254843e1dc7f594b4c681ff67141b56ef1f",
+      "skill_tree_git_oid": "af0c17e7752286e1284b940ae12737bd75e7e96e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 154,
+      "description_length": 245,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/gaia-aip-data-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "57b8faec9255390fafa98f60c9154cfc589fd05e",
+      "skill_md_sha256": "sha256:1a49538c581d40da249b90cc94b18285c647847c107e9281828fc82bd0a897ae",
+      "skill_tree_git_oid": "1c0d67573809f27e5fa67f6d1549382aed9ee59e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 31,
+      "description_length": 93,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/gaia-aip-de-adql/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "664ce9af12917b36cd0127aca02cb0fb217f1985",
+      "skill_md_sha256": "sha256:21518e5a6f98818f5232d29a27e1c8a218793b047923f08e6c4917b2ebe45e37",
+      "skill_tree_git_oid": "eb806ecb83c508426e1fd3eb997489c7140c3866",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 118,
+      "description_length": 206,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/gaiadr3-aip-de-adql/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "72823e871270cce01424417c824521fb165b09c1",
+      "skill_md_sha256": "sha256:047f7b7fd135c96532143e45bd015e85e7cc0614d5db4cd42db66418ad465207",
+      "skill_tree_git_oid": "8dc86fc86e4d9c50870eadf4ac2acdb675786e97",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 104,
+      "description_length": 138,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "triggers"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "triggers": "list"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/gaiadr3-aip-query-api/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "de987619cff10057c74db250d204cd4205c9a894",
+      "skill_md_sha256": "sha256:77f8b7737fce50beea7ef3b6a04887618d9cdcff2e500aa629297e5892a1a433",
+      "skill_tree_git_oid": "7c3021b219328b3930d39e45543c4a0f4c29c4e1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 129,
+      "description_length": 241,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/rave-dr6-data-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "55bd97ec9500c2a20e74aac38918e48a92da5dd0",
+      "skill_md_sha256": "sha256:3fd21bb94e754daae378c8f8ffc6e37094baa7fbe910968596b9aff78d4606cd",
+      "skill_tree_git_oid": "15697ef96df3a7113e2891e098c9133ae38c83db",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 226,
+      "description_length": 296,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/rave-dr6-tap-query/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "5bbc6c1b2ba8b1907db44196520f08871c3ca8e2",
+      "skill_md_sha256": "sha256:481b08f64b7276f002bc2cbeed266a8fff16f3d8b4940cae18cc5ecbd6753447",
+      "skill_tree_git_oid": "5a7ffe66ca9cb5f1de770577799e2cb526cc6b37",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 150,
+      "description_length": 261,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/s3-parquet-astro-access/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "6f063d167cea6b41ad0ab69205460a8750777d4c",
+      "skill_md_sha256": "sha256:bdabb1090b816b1f38228e584c0318f72b6487997aac6bad2475ea9497154844",
+      "skill_tree_git_oid": "472f9214aac530caa3ad03be8cba10dfc6f4e8ba",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 129,
+      "description_length": 226,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "requirements",
+        "steps",
+        "title"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "requirements": "list",
+        "steps": "list",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost-cmd-plot/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "2ace84f7e5dc6b7a58b040d837b601b815ca7d81",
+      "skill_md_sha256": "sha256:2829566429c44f468d2929f5ba00c9b413789bbe64e645e3eef4fe16cbedb52e",
+      "skill_tree_git_oid": "d11f01f7d8ae6f1129c85e80c95d2f5045f2b7d1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 128,
+      "description_length": 251,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost-cmd-visualization/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "1b737f8436bc99879665fbdbe64ecd152ef71fa6",
+      "skill_md_sha256": "sha256:a3d83545b4a1d6a5def49f9d2971fa68d5c9fb56edef88c2b6bebfc2baa3099d",
+      "skill_tree_git_oid": "870ca1d48461db3b49a05b5849eca9eb4a3362c1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 115,
+      "description_length": 84,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost-plot-s3/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "eee649bfc882d4bbcb21fcb571ff206f214c23e5",
+      "skill_md_sha256": "sha256:c4475fae4b8e11bdf0db65087de23f8eb9767e37f769adc62bda47d386c480a0",
+      "skill_tree_git_oid": "56343da08f6af8fe49bcaaea23083736899145df",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 163,
+      "description_length": 158,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost-public-s3-cmd-plot/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "15627b1f9f54a421c5e86616e4d4aa40703e8f12",
+      "skill_md_sha256": "sha256:5991633cb0bea1b977c8a89766e7834405a12d7c1814e7c5a10e5bc4bee0bd06",
+      "skill_tree_git_oid": "2ad5246d18629f25d550b397d1806cc6ff0a3abd",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 28,
+      "description_length": 115,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost24-cmd/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "81cfcec2193d0c8d633ddebba9656302355c019d",
+      "skill_md_sha256": "sha256:ed1ed8dfa3e51d7d7ebafe84e1bafc1bc9c4fd580f2292b058c9fc27989a240f",
+      "skill_tree_git_oid": "9e738969d37dac52c9f55acad9f8f325ecd0c89b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 221,
+      "description_length": 225,
+      "diagnostic_codes": [
+        "AGENT_INVALID_NAME",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost_cmd_plot_and_animation/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "54fab76be155f8489990a38dadbd67cefa839543",
+      "skill_md_sha256": "sha256:a776e5c755791e667c3f1c485d8b4983591851d8d6a63a55f65977ad7d2a9ad0",
+      "skill_tree_git_oid": "2647b7db7828893e45ee3f79cd57cad13990f53b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 134,
+      "description_length": 151,
+      "diagnostic_codes": [
+        "AGENT_INVALID_NAME",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "outdated-skills/shboost_full_cmd_datashader/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "8446d929103492dd14295701f874450f28348042",
+      "skill_md_sha256": "sha256:9b43f90d2c65e610bb1c5eb9a92ebfefd39cb7e3d074ed93e6b02008b2c9819c",
+      "skill_tree_git_oid": "289a8079d66f7d652a4408defcfc370b18c55dfc",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "parked"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 55,
+      "description_length": 133,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "productivity/aip-member-contact-retrieval/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "92a42e59e40710b5279003630d2265595093fe92",
+      "skill_md_sha256": "sha256:4385c716e8d24f31543a14eeac70ee43fd706a72a4fd78393f2ab1485ad55be1",
+      "skill_tree_git_oid": "9aa4df4fead77100ae81d682309877cb5e4481dc",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 45,
+      "description_length": 105,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "productivity/image-description-workflow/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "5ad9289c3934d472eee6abf58a0754a9af126f86",
+      "skill_md_sha256": "sha256:84bb869e13fcb7ac9e2c59013dfb1ffbf6e76272a08d3529ac8816e3ea3c1167",
+      "skill_tree_git_oid": "4301aa9b2f658732ec5c4080254a0fd897f6aa8c",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 166,
+      "description_length": 145,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "name",
+        "tags",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "name": "str",
+        "tags": "list",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "productivity/nextcloud-caldav-calendar-management/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "985efb248914798c916d398f9f4d8813d154e41f",
+      "skill_md_sha256": "sha256:14e6f24a1f5bc8e10b8d635d77bfcda8573161546f13c7e142596363bb713266",
+      "skill_tree_git_oid": "ced8f2e96921c5753ea1df411497d37c78a552df",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 104,
+      "description_length": 209,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_NAME_DIRECTORY_MISMATCH",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": false,
+      "path": "productivity/nextcloud-caldav/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "c53c528f4bba31cb0c7c44f831851824410a7034",
+      "skill_md_sha256": "sha256:af3a1a337c2b638fc47d032bc87c0eb5f65d186eeb4724b75b12ff9b593a13c3",
+      "skill_tree_git_oid": "d6125e660652425b69706fcf58e7254ddb2623c7",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 63,
+      "description_length": 188,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/calculator/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "13b3779db2100b53c366489da875431a9e9d5c22",
+      "skill_md_sha256": "sha256:c15e57fa7516417c07a3cd6befb04a70e34d5aeba5e0ec7503b9812a999a8e13",
+      "skill_tree_git_oid": "d576326aa6a829d284507aabbd60f0c97e116ccc",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 20,
+      "description_length": 90,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/cmd-plotting/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "0bcb6f80611a514415787ec4643bb481ae80823d",
+      "skill_md_sha256": "sha256:7ed4f9dabe1569ccf2baf4ff89fcfa25585de867501ff431a3cc683915db561e",
+      "skill_tree_git_oid": "8023148884974c28a18425cc8e5e907f257688b7",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 69,
+      "description_length": 154,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/dask-hvplot-datashader-scientific-plots/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "322181f566bc898c1222eb0ea35b647a6ed819d9",
+      "skill_md_sha256": "sha256:3d0e799da600aa9a1ef765efa6f2624b894c38c8bde3791e7a67127b2be61fad",
+      "skill_tree_git_oid": "dd25c65d857723c371264729a50d1eef4e81c7eb",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 66,
+      "description_length": 165,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/hdf5-on-s3-cached/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "69621c5d8b2e1febd4905d17a31c3ad40cdd69ba",
+      "skill_md_sha256": "sha256:d471329799aae849fdc3fe67c0cd6f3a2516e72e4d726d525c58a3cf98c86ad8",
+      "skill_tree_git_oid": "1e2bd7f219c9a74cfaae9008266d11b5ae15351c",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 172,
+      "description_length": 233,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "python/s3-parquet-sampling-plot-cached/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "4d1acbe005580820c5e90bd4f948dd8adc8e86ad",
+      "skill_md_sha256": "sha256:b1f2498a9a6a33ebc4a8bdabed01d9e4e266e3f7163b7dc64ddf5e06d7d5c9c8",
+      "skill_tree_git_oid": "c689c37c95335b9e3977ac2ad6efb889c380867a",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 75,
+      "description_length": 177,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/s3-parquet-sampling/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "4cc3549f016a03fad5f8bf33dd3e3c39ae08ebb9",
+      "skill_md_sha256": "sha256:ea915bd5a2e63efb4f3033c611b19b48ef1bf922950a1c3e1a73575d24e4de78",
+      "skill_tree_git_oid": "7e5b72ea7b427137c3d7add5fa0e31d73f5eb82d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 19,
+      "description_length": 91,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "python/seaborn-paper-plots/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "7dc2e577ce9c9ece74e673fd674d8bef7b593441",
+      "skill_md_sha256": "sha256:91e82001967d5ebb56059e9c8ace36595f8f7b92710319b8f3e39e7d24e0efe5",
+      "skill_tree_git_oid": "d45ca1e7593717b34cdfff743b409c7398141f80",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 123,
+      "description_length": 213,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-aip/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "52a0700bd863dad4e7b5887901c7db25986347f5",
+      "skill_md_sha256": "sha256:fa6d91cc97028748b46d73f75825b248de373803b4be237013a820393e862b81",
+      "skill_tree_git_oid": "22d28990feca361ff724fb531445d02308437859",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 97,
+      "description_length": 169,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-client-config/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "dcd9106fa91d0643e0baac7c3f26ee50c450bf79",
+      "skill_md_sha256": "sha256:8b6588c093dc23fe0fc69b257d859dbb2e7cfe5a7e901556451c455c59f6d34a",
+      "skill_tree_git_oid": "3ff20c7f3569a02a4319575f3f680c98423be1c0",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 108,
+      "description_length": 98,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-client-docker/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "2bc6e95fa2d1f21a62e3ccbf4363ad2345440ca9",
+      "skill_md_sha256": "sha256:4fc2397bb36fd98d92ece5ccdd087449033831f0946ad7ac9ae68db4b9a03d99",
+      "skill_tree_git_oid": "304ddf6b33d8c317ee93f8ea38fbbc9b4ba0eaf4",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 241,
+      "description_length": 338,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-client-failover/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "6bbfcafd35a28c6ea5d3c5ca35cf1e179bb65dab",
+      "skill_md_sha256": "sha256:91e7b7c613674aaea671783a1fef73b21db346fdbd9e0475d14fd98fae79b7e0",
+      "skill_tree_git_oid": "78fea041f8fdcefab74bd736f8db103744c063b0",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 77,
+      "description_length": 132,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "summary",
+        "title"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "summary": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-client-multi-backend/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "313a09dbcefb6e9437be58e2f16d9177ba188647",
+      "skill_md_sha256": "sha256:a7bf69e915e3bedf5cfc2ee480aa7e45f3df19bbad12f08969fc9601fde47fe9",
+      "skill_tree_git_oid": "e271d1e171347d88a90d0c99b88001296075aa4a",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "pass",
+      "body_lines": 85,
+      "description_length": 239,
+      "diagnostic_codes": [],
+      "frontmatter_keys": [
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-cmd-plot-workflow-external-script/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "bc2688d0c367adab7f498afc8179e2830fd821d1",
+      "skill_md_sha256": "sha256:5680136f351965ca3470a2b84c71a6ea1dca26e7ecebe0accc6a6d3fdb32add9",
+      "skill_tree_git_oid": "b0700e41ec5788aa15d4798f0c23502dbb58e44b",
+      "skills_ref_0_1_1_status": "pass",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 197,
+      "description_length": 94,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-cmd-plot-workflow/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "8b786e5a62970b0908dea5e352599f0102fa0627",
+      "skill_md_sha256": "sha256:45262ff6703ad9c7e118b802f1fbe1dcfd52b0c82ef10bb429ef7d3a50abe28d",
+      "skill_tree_git_oid": "b870d0a3ece3e86e5f0de7539cc8f13aa102ff1e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 149,
+      "description_length": 131,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-dev-workflow-setup/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "902e2bdde06278aaf3bf46f4804b2021a1159e94",
+      "skill_md_sha256": "sha256:184740a99c8e2ce1408c8d16aa87428679724b192de0e05f246815bf430d6fe7",
+      "skill_tree_git_oid": "b0da1711e95776219f7d6c902fe06b4c1ff1461e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 316,
+      "description_length": 295,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-operator/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "c7968df37007dd92b65b3c9ef81653e53b45ddb3",
+      "skill_md_sha256": "sha256:0ed3899eed1e242f25ba52237c8d5f36e9dda4d5a71e275225f3fab85a19d17c",
+      "skill_tree_git_oid": "deaba5123bfbe5325eb3325f2bf1e6847292b3bd",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 83,
+      "description_length": 101,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-run-script-with-workspace/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "27d5ee64483f1a16e402ee7411a8e7b8d009026f",
+      "skill_md_sha256": "sha256:40e728e30aad79efdc36fe9ee057b295a45451b3fe5ab9061c8bd10c64f25d23",
+      "skill_tree_git_oid": "a0323c9161afb6e7859ab2a2639fd67949d90fd2",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 134,
+      "description_length": 174,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "float"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-selflearn-workflows/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a55055f091b2bac00cf4a1d5f3b8f070459912f5",
+      "skill_md_sha256": "sha256:b4846bd835a8c51a5edea57d2fc8a5cb476f706bc33180f861794196b3e018da",
+      "skill_tree_git_oid": "556919601cb885cba8d8ee601a2adbf1fad91f86",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 219,
+      "description_length": 264,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-serial-python-analysis-template/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "99821af46b694d7bcb33658a393d47e50dcd682b",
+      "skill_md_sha256": "sha256:51b757ea967f217ecb8eebf4545c565334e4b5c7e9591b9b1eb3aa89769920c7",
+      "skill_tree_git_oid": "f06b7d18770d8ab3b763552b87a5618111893e1f",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 106,
+      "description_length": 124,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-serial-python/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "3bfd91686b9de12e141c8ab7a12f472f382ce441",
+      "skill_md_sha256": "sha256:180ee80bcc50e082969db05aa0a6cfc83e975925e201a775112d5c76ac382562",
+      "skill_tree_git_oid": "08ae438cfb4571fc54bf7477cbc6c5fbae04a649",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 31,
+      "description_length": 112,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-shboost24/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "ab25b7a558efb472a5fe1e1fb7069aee56badaa8",
+      "skill_md_sha256": "sha256:26af4f566c26f1ca58648be2803adb53c0c7c05f826795899424ead88a8ae6fd",
+      "skill_tree_git_oid": "65d684c937d0b8d6129c15850cd24302a39bf2f8",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 77,
+      "description_length": 157,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "contributors",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "contributors": "list",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-sin-plot-workflow/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "bb37b1271dad73629c3e0c8308bd77c813b1a93c",
+      "skill_md_sha256": "sha256:ad36daa41adb7e6910a01be352384d0b67d5e904f142349b2ae231fb8c2fc3a4",
+      "skill_tree_git_oid": "3dd305cbb34297da6aba54eea19b39094dfe045c",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 37,
+      "description_length": 102,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-version-info/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "e0c8e1edaa264f2c1a9b1fc5e72e1e7e3a2e7dd0",
+      "skill_md_sha256": "sha256:05b86a6618dd3224fa0124b920584df39a439cb50b9ebebec68edd53be058c01",
+      "skill_tree_git_oid": "7c6b1d6799221421cca008f1dc293a0c9eb2410c",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 111,
+      "description_length": 90,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-workflow-best-practices/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "27de269e22f08730749aab9b4e30b6de4a731c83",
+      "skill_md_sha256": "sha256:47a72e4a71534fc79f8b503cae42213813fc427b3a138afbd031a3040fb06f2d",
+      "skill_tree_git_oid": "b0f4b163730165da64be19ffefb0f033c22a8503",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 90,
+      "description_length": 136,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-workflow-sin-plot/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a6a5b1608b3355d06af0527dd6c92de7ed3ec826",
+      "skill_md_sha256": "sha256:f45b69583add0ab9ec053651268a4a9dabefefa6ad7084315248af8737239de8",
+      "skill_tree_git_oid": "29e46f677ff355918086b8d60a10d588ecb0dabf",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 74,
+      "description_length": 102,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "reana-workflows/reana-workflow-with-env/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "80baaa9fd2cd715028b81e836e0d4c94ad2f58f3",
+      "skill_md_sha256": "sha256:8f73416e0caac15b3cfc22ca743374319a884d7d5d31d610422cac7d7ea49259",
+      "skill_tree_git_oid": "7bf6a43177e00fb101584add3a025f39f8f0d231",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 18,
+      "description_length": 100,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/2026-agentic-astronomy-literature/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "53d0f91a9a45b36bd848bb45dcfe615ce4356c57",
+      "skill_md_sha256": "sha256:716c49bd0bdc117f62c587ad669808a402be63c94dbf62269c6e9c2c13ea87bf",
+      "skill_tree_git_oid": "2bf931c9b135c6979303daf48814fb77ef82042d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 176,
+      "description_length": 209,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/arxiv/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "2844e0a42005e851578dd19f75fc4fd091c43f99",
+      "skill_md_sha256": "sha256:f022220af138039782e5c22f0f6f1c41dc084bf228106df968b03a6349dccbf8",
+      "skill_tree_git_oid": "40124feb8d313b117618ed420e0c8148bed0040a",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 104,
+      "description_length": 161,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/astroagent-github-skills-repo-bootstrap/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "b276e1254f7c6f208f3c24aeb89253b1c497c26b",
+      "skill_md_sha256": "sha256:c9f157a1d3f60cbf9d6ff5cb130a373c69a8e6ea84f225a87f7867bb8e07d9b6",
+      "skill_tree_git_oid": "a99faa1d6eafdef41383635131efd42bd65285d5",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 124,
+      "description_length": 58,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "prerequisites",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "prerequisites": "dict",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/blogwatcher/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "6d3b77220959937dafc82070accb2cb0f736e6bf",
+      "skill_md_sha256": "sha256:2fa4ea3866b125ebb888e888584bffd3062ef42c7402b2271445cd69766f8e80",
+      "skill_tree_git_oid": "69431e77ef2511ab12f3de75c9e557c4e65a6135",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 224,
+      "description_length": 210,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "date",
+        "description",
+        "name",
+        "related_skills",
+        "tags",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "date": "date",
+        "description": "str",
+        "name": "str",
+        "related_skills": "list",
+        "tags": "list",
+        "title": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/cold-streams-monitoring/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "980089cb9ef33e6b4f9e22007c0af327614f0a91",
+      "skill_md_sha256": "sha256:ceda065bc9b5b312603c5a24cae1aa618016a87c470160478bc1a04ee4fd37ed",
+      "skill_tree_git_oid": "f9924ddfe6ed252f837f2be4540329092532a0d5",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 169,
+      "description_length": 70,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "created",
+        "description",
+        "hermes",
+        "license",
+        "name",
+        "tags",
+        "version"
+      ],
+      "frontmatter_types": {
+        "created": "date",
+        "description": "str",
+        "hermes": "dict",
+        "license": "str",
+        "name": "str",
+        "tags": "list",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/drp-paper/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "abc529b18f642115008cf6127341713843018cd7",
+      "skill_md_sha256": "sha256:fb9cef0c668eca35cdf55e0ea8e600baa75a1d88088a64a846426d8b4c865768",
+      "skill_tree_git_oid": "c62974be8651e1cc540c415b63523d1f2af229dc",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 170,
+      "description_length": 252,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/iterative-paper-improvement/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "4724ab89eb41bce95f3369ac59c6d0d3271c1f22",
+      "skill_md_sha256": "sha256:45be38d48ebe05617f53dd4c8dda1d47fa3efe744a6283b762810bb105704763",
+      "skill_tree_git_oid": "4de293f9fa3a4a7c890af5fd1fa3618b1baf837b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 172,
+      "description_length": 101,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name",
+        "prerequisites"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str",
+        "prerequisites": "dict"
+      },
+      "name_matches_directory": true,
+      "path": "research/jubik/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "ecc5818cefaa8b5c762f59979f0561712c24e2a2",
+      "skill_md_sha256": "sha256:63952dcce538bf036a76736241d8be06da677c64f5a4e8d92fc716e530b7c055",
+      "skill_tree_git_oid": "8b523cbe856e2219c5965ad47749045b2a3bcfc9",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 174,
+      "description_length": 177,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/latex-journal-submission-package/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "2ada53571bb109a259c74ff17c756753f9284e3a",
+      "skill_md_sha256": "sha256:a31191d0ea2f6239ca840b2f0236da53a8d34ee7aaebbf539bf785f8ccf05470",
+      "skill_tree_git_oid": "22b92128005d8301f8418ebabbc2122a0e55c28e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 146,
+      "description_length": 181,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "tags",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "tags": "list",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/latex-paper-iteration/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "8e1282d89dbb7935db589211594ab2a2062989a8",
+      "skill_md_sha256": "sha256:6da0d2b0cff12b4e679d6450a425adf676d804480eabad4fd579309cd8222b62",
+      "skill_tree_git_oid": "f93bc778ba1382298fd12c5367490aa69f8328e1",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 138,
+      "description_length": 144,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/latex-research-paper/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a7ae9c7a34a4c94d363034d1489f400130733af4",
+      "skill_md_sha256": "sha256:cba2906289b71ba4796242a3876be968786c9bc441007ee74099eb77d44d608a",
+      "skill_tree_git_oid": "f34b8653b748177bda11af30ee098b073b4bd72a",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 495,
+      "description_length": 57,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/llm-wiki/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "3a37f9595a388c6c22d33707e7902f64b0663c35",
+      "skill_md_sha256": "sha256:bcbff15793322201fab624177151261a281444979aa6ebff79796819725da826",
+      "skill_tree_git_oid": "bec9b49ab6d3bbd15c12efe8cd6dd02b7e6dd729",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 156,
+      "description_length": 133,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/mnras-latex-compile-portability-fixes/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "1cbe477dc396c1e01f7d682e62e2960cf4712e6d",
+      "skill_md_sha256": "sha256:aea2f9d5a81b9d1bcdb5c286da732daf5b58097095506976d92c73bcfa2e2c61",
+      "skill_tree_git_oid": "257f3915e937e886f7144e6363333ad898e45c1e",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 160,
+      "description_length": 145,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/mnras-latex-portable-build-and-package/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "2aaa5393f10f12ad158cc7861710c9cc32c02420",
+      "skill_md_sha256": "sha256:e719a83717197668888e4b57df7885dc29c4888423b5a79b842c64875eafe8c0",
+      "skill_tree_git_oid": "373985492486f1527244fa2baa8798e7d154d35b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 82,
+      "description_length": 145,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/mnras-latex-portable/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "921f5b7afe05757e82b21c07aa12c772f20abcf4",
+      "skill_md_sha256": "sha256:3b51b18f161cfbbe37a50e7f5250a8eacc54d52312b2c9afc28b485af77d08ed",
+      "skill_tree_git_oid": "4e85d023d12b7c8b0359b81885e440b6531e6825",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 139,
+      "description_length": 167,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/multi-section-latex-whitepaper/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "fc10ecb806f6ad9e137388f0c13bcc7df45868a8",
+      "skill_md_sha256": "sha256:6b37bf6ac702bdcb0a486d236858b782e995a336633536b8e3a27151903651ad",
+      "skill_tree_git_oid": "b98eb50f25828603c346ae3a7b07bbe143640335",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 70,
+      "description_length": 55,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "tags",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "tags": "list",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/polymarket/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "da3fef658d359ec6d36ccc9e72fab282463d5dbc",
+      "skill_md_sha256": "sha256:f940c02ae8e112dd44849ee68edd23bc6113bcab117f8624eefad3d8ca1b4301",
+      "skill_tree_git_oid": "8bab4efe2ddb5d29ac0db81273da5112aa31f2a0",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 2361,
+      "description_length": 53,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "dependencies",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "platforms",
+        "title",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "dependencies": "list",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "platforms": "list",
+        "title": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "research/research-paper-writing/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "4175b93a73386abf18273fa24844a6b37d1be226",
+      "skill_md_sha256": "sha256:5bc92cec8357a19d71b1c10c5590ab605e846e4ddd914512511f8281a6053186",
+      "skill_tree_git_oid": "2db841b45df5950a3281d0dcc5617b9f270ea6f6",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 205,
+      "description_length": 172,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dt4acc-container-troubleshooting/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "db11c08468bdd54e3b3add2f7706433ab413a4d0",
+      "skill_md_sha256": "sha256:443e41a7ebeb0cdb9db688934d4635b0e6733053b8be4d82d01f614224a7c044",
+      "skill_tree_git_oid": "aa6af866bddf5db4c8fd91bf13cb10744786ad68",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 106,
+      "description_length": 130,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dtwin-burnin-tests/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "72b7cbe37bf63a0f529da4b6437d4abb385f79b3",
+      "skill_md_sha256": "sha256:4b7e907d5f795e84bf09c85db5c9941f918db47be556a78d3819a6d193b557ce",
+      "skill_tree_git_oid": "cc0870d94e270cf750c9914bc2e47c112be2496d",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 160,
+      "description_length": 147,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dtwin-epics-runbook/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "5c141e1ab6d7fb5efd161672eb116b8f34ab7185",
+      "skill_md_sha256": "sha256:86d38f7c82e5a8066b0793191162ed5e7fb0d72fbba230e32dd25261555faa12",
+      "skill_tree_git_oid": "f3c0a7bc14b960bec32ed0cdeec4415369038c66",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 197,
+      "description_length": 154,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dtwin-host-smoke-test/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "64a2f52f34c29c18adf2a6ded6869abab7144eb8",
+      "skill_md_sha256": "sha256:473d70f6a220f47a4821b24e3bec6c997ce3c8533fae25aab6edc8556e8e58c5",
+      "skill_tree_git_oid": "e68b61758d8f5585c53f854c890ae1dc089d21d9",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 266,
+      "description_length": 79,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "category",
+        "description",
+        "name"
+      ],
+      "frontmatter_types": {
+        "category": "str",
+        "description": "str",
+        "name": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dtwin-setup/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "47469a301810f49c5cdf0e709d8836a32c6387a8",
+      "skill_md_sha256": "sha256:3cca1f6ac30908e9b65a2e20015196bf0968b1ce88875f592b25476c92a3bf2f",
+      "skill_tree_git_oid": "e57345ab68ca83b59bb21efdf9b93ecedec62f71",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 167,
+      "description_length": 173,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "description",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "description": "str",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "science/dtwin-tango-runbook/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "5618a75afa39b296f61260ac3c9ff18015449adf",
+      "skill_md_sha256": "sha256:99318e985b949a52d2d3f9c5a71a85534f442f1baad3341865cb52fdc65be823",
+      "skill_tree_git_oid": "7a72b37584908239994326b3213f1aa43b01aa75",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 102,
+      "description_length": 177,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "software-development/dask-mcp-docs-first/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "0074c7d7799ce8dca296c413ae22e3c48211315a",
+      "skill_md_sha256": "sha256:17d49fe2945823425ef15d654e9570fb67b73a744f4e52469da40fbfe157433f",
+      "skill_tree_git_oid": "5f80acb1e03b7d7bc3b13472b192c95465b6e268",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 91,
+      "description_length": 186,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "software-development/pandas-datashader-mcp-docs-first/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "816ad4c6bc5ce149f4d57045c189b0f48e69ebde",
+      "skill_md_sha256": "sha256:26abbde2fa51ed28b4794a39706658b68c261e8b0705f57160c9213cc468f22d",
+      "skill_tree_git_oid": "831615a22b315e38cca997e52b9031f7ce2f9a05",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 81,
+      "description_length": 132,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "software-development/paperclip-enable-llm-api/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "a7bd1abd13e91e6da2788997bb7329b788d4ae82",
+      "skill_md_sha256": "sha256:fbf80cc06a15d18658f9141750f817b2a98fe2ab75aabb033d450717b3c61c2f",
+      "skill_tree_git_oid": "85ff5698f01ed954f194e356d293e63ae4ddafbe",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 78,
+      "description_length": 141,
+      "diagnostic_codes": [
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "name",
+        "title"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "name": "str",
+        "title": "str"
+      },
+      "name_matches_directory": true,
+      "path": "software-development/paperclip-ensure-oss-120b-assistant/SKILL.md",
+      "per_skill_license_signal": "none",
+      "skill_md_git_blob": "38615ca4cde9e153e928a4d71036da57046b98ad",
+      "skill_md_sha256": "sha256:4bb9d4ec07860c4a3a88a69b170d5ad3dd9eaa30a2e92cd335329ebeb4451582",
+      "skill_tree_git_oid": "d6616a30c84f3de5d972b26c760e6b2d1498cc6b",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    },
+    {
+      "agent_skills_normative_status": "fail",
+      "body_lines": 144,
+      "description_length": 159,
+      "diagnostic_codes": [
+        "AGENT_METADATA_NOT_STRING_MAP",
+        "AGENT_REFERENCE_REJECTED",
+        "AGENT_UNEXPECTED_FIELDS"
+      ],
+      "frontmatter_keys": [
+        "author",
+        "description",
+        "license",
+        "metadata",
+        "name",
+        "version"
+      ],
+      "frontmatter_types": {
+        "author": "str",
+        "description": "str",
+        "license": "str",
+        "metadata": "dict",
+        "name": "str",
+        "version": "str"
+      },
+      "name_matches_directory": true,
+      "path": "software-development/python-mcp-docs-first/SKILL.md",
+      "per_skill_license_signal": "MIT",
+      "skill_md_git_blob": "a977b8f2f1b48d374a8d8df31b68367a334fc129",
+      "skill_md_sha256": "sha256:70bf91a6919920b01ee680206e8fcc1d90b018084438331cc0c87f42fc6de4f0",
+      "skill_tree_git_oid": "0348b77c8b154238b5ea924872cc84edc3064b24",
+      "skills_ref_0_1_1_status": "fail",
+      "source_state": "active"
+    }
+  ],
+  "rights_notice": "Factual structural observations only. This fixture does not copy skill bodies, assert publication rights, or conclude that a root license covers imported material.",
+  "source_lock": {
+    "citation_blob": "8b980caf0e6f3c6001759bef722daef976228b61",
+    "include": [
+      "**/SKILL.md"
+    ],
+    "license_blob": "e3402849838bc944fe2f1fcf4876328cb966fc52",
+    "parked_prefix": "outdated-skills/",
+    "repository": "https://github.com/arm2arm/AstroAgentAssistant",
+    "revision": "ef78afcf1412575dd23e8e88c01dbf50b8b02836",
+    "root_tree": "70828a8059843280d2867bab5ee7b60382a315a8"
+  },
+  "summary": {
+    "active_skills": 114,
+    "frontmatter_key_frequency_all": {
+      "author": 90,
+      "category": 13,
+      "contributors": 1,
+      "created": 2,
+      "date": 7,
+      "dependencies": 1,
+      "description": 128,
+      "hermes": 1,
+      "license": 59,
+      "metadata": 58,
+      "name": 128,
+      "platforms": 2,
+      "prerequisites": 9,
+      "related_skills": 1,
+      "requirements": 1,
+      "steps": 1,
+      "summary": 1,
+      "tags": 9,
+      "title": 22,
+      "trigger": 1,
+      "triggers": 2,
+      "version": 88
+    },
+    "no_per_skill_license_declaration_active": 61,
+    "parked_skills": 14,
+    "skills_ref_0_1_1_pass_active": 6,
+    "skills_ref_0_1_1_passing_paths": [
+      "creative/galaxy-formation-animation",
+      "devops/docker-access",
+      "devops/docker-access-group-reload",
+      "devops/telegram-auth-troubleshooting",
+      "productivity/image-description-workflow",
+      "reana-workflows/reana-cmd-plot-workflow-external-script"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+stages:
+  - test
+
+default:
+  image: ghcr.io/astral-sh/uv:python3.12-bookworm@sha256:85d4cb1afa769a7338e095b927bee941cf5ec92266c7424b3f6c0f2748567248
+  cache:
+    key:
+      files:
+        - uv.lock
+    paths:
+      - .uv-cache/
+  variables:
+    UV_CACHE_DIR: .uv-cache
+    UV_LINK_MODE: copy
+
+test:
+  stage: test
+  script:
+    - uv sync --locked --all-groups
+    - uv run ruff check .
+    - uv run ruff format --check .
+    - uv run pytest --junitxml=junit.xml
+    - uv run skill-commons validate examples/catalog-query-demo --profile all
+    - uv build --out-dir dist
+    - uv export --locked --no-dev --no-emit-project --output-file /tmp/skill-commons-runtime.txt > /dev/null
+    - uv venv --python 3.12 /tmp/skill-commons-wheel-venv
+    - uv pip sync --python /tmp/skill-commons-wheel-venv/bin/python --require-hashes /tmp/skill-commons-runtime.txt
+    - uv pip install --python /tmp/skill-commons-wheel-venv/bin/python --no-deps dist/*.whl
+    - /tmp/skill-commons-wheel-venv/bin/skill-commons validate examples/catalog-query-demo --profile all
+  artifacts:
+    when: always
+    reports:
+      junit: junit.xml

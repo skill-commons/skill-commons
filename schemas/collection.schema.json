@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:collection:0.1.0-draft",
+  "title": "Skill Commons collection payload (Phase 0 stretch sketch)",
+  "description": "Unsigned payload for a proposed signed, immutable collection. Signature-envelope and trust-root semantics are intentionally deferred.",
+  "$comment": "NON-NORMATIVE PHASE 0 STRETCH SKETCH: this shape may change before promotion into the supported interchange specification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "namespace",
+    "name",
+    "version",
+    "description",
+    "owner",
+    "curators",
+    "purpose",
+    "license_policy",
+    "review_rationale",
+    "members",
+    "compatibility",
+    "known_conflicts",
+    "environment_hints",
+    "orchestration_hints",
+    "intended_scopes",
+    "export_targets"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "namespace": { "$ref": "#/$defs/namespace" },
+    "name": { "$ref": "#/$defs/name" },
+    "version": { "$ref": "#/$defs/semver" },
+    "description": { "type": "string", "minLength": 1, "maxLength": 1024 },
+    "owner": { "type": "string", "minLength": 1 },
+    "curators": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "purpose": { "type": "string", "minLength": 1 },
+    "license_policy": { "type": "string", "minLength": 1 },
+    "review_rationale": { "type": "string", "minLength": 1 },
+    "members": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["coordinate", "version", "digest", "requirement"],
+        "properties": {
+          "coordinate": { "$ref": "#/$defs/coordinate" },
+          "version": { "$ref": "#/$defs/semver" },
+          "digest": { "$ref": "#/$defs/digest" },
+          "requirement": { "enum": ["required", "optional"] },
+          "order": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clients", "operating_systems", "architectures"],
+      "properties": {
+        "clients": { "$ref": "#/$defs/stringSet" },
+        "operating_systems": { "$ref": "#/$defs/stringSet" },
+        "architectures": { "$ref": "#/$defs/stringSet" }
+      }
+    },
+    "known_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["members", "reason"],
+        "properties": {
+          "members": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/coordinate" },
+            "minItems": 2,
+            "uniqueItems": true
+          },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "environment_hints": { "$ref": "#/$defs/stringSet" },
+    "orchestration_hints": { "$ref": "#/$defs/stringSet" },
+    "intended_scopes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scope" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "export_targets": { "$ref": "#/$defs/stringSet" }
+  },
+  "$defs": {
+    "namespace": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "coordinate": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*/[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "stringSet": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "scope": {
+      "enum": ["personal", "workspace", "research-group", "institutional", "fleet-baked"]
+    }
+  }
+}

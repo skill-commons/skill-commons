@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:catalog-snapshot:0.1.0-draft",
+  "title": "Skill Commons static catalog snapshot payload",
+  "description": "Unsigned catalog payload intended for detached DSSE, cosign, or OCI signing by a trusted external pipeline before use.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sequence", "generated_at", "expires_at", "previous_snapshot_digest", "generator", "input_digest", "releases", "negative_state"],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "previous_snapshot_digest": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    },
+    "input_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "releases": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/release" }
+    },
+    "negative_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence", "records"],
+      "properties": {
+        "sequence": { "type": "integer", "minimum": 0 },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "coordinate", "version", "record_digest"],
+            "properties": {
+              "kind": { "enum": ["advisory", "yank", "tombstone", "revocation"] },
+              "coordinate": { "$ref": "#/$defs/coordinate" },
+              "version": { "$ref": "#/$defs/semver" },
+              "record_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "coordinate": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*/[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 129
+    },
+    "safeRelativePath": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repository-relative path to the package root directory.",
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*:)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*(?:^|/)SKILL\\.md$).+$"
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "version", "artifact", "manifest_digest", "source", "release_state", "description", "license", "compatibility", "capability_summary", "context_budget", "assessments", "assessment_evidence", "validation_profiles", "evidence"],
+      "properties": {
+        "coordinate": { "$ref": "#/$defs/coordinate" },
+        "version": { "$ref": "#/$defs/semver" },
+        "artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "digest", "media_type", "size"],
+          "properties": {
+            "repository": { "type": "string", "minLength": 1, "pattern": "^\\S+$" },
+            "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "media_type": { "const": "application/vnd.skill-commons.package.v1+tar+gzip" },
+            "size": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "manifest_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "revision", "path"],
+          "properties": {
+            "repository": { "type": "string", "format": "uri" },
+            "revision": { "type": "string", "pattern": "^(?:[0-9a-fA-F]{40}|[0-9a-fA-F]{64})$" },
+            "path": { "$ref": "#/$defs/safeRelativePath" }
+          }
+        },
+        "release_state": { "enum": ["active", "deprecated", "yanked", "quarantined", "revoked"] },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1024 },
+        "license": { "type": "string", "minLength": 1 },
+        "compatibility": { "type": "object" },
+        "capability_summary": { "type": "object" },
+        "context_budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["metadata_tokens", "instruction_tokens", "estimator", "version", "encoding"],
+          "properties": {
+            "metadata_tokens": { "type": "integer", "minimum": 0 },
+            "instruction_tokens": { "type": "integer", "minimum": 0 },
+            "estimator": { "type": "string" },
+            "version": { "type": "string" },
+            "encoding": { "type": "string" }
+          }
+        },
+        "assessments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["license", "publisher_authority", "namespace_control", "redaction", "source_relation"],
+          "properties": {
+            "license": { "const": "verified" },
+            "publisher_authority": { "const": "verified" },
+            "namespace_control": { "const": "verified" },
+            "redaction": { "const": "verified" },
+            "source_relation": { "enum": ["native", "derived", "mirror"] }
+          }
+        },
+        "assessment_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["license", "publisher_authority", "namespace_control", "redaction"],
+          "properties": {
+            "license": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "publisher_authority": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "namespace_control": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "redaction": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+          }
+        },
+        "validation_profiles": {
+          "type": "object",
+          "required": ["commons-publication"],
+          "propertyNames": { "type": "string", "minLength": 1 },
+          "additionalProperties": { "enum": ["pass", "warn"] }
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:skill-commons:schema:external-catalog-record:0.1.0-draft",
+  "title": "Attributed external catalog observation (Phase 0 stretch sketch)",
+  "description": "Metadata-only observation of an external skill. It is not a Commons release, rights conclusion, or transferred trust assessment.",
+  "$comment": "NON-NORMATIVE PHASE 0 STRETCH SKETCH: ecosystem adapters and observation-refresh semantics remain to be exercised.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "ecosystem",
+    "native_id",
+    "source",
+    "source_revision",
+    "native_name",
+    "native_version",
+    "native_artifact_digest",
+    "license_signal",
+    "attribution",
+    "last_seen_at",
+    "scan",
+    "mapping"
+  ],
+  "properties": {
+    "schema_version": { "const": "0.1.0-draft" },
+    "ecosystem": { "type": "string", "minLength": 1 },
+    "native_id": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "format": "uri" },
+    "source_revision": { "type": ["string", "null"] },
+    "native_name": { "type": "string", "minLength": 1 },
+    "native_version": { "type": ["string", "null"] },
+    "native_artifact_digest": {
+      "oneOf": [
+        { "$ref": "#/$defs/digest" },
+        { "type": "null" }
+      ]
+    },
+    "license_signal": { "type": ["string", "null"] },
+    "attribution": { "type": "string", "minLength": 1 },
+    "last_seen_at": { "type": "string", "format": "date-time" },
+    "scan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "scanner", "scanned_at", "evidence_digest"],
+      "properties": {
+        "status": { "enum": ["not-scanned", "passed", "warnings", "failed", "unknown"] },
+        "scanner": { "type": ["string", "null"] },
+        "scanned_at": { "type": ["string", "null"], "format": "date-time" },
+        "evidence_digest": {
+          "oneOf": [
+            { "$ref": "#/$defs/digest" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "mapping": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["coordinate", "version", "digest", "verification", "evidence_digest"],
+          "properties": {
+            "coordinate": { "$ref": "#/$defs/coordinate" },
+            "version": { "$ref": "#/$defs/semver" },
+            "digest": { "$ref": "#/$defs/digest" },
+            "verification": { "const": "verified" },
+            "evidence_digest": { "$ref": "#/$defs/digest" }
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "coordinate": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*/[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}
