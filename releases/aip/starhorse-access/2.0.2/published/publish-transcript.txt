@@ -1,0 +1,153 @@
+
+===== environment =====
+run (UTC): 2026-07-21T23:16:47Z
+-- primary: gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access
+-- mirror: gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access
+-- oras: Version:        1.2.3
+-- cosign: v2.5.0
+-- auth: GitLab personal access token via password-stdin (credential redacted by construction)
+
+===== deterministic subject push (F1 and F3) =====
+-- push #1 digest: sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275
+-- push #2 digest: sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275
+-- F1 PASS: created annotation pinned; identical OCI digest
+-- F3 PASS: persistent rel-2.0.2 tag resolves to subject
+
+===== primary pull and byte parity =====
+-- manifest digest parity: sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275
+-- package byte parity: sha256:a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9
+
+===== signature and attestations =====
+Pushing signature to: gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/validation.json
+-- attached validation.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/contract-report.json
+-- attached contract-report.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/inventory.json
+-- attached inventory.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/policy-result.json
+-- attached policy-result.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/static-scan.json
+-- attached static-scan.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/provenance.intoto.json
+-- attached provenance.intoto.json
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/prepared/evidence/sbom.spdx.json
+-- attached sbom.spdx.json
+-- signature descriptor: sha256:5e3aec29aa77384ffc6c077d063a5591c556ad7a68021bdf9e5be7f6b8f3f224
+-- attestation descriptor: sha256:e33beba89d5f1ee4452035df8e3ffd961e3d12b0f84021d53f279c56454d7790
+
+===== fresh primary verification =====
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the signature.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+-- primary signature + all 7 attestations verify from clean state
+
+===== catalog finalization and detached signature (F4 authority) =====
+Using payload from: /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/final-v4/catalog.json
+Wrote signature to file /home/hermes2/skill-commons-runs/starhorse-2.0.2-20260722/final-v4/catalog.sig
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the blob.
+Verified OK
+-- F4 control PASS: signed catalog binds current subject and live evidence descriptors
+-- gate 4 remains OPEN: project boundary reduces but does not prove publisher isolation
+
+===== mirror reconstruction and verification (F2) =====
+-- enumerated and copied evidence tag: sha256-fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275.att
+-- enumerated and copied evidence tag: sha256-fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275.sig
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the signature.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+WARNING: Skipping tlog verification is an insecure practice that lacks transparency and auditability verification for the attestation.
+
+Verification for gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access@sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275 --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+-- F2/gate 3 PASS: subject + explicitly enumerated evidence reconstruct and verify
+
+===== final live checks and receipt =====
+-- gate 5 remains OPEN: operator backup/restore evidence is not available
+-- DONE: release, evidence, mirror, signed catalog, inventory, and policy result verified

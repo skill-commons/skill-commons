@@ -24,6 +24,7 @@ from .converter import (
 )
 from .io import dump_yaml, json_safe, load_json_file
 from .packer import pack_snapshot, snapshot_tree
+from .publication import finalize_catalog, prepare_release, verify_published_release
 from .survey import survey_repository
 from .validation import report_failed, validate_skill
 
@@ -231,6 +232,42 @@ def _command_catalog(args: argparse.Namespace) -> int:
     return 0
 
 
+def _command_prepare_release(args: argparse.Namespace) -> int:
+    receipt = prepare_release(args.recipe, args.source_repository, args.out)
+    print(json.dumps(receipt, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _command_finalize_release(args: argparse.Namespace) -> int:
+    status = finalize_catalog(
+        args.recipe,
+        args.prepared,
+        args.repository,
+        args.oci_digest,
+        args.signature_digest,
+        args.attestation_digest,
+        args.out,
+    )
+    print(json.dumps(status, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _command_verify_release(args: argparse.Namespace) -> int:
+    report = verify_published_release(
+        args.catalog,
+        args.signature,
+        args.public_key,
+        args.prepare_receipt,
+        args.coordinate,
+        args.release_version,
+        args.mirror,
+    )
+    if args.output is not None:
+        _write_json(args.output, report)
+    print(json.dumps(report, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="skill-commons")
     parser.add_argument("--version", action="version", version=__version__)
@@ -287,6 +324,42 @@ def build_parser() -> argparse.ArgumentParser:
     catalog.add_argument("--previous-snapshot-digest")
     catalog.add_argument("--output", required=True, type=Path)
     catalog.set_defaults(func=_command_catalog)
+
+    prepare = subparsers.add_parser(
+        "prepare-release",
+        help="materialize immutable source and emit deterministic publication inputs",
+    )
+    prepare.add_argument("recipe", type=Path)
+    prepare.add_argument("--source-repository", required=True, type=Path)
+    prepare.add_argument("--out", required=True, type=Path)
+    prepare.set_defaults(func=_command_prepare_release)
+
+    finalize = subparsers.add_parser(
+        "finalize-release",
+        help="bind live OCI evidence descriptors into a catalog candidate",
+    )
+    finalize.add_argument("recipe", type=Path)
+    finalize.add_argument("--prepared", required=True, type=Path)
+    finalize.add_argument("--repository", required=True)
+    finalize.add_argument("--oci-digest", required=True)
+    finalize.add_argument("--signature-digest", required=True)
+    finalize.add_argument("--attestation-digest", required=True)
+    finalize.add_argument("--out", required=True, type=Path)
+    finalize.set_defaults(func=_command_finalize_release)
+
+    verify_release = subparsers.add_parser(
+        "verify-release",
+        help="verify a signed catalog release and its current registry evidence",
+    )
+    verify_release.add_argument("catalog", type=Path)
+    verify_release.add_argument("--signature", required=True, type=Path)
+    verify_release.add_argument("--public-key", required=True, type=Path)
+    verify_release.add_argument("--prepare-receipt", required=True, type=Path)
+    verify_release.add_argument("--coordinate", required=True)
+    verify_release.add_argument("--release-version", required=True)
+    verify_release.add_argument("--mirror")
+    verify_release.add_argument("--output", type=Path)
+    verify_release.set_defaults(func=_command_verify_release)
     return parser
 
 

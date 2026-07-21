@@ -1,0 +1,37 @@
+{
+  "input": {
+    "directory": "starhorse-access",
+    "manifest_digest": "sha256:1b760ec6888b66382ca301b283772a299cc961cfbfb84c27430f325062ccbc6c",
+    "skill_md_digest": "sha256:e7534b08d0384d15b6ce44f139ea61590ce6b26c76c11b805ee686b81313409f"
+  },
+  "profiles": {
+    "agent-skills": {
+      "contract": "agent-skills-specification+skills-ref@0.1.1",
+      "details": {
+        "normative_status": "pass",
+        "reference_status": "pass",
+        "reference_version": "0.1.1"
+      },
+      "findings": [],
+      "status": "pass"
+    },
+    "commons-publication": {
+      "contract": "aip-phase0-candidate-readiness-v1",
+      "findings": [
+        {
+          "code": "COMMONS_EXTERNAL_ATTESTATIONS_REQUIRED",
+          "message": "local validation cannot establish namespace control, publication rights, or reviewed redaction; the curator-authorized catalog gate must verify them",
+          "pointer": "/catalog/assessments",
+          "profile": "commons-publication",
+          "severity": "warning"
+        }
+      ],
+      "status": "warn"
+    }
+  },
+  "report_schema_version": "0.1.0-draft",
+  "tool": {
+    "name": "skill-commons",
+    "version": "0.1.0.dev0"
+  }
+}

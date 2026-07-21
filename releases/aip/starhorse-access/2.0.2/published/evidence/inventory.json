@@ -1,0 +1,356 @@
+{
+  "capabilities": {
+    "completeness": "complete",
+    "external_side_effects": [
+      "submit-tap-job",
+      "download-catalog-file"
+    ],
+    "filesystem": [
+      {
+        "access": "read",
+        "path_class": "package"
+      },
+      {
+        "access": "read-write",
+        "path_class": "workspace"
+      }
+    ],
+    "named_secrets": [
+      "gaia.aip.de-token"
+    ],
+    "network": [
+      {
+        "host": "s3.data.aip.de:9000",
+        "protocols": [
+          "https"
+        ]
+      },
+      {
+        "host": "gaia.aip.de",
+        "protocols": [
+          "https",
+          "tap"
+        ]
+      }
+    ],
+    "paid_services": [],
+    "processes": [
+      "python",
+      "wget",
+      "curl"
+    ]
+  },
+  "context_budget": {
+    "encoding": "utf-8",
+    "estimator": "utf8-byte-ceiling-divide-by-four",
+    "instruction_tokens": 1862,
+    "metadata_tokens": 72,
+    "version": "1"
+  },
+  "coordinate": "aip/starhorse-access",
+  "dependencies": {
+    "declared": {
+      "completeness": "complete",
+      "containers": [],
+      "python": [
+        "fsspec==2026.6.0",
+        "pandas==3.0.3",
+        "pyarrow==25.0.0",
+        "pyvo==1.9.1",
+        "requests==2.34.2"
+      ],
+      "system": []
+    },
+    "resolution": {
+      "containers": [],
+      "id": "linux-x86_64-cpython-3.12",
+      "python": [
+        {
+          "artifact": {
+            "sha256": "fa11d56855e10107ea2231a6b6a33dbf1edbea6890adf34634c1f1d8f25c5a5a",
+            "url": "https://files.pythonhosted.org/packages/fa/14/6f4427419f8a02e1d0a885fb64d8d4454c5d443627aa7cb1a3a36e16abb7/astropy-8.0.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          "direct": false,
+          "name": "astropy",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/astropy/"
+          },
+          "version": "8.0.1"
+        },
+        {
+          "artifact": {
+            "sha256": "9e4b70b435242a613ad9626e46342ed8a991e058bb273cd6bb256e3bc8caee2f",
+            "url": "https://files.pythonhosted.org/packages/a3/eb/87cede1d1a2a8e6f326c4f8dd1e21682ffc3dd4eee41afd0f84a67de7da2/astropy_iers_data-0.2026.7.20.15.31.18-py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "astropy-iers-data",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/astropy-iers-data/"
+          },
+          "version": "0.2026.7.20.15.31.18"
+        },
+        {
+          "artifact": {
+            "sha256": "2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db",
+            "url": "https://files.pythonhosted.org/packages/ef/2f/c5464532e965badff2f4c4c1a3a83f5697f0d7c407ed0cda44aaa99bb451/certifi-2026.6.17-py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "certifi",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/certifi/"
+          },
+          "version": "2026.6.17"
+        },
+        {
+          "artifact": {
+            "sha256": "5e226f6218febc71f6c1fc2fafb91c226f75bdc1d8fb12d66823716e891608fd",
+            "url": "https://files.pythonhosted.org/packages/01/c4/4fa4c8b3097a11f3c5f09a35b72ed6855fb1d332469504962ab7bafcc702/charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          "direct": false,
+          "name": "charset-normalizer",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/charset-normalizer/"
+          },
+          "version": "3.4.9"
+        },
+        {
+          "artifact": {
+            "sha256": "02e0b71817df9b2169dc30a16832045764def1191b43dcff5bb85bdee212d2a1",
+            "url": "https://files.pythonhosted.org/packages/e5/22/4222d7ddf3da30f363edaa98e329c2bce6c65497c9cb2810931c8b2c0fbc/fsspec-2026.6.0-py3-none-any.whl"
+          },
+          "direct": true,
+          "name": "fsspec",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/fsspec/"
+          },
+          "version": "2026.6.0"
+        },
+        {
+          "artifact": {
+            "sha256": "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2",
+            "url": "https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "idna",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/idna/"
+          },
+          "version": "3.18"
+        },
+        {
+          "artifact": {
+            "sha256": "59fda5e192b570217ec2580c96f00e9a7e12ef6866a900eb089b62c1a32545ca",
+            "url": "https://files.pythonhosted.org/packages/b8/a9/6e73d68500f80773f65f0654ea932019d6694329a0eb0ed0533de38df376/numpy-2.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          "direct": false,
+          "name": "numpy",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/numpy/"
+          },
+          "version": "2.5.1"
+        },
+        {
+          "artifact": {
+            "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+            "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "packaging",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/packaging/"
+          },
+          "version": "26.2"
+        },
+        {
+          "artifact": {
+            "sha256": "6dc0b3fd2169c9157deed50b4d519553a3655c8c6a96027136d654592be973a9",
+            "url": "https://files.pythonhosted.org/packages/65/b6/09b01cdbc15224e2850365192d17b7bdebb8bdbd8780ed221fcdf0d9a515/pandas-3.0.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          "direct": true,
+          "name": "pandas",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/pandas/"
+          },
+          "version": "3.0.3"
+        },
+        {
+          "artifact": {
+            "sha256": "5d1dbf24e151042f2fa3c129563f65d66674128868496fb008c4272b16bdf778",
+            "url": "https://files.pythonhosted.org/packages/55/0e/cd705c042bc4fe7022478db577fcab4abdcfabb9bc37ab7a75556b3fcb2b/pyarrow-25.0.0-cp312-cp312-manylinux_2_28_x86_64.whl"
+          },
+          "direct": true,
+          "name": "pyarrow",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/pyarrow/"
+          },
+          "version": "25.0.0"
+        },
+        {
+          "artifact": {
+            "sha256": "0e43c7194e3242083f2350b46c09fd4bf8ba1bcc0ebd1460b98fc47fe2389906",
+            "url": "https://files.pythonhosted.org/packages/e5/e0/050018d855d26d3c0b4a7d1b2ed692be758ce276d8289e2a2b44ba1014a5/pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          },
+          "direct": false,
+          "name": "pyerfa",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/pyerfa/"
+          },
+          "version": "2.0.1.5"
+        },
+        {
+          "artifact": {
+            "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+            "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "python-dateutil",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/python-dateutil/"
+          },
+          "version": "2.9.0.post0"
+        },
+        {
+          "artifact": {
+            "sha256": "098648d00943440f56c1d00ac76330433578a0725ea6187afaa6bae08545bb53",
+            "url": "https://files.pythonhosted.org/packages/0a/09/04ff6e8beaa6cd60a960f925d837c2afa3fffba7860042ab1b52a8358297/pyvo-1.9.1-py3-none-any.whl"
+          },
+          "direct": true,
+          "name": "pyvo",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/pyvo/"
+          },
+          "version": "1.9.1"
+        },
+        {
+          "artifact": {
+            "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc",
+            "url": "https://files.pythonhosted.org/packages/8b/9d/b3589d3877982d4f2329302ef98a8026e7f4443c765c46cfecc8858c6b4b/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+          },
+          "direct": false,
+          "name": "pyyaml",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/pyyaml/"
+          },
+          "version": "6.0.3"
+        },
+        {
+          "artifact": {
+            "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+            "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl"
+          },
+          "direct": true,
+          "name": "requests",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/requests/"
+          },
+          "version": "2.34.2"
+        },
+        {
+          "artifact": {
+            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+            "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "six",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/six/"
+          },
+          "version": "1.17.0"
+        },
+        {
+          "artifact": {
+            "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+            "url": "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl"
+          },
+          "direct": false,
+          "name": "urllib3",
+          "source": {
+            "kind": "index",
+            "url": "https://pypi.org/simple/urllib3/"
+          },
+          "version": "2.7.0"
+        }
+      ],
+      "requirements_digest": "sha256:ce8e0c1306020cf8316f8414558e959ccab2bdcd8b2f78820a62fd5f1d823eab",
+      "resolver": {
+        "name": "uv",
+        "version": "0.10.12"
+      },
+      "system": [],
+      "target": {
+        "architecture": "amd64",
+        "operating_system": "linux",
+        "python_implementation": "cpython",
+        "python_version": "3.12"
+      }
+    }
+  },
+  "files": [
+    {
+      "digest": "sha256:67c96d4605ed7a4ba0ba62410130a65904fe628d3653c3b876187bd3a0feb3b1",
+      "executable": false,
+      "path": "LICENSE",
+      "size": 1065
+    },
+    {
+      "digest": "sha256:e7534b08d0384d15b6ce44f139ea61590ce6b26c76c11b805ee686b81313409f",
+      "executable": false,
+      "path": "SKILL.md",
+      "size": 7447
+    },
+    {
+      "digest": "sha256:677f95045922ee2cd9475fb5009f3f8b954e69e97a14e4a69635bf50671a97df",
+      "executable": false,
+      "path": "contracts/static-content.expected.json",
+      "size": 58
+    },
+    {
+      "digest": "sha256:2f2443030b27e91d81207ba1f5398cdba2207d956847251e0078af2febd1e32d",
+      "executable": false,
+      "path": "contracts/static-content.json",
+      "size": 696
+    },
+    {
+      "digest": "sha256:f94d305fa6b15ac709b83b696e83e64c5f5a5423a8c924d7847fb7cd76609497",
+      "executable": false,
+      "path": "references/schema.md",
+      "size": 5084
+    },
+    {
+      "digest": "sha256:8d80d350716aadeaf4a70a38bea3ea64e878e6187b2a180a9cc10f7cc12a0a6a",
+      "executable": false,
+      "path": "research-skill.lock",
+      "size": 7290
+    },
+    {
+      "digest": "sha256:9e22ba3b822dd4382b6a7cd5f9c7a1cb959c8892c182d2cb5cbd3860568668de",
+      "executable": false,
+      "path": "research-skill.yaml",
+      "size": 3348
+    }
+  ],
+  "install_mutations": {
+    "containers": 0,
+    "package_files": 7,
+    "python_packages": 17,
+    "system_packages": 0
+  },
+  "schema_version": "0.1.0-draft",
+  "version": "2.0.2"
+}

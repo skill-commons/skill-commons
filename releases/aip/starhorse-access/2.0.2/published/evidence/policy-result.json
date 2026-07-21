@@ -1,0 +1,27 @@
+{
+  "authority": "local-install-policy; signed-catalog-required-for-release-authority",
+  "conditions": [
+    "restrict-network-egress-to-declared-hosts",
+    "gaia-token-is-user-supplied-optional-and-must-never-enter-package-or-logs",
+    "require-user-approval-before-submitting-long-running-tap-jobs",
+    "preserve-rel-version-and-sha256-evidence-tags-and-live-check-them",
+    "acceptance-gate-4-publisher-isolation-remains-open",
+    "acceptance-gate-5-backup-restore-remains-open"
+  ],
+  "coordinate": "aip/starhorse-access",
+  "decision": "allow-with-conditions",
+  "gate_status": {
+    "gate_1_reconstruct_and_verify": "required",
+    "gate_2_gc_and_evidence_retention": "conditional-on-live-tag-checks",
+    "gate_3_mirror_reconstructs_evidence": "required",
+    "gate_4_publisher_isolation": "open",
+    "gate_5_backup_restore": "open",
+    "gate_6_catalog_detects_missing_or_stale_evidence": "required"
+  },
+  "open_gates": [
+    4,
+    5
+  ],
+  "schema_version": "0.1.0-draft",
+  "version": "2.0.2"
+}

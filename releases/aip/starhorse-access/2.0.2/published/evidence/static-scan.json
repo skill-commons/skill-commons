@@ -1,0 +1,7 @@
+{
+  "files_scanned": 7,
+  "findings": [],
+  "schema_version": "0.1.0-draft",
+  "scope": "package paths and conservative credential-pattern scan; not dependency vulnerability analysis",
+  "status": "pass"
+}

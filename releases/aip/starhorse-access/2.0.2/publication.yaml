@@ -1,0 +1,181 @@
+schema_version: 0.1.0-draft
+coordinate: aip/starhorse-access
+version: 2.0.2
+created: '2026-07-21T22:00:32Z'
+
+source:
+  repository: https://gitlab-p4n.aip.de/p4nreana/reana-env.git
+  revision: 5f1d331b106cc96b47f0633cddc94b05325b8b49
+  path: skills/starhorse-access
+  tree_oid: 3fa9e8b084e0b5e70a665a9a538a81725fbb2299
+  tree_digest: sha256:6c412460f445423ce1d27cbf9dc5d9d67d62b47a6deb77176b793ab7da7de440
+  files:
+    - path: SKILL.md
+      blob_oid: 1afe19d301d9670918aa39051ee22653ca6eb9f7
+      digest: sha256:c3a7db591d67713177764cdfd2f8c4ab7020b775a133e54e9560fee66260ea36
+    - path: references/schema.md
+      blob_oid: d19b65a5439e20967f55eac2b6dba6a32de85c0b
+      digest: sha256:f94d305fa6b15ac709b83b696e83e64c5f5a5423a8c924d7847fb7cd76609497
+
+portable_frontmatter:
+  name: starhorse-access
+  description: Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP.
+  license: MIT
+  compatibility: Linux x86_64 with CPython 3.12; requires declared HTTPS access.
+  metadata:
+    research-skill.manifest: research-skill.yaml
+
+overlays:
+  - source: overlays/LICENSE
+    path: LICENSE
+    digest: sha256:67c96d4605ed7a4ba0ba62410130a65904fe628d3653c3b876187bd3a0feb3b1
+  - source: overlays/contracts/static-content.json
+    path: contracts/static-content.json
+    digest: sha256:2f2443030b27e91d81207ba1f5398cdba2207d956847251e0078af2febd1e32d
+  - source: overlays/contracts/static-content.expected.json
+    path: contracts/static-content.expected.json
+    digest: sha256:677f95045922ee2cd9475fb5009f3f8b954e69e97a14e4a69635bf50671a97df
+
+dependency_lock:
+  input: pylock.toml
+  digest: sha256:83e29f5102fb36de8dcd7eb927a9c45c22fc82d8cf751b8c3f1a879b8078f195
+  resolver:
+    name: uv
+    version: 0.10.12
+  target:
+    id: linux-x86_64-cpython-3.12
+    operating_system: linux
+    architecture: amd64
+    python_implementation: cpython
+    python_version: '3.12'
+  direct: [fsspec, pandas, pyarrow, pyvo, requests]
+
+manifest:
+  schema_version: 0.1.0-draft
+  package:
+    namespace: aip
+    name: starhorse-access
+    version: 2.0.2
+    license: MIT
+    source:
+      repository: https://gitlab-p4n.aip.de/p4nreana/reana-env.git
+      revision: 5f1d331b106cc96b47f0633cddc94b05325b8b49
+      path: skills/starhorse-access
+  authorship:
+    status: verified
+    contributors:
+      - name: Tom Tong
+        orcid: 0000-0001-6014-5031
+        role: curator
+    creation_mode: mixed
+    agent:
+      client: Project Hermes
+      model_family: Claude Fable 5
+    validation_receipts:
+      - kind: human-publication-assertions
+        digest: sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501
+  research:
+    disciplines: [astronomy, stellar-astrophysics]
+    methods: [catalog-access, tap-query, parquet-analysis, color-magnitude-diagram]
+    software: [StarHorse, SHboost, Gaia]
+    data_sources: [SH21-EDR3, SHboost-2024, gaia.aip.de]
+    intended_uses: [access-starhorse-catalogs, query-stellar-parameters, build-color-magnitude-diagrams]
+    excluded_uses: [redistribute-catalog-data, treat-example-results-as-research-conclusions]
+    assumptions: [network-access-is-available, users-follow-source-data-terms, tap-schema-remains-compatible]
+    known_failure_modes: [tap-job-timeout, tap-service-schema-change, missing-catalog-values, parquet-download-failure]
+    keywords: [starhorse, gaia-edr3, tap, parquet, stellar-parameters]
+  relations:
+    implements_tasks: [task:astronomy/starhorse-data-access]
+    derived_from: []
+    supersedes: []
+    compatible_with: []
+    related_to: [skill:gaia-dr3-tap-query, skill:data-aip-de-s3]
+  compatibility:
+    clients: []
+    operating_systems: [linux]
+    architectures: [amd64]
+    python: '>=3.12,<3.13'
+  dependencies:
+    completeness: complete
+    python:
+      - fsspec==2026.6.0
+      - pandas==3.0.3
+      - pyarrow==25.0.0
+      - pyvo==1.9.1
+      - requests==2.34.2
+    system: []
+    containers: []
+  capabilities:
+    completeness: complete
+    filesystem:
+      - path_class: package
+        access: read
+      - path_class: workspace
+        access: read-write
+    network:
+      - host: s3.data.aip.de:9000
+        protocols: [https]
+      - host: gaia.aip.de
+        protocols: [https, tap]
+    processes: [python, wget, curl]
+    named_secrets: [gaia.aip.de-token]
+    external_side_effects: [submit-tap-job, download-catalog-file]
+    paid_services: []
+  validation:
+    contracts:
+      - id: static-content-v1
+        input: contracts/static-content.json
+        expected: contracts/static-content.expected.json
+        tolerance: exact-status-and-required-literals
+    network_required: true
+    maximum_runtime_seconds: 7200
+    stochastic: false
+  license_evidence:
+    - kind: package-file
+      expression: MIT
+      path: LICENSE
+      digest: sha256:67c96d4605ed7a4ba0ba62410130a65904fe628d3653c3b876187bd3a0feb3b1
+      applies_to: ['**']
+  provenance:
+    origin: migrated
+    source_state: active
+    population_claims:
+      - issuer: urn:aip:project-hermes
+        scheme: curated-project-skill
+        value: starhorse-access@2.0.2
+        evidence: STARHORSE_PUBLICATION_ASSERTIONS.md@35c1498f01b467d091ef5626419b03997364530d
+    upstreams:
+      - repository: https://gitlab-p4n.aip.de/p4nreana/reana-env.git
+        revision: 5f1d331b106cc96b47f0633cddc94b05325b8b49
+        path: skills/starhorse-access
+        digest: sha256:6c412460f445423ce1d27cbf9dc5d9d67d62b47a6deb77176b793ab7da7de440
+        relation: source
+
+rights_assertion:
+  repository: https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes.git
+  revision: 35c1498f01b467d091ef5626419b03997364530d
+  path: docs/skill-commons/STARHORSE_PUBLICATION_ASSERTIONS.md
+  digest: sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501
+
+registry:
+  artifact_type: application/vnd.skill-commons.release.v1
+  layer_media_type: application/vnd.skill-commons.package.v1+tar+gzip
+  primary_project_id: 423
+  primary: gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access
+  mirror_project_id: 424
+  mirror: gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access
+  release_tag: rel-2.0.2
+
+catalog:
+  sequence: 1
+  generated_at: '2026-07-21T22:00:32Z'
+  expires_at: '2026-10-19T22:00:32Z'
+  negative_sequence: 0
+
+acceptance_gates:
+  gate_1_reconstruct_and_verify: required
+  gate_2_gc_and_evidence_retention: conditional-on-live-tag-checks
+  gate_3_mirror_reconstructs_evidence: required
+  gate_4_publisher_isolation: open
+  gate_5_backup_restore: open
+  gate_6_catalog_detects_missing_or_stale_evidence: required

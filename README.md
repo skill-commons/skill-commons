@@ -17,6 +17,9 @@ first stable release. Published package bytes and digests are nevertheless immut
   review report; it never rewrites `SKILL.md`.
 - A deterministic, safe-path tar.gz packer.
 - A deterministic static-catalog generator.
+- A curated OCI release path that verifies immutable Git input, target locks,
+  deterministic package and push digests, signed evidence, mirror reconstruction, and a
+  detached signed catalog.
 - A source-pinned survey fixture for
   [`arm2arm/AstroAgentAssistant`](https://github.com/arm2arm/AstroAgentAssistant)
   commit `ef78afcf1412575dd23e8e88c01dbf50b8b02836`.
@@ -49,6 +52,11 @@ uv run skill-commons convert /path/to/legacy-skill \
   --source-revision ef78afcf1412575dd23e8e88c01dbf50b8b02836 \
   --source-path astronomy/legacy-skill
 uv run skill-commons pack examples/catalog-query-demo --output /tmp/catalog-query-demo.tar.gz
+
+uv run skill-commons prepare-release \
+  releases/aip/starhorse-access/2.0.2/publication.yaml \
+  --source-repository /path/to/reana-env \
+  --out /tmp/starhorse-prepared
 ```
 
 `--source-path` names the package directory inside the pinned repository, not its
@@ -102,6 +110,13 @@ pipeline inputs: it requires evidence digests for verified license, publisher-au
 namespace-control, and redaction assessments, but does not authenticate those records.
 The curator-controlled publication pipeline and detached catalog signature are the real
 authority gate.
+
+The exercised GitLab OCI fallback workflow and its mandatory registry invariants are
+documented in [`docs/oci-publication.md`](docs/oci-publication.md). OCI manifest
+timestamps are pinned, evidence tags are explicitly reconstructed in mirrors,
+release/evidence retention tags are preserved, and live tag descriptors are checked
+against the signed catalog. Publisher-isolation and backup/restore acceptance gates remain
+explicitly open.
 
 Client extensions are structured, namespaced sidecar data. They may add activation or
 UI hints, but they may not weaken core capability, dependency, license, or provenance

@@ -1,0 +1,39 @@
+{
+  "_type": "https://in-toto.io/Statement/v1",
+  "predicate": {
+    "buildDefinition": {
+      "buildType": "https://aip.de/skill-commons/deterministic-pack/v1",
+      "externalParameters": {
+        "coordinate": "aip/starhorse-access",
+        "created": "2026-07-21T22:00:32Z",
+        "version": "2.0.2"
+      },
+      "resolvedDependencies": [
+        {
+          "digest": {
+            "gitCommit": "5f1d331b106cc96b47f0633cddc94b05325b8b49",
+            "sha256": "6c412460f445423ce1d27cbf9dc5d9d67d62b47a6deb77176b793ab7da7de440"
+          },
+          "uri": "https://gitlab-p4n.aip.de/p4nreana/reana-env.git"
+        }
+      ]
+    },
+    "runDetails": {
+      "builder": {
+        "id": "https://gitlab-p4n.aip.de/physicsllm/skill-commons/spec"
+      },
+      "metadata": {
+        "invocationId": "sha256:a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9"
+      }
+    }
+  },
+  "predicateType": "https://slsa.dev/provenance/v1",
+  "subject": [
+    {
+      "digest": {
+        "sha256": "a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9"
+      },
+      "name": "starhorse-access-2.0.2.tar.gz"
+    }
+  ]
+}

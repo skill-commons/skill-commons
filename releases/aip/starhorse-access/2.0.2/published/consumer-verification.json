@@ -1,0 +1,35 @@
+{
+  "catalog": {
+    "digest": "sha256:22f2598043ed38902948cf9ff9e319fb40fdc8aa80e9592b3c58a1bb73e64e17",
+    "expires_at": "2026-10-19T22:00:32Z",
+    "freshness": "pass",
+    "input_digest": "pass",
+    "schema": "pass",
+    "sequence": 1,
+    "signature": "pass"
+  },
+  "coordinate": "aip/starhorse-access",
+  "evidence": {
+    "attestation_types": 7,
+    "descriptors": {
+      "att": "sha256:e33beba89d5f1ee4452035df8e3ffd961e3d12b0f84021d53f279c56454d7790",
+      "sig": "sha256:5e3aec29aa77384ffc6c077d063a5591c556ad7a68021bdf9e5be7f6b8f3f224"
+    }
+  },
+  "mirror": {
+    "repository": "gitlab-p4n.aip.de:5005/physicsllm/skill-commons/mirror-aip/starhorse-access",
+    "status": "pass"
+  },
+  "package_digest": "sha256:a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9",
+  "release_tag": {
+    "name": "rel-2.0.2",
+    "status": "pass"
+  },
+  "schema_version": "0.1.0-draft",
+  "status": "pass",
+  "subject": {
+    "digest": "sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275",
+    "repository": "gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access"
+  },
+  "version": "2.0.2"
+}

@@ -1,0 +1,116 @@
+{
+  "expires_at": "2026-10-19T22:00:32Z",
+  "generated_at": "2026-07-21T22:00:32Z",
+  "generator": {
+    "name": "skill-commons",
+    "version": "0.1.0.dev0"
+  },
+  "input_digest": "sha256:227ac36ce7d59b82ca275a7d3ef799091bc9af9329079a69f2a8cf8a5568e9ff",
+  "negative_state": {
+    "records": [],
+    "sequence": 0
+  },
+  "previous_snapshot_digest": null,
+  "releases": [
+    {
+      "artifact": {
+        "digest": "sha256:fe3722fdc6a3892d4084907a65dbb3bafdd3421f12373e43884fd5690e477275",
+        "media_type": "application/vnd.skill-commons.package.v1+tar+gzip",
+        "repository": "gitlab-p4n.aip.de:5005/physicsllm/skill-commons/aip/starhorse-access",
+        "size": 10551
+      },
+      "assessment_evidence": {
+        "license": "sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501",
+        "namespace_control": "sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501",
+        "publisher_authority": "sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501",
+        "redaction": "sha256:0ef55cf13dc25962347a30b7065bea0597611d311f2ab32c27e62d733987f501"
+      },
+      "assessments": {
+        "license": "verified",
+        "namespace_control": "verified",
+        "publisher_authority": "verified",
+        "redaction": "verified",
+        "source_relation": "derived"
+      },
+      "capability_summary": {
+        "completeness": "complete",
+        "external_side_effects": [
+          "submit-tap-job",
+          "download-catalog-file"
+        ],
+        "filesystem": [
+          {
+            "access": "read",
+            "path_class": "package"
+          },
+          {
+            "access": "read-write",
+            "path_class": "workspace"
+          }
+        ],
+        "named_secrets": [
+          "gaia.aip.de-token"
+        ],
+        "network": [
+          {
+            "host": "s3.data.aip.de:9000",
+            "protocols": [
+              "https"
+            ]
+          },
+          {
+            "host": "gaia.aip.de",
+            "protocols": [
+              "https",
+              "tap"
+            ]
+          }
+        ],
+        "paid_services": [],
+        "processes": [
+          "python",
+          "wget",
+          "curl"
+        ]
+      },
+      "compatibility": {
+        "architectures": [
+          "amd64"
+        ],
+        "clients": [],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "context_budget": {
+        "encoding": "utf-8",
+        "estimator": "utf8-byte-ceiling-divide-by-four",
+        "instruction_tokens": 1862,
+        "metadata_tokens": 72,
+        "version": "1"
+      },
+      "coordinate": "aip/starhorse-access",
+      "description": "Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP.",
+      "evidence": [
+        "sha256:5e3aec29aa77384ffc6c077d063a5591c556ad7a68021bdf9e5be7f6b8f3f224",
+        "sha256:e33beba89d5f1ee4452035df8e3ffd961e3d12b0f84021d53f279c56454d7790"
+      ],
+      "license": "MIT",
+      "manifest_digest": "sha256:1b760ec6888b66382ca301b283772a299cc961cfbfb84c27430f325062ccbc6c",
+      "release_state": "active",
+      "source": {
+        "path": "skills/starhorse-access",
+        "repository": "https://gitlab-p4n.aip.de/p4nreana/reana-env.git",
+        "revision": "5f1d331b106cc96b47f0633cddc94b05325b8b49"
+      },
+      "validation_profiles": {
+        "agent-skills": "pass",
+        "commons-publication": "warn"
+      },
+      "version": "2.0.2"
+    }
+  ],
+  "schema_version": "0.1.0-draft",
+  "sequence": 1
+}

@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "kind": "required-string",
+      "path": "SKILL.md",
+      "status": "pass",
+      "value_digest": "sha256:a201c675bb2bcb0144d06789a522fe1587f4fa10a2e2aa475993ed2b2b656465"
+    },
+    {
+      "kind": "required-string",
+      "path": "SKILL.md",
+      "status": "pass",
+      "value_digest": "sha256:49693062b47ecbbce6788146900ed4a39bc685dcc0e537d08b8d538d16165e64"
+    },
+    {
+      "kind": "required-string",
+      "path": "SKILL.md",
+      "status": "pass",
+      "value_digest": "sha256:4240b4756bd899b6d52b04c13ff8e8ef9ca0fa0b3413f25c67181cc33fda68f0"
+    },
+    {
+      "kind": "required-string",
+      "path": "SKILL.md",
+      "status": "pass",
+      "value_digest": "sha256:9661044168810a30cc80da4d99871c3d0254be3c291613ff247876a5dd1ed2b1"
+    },
+    {
+      "kind": "required-string",
+      "path": "SKILL.md",
+      "status": "pass",
+      "value_digest": "sha256:5e37eea549d98d81236b4cb9170e1f6820633fc1f76de70b3ccd093f790ddde4"
+    },
+    {
+      "kind": "required-string",
+      "path": "references/schema.md",
+      "status": "pass",
+      "value_digest": "sha256:965a7e5a1675b96004e5573195e634c62a2d14fdee83a8a9ed7cd5b817ee87f3"
+    },
+    {
+      "kind": "required-string",
+      "path": "references/schema.md",
+      "status": "pass",
+      "value_digest": "sha256:72555a7f6c6495f357da11ff033c7589a6bd914376cb4c7574a90a89f7267139"
+    },
+    {
+      "kind": "required-string",
+      "path": "references/schema.md",
+      "status": "pass",
+      "value_digest": "sha256:d1b14a9504f4f17a973ff8da0ca145cebd6f2f3dced9c294a66d6221f09e8bb4"
+    },
+    {
+      "kind": "forbidden-pattern",
+      "pattern_digest": "sha256:b73c39b95b1614ca3f3224fd7e19483d1eff977eaf6599517458fdd1db8d80c9",
+      "status": "pass"
+    },
+    {
+      "kind": "forbidden-pattern",
+      "pattern_digest": "sha256:3d7df156f64aeafce8ba093c8f8ac8bd532a662206f6d2edb5e258e5c6f867fc",
+      "status": "pass"
+    },
+    {
+      "kind": "forbidden-pattern",
+      "pattern_digest": "sha256:02f2c9b46fcd46b687268885adc4e54e113b640381a9e3b6ffe68fe21be97816",
+      "status": "pass"
+    }
+  ],
+  "contract_id": "static-content-v1",
+  "schema_version": "0.1.0-draft",
+  "status": "pass"
+}

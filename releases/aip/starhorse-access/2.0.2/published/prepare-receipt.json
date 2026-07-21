@@ -1,0 +1,53 @@
+{
+  "artifact": {
+    "digest": "sha256:a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9",
+    "path": "starhorse-access-2.0.2.tar.gz",
+    "size": 10551
+  },
+  "coordinate": "aip/starhorse-access",
+  "deterministic_pack": {
+    "digest": "sha256:a375de9ccbc9abf40b9bda1efd7e8b4a55704fd3f64c0e4a8f81aa26a86913b9",
+    "runs": 2,
+    "status": "pass"
+  },
+  "evidence": {
+    "contract-report.json": "sha256:00eaa5e590ef2472e43707cf4413a1028c1a047b77b3687cff44dd4c0246ecdb",
+    "inventory.json": "sha256:7ba1aef9e2e517dc476afe4ef0286e61057e2883db230f1dffc4d1318f8a0536",
+    "policy-result.json": "sha256:4e63493895cbd481dc039a7a803a5e4468b707143c3cdc32dacbfa5e4d04507a",
+    "provenance.intoto.json": "sha256:ef43153dcfdb288a8c1b3acb02dc9c493df138558f44263421d387940eb5bcd3",
+    "sbom.spdx.json": "sha256:51729ac6ad597ecbf45168f2424662ebc6e57ce3067e8cf26d785c95025ba244",
+    "static-scan.json": "sha256:466dd5049134457ea9dd0a678394a2f508cface1842e2406ad92876c8c85b53b",
+    "validation.json": "sha256:5e19718719dfb130be6aeb577a03f9d56c0f2af83ed222f4aa94838bb438acbd"
+  },
+  "lock_digest": "sha256:8d80d350716aadeaf4a70a38bea3ea64e878e6187b2a180a9cc10f7cc12a0a6a",
+  "manifest_digest": "sha256:1b760ec6888b66382ca301b283772a299cc961cfbfb84c27430f325062ccbc6c",
+  "open_gates": [
+    4,
+    5
+  ],
+  "schema_version": "0.1.0-draft",
+  "source": {
+    "files": [
+      {
+        "blob_oid": "1afe19d301d9670918aa39051ee22653ca6eb9f7",
+        "digest": "sha256:c3a7db591d67713177764cdfd2f8c4ab7020b775a133e54e9560fee66260ea36",
+        "path": "SKILL.md"
+      },
+      {
+        "blob_oid": "d19b65a5439e20967f55eac2b6dba6a32de85c0b",
+        "digest": "sha256:f94d305fa6b15ac709b83b696e83e64c5f5a5423a8c924d7847fb7cd76609497",
+        "path": "references/schema.md"
+      }
+    ],
+    "path": "skills/starhorse-access",
+    "repository": "https://gitlab-p4n.aip.de/p4nreana/reana-env.git",
+    "revision": "5f1d331b106cc96b47f0633cddc94b05325b8b49",
+    "tree_digest": "sha256:6c412460f445423ce1d27cbf9dc5d9d67d62b47a6deb77176b793ab7da7de440",
+    "tree_oid": "3fa9e8b084e0b5e70a665a9a538a81725fbb2299"
+  },
+  "validation_status": {
+    "agent-skills": "pass",
+    "commons-publication": "warn"
+  },
+  "version": "2.0.2"
+}
