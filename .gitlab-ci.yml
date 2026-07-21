@@ -9,9 +9,10 @@ default:
         - uv.lock
     paths:
       - .uv-cache/
-  variables:
-    UV_CACHE_DIR: .uv-cache
-    UV_LINK_MODE: copy
+
+variables:
+  UV_CACHE_DIR: .uv-cache
+  UV_LINK_MODE: copy
 
 test:
   stage: test
