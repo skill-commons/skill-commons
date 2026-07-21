@@ -31,6 +31,16 @@ dev = [
 [tool.hatch.build.targets.wheel]
 packages = ["src/skill_commons"]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.pytest_cache",
+  "/.ruff_cache",
+  "/.uv-cache",
+  "/.venv",
+  "/dist",
+  "/junit.xml",
+]
+
 [tool.hatch.build.targets.wheel.force-include]
 "schemas" = "skill_commons/schemas"
 
