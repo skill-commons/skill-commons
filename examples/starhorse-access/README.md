@@ -1,10 +1,10 @@
 # StarHorse migration case
 
-StarHorse is the first exercised real positive migration. This directory deliberately
-does not copy the upstream skill body. The release recipe imports exact Git objects from
-the pinned canonical source after checking the AIP namespace/publication-rights record and
-adds the reviewed MIT notice to the standalone package.
+StarHorse is the first exercised real positive migration. The complete, portable package
+is now materialized under
+[`skills/starhorse-access`](../../skills/starhorse-access/) for direct Git-native use.
+It is byte-for-byte the package prepared from the pinned, reviewed upstream source.
 
-The recipe, signed catalog, pre-install inventory, policy result, public verification key,
-and successful redacted transcript live under
+The original OCI release recipe, signed catalog, pre-install inventory, policy result,
+public verification key, and successful redacted transcript remain under
 [`releases/aip/starhorse-access/2.0.2`](../../releases/aip/starhorse-access/2.0.2/).

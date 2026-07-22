@@ -22,6 +22,8 @@ test:
     - uv run ruff format --check .
     - uv run pytest --junitxml=junit.xml
     - uv run skill-commons validate examples/catalog-query-demo --profile all
+    - uv run skill-commons validate skills/starhorse-access --profile agent-skills
+    - uv run skill-commons validate skills/starhorse-access --profile commons-publication
     - uv build --out-dir dist
     - uv export --locked --no-dev --no-emit-project --output-file /tmp/skill-commons-runtime.txt > /dev/null
     - uv venv --python 3.12 /tmp/skill-commons-wheel-venv
