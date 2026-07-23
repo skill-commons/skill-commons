@@ -14,6 +14,10 @@ Point an Agent Skills-compatible client at the skill directory, or copy/symlink 
 directory into the client's normal skills location. Clients that accept a Git URL plus a
 subdirectory can use `skills/starhorse-access` directly.
 
+The current design and cross-session state are recorded in
+[`docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md)
+and [`docs/GIT_FIRST_HANDOFF_MEMO.md`](docs/GIT_FIRST_HANDOFF_MEMO.md).
+
 Status: **v0.1.0-draft / Phase 0**. Schemas and command behavior may change before the
 first stable release. Published package bytes and digests are nevertheless immutable.
 
