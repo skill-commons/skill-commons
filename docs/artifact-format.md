@@ -1,12 +1,12 @@
-# Phase 0 canonical bytes and digests
+# Deterministic bytes and digests
 
-This document is normative for the `0.1.0-draft` reference tooling. Digest strings use
+This document is normative for the `0.1.0.dev0` reference tooling. Digest strings use
 lowercase hexadecimal in the form `sha256:<64 hex characters>`.
 
 ## Structured-document digests
 
-`manifest_digest`, lock `manifest_digest`, catalog `input_digest`, snapshot-chain
-digests, and negative-state `record_digest` use this procedure:
+`manifest_digest`, lock `manifest_digest`, and generated catalog tree digests use this
+procedure:
 
 1. Parse YAML or JSON with duplicate keys and YAML aliases rejected.
 2. Require the finite JSON/I-JSON data model: string object keys, null, booleans,
@@ -15,11 +15,10 @@ digests, and negative-state `record_digest` use this procedure:
 3. Serialize with the JSON Canonicalization Scheme in RFC 8785.
 4. SHA-256 hash those bytes and prefix the lowercase hexadecimal value with `sha256:`.
 
-The catalog `input_digest` covers an object with two keys: `releases`, containing the
-coordinate/version-sorted release records, and `negative_state`, containing the
-coordinate/version/kind-sorted negative records. Sequence and timestamps deliberately do
-not enter this input-set digest. A snapshot-chain digest covers the complete catalog
-payload; its detached signature envelope is not part of the payload digest.
+The Git-native catalog tree digest covers a UTF-8-path-sorted array of each package
+file's relative path, normalized executable mode, and raw-file SHA-256 digest. It binds
+the complete directory without making a generated archive or external registry part of
+the publication path.
 
 Each lock resolution's `requirements_digest` applies the same procedure to the complete
 manifest `dependencies` object. The publication profile rejects a resolution that binds
@@ -68,11 +67,10 @@ gzip byte stream. The reference packer:
 - sets uid, gid, and mtime to zero and user/group names to empty strings; and
 - uses gzip level 9 with empty original filename and mtime zero.
 
-`pack` creates candidate artifact bytes; it is not a publication operation. A positive
-catalog record additionally carries evidence digests for curator-verified license,
-publisher-authority, namespace-control, and redaction assessments and requires an
-external catalog signature. The structural catalog assembler does not authenticate those
-attestations; that remains a trusted publication-pipeline responsibility.
+`pack` creates candidate artifact bytes; it is not a publication operation. Publication
+is the reviewed Git merge and, for an immutable release, its protected per-skill tag.
+The generated catalog is a derived index and does not authenticate publisher authority,
+namespace control, scientific validity, or redaction review.
 
 ## Raw-file evidence
 

@@ -1,12 +1,17 @@
 # Skill Commons Git-first handoff memo
 
+> **Historical handoff:** This memo captured the 2026-07-23 transition. Current
+> architecture and repository status live in
+> [`SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](../../docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md)
+> and the root README.
+
 **Audience:** Claude Fable and the next Codex session  
 **Date:** 2026-07-23  
 **Repository:** `git@gitlab-p4n.aip.de:physicsllm/skill-commons/spec.git`  
 **Branch:** `main`
 
 Read this memo first, then read
-[`SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md).
+[`SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](../../docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md).
 That architecture is the current decision. The older Ori v0.4.1 architecture is design
 history and remains authoritative only where the new document does not supersede it.
 

@@ -1,0 +1,50 @@
+{
+  "repository": "https://github.com/skill-commons/skill-commons",
+  "schema_version": "1.0",
+  "skills": [
+    {
+      "compatibility": {
+        "architectures": [
+          "amd64"
+        ],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/starhorse-access",
+      "description": "Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP.",
+      "license": "MIT",
+      "name": "starhorse-access",
+      "path": "skills/starhorse-access",
+      "release_tag": "skill/starhorse-access/v2.0.2",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "starhorse",
+          "gaia-edr3",
+          "tap",
+          "parquet",
+          "stellar-parameters"
+        ],
+        "methods": [
+          "catalog-access",
+          "tap-query",
+          "parquet-analysis",
+          "color-magnitude-diagram"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:1ca80a228ca3b80c42812619219477cb9b4241e9020f51e3e7a86a910b50b4b3",
+      "upstream": {
+        "path": "skills/starhorse-access",
+        "repository": "https://gitlab-p4n.aip.de/p4nreana/reana-env.git",
+        "revision": "5f1d331b106cc96b47f0633cddc94b05325b8b49"
+      },
+      "version": "2.0.2"
+    }
+  ]
+}

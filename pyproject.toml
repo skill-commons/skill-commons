@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "research-skill-commons"
 version = "0.1.0.dev0"
-description = "Draft Skill Commons schemas and Phase 0 reference tools"
+description = "Git-first hub and reference tooling for reusable research Agent Skills"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
@@ -39,6 +39,7 @@ exclude = [
   "/.venv",
   "/dist",
   "/junit.xml",
+  "/warehouse",
 ]
 
 [tool.hatch.build.targets.wheel.force-include]
@@ -51,6 +52,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+extend-exclude = ["warehouse"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

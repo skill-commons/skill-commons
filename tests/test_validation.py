@@ -9,11 +9,12 @@ from skill_commons.io import dump_yaml, load_yaml, load_yaml_file, semantic_dige
 from skill_commons.validation import report_failed, validate_skill
 
 ROOT = Path(__file__).resolve().parents[1]
+VALID_SKILL = ROOT / "tests" / "fixtures" / "valid" / "catalog-query-demo"
 
 
 def test_positive_example_passes_all_profiles() -> None:
     report = validate_skill(
-        ROOT / "examples" / "catalog-query-demo",
+        VALID_SKILL,
         ["agent-skills", "ori-compatibility", "commons-publication"],
     )
     assert not report_failed(report), report
@@ -42,7 +43,7 @@ def test_missing_manifest_only_blocks_publication() -> None:
 
 def test_declared_dependencies_require_a_manifest_bound_lock(tmp_path: Path) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest = load_yaml_file(manifest_path)
     manifest["dependencies"]["python"] = ["requests==2.32.4"]
@@ -185,7 +186,7 @@ def test_declared_dependencies_require_a_manifest_bound_lock(tmp_path: Path) -> 
 
 def test_mixed_license_evidence_can_support_an_aggregate_expression(tmp_path: Path) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     data_license = skill / "DATA_LICENSE"
     data_license.write_text("Synthetic CC-BY-4.0 evidence fixture.\n")
     manifest_path = skill / "research-skill.yaml"
@@ -220,7 +221,7 @@ def test_license_evidence_must_equal_not_merely_overlap_the_package_expression(
     tmp_path: Path,
 ) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest = load_yaml_file(manifest_path)
     manifest["license_evidence"][0]["expression"] = "MIT OR GPL-3.0-only"
@@ -237,7 +238,7 @@ def test_publication_requires_equivalent_portable_and_manifest_licenses(
     tmp_path: Path, portable_license: str | None
 ) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     skill_path = skill / "SKILL.md"
     text = skill_path.read_text()
     if portable_license is None:
@@ -262,7 +263,7 @@ def test_untrusted_nested_sidecar_shapes_become_findings_not_tracebacks(
     tmp_path: Path,
 ) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest = load_yaml_file(manifest_path)
     manifest["dependencies"] = []
@@ -278,7 +279,7 @@ def test_noncanonical_sidecar_values_become_schema_findings_not_tracebacks(
     tmp_path: Path,
 ) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest_text = manifest_path.read_text().replace("version: 1.0.0", "version: 2026-07-20")
     manifest_path.write_text(manifest_text)
@@ -316,7 +317,7 @@ def test_ori_rejects_sidecar_only_semantics_and_unknown_required_extension(
     tmp_path: Path,
 ) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest = load_yaml_file(manifest_path)
     manifest["compatibility"]["operating_systems"] = ["linux"]
@@ -354,7 +355,7 @@ def test_ori_rejects_sidecar_only_semantics_and_unknown_required_extension(
 
 def test_migrated_provenance_source_must_match_package_source(tmp_path: Path) -> None:
     skill = tmp_path / "catalog-query-demo"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", skill)
+    shutil.copytree(VALID_SKILL, skill)
     manifest_path = skill / "research-skill.yaml"
     manifest = load_yaml_file(manifest_path)
     manifest["provenance"]["origin"] = "migrated"

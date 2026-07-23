@@ -7,7 +7,7 @@ package:
   source:
     repository: https://example.invalid/skill-commons-fixtures
     revision: 0123456789abcdef0123456789abcdef01234567
-    path: examples/catalog-query-demo
+    path: tests/fixtures/valid/catalog-query-demo
 authorship:
   status: verified
   contributors:
@@ -68,5 +68,5 @@ provenance:
     - issuer: urn:skill-commons:project
       scheme: fixture-kind
       value: synthetic
-      evidence: examples/catalog-query-demo
+      evidence: tests/fixtures/valid/catalog-query-demo
   upstreams: []

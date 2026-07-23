@@ -1,4 +1,4 @@
-"""Command-line entry point for the Phase 0 reference tools."""
+"""Command-line entry point for the Git-first Skill Commons tools."""
 
 from __future__ import annotations
 
@@ -15,17 +15,15 @@ import jsonschema
 import yaml
 
 from . import __version__
-from .catalog import build_catalog_snapshot
+from .catalog import build_git_catalog, write_git_catalog
 from .converter import (
     build_manifest,
     conversion_report,
     emit_candidate,
     projected_skill,
 )
-from .io import dump_yaml, json_safe, load_json_file
+from .io import dump_yaml, json_safe
 from .packer import pack_snapshot, snapshot_tree
-from .publication import finalize_catalog, prepare_release, verify_published_release
-from .survey import survey_repository
 from .validation import report_failed, validate_skill
 
 PROFILE_ALIASES = {
@@ -195,76 +193,22 @@ def _command_pack(args: argparse.Namespace) -> int:
     return 0
 
 
-def _command_audit(args: argparse.Namespace) -> int:
-    report = survey_repository(
-        args.repository,
-        source_url=args.source_url,
-        expected_revision=args.expected_revision,
-    )
-    _write_json(args.output, report)
+def _command_catalog(args: argparse.Namespace) -> int:
+    catalog = build_git_catalog(args.root, args.repository)
+    current = write_git_catalog(args.output_dir, catalog, check=args.check)
+    if args.check and not current:
+        print("generated catalog is stale", file=sys.stderr)
+        return 1
     print(
         json.dumps(
             {
-                "output": str(args.output),
-                "active": report["summary"]["active_skills"],
-                "parked": report["summary"]["parked_skills"],
+                "output": str(args.output_dir),
+                "skills": len(catalog["skills"]),
+                "status": "current" if args.check else "written",
             },
             sort_keys=True,
         )
     )
-    return 0
-
-
-def _command_catalog(args: argparse.Namespace) -> int:
-    releases = [load_json_file(path) for path in args.release]
-    negatives = [load_json_file(path) for path in args.negative_record]
-    snapshot = build_catalog_snapshot(
-        releases,
-        sequence=args.sequence,
-        generated_at=args.generated_at,
-        expires_at=args.expires_at,
-        previous_snapshot_digest=args.previous_snapshot_digest,
-        negative_sequence=args.negative_sequence,
-        negative_records=negatives,
-    )
-    _write_json(args.output, snapshot)
-    print(json.dumps({"output": str(args.output), "releases": len(releases)}, sort_keys=True))
-    return 0
-
-
-def _command_prepare_release(args: argparse.Namespace) -> int:
-    receipt = prepare_release(args.recipe, args.source_repository, args.out)
-    print(json.dumps(receipt, ensure_ascii=False, sort_keys=True))
-    return 0
-
-
-def _command_finalize_release(args: argparse.Namespace) -> int:
-    status = finalize_catalog(
-        args.recipe,
-        args.prepared,
-        args.repository,
-        args.oci_digest,
-        args.signature_digest,
-        args.attestation_digest,
-        args.out,
-    )
-    print(json.dumps(status, ensure_ascii=False, sort_keys=True))
-    return 0
-
-
-def _command_verify_release(args: argparse.Namespace) -> int:
-    report = verify_published_release(
-        args.catalog,
-        args.signature,
-        args.public_key,
-        args.prepare_receipt,
-        args.coordinate,
-        args.release_version,
-        args.mirror,
-    )
-    if args.output is not None:
-        _write_json(args.output, report)
-    print(json.dumps(report, ensure_ascii=False, sort_keys=True))
     return 0
 
 
@@ -307,59 +251,15 @@ def build_parser() -> argparse.ArgumentParser:
     pack.add_argument("--allow-draft", action="store_true")
     pack.set_defaults(func=_command_pack)
 
-    audit = subparsers.add_parser("audit", help="generate a source-pinned structural survey")
-    audit.add_argument("repository", type=Path)
-    audit.add_argument("--source-url", required=True)
-    audit.add_argument("--expected-revision", required=True)
-    audit.add_argument("--output", required=True, type=Path)
-    audit.set_defaults(func=_command_audit)
-
-    catalog = subparsers.add_parser("catalog", help="assemble a static positive catalog snapshot")
-    catalog.add_argument("--release", action="append", type=Path, default=[])
-    catalog.add_argument("--negative-record", action="append", type=Path, default=[])
-    catalog.add_argument("--sequence", required=True, type=int)
-    catalog.add_argument("--negative-sequence", required=True, type=int)
-    catalog.add_argument("--generated-at", required=True)
-    catalog.add_argument("--expires-at", required=True)
-    catalog.add_argument("--previous-snapshot-digest")
-    catalog.add_argument("--output", required=True, type=Path)
+    catalog = subparsers.add_parser(
+        "catalog",
+        help="generate the static Git-native catalog from published skills",
+    )
+    catalog.add_argument("--root", type=Path, default=Path.cwd())
+    catalog.add_argument("--repository", required=True)
+    catalog.add_argument("--output-dir", type=Path, default=Path("catalog"))
+    catalog.add_argument("--check", action="store_true")
     catalog.set_defaults(func=_command_catalog)
-
-    prepare = subparsers.add_parser(
-        "prepare-release",
-        help="materialize immutable source and emit deterministic publication inputs",
-    )
-    prepare.add_argument("recipe", type=Path)
-    prepare.add_argument("--source-repository", required=True, type=Path)
-    prepare.add_argument("--out", required=True, type=Path)
-    prepare.set_defaults(func=_command_prepare_release)
-
-    finalize = subparsers.add_parser(
-        "finalize-release",
-        help="bind live OCI evidence descriptors into a catalog candidate",
-    )
-    finalize.add_argument("recipe", type=Path)
-    finalize.add_argument("--prepared", required=True, type=Path)
-    finalize.add_argument("--repository", required=True)
-    finalize.add_argument("--oci-digest", required=True)
-    finalize.add_argument("--signature-digest", required=True)
-    finalize.add_argument("--attestation-digest", required=True)
-    finalize.add_argument("--out", required=True, type=Path)
-    finalize.set_defaults(func=_command_finalize_release)
-
-    verify_release = subparsers.add_parser(
-        "verify-release",
-        help="verify a signed catalog release and its current registry evidence",
-    )
-    verify_release.add_argument("catalog", type=Path)
-    verify_release.add_argument("--signature", required=True, type=Path)
-    verify_release.add_argument("--public-key", required=True, type=Path)
-    verify_release.add_argument("--prepare-receipt", required=True, type=Path)
-    verify_release.add_argument("--coordinate", required=True)
-    verify_release.add_argument("--release-version", required=True)
-    verify_release.add_argument("--mirror")
-    verify_release.add_argument("--output", type=Path)
-    verify_release.set_defaults(func=_command_verify_release)
     return parser
 
 

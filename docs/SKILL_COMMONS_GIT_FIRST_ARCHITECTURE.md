@@ -1,8 +1,8 @@
 # Open Research Skill Commons — Git-first architecture
 
-**Status:** v0.5.0 — adopted direction, Phase 0 implementation  
-**Date:** 2026-07-23  
-**Canonical repository:** `physicsllm/skill-commons/spec`  
+**Status:** v0.5.1 — adopted and published
+**Date:** 2026-07-24
+**Canonical repository:** `https://github.com/skill-commons/skill-commons`
 **Scope:** The package, publication, discovery, trust, and evolution model for an open
 collection of reusable research skills.
 
@@ -146,10 +146,11 @@ skill-commons/
 │       ├── assets/                     # optional
 │       └── contracts/                  # optional validation contracts
 ├── schemas/                            # Commons schemas
-├── catalog/                            # generated indexes and negative state (planned)
-├── releases/                           # release receipts and historical export evidence
+├── catalog/                            # generated human and machine indexes
 ├── docs/                               # architecture, policy, and operator documentation
-└── src/                                # reference validation and publication tooling
+├── src/                                # reference validation, conversion, and catalog tooling
+├── tests/                              # active contract and regression tests
+└── warehouse/                          # inert Phase-0 and OCI design history
 ```
 
 `skills/<name>/` is the complete installable unit. Copying only `SKILL.md` is not a
@@ -221,8 +222,8 @@ reproducibility.
 
 `research-skill.lock` records tested, target-specific dependency resolutions and artifact
 hashes. Contracts, validation receipts, SBOMs, provenance attestations, reviews, and
-scientific reproduction records may accompany a release or live in the repository's
-release/evidence tree.
+scientific reproduction records may accompany the package or live in a separately
+reviewed evidence tree.
 
 The lock is generated, not hand-authored. A lock for one platform is evidence for that
 platform only. It does not prove support for another architecture or operating system.
@@ -235,11 +236,12 @@ A release has both a human coordinate and exact Git identity:
 coordinate:  aip/starhorse-access:2.0.2
 git identity: <repository>@<commit>:skills/starhorse-access
 tree digest:  sha256:<canonical tree digest>
-tag:          skill/starhorse-access/v2.0.2       # proposed convention
+tag:          skill/starhorse-access/v2.0.2
 ```
 
-Until the tag convention is implemented, an exact commit plus path is authoritative.
-`main` shows the current reviewed state but is not an immutable version selector.
+An exact protected tag plus path is the preferred release selector. An exact commit plus
+path remains authoritative when no release tag exists. `main` shows the current reviewed
+state but is not an immutable version selector.
 
 Release rules:
 
@@ -270,7 +272,7 @@ The normal workflow is deliberately ordinary:
 1. Fork or branch the canonical Git repository.
 2. Add or edit one complete `skills/<name>/` directory.
 3. Run the local validators and relevant contracts.
-4. Open a merge request with the source, authorship, license, and intended-use assertions.
+4. Open a pull request with the source, authorship, license, and intended-use assertions.
 5. CI produces a review report; it does not silently rewrite the contribution.
 6. An accountable maintainer resolves findings and approves publication.
 7. Merge to protected `main`.
@@ -325,13 +327,14 @@ The Git forge is the first user interface:
 - directory browsing shows the complete skill;
 - rendered Markdown shows instructions and references;
 - commit history and blame show evolution;
-- issues and merge requests support discussion and contribution;
+- issues and pull requests support discussion and contribution;
 - tags show released versions;
 - ordinary clone and archive operations provide export.
 
-A generated `catalog/` should add a human index and machine-readable index without
-becoming a second source of truth. It is reconstructed from reviewed package directories,
-release tags, and advisory records.
+The generated `catalog/` adds a human index and machine-readable index without becoming
+a second source of truth. It is reconstructed from reviewed package directories. Release
+tags and advisory records can be added to the generation inputs as those workflows
+mature.
 
 ### 5.2 Agent discovery
 
@@ -359,7 +362,7 @@ A capable installer records at least:
 coordinate: aip/starhorse-access
 version: 2.0.2
 source:
-  repository: https://gitlab-p4n.aip.de/physicsllm/skill-commons/spec.git
+  repository: https://github.com/skill-commons/skill-commons
   commit: <exact commit>
   path: skills/starhorse-access
 tree_digest: sha256:...
@@ -378,12 +381,15 @@ do not support this richer record may still install the directory normally.
 
 ### 6.1 Generated catalog
 
-The first catalog is static and Git-versioned, not a mandatory database service. Planned
-outputs are:
+The first catalog is static and Git-versioned, not a mandatory database service.
+Implemented outputs are:
 
 - `catalog/index.json` — machine-readable coordinates, versions, paths, package tree
-  digests, descriptions, research facets, status, and evidence links;
+  digests, descriptions, research facets, status, and source information;
 - `catalog/README.md` — generated human index;
+
+Planned additions are:
+
 - `catalog/advisories/` — signed or reviewed negative-state records;
 - optional detached signatures over tagged catalog snapshots.
 
@@ -401,7 +407,7 @@ portal, REST, or MCP becomes justified only after corpus size and user behavior 
 Phase 1 uses controls familiar to maintainers:
 
 - protected `main` and protected release tags;
-- required merge-request review and CODEOWNERS-like ownership;
+- required pull-request review and CODEOWNERS ownership;
 - CI validation and preserved reports;
 - exact commit and tree-digest pinning;
 - signed commits or tags where operationally supportable;
@@ -459,9 +465,11 @@ without forking package content or creating a competing identity.
 
 OCI is a **parked, optional export profile**.
 
-The existing StarHorse 2.0.2 vertical slice, deterministic packer, publication scripts,
-probe records, signed catalog, evidence, and mirror verification remain preserved. They
-are valid engineering evidence and may support institutional or archival use.
+The existing StarHorse 2.0.2 vertical slice, publication scripts, probe records, signed
+catalog, evidence, and mirror verification remain preserved under
+`warehouse/oci-phase0/`. They are inert engineering evidence and may support
+institutional or archival use. The small deterministic packer remains active because it
+is useful independently of OCI publication.
 
 For new releases:
 
@@ -493,21 +501,22 @@ alone is not a trigger.
 
 ## 9. Hosting and federation
 
-The current canonical forge is the AIP GitLab project
-`physicsllm/skill-commons/spec`. The canonical contribution location must remain singular.
+The public GitHub repository
+[`skill-commons/skill-commons`](https://github.com/skill-commons/skill-commons) is the
+singular canonical forge. Issues, pull requests, protected branches, and release tags
+live there.
 
-For public adoption, the project must decide and document:
+The private AIP GitLab project `physicsllm/skill-commons/spec` is a one-way institutional
+backup. It does not accept independent package releases. The prior OCI carrier projects
+are archived, preserving their registry evidence without presenting empty sibling
+projects as active parts of the hub.
 
-- whether the AIP project is publicly readable and accepts external contributions;
-- whether a public GitHub repository is a read-only mirror or becomes the canonical
-  community forge;
-- where issues and merge requests are accepted;
-- how institutional identity, ORCID, and namespace control are verified;
-- how backups and mirrors preserve protected tags and negative state.
+Institutional identity, ORCID, and namespace control remain curator-reviewed claims; the
+choice of forge does not establish them automatically. Backup and restore checks must
+preserve full history, protected release tags, and negative state.
 
-If GitHub is used for reach while AIP GitLab remains canonical, the mirror is one-way and
-clearly labeled. Contributions on the mirror are redirected or explicitly imported; they
-do not create a second writable history.
+This hosting decision is recorded in
+[`ADR 0001`](adr/0001-public-github-canonical.md).
 
 Long-term federation can index multiple canonical repositories through external-catalog
 records and signed snapshots. It does not require copying every skill into one repository
@@ -531,13 +540,18 @@ Status: **implemented on 2026-07-23**.
 
 ### Phase 1A — contribution-ready collection
 
-- Add contributor and curator documentation with minimal templates.
-- Define and enforce the per-skill protected tag convention.
-- Generate a static human and machine catalog from Git.
+Status: **in progress; public hosting, contributor guidance, catalog generation, and the
+initial protected tag convention were implemented on 2026-07-24**.
+
+- Add contributor and curator documentation with minimal templates. **Done.**
+- Define and enforce the per-skill protected tag convention. **Done for the initial
+  repository.**
+- Generate a static human and machine catalog from Git. **Done.**
 - Add version-bump and released-byte immutability checks.
 - Add advisory/deprecation/yank records and negative-state generation.
 - Add portable prerequisite/setup linting for skills with dependencies.
-- Decide public visibility and the canonical community contribution forge.
+- Decide public visibility and the canonical community contribution forge. **Done; see
+  ADR 0001.**
 - Migrate a small, rights-cleared set of additional AIP skills.
 
 ### Phase 1B — native client paths
@@ -591,7 +605,7 @@ The architecture is working when:
 
 This v0.5 architecture changes these v0.4.1 decisions:
 
-| v0.4.1 | v0.5.0 |
+| v0.4.1 | v0.5.1 |
 |---|---|
 | Git is authoring only; OCI is canonical distribution. | Git is canonical publication and distribution for the current phase. |
 | Installed identity is primarily an OCI digest. | Installed identity is repository + exact commit/tag + path, optionally with a tree digest. |

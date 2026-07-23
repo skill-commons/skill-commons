@@ -10,10 +10,11 @@ import pytest
 from skill_commons.packer import SnapshotEntry, pack_directory, pack_snapshot, snapshot_tree
 
 ROOT = Path(__file__).resolve().parents[1]
+VALID_SKILL = ROOT / "tests" / "fixtures" / "valid" / "catalog-query-demo"
 
 
 def test_packer_is_deterministic_across_mtimes_and_directories(tmp_path: Path) -> None:
-    source = ROOT / "examples" / "catalog-query-demo"
+    source = VALID_SKILL
     one = tmp_path / "one"
     two = tmp_path / "two"
     shutil.copytree(source, one)
@@ -29,7 +30,7 @@ def test_packer_is_deterministic_across_mtimes_and_directories(tmp_path: Path) -
 
 def test_packer_rejects_symlinks(tmp_path: Path) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     (package / "escape").symlink_to("/etc/passwd")
     with pytest.raises(ValueError, match="symlink"):
         pack_directory(package, tmp_path / "bad.tar.gz")
@@ -39,7 +40,7 @@ def test_packer_rejects_secret_bearing_paths_instead_of_silently_dropping_them(
     tmp_path: Path,
 ) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     (package / ".env").write_text("EXAMPLE=not-a-real-secret\n")
     with pytest.raises(ValueError, match="secret-bearing"):
         pack_directory(package, tmp_path / "bad.tar.gz")
@@ -47,7 +48,7 @@ def test_packer_rejects_secret_bearing_paths_instead_of_silently_dropping_them(
 
 def test_packer_preserves_only_the_executable_class(tmp_path: Path) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     script = package / "run.sh"
     script.write_text("#!/bin/sh\nexit 0\n")
     script.chmod(0o751)
@@ -63,7 +64,7 @@ def test_packer_preserves_only_the_executable_class(tmp_path: Path) -> None:
 @pytest.mark.skipif(not hasattr(os, "mkfifo"), reason="FIFO creation is POSIX-only")
 def test_packer_rejects_non_regular_entries_without_opening_them(tmp_path: Path) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     os.mkfifo(package / "input.pipe")
 
     with pytest.raises(ValueError, match="non-regular"):
@@ -72,7 +73,7 @@ def test_packer_rejects_non_regular_entries_without_opening_them(tmp_path: Path)
 
 def test_packer_rejects_oversize_files_before_writing_output(tmp_path: Path) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     (package / "large.bin").write_bytes(b"12345")
     output = tmp_path / "bad.tar.gz"
 
@@ -98,7 +99,7 @@ def test_packer_refuses_to_overwrite_an_existing_artifact(tmp_path: Path) -> Non
     output = tmp_path / "existing.tar.gz"
     output.write_bytes(b"keep me")
     with pytest.raises(ValueError, match="overwrite"):
-        pack_directory(ROOT / "examples" / "catalog-query-demo", output)
+        pack_directory(VALID_SKILL, output)
     assert output.read_bytes() == b"keep me"
 
 
@@ -114,7 +115,7 @@ def test_packer_rejects_cross_platform_traversal_and_unencodable_names(
     tmp_path: Path, name: str, message: str
 ) -> None:
     package = tmp_path / "package"
-    shutil.copytree(ROOT / "examples" / "catalog-query-demo", package)
+    shutil.copytree(VALID_SKILL, package)
     unsafe = package / name
     unsafe.parent.mkdir(parents=True, exist_ok=True)
     unsafe.write_text("unsafe archive name\n")
@@ -128,7 +129,7 @@ def test_packer_rejects_cross_platform_traversal_and_unencodable_names(
     ["../escape", "/absolute", "C:/escape.txt", "safe.txt:stream", "./normalized"],
 )
 def test_pack_snapshot_cannot_bypass_path_validation(tmp_path: Path, name: str) -> None:
-    entries = snapshot_tree(ROOT / "examples" / "catalog-query-demo")
+    entries = snapshot_tree(VALID_SKILL)
     entries.append(SnapshotEntry(name, b"unsafe\n", False))
 
     with pytest.raises(ValueError, match="package|Windows"):

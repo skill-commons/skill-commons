@@ -21,15 +21,16 @@ test:
     - uv run ruff check .
     - uv run ruff format --check .
     - uv run pytest --junitxml=junit.xml
-    - uv run skill-commons validate examples/catalog-query-demo --profile all
+    - uv run skill-commons validate tests/fixtures/valid/catalog-query-demo --profile all
     - uv run skill-commons validate skills/starhorse-access --profile agent-skills
     - uv run skill-commons validate skills/starhorse-access --profile commons-publication
+    - uv run skill-commons catalog --repository https://github.com/skill-commons/skill-commons --check
     - uv build --out-dir dist
     - uv export --locked --no-dev --no-emit-project --output-file /tmp/skill-commons-runtime.txt > /dev/null
     - uv venv --python 3.12 /tmp/skill-commons-wheel-venv
     - uv pip sync --python /tmp/skill-commons-wheel-venv/bin/python --require-hashes /tmp/skill-commons-runtime.txt
     - uv pip install --python /tmp/skill-commons-wheel-venv/bin/python --no-deps dist/*.whl
-    - /tmp/skill-commons-wheel-venv/bin/skill-commons validate examples/catalog-query-demo --profile all
+    - /tmp/skill-commons-wheel-venv/bin/skill-commons validate tests/fixtures/valid/catalog-query-demo --profile all
   artifacts:
     when: always
     reports:

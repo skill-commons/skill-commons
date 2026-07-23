@@ -14,7 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS_WITH_SKILL_VERSIONS = [
     "research-skill.schema.json",
     "research-skill-lock.schema.json",
-    "catalog-snapshot.schema.json",
 ]
 
 VALID_SEMVER = [

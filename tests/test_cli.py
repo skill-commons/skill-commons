@@ -6,13 +6,14 @@ from pathlib import Path
 from skill_commons.cli import main
 
 ROOT = Path(__file__).resolve().parents[1]
+VALID_SKILL = ROOT / "tests" / "fixtures" / "valid" / "catalog-query-demo"
 
 
 def test_explicit_profile_does_not_implicitly_add_all(capsys) -> None:
     exit_code = main(
         [
             "validate",
-            str(ROOT / "examples" / "catalog-query-demo"),
+            str(VALID_SKILL),
             "--profile",
             "agent-skills",
             "--format",
@@ -28,7 +29,7 @@ def test_default_profile_selects_all(capsys) -> None:
     exit_code = main(
         [
             "validate",
-            str(ROOT / "examples" / "catalog-query-demo"),
+            str(VALID_SKILL),
             "--format",
             "json",
         ]

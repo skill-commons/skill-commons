@@ -1,153 +1,122 @@
-# Skill Commons
+# Open Research Skill Commons
 
-This repository is the Git-native home of published Skill Commons skills, the Commons
-package formats, and the small reference tools used to validate them. Skill Commons is
-agent-neutral: Ori is one client, not the package format's owner.
+Skill Commons is a public, Git-first hub for reusable research skills. Each published
+skill is a complete directory rooted at the open
+[Agent Skills](https://agentskills.io/) `SKILL.md` format, so a compatible agent can use
+the core workflow without Ori, a registry client, or vendor-specific packaging.
 
-Published skills use the open [Agent Skills](https://agentskills.io/) directory format.
-Each installable skill has a root `SKILL.md`; no Claude plugin wrapper or OCI-aware reader
-is required. Commons-specific research, dependency, capability, and provenance data live
-in optional sidecars beside that portable entry point.
+**Git is canonical. Agent Skills is the portable interface.** Richer research,
+dependency, capability, provenance, and client metadata can live beside `SKILL.md` in
+`research-skill.yaml` and `research-skill.lock`.
 
-The format standardizes what an agent receives, not one universal installation command.
-Point an Agent Skills-compatible client at the skill directory, or copy/symlink that
-directory into the client's normal skills location. Clients that accept a Git URL plus a
-subdirectory can use `skills/starhorse-access` directly.
+## Browse the skills
 
-The current design and cross-session state are recorded in
-[`docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md)
-and [`docs/GIT_FIRST_HANDOFF_MEMO.md`](docs/GIT_FIRST_HANDOFF_MEMO.md).
+| Skill | Version | What it does |
+|---|---:|---|
+| [`aip/starhorse-access`](skills/starhorse-access/) | `2.0.2` | Access StarHorse SHboost-2024 and SH21 EDR3 data through public Parquet and AIP TAP services. |
 
-Status: **v0.1.0-draft / Phase 0**. Schemas and command behavior may change before the
-first stable release. Published package bytes and digests are nevertheless immutable.
+The generated [human catalog](catalog/README.md) and
+[machine-readable catalog](catalog/index.json) are derived views. The reviewed
+directories under [`skills/`](skills/) remain authoritative.
 
-## What is implemented
+## Install a skill
 
-- A directly browsable and installable `skills/` tree. The first reviewed package is
-  [`starhorse-access`](skills/starhorse-access/).
-- Draft JSON Schemas for `research-skill.yaml`, `research-skill.lock`, and catalog
-  snapshot payloads intended for detached signing.
-- Three deliberately separate validation profiles:
-  `agent-skills`, `ori-compatibility`, and `commons-publication`.
-- A report-first converter for current Hermes/Ori frontmatter. It emits a sidecar and
-  review report; it never rewrites `SKILL.md`.
-- A deterministic, safe-path tar.gz packer.
-- A deterministic static-catalog generator.
-- An optional OCI export path that verifies immutable Git input, target locks,
-  deterministic package and push digests, signed evidence, mirror reconstruction, and a
-  detached signed catalog. OCI is preserved as an exercised distribution backend, not a
-  prerequisite for contributing, browsing, or installing a skill.
-- A source-pinned survey fixture for
-  [`arm2arm/AstroAgentAssistant`](https://github.com/arm2arm/AstroAgentAssistant)
-  commit `ef78afcf1412575dd23e8e88c01dbf50b8b02836`.
+There is no universal Agent Skills installation command. Use the complete directory,
+including its references, scripts, contracts, and sidecars.
 
-## Non-normative Phase 0 stretch sketches
+```bash
+git clone https://github.com/skill-commons/skill-commons.git
+cd skill-commons
+git checkout skill/starhorse-access/v2.0.2
+```
 
-The schemas for collections, external-catalog records, installation profiles, and
-negative-state/tombstone records are **design sketches, not supported interchange
-contracts**. They reserve the RFC's trust boundaries and principal concepts so prototypes
-can exercise them, but their fields, identifiers, and signing envelopes may change before
-promotion into the normative specification. In particular, no client should treat a
-stretch-schema-valid document as signed, authorized, installable, or publication-ready.
+Then either:
 
-Each stretch schema carries an explicit `NON-NORMATIVE PHASE 0 STRETCH SKETCH` comment.
-Promotion requires exercised cross-object constraints, signing and delegation semantics,
-and compatibility fixtures from at least one producer and consumer.
+- point your Agent Skills-compatible client at `skills/starhorse-access`;
+- copy or symlink that complete directory into the client's normal skills location; or
+- give a supporting client the repository, exact tag, and subdirectory.
 
-## Quick start
+Read the skill before running it. The portable file describes prerequisites, requested
+network access, possible side effects, and verification steps. A client may add policy
+and dependency automation from the sidecar, but the sidecar does not itself grant
+permissions.
+
+## Contribute a skill
+
+The normal path is ordinary Git collaboration:
+
+1. Fork this repository.
+2. Add one complete `skills/<name>/` directory.
+3. Start with a valid `SKILL.md` and license; add the Commons sidecar before curated
+   publication.
+4. Run the local checks below.
+5. Open a pull request and complete the rights, attribution, redaction, and validation
+   checklist.
+
+Published versions are immutable. If released package bytes change, bump the version and
+create a new reviewed release. Never silently revise an existing release tag.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[curator checklist](docs/curator-checklist.md) for the accountable review boundary.
+
+## Validate locally
 
 Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-uv sync --all-groups
+uv sync --locked --all-groups
+uv run ruff check .
+uv run ruff format --check .
 uv run pytest
 
-uv run skill-commons validate examples/catalog-query-demo --profile all
 uv run skill-commons validate skills/starhorse-access --profile agent-skills
 uv run skill-commons validate skills/starhorse-access --profile commons-publication
-uv run skill-commons convert /path/to/legacy-skill \
-  --namespace aip \
-  --source-url https://github.com/arm2arm/AstroAgentAssistant \
-  --source-revision ef78afcf1412575dd23e8e88c01dbf50b8b02836 \
-  --source-path astronomy/legacy-skill
-uv run skill-commons pack examples/catalog-query-demo --output /tmp/catalog-query-demo.tar.gz
-
-uv run skill-commons prepare-release \
-  releases/aip/starhorse-access/2.0.2/publication.yaml \
-  --source-repository /path/to/reana-env \
-  --out /tmp/starhorse-prepared
+uv run skill-commons catalog \
+  --repository https://github.com/skill-commons/skill-commons \
+  --check
 ```
 
-`--source-path` names the package directory inside the pinned repository, not its
-`SKILL.md`. `convert` writes the manifest to stdout unless `--output` or `--out` is
-supplied; `--report` independently writes the report. It never modifies its input.
-Reports include both the portable and Ori-bridge proposed
-frontmatter diffs; `--projection` chooses which one an `--out` candidate receives.
-Applying the portable projection upstream is intentionally deferred until a client reads
-`research-skill.yaml` first.
+Validation profiles answer different questions:
 
-## Validation profiles
+| Profile | Question |
+|---|---|
+| `agent-skills` | Is the portable `SKILL.md` valid under the public Agent Skills reference implementation? |
+| `ori-compatibility` | Can today's Ori/Hermes runtime preserve the declared behavior? |
+| `commons-publication` | Is the candidate locally ready for accountable Commons review? |
 
-| Profile | Question answered | Authority |
-|---|---|---|
-| `agent-skills` | Is `SKILL.md` portable under the public Agent Skills reference validator? | Agent Skills specification/reference library |
-| `ori-compatibility` | Will today's Ori/Hermes runtime preserve identity, dependencies, activation, and configuration semantics? | Ori compatibility contract |
-| `commons-publication` | Is the package locally ready to enter the curator-authorized publication gate? | Skill Commons candidate-readiness policy and schema |
-
-A skill may pass one profile and fail another. Missing `license` frontmatter, for
-example, is permitted by Agent Skills but blocks Commons publication until an SPDX
-expression appears equivalently in portable frontmatter and the sidecar, with supporting
-package-wide evidence.
+A local Commons validator intentionally warns when namespace control, publication rights,
+or reviewed redaction require human or institutional evidence. It must not manufacture a
+local pass for those claims.
 
 ## Repository layout
 
 ```text
-skills/                     Published, Git-native Agent Skills packages
-schemas/                    Core schemas plus clearly marked non-normative stretch sketches
-src/skill_commons/          Reference CLI and library
-tests/                      Contract and regression tests
-examples/                   Converted Phase 0 reference packages
-fixtures/surveys/           Source-pinned, generated corpus observations
-docs/                       Threat model, migration and extension contracts
-adapters/                   Phase 0 design sketches for external ecosystems
-capability-taxonomy.yaml    Initial capability vocabulary
+skills/                 Complete published skill directories
+catalog/                Generated human and machine indexes
+docs/                   Current architecture, contracts, and review guidance
+schemas/                Active sidecar, lock, extension, and capability contracts
+src/skill_commons/      Small reference validator, converter, packer, and catalog tool
+tests/                  Active contract and regression tests
+warehouse/              Inert Phase-0 designs, surveys, and optional OCI evidence
 ```
 
-The architecture rationale remains in the Ori project's
-[`ORI_SKILL_COMMONS_ARCHITECTURE.md`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/blob/main/docs/ORI_SKILL_COMMONS_ARCHITECTURE.md)
-during the handoff. Normative format changes land here.
+Material under [`warehouse/`](warehouse/) is preserved design history. It is excluded
+from the supported runtime, package build, catalog, and default CI surface.
 
-## Trust and publication boundary
+## Architecture and governance
 
-Only reviewed directories merged under `skills/` are Git-native Commons publications.
-Survey fixtures, converter output, and skills merely observed in other repositories are
-not publications. Observed community and client-bundled skills retain their upstream
-identity and do not become `aip/*` merely because a converter can parse them.
+The current decision is documented in the
+[Git-first architecture](docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md). In brief:
 
-Local `commons-publication` validation always warns that namespace control, publication
-rights, and reviewed redaction require external attestations. `pack` only creates
-candidate bytes. The catalog builder is a deterministic structural assembler for trusted
-pipeline inputs: it requires evidence digests for verified license, publisher-authority,
-namespace-control, and redaction assessments, but does not authenticate those records.
-For the Git-native collection, protected review and the exact Git commit identify the
-published state. A detached signed catalog remains available for higher-assurance or OCI
-distribution profiles; it is not required for ordinary Agent Skills installation.
-
-The exercised optional GitLab OCI workflow and its mandatory registry invariants are
-documented in [`docs/oci-publication.md`](docs/oci-publication.md). OCI manifest
-timestamps are pinned, evidence tags are explicitly reconstructed in mirrors,
-release/evidence retention tags are preserved, and live tag descriptors are checked
-against the signed catalog. Publisher-isolation and backup/restore acceptance gates remain
-explicitly open.
-
-Client extensions are structured, namespaced sidecar data. They may add activation or
-UI hints, but they may not weaken core capability, dependency, license, or provenance
-declarations.
-
-Canonical bytes, tree binding, archive normalization, and digest domains are defined in
-[`docs/artifact-format.md`](docs/artifact-format.md).
+- this public GitHub repository is the canonical contribution and publication forge;
+- the private AIP GitLab project is a one-way institutional backup;
+- one package has one canonical source, and mirrors do not accept competing changes;
+- publication is explicit and human-accountable;
+- identity, license, integrity, security, scientific validity, reproducibility, and
+  maintenance remain separate evidence axes;
+- OCI is parked optional export technology, not a prerequisite or co-equal authority.
 
 ## License
 
-Code and specification text in this repository are licensed under Apache-2.0. Survey
-fixtures contain factual observations and source coordinates, not copied skill bodies.
+Code and specification text are licensed under Apache-2.0. Individual skills carry their
+own license files and evidence.
