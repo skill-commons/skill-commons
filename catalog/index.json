@@ -4,6 +4,1218 @@
   "skills": [
     {
       "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": ">=3.9"
+      },
+      "coordinate": "aip/arxiv",
+      "description": "Search and retrieve academic papers from arXiv using the free REST API. Query by keyword, author, category, or paper ID. Fetch abstracts, full PDFs, generate BibTeX, and explore citations via Semantic Scholar.",
+      "license": "MIT",
+      "name": "arxiv",
+      "path": "skills/arxiv",
+      "release_tag": "skill/arxiv/v1.0.0",
+      "research": {
+        "disciplines": [
+          "research"
+        ],
+        "keywords": [
+          "research",
+          "arxiv",
+          "literature",
+          "citations",
+          "bibtex"
+        ],
+        "methods": [
+          "literature-search",
+          "citation-analysis",
+          "bibliographic-metadata-extraction"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:2000e9648d5c58f6875765ef721f698cee02ebaf7641c34c07b604ca720a13d3",
+      "upstream": {
+        "path": "research/arxiv",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/astro-catalog-plotting-cache",
+      "description": "Use when turning astronomy catalog data into reproducible cached products and publication-ready plots, especially CMDs, RA/Dec maps, Galactic projections, hexbin density plots, Datashader outputs, and provenance-backed figure deliverables.",
+      "license": "MIT",
+      "name": "astro-catalog-plotting-cache",
+      "path": "skills/astro-catalog-plotting-cache",
+      "release_tag": "skill/astro-catalog-plotting-cache/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy"
+        ],
+        "keywords": [
+          "astronomy",
+          "cache",
+          "cmd",
+          "datashader",
+          "hexbin",
+          "plotting",
+          "provenance"
+        ],
+        "methods": [
+          "catalog-visualization",
+          "color-magnitude-diagram",
+          "density-rendering",
+          "reproducible-caching",
+          "sky-projection"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:88cb3d092f92f3af078221ca17d4426143d65c61f050e15848a9d30f0b99e29e",
+      "upstream": {
+        "path": "astronomy/astro-catalog-plotting-cache",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/calculator",
+      "description": "Exact symbolic + numeric math with sympy/mpmath — derive formulas, evaluate constants, propagate errors, convert units. Use for ANY multi-step arithmetic or algebra instead of mental math.",
+      "license": "MIT",
+      "name": "calculator",
+      "path": "skills/calculator",
+      "release_tag": "skill/calculator/v1.0.0",
+      "research": {
+        "disciplines": [
+          "mathematics",
+          "scientific-computing"
+        ],
+        "keywords": [
+          "calculation",
+          "sympy",
+          "mpmath",
+          "astropy",
+          "units"
+        ],
+        "methods": [
+          "symbolic-algebra",
+          "numerical-evaluation",
+          "uncertainty-propagation",
+          "unit-conversion"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:8e078a83ccef1019052879bd108802104c913fc1adfc4680a0d74dc1056e5559",
+      "upstream": {
+        "path": "python/calculator",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/cmd-plotting",
+      "description": "Generate astronomy colour-magnitude diagrams in Python with reproducible plotting choices.",
+      "license": "MIT",
+      "name": "cmd-plotting",
+      "path": "skills/cmd-plotting",
+      "release_tag": "skill/cmd-plotting/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "astronomy",
+          "cmd",
+          "matplotlib",
+          "parquet",
+          "visualization"
+        ],
+        "methods": [
+          "color-magnitude-diagram",
+          "density-visualization"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:b555f25c3ed09ffb56367d2cf199cb3b55be897a4f1302f9dcbbb243a4fc0765",
+      "upstream": {
+        "path": "python/cmd-plotting",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": ">=3.9"
+      },
+      "coordinate": "aip/cold-streams-monitoring",
+      "description": "Automated arXiv monitoring for cold gas filament accretion in galaxy formation. Discovers new papers on cold mode accretion, cold flows, cosmological filaments, and related topics. Use for on-demand scans or recurring monitoring with the user's scheduler.",
+      "license": "MIT",
+      "name": "cold-streams-monitoring",
+      "path": "skills/cold-streams-monitoring",
+      "release_tag": "skill/cold-streams-monitoring/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "cosmology",
+          "galaxy-formation"
+        ],
+        "keywords": [
+          "cold-streams",
+          "cosmology",
+          "galaxy-formation",
+          "arxiv",
+          "monitoring"
+        ],
+        "methods": [
+          "literature-monitoring",
+          "keyword-search",
+          "paper-classification"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:18deccc7dc9a418a2b87a9f5d51b72fac2de242e8ce4e8946c166858ac769d91",
+      "upstream": {
+        "path": "research/cold-streams-monitoring",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/data-aip-de-s3",
+      "description": "Work with data.aip.de and S3-backed datasets using reproducible local caching, Dask-first reads for huge data, and plotting workflows that scale to large astronomy catalogs.",
+      "license": "MIT",
+      "name": "data-aip-de-s3",
+      "path": "skills/data-aip-de-s3",
+      "release_tag": "skill/data-aip-de-s3/v1.1.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "research-data-management"
+        ],
+        "keywords": [
+          "astronomy",
+          "dask",
+          "data-engineering",
+          "dataset",
+          "hdf5",
+          "parquet",
+          "s3"
+        ],
+        "methods": [
+          "columnar-data-access",
+          "distributed-dataframe-analysis",
+          "local-cache-construction",
+          "object-storage-access"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:ebfb1f860f9f82d8458ebc0373dcc0256be61ceef5e516d566f8411dc051f0b5",
+      "upstream": {
+        "path": "astronomy/data-aip-de-s3",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/datashader-019-pipeline",
+      "description": "Generate density plots (CMD, hexbin, 2D histograms) using datashader 0.19.0 with Dask for lazy data loading and matplotlib for final rendering. Handles the 0.19.0 API: no Canvas.hexbin(), no tf.to_rgba(), tf.shade() returns Image.to_pil().",
+      "license": "MIT",
+      "name": "datashader-019-pipeline",
+      "path": "skills/datashader-019-pipeline",
+      "release_tag": "skill/datashader-019-pipeline/v0.1.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "data-science"
+        ],
+        "keywords": [
+          "datashader",
+          "dask",
+          "density-plot",
+          "cmd",
+          "parquet"
+        ],
+        "methods": [
+          "density-visualization",
+          "distributed-dataframe-analysis",
+          "parquet-analysis"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:5e4f6076d1959108fa8094dce46c91be710f7544f606d0320c1dff7efa83532b",
+      "upstream": {
+        "path": "data-science/datashader-019-pipeline",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/gaia-dr3-daiquiri-rest",
+      "description": "FALLBACK Gaia access (prefer gaia-dr3-tap-query). Query Gaia DR3 at gaia.aip.de via its Daiquiri REST API for full-table COUNTs and very large async scans — CSRF handling, async jobs, queue names, JSON result fetching. Access 1.8 billion sources with ~153 columns.",
+      "license": "MIT",
+      "name": "gaia-dr3-daiquiri-rest",
+      "path": "skills/gaia-dr3-daiquiri-rest",
+      "release_tag": "skill/gaia-dr3-daiquiri-rest/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy"
+        ],
+        "keywords": [
+          "adql",
+          "astronomy",
+          "daiquiri",
+          "gaia-aip",
+          "gaia-dr3",
+          "postgresql",
+          "rest-api"
+        ],
+        "methods": [
+          "asynchronous-catalog-query",
+          "job-polling",
+          "postgresql-query"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:cebf1db9480ee7801c3e5768075aae462caf5f4705a77e834f488ba207c5c8bd",
+      "upstream": {
+        "path": "astronomy/gaia-dr3-daiquiri-rest",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/gaia-dr3-plot-with-dust",
+      "description": "Retrieve nearby Gaia DR3 stars (via the AIP TAP service) and produce a two-panel research-paper figure — RA/Dec on the left, a Galactic XY projection overlaid with the SFD all-sky dust-extinction map on the right (dustmaps package).",
+      "license": "MIT",
+      "name": "gaia-dr3-plot-with-dust",
+      "path": "skills/gaia-dr3-plot-with-dust",
+      "release_tag": "skill/gaia-dr3-plot-with-dust/v2.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "galactic-astronomy"
+        ],
+        "keywords": [
+          "astronomy",
+          "dust",
+          "extinction",
+          "gaia-dr3",
+          "plotting",
+          "pyvo"
+        ],
+        "methods": [
+          "catalog-query",
+          "coordinate-projection",
+          "dust-extinction-overlay",
+          "scientific-visualization"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:fc7b5c218006713ef8b5937c99ed87dc36c4c932fbd44aa44f184a1347b2c939",
+      "upstream": {
+        "path": "astronomy/gaia-dr3-plot-with-dust",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "amd64",
+          "arm64"
+        ],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/gaia-dr3-tap-query",
+      "description": "Query Gaia DR3 at gaia.aip.de via TAP/pyvo — the DEFAULT way to get Gaia data. ADQL queries, uniform random subsampling, Parquet caching, and ready-made sky / Galactic-XY plots. Access 1.8 billion sources.",
+      "license": "MIT",
+      "name": "gaia-dr3-tap-query",
+      "path": "skills/gaia-dr3-tap-query",
+      "release_tag": "skill/gaia-dr3-tap-query/v2.1.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "galactic-astronomy"
+        ],
+        "keywords": [
+          "adql",
+          "astronomy",
+          "gaia-aip",
+          "gaia-dr3",
+          "pyvo",
+          "tap"
+        ],
+        "methods": [
+          "adql-query",
+          "catalog-access",
+          "random-subsampling",
+          "scientific-visualization"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:ba3b8dd359205269a281a9e385ebcc3a2239690444fecee6897640f2eb87250a",
+      "upstream": {
+        "path": "astronomy/gaia-dr3-tap-query",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/hdf5-on-s3-cached",
+      "description": "Access HDF5 files stored on S3 by creating a reliable local cache first, extracting reusable subsets, and converting repeated tabular work products to local Parquet.",
+      "license": "MIT",
+      "name": "hdf5-on-s3-cached",
+      "path": "skills/hdf5-on-s3-cached",
+      "release_tag": "skill/hdf5-on-s3-cached/v1.0.0",
+      "research": {
+        "disciplines": [
+          "data-science",
+          "research-data-management"
+        ],
+        "keywords": [
+          "hdf5",
+          "s3",
+          "cache",
+          "parquet",
+          "dask"
+        ],
+        "methods": [
+          "hdf5-extraction",
+          "object-storage-access",
+          "parquet-conversion",
+          "local-caching"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:3f44bd5c2ff777c18eec87350b5d430c914a49d2a930e810d46a8fdc42fbf1df",
+      "upstream": {
+        "path": "python/hdf5-on-s3-cached",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/iterative-paper-improvement",
+      "description": "Structured multi-round improvement workflow for LaTeX academic papers — each round targets specific improvements (structure, prose, figures, compilation). Also covers merging multiple papers and multi-phase iterations (X figure rounds + Y text rounds).",
+      "license": "MIT",
+      "name": "iterative-paper-improvement",
+      "path": "skills/iterative-paper-improvement",
+      "release_tag": "skill/iterative-paper-improvement/v2.0.0",
+      "research": {
+        "disciplines": [
+          "research-writing"
+        ],
+        "keywords": [
+          "academic-writing",
+          "latex",
+          "paper-improvement",
+          "iterative-review",
+          "paper-merge"
+        ],
+        "methods": [
+          "iterative-manuscript-revision",
+          "structural-editing",
+          "figure-refinement",
+          "compilation-verification"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:d695077a0beb584c83ad9980fba84b279fb0aa419532ed8fbb4c089b6827ad92",
+      "upstream": {
+        "path": "research/iterative-paper-improvement",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/latex-journal-submission-package",
+      "description": "Convert a working LaTeX manuscript into a journal-style submission package with separate BibTeX, build helper, manifest, and zip archive; useful when TeX is unavailable locally.",
+      "license": "MIT",
+      "name": "latex-journal-submission-package",
+      "path": "skills/latex-journal-submission-package",
+      "release_tag": "skill/latex-journal-submission-package/v1.0.0",
+      "research": {
+        "disciplines": [
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "bibtex",
+          "journal-submission",
+          "manuscript",
+          "packaging"
+        ],
+        "methods": [
+          "journal-format-adaptation",
+          "bibliography-normalization",
+          "submission-packaging",
+          "compilation-verification"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:526ebd1dfeea014a6480a38dd3e2d2a55c5a6d2f36c46246e660a053097cf94c",
+      "upstream": {
+        "path": "research/latex-journal-submission-package",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/latex-paper-iteration",
+      "description": "Iteratively improve LaTeX research papers — structural fixes, prose polishing, figure integration, compilation cycles. Also covers merging multiple papers into a unified manuscript.",
+      "license": "MIT",
+      "name": "latex-paper-iteration",
+      "path": "skills/latex-paper-iteration",
+      "release_tag": "skill/latex-paper-iteration/v2.0.0",
+      "research": {
+        "disciplines": [
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "paper-iteration",
+          "figure-generation",
+          "paper-merge"
+        ],
+        "methods": [
+          "iterative-manuscript-revision",
+          "paper-merging",
+          "scientific-figure-generation",
+          "compilation-verification"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:af2325f33c7fc4867ac29c5bcc717e147a493b44b91d388ff61cbfab405a984e",
+      "upstream": {
+        "path": "research/latex-paper-iteration",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/latex-research-paper",
+      "description": "Generate complete, compilable LaTeX research papers in formal academic style with full section structure, BibTeX references, and figure support.",
+      "license": "MIT",
+      "name": "latex-research-paper",
+      "path": "skills/latex-research-paper",
+      "release_tag": "skill/latex-research-paper/v0.1.0",
+      "research": {
+        "disciplines": [
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "academic-writing",
+          "research-paper",
+          "bibtex",
+          "figures"
+        ],
+        "methods": [
+          "manuscript-drafting",
+          "bibliography-management",
+          "scientific-figure-generation",
+          "compilation-verification"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:f56fccfa5fc9c57fa7ae8cf92f168ece4842fab33a5f2c644a537903b4361bcd",
+      "upstream": {
+        "path": "research/latex-research-paper",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/mnras-latex-compile-portability-fixes",
+      "description": "Fix common MNRAS LaTeX portability issues on Ubuntu/Debian TeX Live installs, compile successfully, and package submission artifacts.",
+      "license": "MIT",
+      "name": "mnras-latex-compile-portability-fixes",
+      "path": "skills/mnras-latex-compile-portability-fixes",
+      "release_tag": "skill/mnras-latex-compile-portability-fixes/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "mnras",
+          "astronomy",
+          "portability",
+          "bibtex"
+        ],
+        "methods": [
+          "latex-portability-debugging",
+          "bibliography-normalization",
+          "submission-packaging"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:3891ff86e23623b3beb5f6051bc5d240934a7fe3617e51126a554875e1b1bd84",
+      "upstream": {
+        "path": "research/mnras-latex-compile-portability-fixes",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/mnras-latex-portable",
+      "description": "Build and package an MNRAS LaTeX manuscript portably on Ubuntu, avoiding missing-font-package failures and fixing common two-column table issues.",
+      "license": "MIT",
+      "name": "mnras-latex-portable",
+      "path": "skills/mnras-latex-portable",
+      "release_tag": "skill/mnras-latex-portable/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "mnras",
+          "journal",
+          "submission",
+          "portability"
+        ],
+        "methods": [
+          "portable-latex-build",
+          "two-column-layout-repair",
+          "submission-packaging"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:954d7b961a4da72cc1d1ccdf46c757fad84da758aea678e94671695b1f0fedee",
+      "upstream": {
+        "path": "research/mnras-latex-portable",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/mnras-latex-portable-build-and-package",
+      "description": "Build and package an MNRAS LaTeX manuscript portably on Ubuntu, avoiding missing-font-package failures and fixing common two-column table issues.",
+      "license": "MIT",
+      "name": "mnras-latex-portable-build-and-package",
+      "path": "skills/mnras-latex-portable-build-and-package",
+      "release_tag": "skill/mnras-latex-portable-build-and-package/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "research-writing"
+        ],
+        "keywords": [
+          "latex",
+          "mnras",
+          "ubuntu",
+          "bibtex",
+          "packaging"
+        ],
+        "methods": [
+          "portable-latex-build",
+          "bibliography-normalization",
+          "two-column-layout-repair",
+          "submission-packaging"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:b3d54b207bec1bcb5f97406eb45be6a9aa272e58d33e8a471ffe9262345352d0",
+      "upstream": {
+        "path": "research/mnras-latex-portable-build-and-package",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": null
+      },
+      "coordinate": "aip/multi-section-latex-whitepaper",
+      "description": "Generate comprehensive LaTeX white papers from multiple sources — Markdown sections, existing papers, or user ideas. Converts and assembles into a single compiled PDF.",
+      "license": "MIT",
+      "name": "multi-section-latex-whitepaper",
+      "path": "skills/multi-section-latex-whitepaper",
+      "release_tag": "skill/multi-section-latex-whitepaper/v2.0.0",
+      "research": {
+        "disciplines": [
+          "research-writing"
+        ],
+        "keywords": [
+          "academic-writing",
+          "latex",
+          "whitepaper",
+          "multi-section",
+          "paper-merging"
+        ],
+        "methods": [
+          "source-synthesis",
+          "document-structuring",
+          "bibliography-management",
+          "scientific-figure-generation"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:f6c23358eac1d62a1591729eef38e9e504bf81579e1b6196b16d4e375aa9032e",
+      "upstream": {
+        "path": "research/multi-section-latex-whitepaper",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6",
+      "description": "Query the RAVE DR6 catalog at https://www.rave-survey.org/tap/ using pyvo (TAPService.run_sync). Access stellar parameters, Gaia cross-matches, distances, and Galactic coordinates (l, b). Includes galactic and equirectangular projection plotting recipes.",
+      "license": "MIT",
+      "name": "rave-dr6",
+      "path": "skills/rave-dr6",
+      "release_tag": "skill/rave-dr6/v1.1.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "astronomy",
+          "galactic-coordinates",
+          "pyvo",
+          "rave-dr6",
+          "stellar-parameters",
+          "tap"
+        ],
+        "methods": [
+          "catalog-query",
+          "galactic-projection",
+          "sky-distribution-plotting",
+          "tap-query"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:3c85e83537b544bb0aa02408eba9e0f2cf4f2723fb9e0729e8f3eaced0465264",
+      "upstream": {
+        "path": "astronomy/rave-dr6",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6-nearest-100-plot",
+      "description": "Query the 100 nearest RAVE DR6 stars and generate two clear PNG plots: Galactic projection and RA/Dec scatter, with reproducible local parquet output.",
+      "license": "MIT",
+      "name": "rave-dr6-nearest-100-plot",
+      "path": "skills/rave-dr6-nearest-100-plot",
+      "release_tag": "skill/rave-dr6-nearest-100-plot/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "astronomy",
+          "nearest-stars",
+          "parquet",
+          "plotting",
+          "pyvo",
+          "rave-dr6"
+        ],
+        "methods": [
+          "nearest-neighbor-selection",
+          "sky-distribution-plotting",
+          "tap-query"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:8a56f30cbd9175a6f6370c6d48c9cc3f1b38118309335cb7eae5c0f4f1b7f449",
+      "upstream": {
+        "path": "astronomy/rave-dr6-nearest-100-plot",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6-public-talk-visualizations",
+      "description": "Turn a nearest-100 RAVE DR6 query into dark-theme, public-talk-ready PNG visualizations with clear titles, readable scaling, and presentation-friendly styling.",
+      "license": "MIT",
+      "name": "rave-dr6-public-talk-visualizations",
+      "path": "skills/rave-dr6-public-talk-visualizations",
+      "release_tag": "skill/rave-dr6-public-talk-visualizations/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "science-communication"
+        ],
+        "keywords": [
+          "astronomy",
+          "plotting",
+          "presentation",
+          "public-talk",
+          "rave-dr6",
+          "visualization"
+        ],
+        "methods": [
+          "presentation-visualization",
+          "sky-distribution-plotting"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:6f1fe6c293eb864ff8d6c331a552f2ed5b2041d71d2e0eb820f9235eed066289",
+      "upstream": {
+        "path": "astronomy/rave-dr6-public-talk-visualizations",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6-recent-observations-plot",
+      "description": "Retrieve the most recent 100 entries from the RAVE DR6 `dr6_obsdata` table and generate a simple RA‑Dec scatter plot. Use an isolated Python environment and optionally use Astropy to derive Galactic coordinates.",
+      "license": "MIT",
+      "name": "rave-dr6-recent-observations-plot",
+      "path": "skills/rave-dr6-recent-observations-plot",
+      "release_tag": "skill/rave-dr6-recent-observations-plot/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy"
+        ],
+        "keywords": [
+          "astronomy",
+          "observation-date",
+          "plotting",
+          "rave-dr6",
+          "tap"
+        ],
+        "methods": [
+          "catalog-query",
+          "coordinate-transformation",
+          "observation-time-ordering",
+          "sky-distribution-plotting"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:ffcc6acdf75d765daec9a9d7a0406e112154454700ece1ae95a1c56f89728d65",
+      "upstream": {
+        "path": "astronomy/rave-dr6-recent-observations-plot",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6-shboost-distance-query",
+      "description": "Query and crossmatch RAVE DR6 stars with SHboost24 Gaia source IDs to obtain distances and Galactocentric coordinates, then select and plot nearby matches.",
+      "license": "MIT",
+      "name": "rave-dr6-shboost-distance-query",
+      "path": "skills/rave-dr6-shboost-distance-query",
+      "release_tag": "skill/rave-dr6-shboost-distance-query/v0.1.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "distance",
+          "galactocentric",
+          "rave",
+          "shboost",
+          "tap"
+        ],
+        "methods": [
+          "catalog-crossmatch",
+          "galactocentric-projection",
+          "tap-query"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:825f2b9ff8abce91ead52da51e2fab05b7161788a3812c81252c4e5b3ff6c4bc",
+      "upstream": {
+        "path": "astronomy/rave-dr6-shboost-distance-query",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/rave-dr6-starhorse-access",
+      "description": "Query RAVE DR6 via TAP and crossmatch with SHboost24 distances for nearby star analysis.",
+      "license": "MIT",
+      "name": "rave-dr6-starhorse-access",
+      "path": "skills/rave-dr6-starhorse-access",
+      "release_tag": "skill/rave-dr6-starhorse-access/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "adql",
+          "astronomy",
+          "crossmatch",
+          "parquet",
+          "rave-dr6",
+          "s3",
+          "starhorse",
+          "tap"
+        ],
+        "methods": [
+          "catalog-crossmatch",
+          "distance-catalog-access",
+          "tap-query"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:8512eac6634ac65230c6fc3faff89ecedd28f9204e76914493a6120055a8c71e",
+      "upstream": {
+        "path": "astronomy/rave-dr6-starhorse-access",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/s3-parquet-sampling",
+      "description": "Sample or reduce massive Parquet datasets on S3 using local Parquet caching, Dask-first processing for large inputs, and hvPlot/Datashader for scalable scientific visualization.",
+      "license": "MIT",
+      "name": "s3-parquet-sampling",
+      "path": "skills/s3-parquet-sampling",
+      "release_tag": "skill/s3-parquet-sampling/v1.1.0",
+      "research": {
+        "disciplines": [
+          "data-science",
+          "research-data-management"
+        ],
+        "keywords": [
+          "s3",
+          "parquet",
+          "sampling",
+          "dask",
+          "hvplot",
+          "datashader"
+        ],
+        "methods": [
+          "distributed-dataframe-analysis",
+          "parquet-sampling",
+          "density-visualization"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:74d091de6bbed3e89b0de6401e9f493c153ed6598f578a217bd4627c73b2e3e9",
+      "upstream": {
+        "path": "python/s3-parquet-sampling",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/s3-parquet-sampling-plot-cached",
+      "description": "Efficiently sample a subset of a massive Parquet dataset stored on an S3‑compatible bucket, cache the sampled rows locally as a Parquet file for fast reuse, and produce high‑resolution PNG plots suitable for analysis and publication.",
+      "license": "MIT",
+      "name": "s3-parquet-sampling-plot-cached",
+      "path": "skills/s3-parquet-sampling-plot-cached",
+      "release_tag": "skill/s3-parquet-sampling-plot-cached/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy",
+          "data-science",
+          "stellar-astrophysics"
+        ],
+        "keywords": [
+          "shboost",
+          "s3",
+          "parquet",
+          "datashader",
+          "cmd",
+          "cache"
+        ],
+        "methods": [
+          "color-magnitude-diagram",
+          "parquet-sampling",
+          "density-visualization",
+          "local-caching"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:b72ab4516513cf7f4d490930c1a8f9a8830f275ffd197954b0fc442cabcbaa5f",
+      "upstream": {
+        "path": "python/s3-parquet-sampling-plot-cached",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "arm64"
+        ],
+        "operating_systems": [
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/seaborn-paper-plots",
+      "description": "Create clean seaborn/matplotlib plots suitable for papers, notes, and reproducible reports.",
+      "license": "MIT",
+      "name": "seaborn-paper-plots",
+      "path": "skills/seaborn-paper-plots",
+      "release_tag": "skill/seaborn-paper-plots/v1.0.0",
+      "research": {
+        "disciplines": [
+          "data-science",
+          "scientific-communication"
+        ],
+        "keywords": [
+          "seaborn",
+          "matplotlib",
+          "publication",
+          "visualization"
+        ],
+        "methods": [
+          "statistical-visualization",
+          "publication-figure-preparation"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:a25f6153447dbd8e04629e252d367b5820626f76e792791c3ec5832fea55ddf9",
+      "upstream": {
+        "path": "python/seaborn-paper-plots",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "compatibility": {
         "architectures": [
           "amd64"
         ],
@@ -45,6 +1257,52 @@
         "revision": "5f1d331b106cc96b47f0633cddc94b05325b8b49"
       },
       "version": "2.0.2"
+    },
+    {
+      "compatibility": {
+        "architectures": [
+          "amd64",
+          "arm64"
+        ],
+        "operating_systems": [
+          "linux",
+          "macos"
+        ],
+        "python": ">=3.12,<3.13"
+      },
+      "coordinate": "aip/tap-pyvo-adql-access",
+      "description": "Use when querying astronomy TAP services with ADQL through pyvo or curl, including service probes, metadata discovery, TOP-based queries, VOTable/FITS conversion, pandas/Parquet caching, and robust network fallbacks.",
+      "license": "MIT",
+      "name": "tap-pyvo-adql-access",
+      "path": "skills/tap-pyvo-adql-access",
+      "release_tag": "skill/tap-pyvo-adql-access/v1.0.0",
+      "research": {
+        "disciplines": [
+          "astronomy"
+        ],
+        "keywords": [
+          "adql",
+          "astronomy",
+          "catalog",
+          "pyvo",
+          "tap",
+          "votable"
+        ],
+        "methods": [
+          "adql-query",
+          "catalog-access",
+          "metadata-discovery",
+          "result-caching"
+        ]
+      },
+      "status": "active",
+      "tree_digest": "sha256:db23e5296ae07170388137c707c02e2f1dc0836ff41a9f74b28bbbd038b3a2da",
+      "upstream": {
+        "path": "astronomy/tap-pyvo-adql-access",
+        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
+        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      },
+      "version": "1.0.0"
     }
   ]
 }

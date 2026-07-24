@@ -17,19 +17,24 @@ ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "https://github.com/skill-commons/skill-commons"
 
 
-def test_git_catalog_is_deterministic_and_records_the_published_skill() -> None:
+def test_git_catalog_is_deterministic_and_records_published_skills() -> None:
     first = build_git_catalog(ROOT, REPOSITORY)
     second = build_git_catalog(ROOT, REPOSITORY + ".git")
 
     assert first == second
     assert first["repository"] == REPOSITORY
-    assert len(first["skills"]) == 1
-    skill = first["skills"][0]
+    assert len(first["skills"]) == len(
+        [path for path in (ROOT / "skills").iterdir() if path.is_dir()]
+    )
+    records = {record["coordinate"]: record for record in first["skills"]}
+    skill = records["aip/starhorse-access"]
     assert skill["coordinate"] == "aip/starhorse-access"
     assert skill["version"] == "2.0.2"
     assert skill["path"] == "skills/starhorse-access"
     assert skill["release_tag"] == "skill/starhorse-access/v2.0.2"
     assert skill["tree_digest"].startswith("sha256:")
+    assert records["aip/tap-pyvo-adql-access"]["path"] == "skills/tap-pyvo-adql-access"
+    assert records["aip/gaia-dr3-tap-query"]["path"] == "skills/gaia-dr3-tap-query"
 
 
 def test_catalog_outputs_can_be_written_and_checked(tmp_path: Path) -> None:

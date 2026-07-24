@@ -1,0 +1,130 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: datashader-019-pipeline
+  version: 0.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: data-science/datashader-019-pipeline
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: maintainer
+  - name: Tom Tong
+    orcid: 0000-0001-6014-5031
+    role: curator
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - astronomy
+  - data-science
+  methods:
+  - density-visualization
+  - distributed-dataframe-analysis
+  - parquet-analysis
+  software:
+  - Dask
+  - Datashader
+  - Matplotlib
+  - pandas
+  data_sources:
+  - user-supplied-tabular-data
+  - s3-object-storage
+  intended_uses:
+  - render-large-density-plots
+  - build-color-magnitude-diagrams
+  excluded_uses:
+  - treat-density-images-as-statistical-inference
+  - overwrite-source-data
+  assumptions:
+  - input-columns-are-numeric
+  - plot-ranges-are-scientifically-appropriate
+  known_failure_modes:
+  - object-store-unavailable
+  - insufficient-memory-after-materialization
+  - invalid-plot-range
+  keywords:
+  - datashader
+  - dask
+  - density-plot
+  - cmd
+  - parquet
+relations:
+  implements_tasks:
+  - task:astronomy/datashader-019-pipeline
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:astro-catalog-plotting-cache
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - dask[dataframe]==2026.7.1
+  - datashader==0.19.0
+  - matplotlib==3.11.1
+  - numpy==2.4.6
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  - s3fs==2026.6.0
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: user-configured-object-store
+    protocols:
+    - https
+    - s3
+  processes:
+  - python
+  named_secrets:
+  - s3-credentials
+  external_side_effects:
+  - download-remote-parquet
+  - write-local-cache
+  - write-plot-file
+  paid_services: []
+validation:
+  contracts: []
+  network_required: false
+  maximum_runtime_seconds: 7200
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
+    scheme: source-tree-population
+    value: active-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:data-science/datashader-019-pipeline
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: data-science/datashader-019-pipeline
+    digest: sha256:e5521e92a16031805755603b5ff0405d9d9c9872d85bc6ad724f5b4fbbe51622
+    relation: source

@@ -1,0 +1,138 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: latex-journal-submission-package
+  version: 1.0.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/latex-journal-submission-package
+authorship:
+  status: verified
+  contributors:
+  - name: Hermes Agent
+    role: author
+  - name: Tom Tong
+    orcid: 0000-0001-6014-5031
+    role: curator
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - research-writing
+  methods:
+  - journal-format-adaptation
+  - bibliography-normalization
+  - submission-packaging
+  - compilation-verification
+  software:
+  - LaTeX
+  - BibTeX
+  - latexmk
+  - TeX Live
+  data_sources:
+  - user-provided-manuscript
+  - user-provided-bibliography
+  - arXiv-metadata
+  intended_uses:
+  - prepare-journal-submission-package
+  - separate-inline-bibliography
+  - verify-portable-build-instructions
+  excluded_uses:
+  - claim-journal-compliance-without-review
+  - invent-bibliographic-metadata
+  - submit-on-the-users-behalf
+  assumptions:
+  - user-has-rights-to-package-the-manuscript
+  - target-journal-requirements-are-reviewed
+  known_failure_modes:
+  - missing-journal-class
+  - missing-tex-package
+  - unresolved-bibliography
+  - incomplete-submission-archive
+  keywords:
+  - latex
+  - bibtex
+  - journal-submission
+  - manuscript
+  - packaging
+relations:
+  implements_tasks:
+  - task:research/journal-submission-packaging
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:mnras-latex-portable
+compatibility:
+  clients: []
+  operating_systems:
+  - linux
+  architectures: []
+  python: null
+dependencies:
+  completeness: complete
+  python: []
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: export.arxiv.org
+    protocols:
+    - https
+  - host: archive.ubuntu.com
+    protocols:
+    - http
+    - https
+  - host: security.ubuntu.com
+    protocols:
+    - http
+    - https
+  processes:
+  - sh
+  - latexmk
+  - pdflatex
+  - bibtex
+  - zip
+  - apt
+  - sudo
+  named_secrets: []
+  external_side_effects:
+  - modify-manuscript-files
+  - create-submission-archive
+  - install-system-packages
+  paid_services: []
+validation:
+  contracts: []
+  network_required: false
+  maximum_runtime_seconds: 3600
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
+    scheme: source-tree-population
+    value: astroagentassistant-active-tree
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:research/latex-journal-submission-package
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/latex-journal-submission-package
+    digest: sha256:ec98f3c4ab1f4f244bc87b4a2f217841436b930e40d8f0c238ec084b277c6f26
+    relation: source

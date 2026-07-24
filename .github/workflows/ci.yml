@@ -32,8 +32,10 @@ jobs:
         run: uv run pytest
       - name: Validate published skills
         run: |
-          uv run skill-commons validate skills/starhorse-access --profile agent-skills
-          uv run skill-commons validate skills/starhorse-access --profile commons-publication
+          for skill in skills/*; do
+            uv run skill-commons validate "$skill" --profile agent-skills
+            uv run skill-commons validate "$skill" --profile commons-publication
+          done
       - name: Check generated catalog
         run: >-
           uv run skill-commons catalog

@@ -1,0 +1,168 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: data-aip-de-s3
+  version: 1.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/data-aip-de-s3
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: mixed
+  agent:
+    client: AstroAgent
+research:
+  disciplines:
+  - astronomy
+  - research-data-management
+  methods:
+  - columnar-data-access
+  - distributed-dataframe-analysis
+  - local-cache-construction
+  - object-storage-access
+  software:
+  - Dask
+  - Datashader
+  - hvPlot
+  - pandas
+  - PyArrow
+  - s3fs
+  data_sources:
+  - data.aip.de
+  - S3-compatible-object-storage
+  intended_uses:
+  - access-large-astronomy-datasets
+  - cache-reusable-parquet-subsets
+  - plot-large-catalogs
+  excluded_uses:
+  - assume-anonymous-access-without-checking
+  - modify-or-delete-remote-objects
+  - publish-unreviewed-private-data
+  assumptions:
+  - endpoint-and-bucket-layout-are-known
+  - sufficient-local-cache-storage
+  - user-supplies-required-s3-credentials
+  known_failure_modes:
+  - authentication-failure
+  - insufficient-local-storage
+  - remote-schema-or-prefix-change
+  - unbounded-eager-read
+  keywords:
+  - astronomy
+  - dask
+  - data-engineering
+  - dataset
+  - hdf5
+  - parquet
+  - s3
+relations:
+  implements_tasks:
+  - task:astronomy/s3-catalog-access
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:astro-catalog-plotting-cache
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - dask[dataframe]==2026.7.1
+  - hvplot==0.12.2
+  - datashader==0.19.1
+  - pyarrow==25.0.0
+  - pandas==3.0.5
+  - s3fs==2026.6.0
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: data.aip.de
+    protocols:
+    - https
+    - s3
+  - host: s3.data.aip.de:9000
+    protocols:
+    - https
+    - s3
+  - host: user-specified-s3-endpoint
+    protocols:
+    - https
+    - s3
+  processes:
+  - python
+  named_secrets:
+  - s3-credentials
+  external_side_effects:
+  - download-dataset-objects
+  - write-local-cache
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: true
+  maximum_runtime_seconds: 7200
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/data-aip-de-s3
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/data-aip-de-s3
+    digest: sha256:7be230499845f10190f5cd79cb91e80bf737ead0f963e82db37be69df81a73e7
+    relation: source
+extensions:
+  de.aip.ori:
+    schema: urn:skill-commons:extension:de.aip.ori:1
+    required: false
+    data:
+      discovery:
+        tags:
+        - astronomy
+        - s3
+        - parquet
+        - hdf5
+        - dataset
+        - data-engineering
+        - dask
+        legacy_category: astronomy
+        related_skill_candidates:
+        - shboost24-cmd
+        - s3-parquet-sampling
+        - hdf5-on-s3-cached
+        - dask-hvplot-datashader-scientific-plots

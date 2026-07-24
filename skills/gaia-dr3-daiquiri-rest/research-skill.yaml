@@ -1,0 +1,163 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: gaia-dr3-daiquiri-rest
+  version: 1.0.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-daiquiri-rest
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: mixed
+  agent:
+    client: AstroAgent
+research:
+  disciplines:
+  - astronomy
+  methods:
+  - asynchronous-catalog-query
+  - job-polling
+  - postgresql-query
+  software:
+  - curl
+  - Daiquiri
+  data_sources:
+  - Gaia-DR3
+  - gaia.aip.de
+  intended_uses:
+  - count-gaia-dr3-rows
+  - fetch-daiquiri-query-results
+  - run-large-gaia-dr3-scans
+  excluded_uses:
+  - launch-unbounded-concurrent-jobs
+  - use-random-full-table-sort
+  - write-or-modify-gaia-catalog-data
+  assumptions:
+  - daiquiri-api-and-queue-names-remain-compatible
+  - foreground-polling-remains-active
+  - network-access-is-available
+  known_failure_modes:
+  - csrf-token-expiry
+  - job-timeout
+  - queue-name-change
+  - rest-api-change
+  keywords:
+  - adql
+  - astronomy
+  - daiquiri
+  - gaia-aip
+  - gaia-dr3
+  - postgresql
+  - rest-api
+relations:
+  implements_tasks:
+  - task:astronomy/gaia-daiquiri-query
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:gaia-dr3-tap-query
+  - skill:tap-pyvo-adql-access
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python: []
+  system:
+  - awk==20200816
+  - curl==8.7.1
+  - grep==2.6.0-FreeBSD
+  - mktemp@Darwin-25.5.0
+  - rmdir@Darwin-25.5.0
+  - seq@Darwin-25.5.0
+  - sleep@Darwin-25.5.0
+  - unlink@Darwin-25.5.0
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: temporary
+    access: read-write
+  network:
+  - host: gaia.aip.de
+    protocols:
+    - https
+  processes:
+  - awk
+  - curl
+  - grep
+  - mktemp
+  - python
+  - rmdir
+  - seq
+  - sleep
+  - unlink
+  named_secrets: []
+  external_side_effects:
+  - create-temporary-session-cookie
+  - submit-remote-query-job
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: true
+  maximum_runtime_seconds: 7200
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/gaia-dr3-daiquiri-rest
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-daiquiri-rest
+    digest: sha256:1fc80d2ffaf69c9eb24b63ad630fb40d5a734e047edf92d681be6e95fe165bd7
+    relation: source
+extensions:
+  de.aip.ori:
+    schema: urn:skill-commons:extension:de.aip.ori:1
+    required: false
+    data:
+      discovery:
+        tags:
+        - astronomy
+        - gaia-dr3
+        - postgresql
+        - adql
+        - daiquiri
+        - rest-api
+        - gaia-aip
+        legacy_category: astronomy
+        related_skill_candidates:
+        - gaia-dr3-tap-query
+        - rave-dr6
+        - shboost24-cmd
+        - starhorse-access

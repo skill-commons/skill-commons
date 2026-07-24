@@ -1,0 +1,595 @@
+schema_version: 0.1.0-draft
+package:
+  coordinate: aip/s3-parquet-sampling
+  version: 1.1.0
+manifest_digest: sha256:e6d50e04c7edc562dfd38faf9e2d5f8729ebea7981280e684e3e570c4c27bf91
+resolutions:
+- id: macos-arm64-cpython-3.12
+  target:
+    operating_system: macos
+    architecture: arm64
+    python_implementation: cpython
+    python_version: '3.12'
+  resolver:
+    name: uv
+    version: 0.10.12
+  requirements_digest: sha256:e89dba7573be0f04fc4e1c2250bd09a32ef401c5a9b233ed5697d298f5bb3cc1
+  python:
+  - name: aiobotocore
+    version: 3.8.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/aiobotocore/
+    artifact:
+      url: https://files.pythonhosted.org/packages/6d/f4/5a7d76dc844d3ff8ed1f1a043158aa393794aebb787d3e2f8c0fe87f674f/aiobotocore-3.8.0-py3-none-any.whl
+      sha256: 8bc605132cadfe844a3f334635a0a64fa5e360a4a206e915d99d53db5b6deeba
+  - name: aiohappyeyeballs
+    version: 2.7.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/aiohappyeyeballs/
+    artifact:
+      url: https://files.pythonhosted.org/packages/71/43/1947f06babed6b3f1d7f38b0c767f52df66bfb2bc10b468c4a7de9eceff2/aiohappyeyeballs-2.7.1-py3-none-any.whl
+      sha256: 9243213661e29250eb41368e5daa826fc017156c3b8a11440826b2e3ed376472
+  - name: aiohttp
+    version: 3.14.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/aiohttp/
+    artifact:
+      url: https://files.pythonhosted.org/packages/30/07/4bbc222cc8dbe31d4c3e8a5baad2286e4d42026ac0c570027b89afce6344/aiohttp-3.14.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 617105e2c3018ee38d0c8ce5ee3c84f621a6d8b9f723202aacaff28449ca91ee
+  - name: aioitertools
+    version: 0.13.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/aioitertools/
+    artifact:
+      url: https://files.pythonhosted.org/packages/10/a1/510b0a7fadc6f43a6ce50152e69dbd86415240835868bb0bd9b5b88b1e06/aioitertools-0.13.0-py3-none-any.whl
+      sha256: 0be0292b856f08dfac90e31f4739432f4cb6d7520ab9eb73e143f4f2fa5259be
+  - name: aiosignal
+    version: 1.4.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/aiosignal/
+    artifact:
+      url: https://files.pythonhosted.org/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl
+      sha256: 053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e
+  - name: attrs
+    version: 26.1.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/attrs/
+    artifact:
+      url: https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl
+      sha256: c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309
+  - name: bokeh
+    version: 3.9.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/bokeh/
+    artifact:
+      url: https://files.pythonhosted.org/packages/f3/54/40ff985187f0fd1afcedebc23eda0ba92bdbea1e0605cbb878b45391e5e0/bokeh-3.9.1-py3-none-any.whl
+      sha256: 8bf2aae574509055fbd6b68f023046bebc91b0bbd631d204d0d60863b4237dbd
+  - name: botocore
+    version: 1.43.46
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/botocore/
+    artifact:
+      url: https://files.pythonhosted.org/packages/0e/f2/4bd8f2f419088feb3ce55f0ca91040ff902f402edfd197450b20a2e1d533/botocore-1.43.46-py3-none-any.whl
+      sha256: cb673891e623ae6e6a1bf24d94ef169504f3eb02584adb5d5bee2f6aae819b60
+  - name: certifi
+    version: 2026.7.22
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/certifi/
+    artifact:
+      url: https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl
+      sha256: 62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775
+  - name: charset-normalizer
+    version: 3.4.9
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/charset-normalizer/
+    artifact:
+      url: https://files.pythonhosted.org/packages/70/4a/ecbd131485c07fcdfad54e28946d513e3da22ef3b4bd854dcafae54ec739/charset_normalizer-3.4.9-cp312-cp312-macosx_10_13_universal2.whl
+      sha256: 45b0cc4e3556cd875e09102988d1ab8356c998b596c9fced84547c8138b487a0
+  - name: click
+    version: 8.4.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/click/
+    artifact:
+      url: https://files.pythonhosted.org/packages/fb/e2/79c688af8b210d232694e31e59da9f6ec747bae31c3f5946e4e9b98860d5/click-8.4.2-py3-none-any.whl
+      sha256: e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76
+  - name: cloudpickle
+    version: 3.1.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/cloudpickle/
+    artifact:
+      url: https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl
+      sha256: 9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a
+  - name: colorcet
+    version: 3.2.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/colorcet/
+    artifact:
+      url: https://files.pythonhosted.org/packages/1b/24/e95471ae93c08d3606c9c7343cf65d490f154daa88b50581957a0aa780f4/colorcet-3.2.1-py3-none-any.whl
+      sha256: 3f6fde13cef2169222dd5fe2a2bf847c02d644470fdf167ed566f6421df470f7
+  - name: contourpy
+    version: 1.3.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/contourpy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/53/3e/405b59cfa13021a56bba395a6b3aca8cec012b45bf177b0eaf7a202cde2c/contourpy-1.3.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 556dba8fb6f5d8742f2923fe9457dbdd51e1049c4a43fd3986a0b14a1d815fc6
+  - name: dask
+    version: 2026.7.1
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/dask/
+    artifact:
+      url: https://files.pythonhosted.org/packages/7e/5f/7c22733da92b3a6cc4dddcaa8731089d213c2790bbc997e51c429a4e8f8b/dask-2026.7.1-py3-none-any.whl
+      sha256: 985ffd6c5e9d7979ede515e84ae8d39b647d6aa64f77600f15714ff65f578fe6
+  - name: datashader
+    version: 0.19.1
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/datashader/
+    artifact:
+      url: https://files.pythonhosted.org/packages/cb/41/247627c8b9fef5c605d00546b85771a8fe42975b9616a557cead5468789b/datashader-0.19.1-py3-none-any.whl
+      sha256: 7ce7154ff3ed070607f429355f57002fee5a17964e47c0b6447eeafe8cef9c82
+  - name: frozenlist
+    version: 1.8.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/frozenlist/
+    artifact:
+      url: https://files.pythonhosted.org/packages/2b/94/5c8a2b50a496b11dd519f4a24cb5496cf125681dd99e94c604ccdea9419a/frozenlist-1.8.0-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: f833670942247a14eafbb675458b4e61c82e002a148f49e68257b79296e865c4
+  - name: fsspec
+    version: 2026.6.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/fsspec/
+    artifact:
+      url: https://files.pythonhosted.org/packages/e5/22/4222d7ddf3da30f363edaa98e329c2bce6c65497c9cb2810931c8b2c0fbc/fsspec-2026.6.0-py3-none-any.whl
+      sha256: 02e0b71817df9b2169dc30a16832045764def1191b43dcff5bb85bdee212d2a1
+  - name: holoviews
+    version: 1.23.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/holoviews/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ed/b4/3755e3b3f791eefad4131f661ae04eaf70aabd6fc877f41f533e28607a5d/holoviews-1.23.1-py3-none-any.whl
+      sha256: 43960a6e945aff019816b109873e3088c45c7413f1b679c4dfd1821e2af1a64c
+  - name: hvplot
+    version: 0.12.2
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/hvplot/
+    artifact:
+      url: https://files.pythonhosted.org/packages/11/cd/ec193e471780dfad60e44ded5526c123695c1354910edd537d7aa1d22094/hvplot-0.12.2-py3-none-any.whl
+      sha256: 0687e2e4d2eeb035c437af0011922abff856054299c121914d903a02b1bb1b22
+  - name: idna
+    version: '3.18'
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/idna/
+    artifact:
+      url: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
+      sha256: 7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2
+  - name: jinja2
+    version: 3.1.6
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/jinja2/
+    artifact:
+      url: https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl
+      sha256: 85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67
+  - name: jmespath
+    version: 1.1.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/jmespath/
+    artifact:
+      url: https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl
+      sha256: a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64
+  - name: linkify-it-py
+    version: 2.1.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/linkify-it-py/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b4/de/88b3be5c31b22333b3ca2f6ff1de4e863d8fe45aaea7485f591970ec1d3e/linkify_it_py-2.1.0-py3-none-any.whl
+      sha256: 0d252c1594ecba2ecedc444053db5d3a9b7ec1b0dd929c8f1d74dce89f86c05e
+  - name: llvmlite
+    version: 0.48.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/llvmlite/
+    artifact:
+      url: https://files.pythonhosted.org/packages/92/a2/28696a9e61e245d1a79816d29d106692a90a2b6e7d78c98b326db70827af/llvmlite-0.48.0-cp312-cp312-macosx_12_0_arm64.whl
+      sha256: d66c3beb4209087ddd4cf4ed2a0856b6887e6a913bdcf1aacfec9851cf2cba4e
+  - name: locket
+    version: 1.0.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/locket/
+    artifact:
+      url: https://files.pythonhosted.org/packages/db/bc/83e112abc66cd466c6b83f99118035867cecd41802f8d044638aa78a106e/locket-1.0.0-py2.py3-none-any.whl
+      sha256: b6c819a722f7b6bd955b80781788e4a66a55628b858d347536b7e81325a3a5e3
+  - name: markdown
+    version: 3.10.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/markdown/
+    artifact:
+      url: https://files.pythonhosted.org/packages/de/1f/77fa3081e4f66ca3576c896ae5d31c3002ac6607f9747d2e3aa49227e464/markdown-3.10.2-py3-none-any.whl
+      sha256: e91464b71ae3ee7afd3017d9f358ef0baf158fd9a298db92f1d4761133824c36
+  - name: markdown-it-py
+    version: 4.2.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/markdown-it-py/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl
+      sha256: 9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a
+  - name: markupsafe
+    version: 3.0.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/markupsafe/
+    artifact:
+      url: https://files.pythonhosted.org/packages/9a/81/7e4e08678a1f98521201c3079f77db69fb552acd56067661f8c2f534a718/markupsafe-3.0.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 1872df69a4de6aead3491198eaf13810b565bdbeec3ae2dc8780f14458ec73ce
+  - name: mdit-py-plugins
+    version: 0.6.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/mdit-py-plugins/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a5/69/6da5581c6a7fede7dc261bf4e67d6adca4196f176b43288b55b3db395b6e/mdit_py_plugins-0.6.1-py3-none-any.whl
+      sha256: 214c82fb2ac524472ab6a5bcab1de80f73b50443e187f401bfd77efbc7c6481d
+  - name: mdurl
+    version: 0.1.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/mdurl/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl
+      sha256: 84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8
+  - name: multidict
+    version: 6.7.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/multidict/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a9/65/1caac9d4cd32e8433908683446eebc953e82d22b03d10d41a5f0fefe991b/multidict-6.7.1-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: b0fa96985700739c4c7853a43c0b3e169360d6855780021bfc6d0f1ce7c123e7
+  - name: multipledispatch
+    version: 1.0.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/multipledispatch/
+    artifact:
+      url: https://files.pythonhosted.org/packages/51/c0/00c9809d8b9346eb238a6bbd5f83e846a4ce4503da94a4c08cb7284c325b/multipledispatch-1.0.0-py3-none-any.whl
+      sha256: 0c53cd8b077546da4e48869f49b13164bebafd0c2a5afceb6bb6a316e7fb46e4
+  - name: narwhals
+    version: 2.24.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/narwhals/
+    artifact:
+      url: https://files.pythonhosted.org/packages/7e/85/a5bfaebfd305ac18b57b0854d74e37e586809061a91fda62f0bd50c8518e/narwhals-2.24.0-py3-none-any.whl
+      sha256: 42fdedf44e5b2ca7505630d45b4ac3058f38d8485cba9fe1652ca23152df7489
+  - name: nh3
+    version: 0.3.6
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/nh3/
+    artifact:
+      url: https://files.pythonhosted.org/packages/f3/ab/a7653bce9a3b204be6a6931767a9e23595807bb84790ce6685e4d7e5bd08/nh3-0.3.6-cp38-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl
+      sha256: a43ebd7543555c3ac1bc353023d0794e75cb76f6f18f19c32e95441496c0cc25
+  - name: numba
+    version: 0.66.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/numba/
+    artifact:
+      url: https://files.pythonhosted.org/packages/62/a3/70deb7f88461c1cd5d16aa990c2380604102661a427667b8950dcdccc27f/numba-0.66.0-cp312-cp312-macosx_12_0_arm64.whl
+      sha256: 53ca5900b7cab15109796030113a6b28576bae5ad7bb507ad6dd1360ddd81ba4
+  - name: numpy
+    version: 2.4.6
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/numpy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ad/fe/c0a6b7b2ca128a8fb228575147073b660656734b8ebe4d76c8fd748dcc79/numpy-2.4.6-cp312-cp312-macosx_14_0_arm64.whl
+      sha256: 3213d622a0283a39a93d188f3cf72b26862df52fbb4ca3697f51705016523d41
+  - name: packaging
+    version: '26.2'
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/packaging/
+    artifact:
+      url: https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl
+      sha256: 5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e
+  - name: pandas
+    version: 3.0.5
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pandas/
+    artifact:
+      url: https://files.pythonhosted.org/packages/68/56/fbe81c09195924d8b7b8d4461a20458fe80a6a5ed6b24f0314da684277e1/pandas-3.0.5-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: c2e26bb46934b8a2ca0c3de1d3d606fc5f6746584791b2db264d58cf370e08dc
+  - name: panel
+    version: 1.9.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/panel/
+    artifact:
+      url: https://files.pythonhosted.org/packages/19/0c/121f4a7d7be7ddbbc9923f3d5c687cb77e3958b2a2e812be69fd76461e4f/panel-1.9.3-py3-none-any.whl
+      sha256: 46e8d82541b7ae47d2c2393dd746800b95fa7ad8eb545cc39ab5f366ba00a664
+  - name: panel-material-ui
+    version: 0.14.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/panel-material-ui/
+    artifact:
+      url: https://files.pythonhosted.org/packages/36/f2/4dac7c73673dd2b824aa9c539cbcbec3fadb5b602009ac3fa634f8d00438/panel_material_ui-0.14.0-py3-none-any.whl
+      sha256: 152e09fc0b903e37d3b45bf8d3018cc3360b9112588a80c1254c3da3f3c2f22d
+  - name: param
+    version: 2.4.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/param/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ac/37/1351bbfabbacbe92cd38774f8779ff680fab48c36b5fed9bcfe0c160009c/param-2.4.1-py3-none-any.whl
+      sha256: 6cdc0869b3ade232fc6d01691223cf86c2bdb53a6d5ba67a33dba838d8b8cf4c
+  - name: partd
+    version: 1.4.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/partd/
+    artifact:
+      url: https://files.pythonhosted.org/packages/71/e7/40fb618334dcdf7c5a316c0e7343c5cd82d3d866edc100d98e29bc945ecd/partd-1.4.2-py3-none-any.whl
+      sha256: 978e4ac767ec4ba5b86c6eaa52e5a2a3bc748a2ca839e8cc798f1cc6ce6efb0f
+  - name: pillow
+    version: 12.3.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pillow/
+    artifact:
+      url: https://files.pythonhosted.org/packages/d8/66/9a386a92561f402389a4fc70c18838bf6d35eb5eb5c6850b4b2dc64f5048/pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: ffd0c5368496f41b0944be820fcb7a838aa6e623d250b01acf2643939c3f99d7
+  - name: propcache
+    version: 0.5.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/propcache/
+    artifact:
+      url: https://files.pythonhosted.org/packages/2c/7d/49777a3e20b55863d4794384a38acd460c04157b0a00f8602b0d508b8431/propcache-0.5.2-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: e5cbfac9f61484f7e9f3597775500cd3ebe8274e9b050c38f9525c77c97520bf
+  - name: pyarrow
+    version: 25.0.0
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyarrow/
+    artifact:
+      url: https://files.pythonhosted.org/packages/73/44/fdd3a4377807b7dcabe2d4b5aa99dbbc98e2e5df3f1ca4e7f0aec492d987/pyarrow-25.0.0-cp312-cp312-macosx_12_0_arm64.whl
+      sha256: 149730a3d1f0fb59d663a0b8aa210adfd9c17c27cd94a0d143e60daea8320d4e
+  - name: pyct
+    version: 0.6.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyct/
+    artifact:
+      url: https://files.pythonhosted.org/packages/8c/b2/23f4032cd1c9744aa8e9ecda43cd4d755fcb209f7f40fae035248f31a679/pyct-0.6.0-py3-none-any.whl
+      sha256: cfaded7289fca72ddf6579b81459e3ec8db323a508e61c49aa318ee3cd6ff160
+  - name: python-dateutil
+    version: 2.9.0.post0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/python-dateutil/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+      sha256: a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+  - name: pyviz-comms
+    version: 3.0.6
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyviz-comms/
+    artifact:
+      url: https://files.pythonhosted.org/packages/13/5a/f8c0868199bbb231a02616286ce8a4ccb85f5387b9215510297dcfedd214/pyviz_comms-3.0.6-py3-none-any.whl
+      sha256: 4eba6238cd4a7f4add2d11879ce55411785b7d38a7c5dba42c7a0826ca53e6c2
+  - name: pyyaml
+    version: 6.0.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyyaml/
+    artifact:
+      url: https://files.pythonhosted.org/packages/89/a0/6cf41a19a1f2f3feab0e9c0b74134aa2ce6849093d5517a0c550fe37a648/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0
+  - name: requests
+    version: 2.34.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/requests/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl
+      sha256: 2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0
+  - name: s3fs
+    version: 2026.6.0
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/s3fs/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a5/0b/f68a968b49876eae0f2a515387093cebb2eb9451380a96741cc20efac0d0/s3fs-2026.6.0-py3-none-any.whl
+      sha256: 60576e31bb31193c1f643f32b4c6439548720ea6918ac702e21cd757c80b5db8
+  - name: scipy
+    version: 1.18.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/scipy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/9b/2d/11dd93d21e147a73ba22bd75c0b9208d3a2e0ec76d53170ce7d9029b1015/scipy-1.18.0-cp312-cp312-macosx_14_0_arm64.whl
+      sha256: 9ab7b758be6940954a713ee466e2043e9f6e2ed965c1fce5c91039f4be3d90a9
+  - name: six
+    version: 1.17.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/six/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+      sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
+  - name: toolz
+    version: 1.1.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/toolz/
+    artifact:
+      url: https://files.pythonhosted.org/packages/fb/12/5911ae3eeec47800503a238d971e51722ccea5feb8569b735184d5fcdbc0/toolz-1.1.0-py3-none-any.whl
+      sha256: 15ccc861ac51c53696de0a5d6d4607f99c210739caf987b5d2054f3efed429d8
+  - name: tornado
+    version: 6.5.7
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/tornado/
+    artifact:
+      url: https://files.pythonhosted.org/packages/02/dc/c7043cab6fed8ae159fc1923ce829ada35c4dbd797d408a43858ffaf9639/tornado-6.5.7-cp39-abi3-macosx_10_9_universal2.whl
+      sha256: 148b2eb15c2c765a50796172c1e499649b35f30d2e3c3d3e15913cfa56bfb163
+  - name: tqdm
+    version: 4.69.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/tqdm/
+    artifact:
+      url: https://files.pythonhosted.org/packages/01/50/5817619a0fca56aff06383dbfde7ae017b3ca383915b3f1e4713164273cf/tqdm-4.69.1-py3-none-any.whl
+      sha256: 0a654b96f7a2660cceb615b56f307ec2bef96c515409014a429a561981ab52b4
+  - name: typing-extensions
+    version: 4.16.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/typing-extensions/
+    artifact:
+      url: https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl
+      sha256: 481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8
+  - name: uc-micro-py
+    version: 2.0.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/uc-micro-py/
+    artifact:
+      url: https://files.pythonhosted.org/packages/61/73/d21edf5b204d1467e06500080a50f79d49ef2b997c79123a536d4a17d97c/uc_micro_py-2.0.0-py3-none-any.whl
+      sha256: 3603a3859af53e5a39bc7677713c78ea6589ff188d70f4fee165db88e22b242c
+  - name: urllib3
+    version: 2.7.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/urllib3/
+    artifact:
+      url: https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl
+      sha256: 9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
+  - name: wrapt
+    version: 2.2.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/wrapt/
+    artifact:
+      url: https://files.pythonhosted.org/packages/94/f2/21c90f2a16689702e2aaff45795b11018dff2c9b1242bac10d225483f676/wrapt-2.2.2-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 0e7070c7472582e31af3dfc2622b2381a0df7435110a9388ed8db5ffbce67efb
+  - name: xarray
+    version: 2026.7.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/xarray/
+    artifact:
+      url: https://files.pythonhosted.org/packages/57/5b/28365212062939d213802e5e5fe855cdb231e1c2a93254ba1690066504e3/xarray-2026.7.0-py3-none-any.whl
+      sha256: bf9dd130b93806dc78e90c1b7ac24851b31557b888674c53622235691cf21824
+  - name: xyzservices
+    version: 2026.3.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/xyzservices/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a8/a9/d23012099dc88ec69a29c6407b41d89681cb674c2043cd5b467c7e299c08/xyzservices-2026.3.0-py3-none-any.whl
+      sha256: 503183d4b322bfebc3c50cdd21192aa3e81e36c5efbf9133d54ae82143e0576b
+  - name: yarl
+    version: 1.24.5
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/yarl/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ea/b4/05b4131c407006cd1e410e9c6539f16a0945724677e5364447313c15ea3e/yarl-1.24.5-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 9d399bdcfb4a0f659b9b3788bbc89babe63d9a6a65aacdf4d4e7065ff2e6316c
+  system: []
+  containers: []

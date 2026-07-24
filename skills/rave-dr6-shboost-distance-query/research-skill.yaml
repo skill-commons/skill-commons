@@ -1,0 +1,138 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: rave-dr6-shboost-distance-query
+  version: 0.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-shboost-distance-query
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: unknown
+research:
+  disciplines:
+  - astronomy
+  - stellar-astrophysics
+  methods:
+  - catalog-crossmatch
+  - galactocentric-projection
+  - tap-query
+  software:
+  - Matplotlib
+  - pandas
+  - PyArrow
+  data_sources:
+  - RAVE-DR6
+  - SHboost-2024
+  - RAVE-TAP
+  - data.aip.de
+  intended_uses:
+  - crossmatch-rave-with-shboost
+  - query-rave-stars-with-distance-estimates
+  - visualize-nearby-rave-shboost-matches
+  excluded_uses:
+  - assume-crossmatch-completeness
+  - redistribute-source-catalogs
+  - treat-model-distances-as-exact
+  assumptions:
+  - gaia-source-id-semantics-match
+  - public-shboost-object-remains-available
+  - rave-pagination-key-is-monotonic
+  known_failure_modes:
+  - crossmatch-yield-is-low
+  - duplicate-source-ids
+  - remote-parquet-download-failure
+  - tap-pagination-failure
+  - votable-namespace-change
+  keywords:
+  - distance
+  - galactocentric
+  - rave
+  - shboost
+  - tap
+relations:
+  implements_tasks:
+  - task:astronomy/rave-shboost-crossmatch
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:rave-dr6
+  - skill:rave-dr6-starhorse-access
+  - skill:starhorse-access
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  - matplotlib==3.11.1
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: www.rave-survey.org
+    protocols:
+    - https
+    - tap
+  - host: s3.data.aip.de:9000
+    protocols:
+    - https
+  processes:
+  - python
+  named_secrets: []
+  external_side_effects:
+  - download-catalog-file
+  - submit-tap-query
+  - write-crossmatch-cache
+  - write-figure-files
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: true
+  maximum_runtime_seconds: 7200
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/rave-dr6-shboost-distance-query
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-shboost-distance-query
+    digest: sha256:b77956980174ee78512ebfa6a322011e0ed84548435d6dcf7511b40ffd3e16af
+    relation: source

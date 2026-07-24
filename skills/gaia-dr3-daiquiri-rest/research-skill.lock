@@ -1,0 +1,43 @@
+schema_version: 0.1.0-draft
+package:
+  coordinate: aip/gaia-dr3-daiquiri-rest
+  version: 1.0.0
+manifest_digest: sha256:52973f7803e6514affb37cf46b5b0c9778242889125b687ae391714cffe5c428
+resolutions:
+- id: macos-arm64-cpython-3.12
+  target:
+    operating_system: macos
+    architecture: arm64
+    python_implementation: cpython
+    python_version: 3.12.4
+  resolver:
+    name: local-tool-inspection
+    version: '1'
+  requirements_digest: sha256:6a864eae5e87dd31d61a36c9593f9b23f752c3e4afc75033beaf7cf3fed4ed36
+  python: []
+  system:
+  - name: awk
+    version: '20200816'
+    manager: macos-system
+  - name: curl
+    version: 8.7.1
+    manager: macos-system
+  - name: grep
+    version: 2.6.0-FreeBSD
+    manager: macos-system
+  - name: mktemp
+    version: Darwin-25.5.0
+    manager: macos-system
+  - name: rmdir
+    version: Darwin-25.5.0
+    manager: macos-system
+  - name: seq
+    version: Darwin-25.5.0
+    manager: macos-system
+  - name: sleep
+    version: Darwin-25.5.0
+    manager: macos-system
+  - name: unlink
+    version: Darwin-25.5.0
+    manager: macos-system
+  containers: []

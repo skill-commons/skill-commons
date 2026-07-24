@@ -1,0 +1,163 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: gaia-dr3-plot-with-dust
+  version: 2.0.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-plot-with-dust
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - astronomy
+  - galactic-astronomy
+  methods:
+  - catalog-query
+  - coordinate-projection
+  - dust-extinction-overlay
+  - scientific-visualization
+  software:
+  - Astropy
+  - dustmaps
+  - Matplotlib
+  - pandas
+  - PyVO
+  data_sources:
+  - Gaia-DR3
+  - SFD-dust-map
+  - gaia.aip.de
+  intended_uses:
+  - plot-nearby-gaia-stars
+  - produce-dust-context-figures
+  - write-reproducible-catalog-subsets
+  excluded_uses:
+  - interpret-two-dimensional-projection-as-physical-distance
+  - redistribute-source-catalogs
+  - treat-sfd-extinction-as-object-distance
+  assumptions:
+  - gaia-tap-schema-remains-compatible
+  - network-access-is-available
+  - sfd-map-license-and-citation-terms-are-followed
+  known_failure_modes:
+  - dust-map-download-failure
+  - gaia-tap-timeout
+  - missing-catalog-values
+  - projection-or-extent-mismatch
+  keywords:
+  - astronomy
+  - dust
+  - extinction
+  - gaia-dr3
+  - plotting
+  - pyvo
+relations:
+  implements_tasks:
+  - task:astronomy/gaia-dust-visualization
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:gaia-dr3-tap-query
+  - skill:seaborn-paper-plots
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - pyvo==1.9.1
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  - matplotlib==3.11.1
+  - dustmaps==1.0.14
+  - astropy==8.0.1
+  - numpy==2.5.1
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: gaia.aip.de
+    protocols:
+    - https
+    - tap
+  - host: dataverse.harvard.edu
+    protocols:
+    - https
+  processes:
+  - python
+  named_secrets: []
+  external_side_effects:
+  - download-dust-map
+  - submit-tap-query
+  - write-catalog-cache
+  - write-figure-files
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: true
+  maximum_runtime_seconds: 1800
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/gaia-dr3-plot-with-dust
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-plot-with-dust
+    digest: sha256:46c51e54444d15a447d041e07cb8ff40ede83b73d316637a8dbc56554de49d64
+    relation: source
+extensions:
+  de.aip.ori:
+    schema: urn:skill-commons:extension:de.aip.ori:1
+    required: false
+    data:
+      discovery:
+        tags:
+        - astronomy
+        - gaia-dr3
+        - dust
+        - extinction
+        - plotting
+        - pyvo
+        legacy_category: astronomy
+        related_skill_candidates:
+        - gaia-dr3-tap-query
+        - cmd-plotting
+        - seaborn-paper-plots

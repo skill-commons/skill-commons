@@ -1,0 +1,64 @@
+schema_version: 0.1.0-draft
+package:
+  coordinate: aip/rave-dr6-starhorse-access
+  version: 1.0.0
+manifest_digest: sha256:b7c474eddea00d633993bcb45b754d1819a93e23b64e262452587a17fea048a3
+resolutions:
+- id: macos-arm64-cpython-3.12
+  target:
+    operating_system: macos
+    architecture: arm64
+    python_implementation: cpython
+    python_version: 3.12.4
+  resolver:
+    name: pip
+    version: 26.1.2
+  requirements_digest: sha256:a5afebfef2b333a3822b5ea9b2d761c7353d1fe7ab0b66b6653e54eda91e9398
+  python:
+  - name: numpy
+    version: 2.5.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/numpy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/42/77/fdf34a71dd30f54979b18603bee915e0aaf825b07afe79acd60b04b691e2/numpy-2.5.1-cp312-cp312-macosx_14_0_arm64.whl
+      sha256: 78798bd5b9ad744056af8efa90e3b9ddaa53272a0848a483084a1cc0a13b2dc0
+  - name: pandas
+    version: 3.0.5
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pandas/
+    artifact:
+      url: https://files.pythonhosted.org/packages/68/56/fbe81c09195924d8b7b8d4461a20458fe80a6a5ed6b24f0314da684277e1/pandas-3.0.5-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: c2e26bb46934b8a2ca0c3de1d3d606fc5f6746584791b2db264d58cf370e08dc
+  - name: pyarrow
+    version: 25.0.0
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyarrow/
+    artifact:
+      url: https://files.pythonhosted.org/packages/73/44/fdd3a4377807b7dcabe2d4b5aa99dbbc98e2e5df3f1ca4e7f0aec492d987/pyarrow-25.0.0-cp312-cp312-macosx_12_0_arm64.whl
+      sha256: 149730a3d1f0fb59d663a0b8aa210adfd9c17c27cd94a0d143e60daea8320d4e
+  - name: python-dateutil
+    version: 2.9.0.post0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/python-dateutil/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+      sha256: a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+  - name: six
+    version: 1.17.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/six/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+      sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
+  system: []
+  containers: []
