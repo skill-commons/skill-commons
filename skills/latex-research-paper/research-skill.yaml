@@ -1,0 +1,123 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: latex-research-paper
+  version: 0.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/latex-research-paper
+authorship:
+  status: verified
+  contributors:
+  - name: Hermes Agent
+    role: author
+  - name: Tom Tong
+    orcid: 0000-0001-6014-5031
+    role: curator
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - research-writing
+  methods:
+  - manuscript-drafting
+  - bibliography-management
+  - scientific-figure-generation
+  - compilation-verification
+  software:
+  - LaTeX
+  - BibTeX
+  - matplotlib
+  data_sources:
+  - user-provided-research-material
+  - verified-bibliographic-metadata
+  intended_uses:
+  - draft-latex-research-paper
+  - structure-academic-manuscript
+  - compile-reviewable-pdf
+  excluded_uses:
+  - invent-authors-or-citations
+  - invent-data-or-results
+  - represent-draft-as-peer-reviewed
+  assumptions:
+  - user-supplies-or-approves-scientific-content
+  - required-tex-tools-are-available
+  known_failure_modes:
+  - latex-compilation-error
+  - unresolved-citation
+  - missing-figure
+  - unsupported-scientific-claim
+  keywords:
+  - latex
+  - academic-writing
+  - research-paper
+  - bibtex
+  - figures
+relations:
+  implements_tasks:
+  - task:research/latex-paper-drafting
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:latex-paper-iteration
+  - skill:multi-section-latex-whitepaper
+compatibility:
+  clients: []
+  operating_systems:
+  - linux
+  - macos
+  architectures: []
+  python: null
+dependencies:
+  completeness: complete
+  python: []
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network: []
+  processes:
+  - pdflatex
+  - bibtex
+  - python3
+  named_secrets: []
+  external_side_effects:
+  - create-manuscript-files
+  - generate-figures
+  - generate-pdf
+  paid_services: []
+validation:
+  contracts: []
+  network_required: false
+  maximum_runtime_seconds: 7200
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
+    scheme: source-tree-population
+    value: latex-research-paper@0.1.0
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:research/latex-research-paper
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/latex-research-paper
+    digest: sha256:415ad60e843d1dbcc9225b66fbd3843185246cf7aeb6b30580202a74526c4eec
+    relation: source
