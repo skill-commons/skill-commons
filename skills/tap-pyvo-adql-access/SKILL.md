@@ -41,7 +41,8 @@ Use this skill when the user asks to:
 - discover schemas/tables/columns from a TAP service;
 - cache TAP query results for plotting or REANA.
 
-Use `gaia-aip-data-access` for Gaia@AIP details and `rave-dr6-data-access` for RAVE-specific table names and survey caveats.
+Use `gaia-dr3-tap-query` for Gaia@AIP details and `rave-dr6` for RAVE-specific
+table names and survey caveats.
 
 ## Procedure
 
@@ -147,24 +148,11 @@ Use service-specific metadata pages when available; they are often faster and mo
 
 ## Optional REANA use
 
-If a separately installed `reana-operator` skill is available, package the TAP query as
-`analysis.py` and run:
-
-```bash
-python reana-workflows/reana-operator/scripts/reana_operator.py task \
-  --project /tmp/tap-task \
-  --task "TAP query and plot" \
-  --script analysis.py \
-  --output data.parquet \
-  --output preview.csv \
-  --environment-profile astro-ml \
-  --package pyvo \
-  --run --timestamp
-```
-
-`pyvo` may not be present in every modeled REANA environment, so add `--package pyvo`
-unless you have verified it is included. This optional path is not required for the
-portable TAP workflow.
+If a separately installed REANA client or operator skill is available, package the TAP
+query as `analysis.py`, declare `pyvo` as an environment dependency, and request the
+Parquet, preview, query, and provenance files as outputs. Follow that client's own
+invocation and approval workflow; this optional path is not required for portable TAP
+use.
 
 ## Common Pitfalls
 

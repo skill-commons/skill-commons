@@ -108,7 +108,8 @@ fig.savefig(f"{out}/allsky_density.png", dpi=130, bbox_inches="tight")
 - **Never `ORDER BY random()`** over the full table — it forces a full scan + sort (minutes → stuck).
 - For nearest-stars queries add a parallax floor (`WHERE parallax > 10`) so the sort is bounded.
 - Samples above the sync row cap: pass `maxrec=`; for >1M rows use `service.submit_job(q)` (async).
-- Save all outputs under the workspace (a topic folder) — never `/home/hermes/` or `/tmp`.
+- Save all outputs under the workspace (a topic folder); do not rely on
+  client-specific home directories or temporary storage.
 - **Keep queries in the foreground.** Run the query in a single foreground script — never launch it as a background process (terminal `background=true` / `notify_on_complete`). A detached query job keeps running after you stop and spawns stray completion nudges. A `run_sync` of a few hundred k rows returns in ~1 s; for a genuinely large scan use `service.submit_job(q)` and poll it *within* the foreground script. If you think you need millions of rows, subsample instead (`WHERE random_index < N`).
 - **Anchor selections to literature values.** When isolating a known object's members (e.g. an open cluster), set your parallax / proper-motion / distance cuts from its published values — not from whatever maximizes the star count.
 - **This service also speaks PostgreSQL (not only ADQL).** gaia.aip.de is a Daiquiri service: `service.submit_job(qstr, language='postgresql')` runs native PostgreSQL — the recipe many published notebooks for AIP-hosted tables use (e.g. StarHorse's `get_one_query`; see the `starhorse-access` skill). If a notebook/paper gives you a PostgreSQL query for an AIP table, run it VERBATIM with `language='postgresql'` — do NOT rewrite it into ADQL. Both languages work; rewriting is where errors creep in.

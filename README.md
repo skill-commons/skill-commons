@@ -11,8 +11,14 @@ dependency, capability, provenance, and client metadata can live beside `SKILL.m
 
 ## Browse the skills
 
+The hub currently publishes 30 complete skill directories spanning public astronomy
+data access, scalable Python/data workflows, and research-writing workflows. Good
+starting points include:
+
 | Skill | Version | What it does |
 |---|---:|---|
+| [`aip/tap-pyvo-adql-access`](skills/tap-pyvo-adql-access/) | `1.0.0` | Run portable, provenance-aware TAP/ADQL queries with PyVO. |
+| [`aip/gaia-dr3-tap-query`](skills/gaia-dr3-tap-query/) | `2.1.0` | Query Gaia DR3 through the public AIP TAP service. |
 | [`aip/starhorse-access`](skills/starhorse-access/) | `2.0.2` | Access StarHorse SHboost-2024 and SH21 EDR3 data through public Parquet and AIP TAP services. |
 
 The generated [human catalog](catalog/README.md) and
@@ -69,8 +75,11 @@ uv run ruff check .
 uv run ruff format --check .
 uv run pytest
 
-uv run skill-commons validate skills/starhorse-access --profile agent-skills
-uv run skill-commons validate skills/starhorse-access --profile commons-publication
+for skill in skills/*; do
+  uv run skill-commons validate "$skill" --profile agent-skills
+  uv run skill-commons validate "$skill" --profile commons-publication
+done
+
 uv run skill-commons catalog \
   --repository https://github.com/skill-commons/skill-commons \
   --check

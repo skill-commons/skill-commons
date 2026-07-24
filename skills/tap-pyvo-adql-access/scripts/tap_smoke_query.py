@@ -5,6 +5,7 @@ Examples:
   python tap_smoke_query.py --endpoint https://www.rave-survey.org/tap/ \
     --query 'SELECT TOP 1 * FROM ravedr6.dr6_x_gaiaedr3' --out /tmp/rave_probe
 """
+
 from __future__ import annotations
 
 import argparse
@@ -14,8 +15,12 @@ from pathlib import Path
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run a tiny TAP query and cache preview/provenance.")
-    parser.add_argument("--endpoint", required=True, help="TAP endpoint URL, e.g. https://www.rave-survey.org/tap/")
+    parser = argparse.ArgumentParser(
+        description="Run a tiny TAP query and cache preview/provenance."
+    )
+    parser.add_argument(
+        "--endpoint", required=True, help="TAP endpoint URL, e.g. https://www.rave-survey.org/tap/"
+    )
     parser.add_argument("--query", required=True, help="ADQL query; use TOP N, not LIMIT")
     parser.add_argument("--out", default="tap_probe", help="Output directory")
     args = parser.parse_args()

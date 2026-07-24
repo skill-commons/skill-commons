@@ -64,8 +64,7 @@ relations:
   implements_tasks:
   - task:astronomy/gaia-dr3-catalog-query
   derived_from: []
-  supersedes:
-  - skill:gaia-aip-data-access
+  supersedes: []
   compatible_with:
   - skill:tap-pyvo-adql-access
   related_to:
