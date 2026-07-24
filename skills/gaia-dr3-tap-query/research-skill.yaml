@@ -1,0 +1,143 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: gaia-dr3-tap-query
+  version: 2.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-tap-query
+authorship:
+  status: verified
+  contributors:
+  - name: Hermi (sorgenfresser) / AIP
+    role: author
+  - name: Tom Tong
+    orcid: 0000-0001-6014-5031
+    role: curator
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - astronomy
+  - galactic-astronomy
+  methods:
+  - adql-query
+  - catalog-access
+  - random-subsampling
+  - scientific-visualization
+  software:
+  - Astropy
+  - Gaia
+  - pandas
+  - PyVO
+  data_sources:
+  - Gaia DR3
+  - gaia.aip.de
+  intended_uses:
+  - query-gaia-dr3
+  - create-representative-gaia-samples
+  - visualize-gaia-sources
+  excluded_uses:
+  - bypass-gaia-data-terms
+  - infer-membership-without-literature-anchored-cuts
+  - treat-example-results-as-scientific-conclusions
+  assumptions:
+  - gaia-aip-tap-service-is-available
+  - gaiadr3-schema-remains-compatible
+  - network-access-is-available
+  known_failure_modes:
+  - adql-query-rejected
+  - result-row-limit
+  - service-schema-change
+  - tap-service-unavailable
+  keywords:
+  - adql
+  - astronomy
+  - gaia-aip
+  - gaia-dr3
+  - pyvo
+  - tap
+relations:
+  implements_tasks:
+  - task:astronomy/gaia-dr3-catalog-query
+  derived_from: []
+  supersedes:
+  - skill:gaia-aip-data-access
+  compatible_with:
+  - skill:tap-pyvo-adql-access
+  related_to:
+  - skill:astro-catalog-plotting-cache
+  - skill:gaia-dr3-daiquiri-rest
+  - skill:gaia-dr3-plot-with-dust
+  - skill:rave-dr6
+  - skill:starhorse-access
+compatibility:
+  clients: []
+  operating_systems:
+  - linux
+  - macos
+  architectures:
+  - amd64
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - astropy==8.0.1
+  - matplotlib==3.11.1
+  - numpy==2.5.1
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  - pyvo==1.9.1
+  - scipy==1.18.0
+  - seaborn==0.13.2
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: gaia.aip.de
+    protocols:
+    - https
+    - tap
+  processes:
+  - python
+  named_secrets: []
+  external_side_effects:
+  - download-gaia-query-results
+  - submit-tap-query
+  paid_services: []
+validation:
+  contracts: []
+  network_required: true
+  maximum_runtime_seconds: 300
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
+    scheme: curated-project-skill
+    value: gaia-dr3-tap-query@2.1.0
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/gaia-dr3-tap-query
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-tap-query
+    digest: sha256:05645609aaf88a02d207403bfd55c3f2052f01550e3a755f62660edb4203cf10
+    relation: source
