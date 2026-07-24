@@ -1,0 +1,138 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: rave-dr6-public-talk-visualizations
+  version: 1.0.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-public-talk-visualizations
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: mixed
+  agent:
+    client: AstroAgent
+research:
+  disciplines:
+  - astronomy
+  - science-communication
+  methods:
+  - presentation-visualization
+  - sky-distribution-plotting
+  software:
+  - Matplotlib
+  - pandas
+  data_sources:
+  - RAVE-DR6-derived-table
+  intended_uses:
+  - create-public-talk-graphics
+  - style-rave-nearest-star-plots
+  excluded_uses:
+  - replace-scientific-quality-control-with-styling
+  - publish-unreviewed-private-data
+  assumptions:
+  - nearest-star-dataframe-is-already-available
+  - source-table-provenance-is-recorded
+  known_failure_modes:
+  - input-schema-mismatch
+  - poor-slide-contrast
+  - unreadable-label-scale
+  keywords:
+  - astronomy
+  - plotting
+  - presentation
+  - public-talk
+  - rave-dr6
+  - visualization
+relations:
+  implements_tasks:
+  - task:astronomy/rave-public-talk-visualization
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:rave-dr6
+  - skill:rave-dr6-nearest-100-plot
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - matplotlib==3.11.1
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network: []
+  processes:
+  - python
+  named_secrets: []
+  external_side_effects:
+  - write-catalog-cache
+  - write-figure-files
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: false
+  maximum_runtime_seconds: 600
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/rave-dr6-public-talk-visualizations
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-public-talk-visualizations
+    digest: sha256:b581cc7ef6c9dc0b0afa93a77846a19dd72b5e0ef92f34aab624553ee8b8d75e
+    relation: source
+extensions:
+  de.aip.ori:
+    schema: urn:skill-commons:extension:de.aip.ori:1
+    required: false
+    data:
+      discovery:
+        tags:
+        - astronomy
+        - rave-dr6
+        - visualization
+        - public-talk
+        - presentation
+        - plotting
+        legacy_category: astronomy
+        related_skill_candidates:
+        - rave-dr6
+        - rave-dr6-nearest-100-plot

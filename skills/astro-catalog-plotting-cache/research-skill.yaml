@@ -1,0 +1,153 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: astro-catalog-plotting-cache
+  version: 1.0.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/astro-catalog-plotting-cache
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: author
+  - name: Tiantian Tong
+    role: author
+  creation_mode: mixed
+  agent:
+    client: AstroAgent
+research:
+  disciplines:
+  - astronomy
+  methods:
+  - catalog-visualization
+  - color-magnitude-diagram
+  - density-rendering
+  - reproducible-caching
+  - sky-projection
+  software:
+  - Dask
+  - Datashader
+  - Matplotlib
+  - pandas
+  data_sources:
+  - user-supplied-astronomy-catalogs
+  intended_uses:
+  - cache-plotting-inputs
+  - create-publication-ready-catalog-plots
+  - record-figure-provenance
+  excluded_uses:
+  - infer-scientific-conclusions-from-visualization-alone
+  - publish-unreviewed-private-catalog-data
+  assumptions:
+  - catalog-column-semantics-are-known
+  - coordinate-and-magnitude-conventions-are-known
+  - sufficient-local-memory-and-storage
+  known_failure_modes:
+  - cache-schema-mismatch
+  - dependency-api-drift
+  - incorrect-magnitude-axis-orientation
+  - missing-or-nonfinite-columns
+  - overplotting
+  keywords:
+  - astronomy
+  - cache
+  - cmd
+  - datashader
+  - hexbin
+  - plotting
+  - provenance
+relations:
+  implements_tasks:
+  - task:astronomy/catalog-visualization
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:tap-pyvo-adql-access
+  - skill:data-aip-de-s3
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - numpy==2.4.6
+  - pandas==3.0.5
+  - matplotlib==3.11.1
+  - dask[dataframe]==2026.7.1
+  - datashader==0.19.1
+  - pyarrow==25.0.0
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network: []
+  processes:
+  - python
+  named_secrets: []
+  external_side_effects:
+  - write-cache-files
+  - write-figure-files
+  - write-provenance-files
+  paid_services: []
+validation:
+  contracts:
+  - id: static-content-v1
+    input: contracts/static-content.json
+    expected: contracts/static-content.expected.json
+    tolerance: exact-status-and-required-literals
+  network_required: false
+  maximum_runtime_seconds: 3600
+  stochastic: false
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant
+    scheme: source-tree-population
+    value: active-astronomy-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:astronomy/astro-catalog-plotting-cache
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/astro-catalog-plotting-cache
+    digest: sha256:f6eec57f7e8ed035b887be3f4df1e09db2b1b5f357c9109dede3b035c6e859a3
+    relation: source
+extensions:
+  de.aip.ori:
+    schema: urn:skill-commons:extension:de.aip.ori:1
+    required: false
+    data:
+      discovery:
+        tags:
+        - astronomy
+        - plotting
+        - cmd
+        - hexbin
+        - datashader
+        - cache
+        - provenance
+        related_skill_candidates:
+        - astro-data-access-umbrella
+        - s3-parquet-astro-access
+        - tap-pyvo-adql-access
+        - data-visualization-umbrella

@@ -1,0 +1,235 @@
+schema_version: 0.1.0-draft
+package:
+  coordinate: aip/rave-dr6
+  version: 1.1.0
+manifest_digest: sha256:5b9595c5679c2ace98115d837c93b8847933f760bcf0cb1c26c2f39004633c60
+resolutions:
+- id: macos-arm64-cpython-3.12
+  target:
+    operating_system: macos
+    architecture: arm64
+    python_implementation: cpython
+    python_version: 3.12.4
+  resolver:
+    name: pip
+    version: 26.1.2
+  requirements_digest: sha256:59b6a0fe6f9b741883c9e6dcdecc1ce9d0ec698b452de3e277fe60e5065b2bc2
+  python:
+  - name: astropy
+    version: 8.0.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/astropy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a6/34/074f367d5699a1008b24c50acc1539f05f2cfc881b1901f4b110d57eae20/astropy-8.0.1-cp311-abi3-macosx_11_0_arm64.whl
+      sha256: 222f0b9837e79fd3d101e6d4e4579e3aa98c490000bb01e35cd32fd3e3c12bf5
+  - name: astropy-iers-data
+    version: 0.2026.7.20.15.31.18
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/astropy-iers-data/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a3/eb/87cede1d1a2a8e6f326c4f8dd1e21682ffc3dd4eee41afd0f84a67de7da2/astropy_iers_data-0.2026.7.20.15.31.18-py3-none-any.whl
+      sha256: 9e4b70b435242a613ad9626e46342ed8a991e058bb273cd6bb256e3bc8caee2f
+  - name: certifi
+    version: 2026.7.22
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/certifi/
+    artifact:
+      url: https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl
+      sha256: 62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775
+  - name: charset-normalizer
+    version: 3.4.9
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/charset-normalizer/
+    artifact:
+      url: https://files.pythonhosted.org/packages/70/4a/ecbd131485c07fcdfad54e28946d513e3da22ef3b4bd854dcafae54ec739/charset_normalizer-3.4.9-cp312-cp312-macosx_10_13_universal2.whl
+      sha256: 45b0cc4e3556cd875e09102988d1ab8356c998b596c9fced84547c8138b487a0
+  - name: contourpy
+    version: 1.3.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/contourpy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/53/3e/405b59cfa13021a56bba395a6b3aca8cec012b45bf177b0eaf7a202cde2c/contourpy-1.3.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 556dba8fb6f5d8742f2923fe9457dbdd51e1049c4a43fd3986a0b14a1d815fc6
+  - name: cycler
+    version: 0.12.1
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/cycler/
+    artifact:
+      url: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
+      sha256: 85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30
+  - name: fonttools
+    version: 4.63.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/fonttools/
+    artifact:
+      url: https://files.pythonhosted.org/packages/08/ef/b3c6b9b5be2f82416d73fe2ed2e96e2793cd80e7510bd6a17ca79cdd88ec/fonttools-4.63.0-cp312-cp312-macosx_10_13_universal2.whl
+      sha256: 37dd23e621e3b0aef1baa70a303b80aaf38449632cfc8fd2a55fb285bbccfc02
+  - name: idna
+    version: '3.18'
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/idna/
+    artifact:
+      url: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
+      sha256: 7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2
+  - name: kiwisolver
+    version: 1.5.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/kiwisolver/
+    artifact:
+      url: https://files.pythonhosted.org/packages/99/9f/795fedf35634f746151ca8839d05681ceb6287fbed6cc1c9bf235f7887c2/kiwisolver-1.5.0-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: ed3a984b31da7481b103f68776f7128a89ef26ed40f4dc41a2223cda7fb24819
+  - name: matplotlib
+    version: 3.11.1
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/matplotlib/
+    artifact:
+      url: https://files.pythonhosted.org/packages/eb/f8/6d0c312c8d9738e7d9677f09fe5c986b3239e651a7b73a2deb38b65e4a71/matplotlib-3.11.1-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: 21a67b961a6d597bca54fae826cd20695ba4a6e4d05424a08da6e13e3176fd6b
+  - name: numpy
+    version: 2.5.1
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/numpy/
+    artifact:
+      url: https://files.pythonhosted.org/packages/42/77/fdf34a71dd30f54979b18603bee915e0aaf825b07afe79acd60b04b691e2/numpy-2.5.1-cp312-cp312-macosx_14_0_arm64.whl
+      sha256: 78798bd5b9ad744056af8efa90e3b9ddaa53272a0848a483084a1cc0a13b2dc0
+  - name: packaging
+    version: '26.2'
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/packaging/
+    artifact:
+      url: https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl
+      sha256: 5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e
+  - name: pandas
+    version: 3.0.5
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pandas/
+    artifact:
+      url: https://files.pythonhosted.org/packages/68/56/fbe81c09195924d8b7b8d4461a20458fe80a6a5ed6b24f0314da684277e1/pandas-3.0.5-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: c2e26bb46934b8a2ca0c3de1d3d606fc5f6746584791b2db264d58cf370e08dc
+  - name: pillow
+    version: 12.3.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pillow/
+    artifact:
+      url: https://files.pythonhosted.org/packages/d8/66/9a386a92561f402389a4fc70c18838bf6d35eb5eb5c6850b4b2dc64f5048/pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: ffd0c5368496f41b0944be820fcb7a838aa6e623d250b01acf2643939c3f99d7
+  - name: pyarrow
+    version: 25.0.0
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyarrow/
+    artifact:
+      url: https://files.pythonhosted.org/packages/73/44/fdd3a4377807b7dcabe2d4b5aa99dbbc98e2e5df3f1ca4e7f0aec492d987/pyarrow-25.0.0-cp312-cp312-macosx_12_0_arm64.whl
+      sha256: 149730a3d1f0fb59d663a0b8aa210adfd9c17c27cd94a0d143e60daea8320d4e
+  - name: pyerfa
+    version: 2.0.1.5
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyerfa/
+    artifact:
+      url: https://files.pythonhosted.org/packages/11/4a/31a363370478b63c6289a34743f2ba2d3ae1bd8223e004d18ab28fb92385/pyerfa-2.0.1.5-cp39-abi3-macosx_11_0_arm64.whl
+      sha256: be1aeb70390dd03a34faf96749d5cabc58437410b4aab7213c512323932427df
+  - name: pyparsing
+    version: 3.3.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyparsing/
+    artifact:
+      url: https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl
+      sha256: 850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d
+  - name: python-dateutil
+    version: 2.9.0.post0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/python-dateutil/
+    artifact:
+      url: https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+      sha256: a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+  - name: pyvo
+    version: 1.9.1
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyvo/
+    artifact:
+      url: https://files.pythonhosted.org/packages/0a/09/04ff6e8beaa6cd60a960f925d837c2afa3fffba7860042ab1b52a8358297/pyvo-1.9.1-py3-none-any.whl
+      sha256: 098648d00943440f56c1d00ac76330433578a0725ea6187afaa6bae08545bb53
+  - name: PyYAML
+    version: 6.0.3
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/pyyaml/
+    artifact:
+      url: https://files.pythonhosted.org/packages/89/a0/6cf41a19a1f2f3feab0e9c0b74134aa2ce6849093d5517a0c550fe37a648/pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl
+      sha256: fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0
+  - name: requests
+    version: 2.34.2
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/requests/
+    artifact:
+      url: https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl
+      sha256: 2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0
+  - name: seaborn
+    version: 0.13.2
+    direct: true
+    source:
+      kind: index
+      url: https://pypi.org/simple/seaborn/
+    artifact:
+      url: https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl
+      sha256: 636f8336facf092165e27924f223d3c62ca560b1f2bb5dff7ab7fad265361987
+  - name: six
+    version: 1.17.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/six/
+    artifact:
+      url: https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+      sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
+  - name: urllib3
+    version: 2.7.0
+    direct: false
+    source:
+      kind: index
+      url: https://pypi.org/simple/urllib3/
+    artifact:
+      url: https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl
+      sha256: 9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
+  system: []
+  containers: []
