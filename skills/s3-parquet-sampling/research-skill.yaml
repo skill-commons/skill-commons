@@ -1,0 +1,132 @@
+schema_version: 0.1.0-draft
+package:
+  namespace: aip
+  name: s3-parquet-sampling
+  version: 1.1.0
+  license: MIT
+  source:
+    repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/s3-parquet-sampling
+authorship:
+  status: verified
+  contributors:
+  - name: Arman Khalatyan
+    role: maintainer
+  - name: Tom Tong
+    orcid: 0000-0001-6014-5031
+    role: curator
+  creation_mode: mixed
+  agent:
+    client: Project Hermes
+research:
+  disciplines:
+  - data-science
+  - research-data-management
+  methods:
+  - distributed-dataframe-analysis
+  - parquet-sampling
+  - density-visualization
+  software:
+  - Dask
+  - Datashader
+  - hvPlot
+  - pandas
+  - PyArrow
+  - s3fs
+  data_sources:
+  - user-configured-s3-parquet
+  intended_uses:
+  - sample-large-parquet-datasets
+  - cache-analysis-subsets
+  - visualize-dense-data
+  excluded_uses:
+  - overwrite-source-datasets
+  - treat-unweighted-samples-as-population-estimates
+  assumptions:
+  - sampling-fraction-is-scientifically-appropriate
+  - user-has-object-access
+  known_failure_modes:
+  - object-store-unavailable
+  - nonrepresentative-sample
+  - insufficient-local-storage
+  keywords:
+  - s3
+  - parquet
+  - sampling
+  - dask
+  - hvplot
+  - datashader
+relations:
+  implements_tasks:
+  - task:data-science/s3-parquet-sampling
+  derived_from: []
+  supersedes: []
+  compatible_with: []
+  related_to:
+  - skill:data-aip-de-s3
+  - skill:astro-catalog-plotting-cache
+compatibility:
+  clients: []
+  operating_systems:
+  - macos
+  architectures:
+  - arm64
+  python: '>=3.12,<3.13'
+dependencies:
+  completeness: complete
+  python:
+  - dask[dataframe]==2026.7.1
+  - datashader==0.19.1
+  - hvplot==0.12.2
+  - pandas==3.0.5
+  - pyarrow==25.0.0
+  - s3fs==2026.6.0
+  system: []
+  containers: []
+capabilities:
+  completeness: complete
+  filesystem:
+  - path_class: package
+    access: read
+  - path_class: workspace
+    access: read-write
+  network:
+  - host: user-configured-object-store
+    protocols:
+    - https
+    - s3
+  processes:
+  - python
+  named_secrets:
+  - s3-credentials
+  external_side_effects:
+  - read-remote-parquet
+  - write-local-cache
+  paid_services: []
+validation:
+  contracts: []
+  network_required: true
+  maximum_runtime_seconds: 7200
+  stochastic: true
+license_evidence:
+- kind: package-file
+  expression: MIT
+  path: LICENSE
+  digest: sha256:325564996db183aab79e56f77d39bf11ccd7381ffa2cda15dd64ac275e040dca
+  applies_to:
+  - '**'
+provenance:
+  origin: migrated
+  source_state: active
+  population_claims:
+  - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
+    scheme: source-tree-population
+    value: active-skill
+    evidence: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb:python/s3-parquet-sampling
+  upstreams:
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/s3-parquet-sampling
+    digest: sha256:d203022513d9965f84216d516c96db622138bae2573fd7f23ca02b6b436c3600
+    relation: source
