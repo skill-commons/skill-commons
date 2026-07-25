@@ -1,8 +1,6 @@
 ---
 name: gaia-dr3-tap-query
-description: Query Gaia DR3 at gaia.aip.de via TAP/pyvo — the DEFAULT way to get Gaia data. ADQL queries,
-  uniform random subsampling, Parquet caching, and ready-made sky / Galactic-XY plots. Access 1.8 billion
-  sources.
+description: Query Gaia DR3 at gaia.aip.de through TAP/PyVO, with schema discovery, representative sampling, local caching, and a Daiquiri REST fallback for exceptional async jobs.
 license: MIT
 metadata:
   research-skill.manifest: research-skill.yaml
@@ -11,10 +9,10 @@ metadata:
 # Gaia DR3 @AIP — TAP / pyvo (default)
 
 ## When to Use
-The default for ALL Gaia DR3 queries and plotting: one `run_sync()` call against the
-standard TAP service `https://gaia.aip.de/tap/`. Use this unless you specifically
-need a full-table `COUNT(*)` or a very large async scan — for those use
-`gaia-dr3-daiquiri-rest`.
+Use this for Gaia DR3 catalog access at AIP. Start with one bounded `run_sync()` call
+against `https://gaia.aip.de/tap/`. For full-table aggregation, exceptional long-running
+jobs, or TAP outages, read [`references/daiquiri-rest.md`](references/daiquiri-rest.md)
+and use the same skill's REST fallback.
 
 > Dependencies (`pyvo`, `pandas`, `pyarrow`, `matplotlib`, `seaborn`) are
 > not bundled with the skill. Create an isolated Python 3.12 environment and install the
@@ -74,7 +72,10 @@ df.to_parquet(f"{out}/gaia_sample.parquet", index=False)
 print([t.name for t in service.tables if "gaiadr3" in t.name][:10])
 ```
 
-## Plot recipes (always save under the workspace folder)
+## Quick-Look Plot Recipes
+
+Use these only to inspect a query result. For reusable CMDs, sky maps, density rendering,
+cache provenance, or presentation figures, use `astro-catalog-plotting-cache`.
 
 ### RA/Dec sky scatter
 ```python
@@ -113,6 +114,8 @@ fig.savefig(f"{out}/allsky_density.png", dpi=130, bbox_inches="tight")
 - **Keep queries in the foreground.** Run the query in a single foreground script — never launch it as a background process (terminal `background=true` / `notify_on_complete`). A detached query job keeps running after you stop and spawns stray completion nudges. A `run_sync` of a few hundred k rows returns in ~1 s; for a genuinely large scan use `service.submit_job(q)` and poll it *within* the foreground script. If you think you need millions of rows, subsample instead (`WHERE random_index < N`).
 - **Anchor selections to literature values.** When isolating a known object's members (e.g. an open cluster), set your parallax / proper-motion / distance cuts from its published values — not from whatever maximizes the star count.
 - **This service also speaks PostgreSQL (not only ADQL).** gaia.aip.de is a Daiquiri service: `service.submit_job(qstr, language='postgresql')` runs native PostgreSQL — the recipe many published notebooks for AIP-hosted tables use (e.g. StarHorse's `get_one_query`; see the `starhorse-access` skill). If a notebook/paper gives you a PostgreSQL query for an AIP table, run it VERBATIM with `language='postgresql'` — do NOT rewrite it into ADQL. Both languages work; rewriting is where errors creep in.
+- Use the Daiquiri REST fallback only when TAP is unsuitable. It creates a server-side
+  job and local cookie state and therefore requires bounded polling and cleanup.
 
 ## Verification
 - `service.run_sync("SELECT TOP 5 ra, dec FROM gaiadr3.gaia_source")` returns 5 rows.

@@ -11,19 +11,30 @@ dependency, capability, provenance, and client metadata can live beside `SKILL.m
 
 ## Browse the skills
 
-The hub currently publishes 30 complete skill directories spanning public astronomy
-data access, scalable Python/data workflows, and research-writing workflows. Good
-starting points include:
+The hub currently publishes 11 curated skills in five functional bundles. Similar,
+one-off, and superseded workflows are consolidated into broad canonical skills:
+
+| Bundle | Scope |
+|---|---|
+| General | Literature work and calculation |
+| LaTeX | Manuscript authoring, revision, compilation, and submission packaging |
+| Astronomy | TAP plus Gaia, RAVE, StarHorse, and catalog visualization |
+| Data | Large research data and S3-compatible object storage |
+| Visualization | General publication and report plots |
+
+Good starting points include:
 
 | Skill | Version | What it does |
 |---|---:|---|
 | [`aip/tap-pyvo-adql-access`](skills/tap-pyvo-adql-access/) | `1.0.0` | Run portable, provenance-aware TAP/ADQL queries with PyVO. |
-| [`aip/gaia-dr3-tap-query`](skills/gaia-dr3-tap-query/) | `2.1.0` | Query Gaia DR3 through the public AIP TAP service. |
+| [`aip/gaia-dr3-tap-query`](skills/gaia-dr3-tap-query/) | `3.0.0` | Query Gaia DR3 through TAP with a bounded Daiquiri REST fallback. |
 | [`aip/starhorse-access`](skills/starhorse-access/) | `2.0.2` | Access StarHorse SHboost-2024 and SH21 EDR3 data through public Parquet and AIP TAP services. |
 
 The generated [human catalog](catalog/README.md) and
 [machine-readable catalog](catalog/index.json) are derived views. The reviewed
 directories under [`skills/`](skills/) remain authoritative.
+The source-controlled [`bundles/index.yaml`](bundles/index.yaml) assigns every active
+skill to exactly one primary bundle and records redirects for consolidated coordinates.
 
 ## Install a skill
 
@@ -55,8 +66,10 @@ The normal path is ordinary Git collaboration:
 2. Add one complete `skills/<name>/` directory.
 3. Start with a valid `SKILL.md` and license; add the Commons sidecar before curated
    publication.
-4. Run the local checks below.
-5. Open a pull request and complete the rights, attribution, redaction, and validation
+4. Add the skill to one functional bundle in `bundles/index.yaml`; consolidate with an
+   existing skill instead if the proposed workflow is only a narrow variant.
+5. Run the local checks below.
+6. Open a pull request and complete the rights, attribution, redaction, and validation
    checklist.
 
 Published versions are immutable. If released package bytes change, bump the version and
@@ -101,6 +114,7 @@ local pass for those claims.
 
 ```text
 skills/                 Complete published skill directories
+bundles/                Curated functional groups and consolidation redirects
 catalog/                Generated human and machine indexes
 docs/                   Current architecture, contracts, and review guidance
 schemas/                Active sidecar, lock, extension, and capability contracts

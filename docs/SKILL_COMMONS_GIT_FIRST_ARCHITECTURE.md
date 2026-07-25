@@ -145,6 +145,8 @@ skill-commons/
 │       ├── references/                 # optional
 │       ├── assets/                     # optional
 │       └── contracts/                  # optional validation contracts
+├── bundles/
+│   └── index.yaml                      # primary groups and consolidation redirects
 ├── schemas/                            # Commons schemas
 ├── catalog/                            # generated human and machine indexes
 ├── docs/                               # architecture, policy, and operator documentation
@@ -160,6 +162,12 @@ The Agent Skills `name` is globally unique within the canonical collection in Ph
 The governed Commons identity remains `<namespace>/<name>` in `research-skill.yaml`.
 If two publishers propose the same portable name, curation must resolve the collision
 explicitly; the system must not silently rename a published skill.
+
+The shallow install path and the human browsing taxonomy are independent. Every active
+coordinate appears in exactly one primary functional bundle in `bundles/index.yaml`.
+Bundles do not nest or move installable packages. The same file records redirects from
+consolidated coordinates to active replacements, while Git history preserves the
+retired package bytes.
 
 ### 3.2 Package layers
 
@@ -271,12 +279,14 @@ The normal workflow is deliberately ordinary:
 
 1. Fork or branch the canonical Git repository.
 2. Add or edit one complete `skills/<name>/` directory.
-3. Run the local validators and relevant contracts.
-4. Open a pull request with the source, authorship, license, and intended-use assertions.
-5. CI produces a review report; it does not silently rewrite the contribution.
-6. An accountable maintainer resolves findings and approves publication.
-7. Merge to protected `main`.
-8. When declaring a release, create the protected per-skill version tag and update the
+3. Assign the active coordinate to one bundle, or consolidate a narrow variant into an
+   existing canonical skill and record its redirect.
+4. Run the local validators and relevant contracts.
+5. Open a pull request with the source, authorship, license, and intended-use assertions.
+6. CI produces a review report; it does not silently rewrite the contribution.
+7. An accountable maintainer resolves findings and approves publication.
+8. Merge to protected `main`.
+9. When declaring a release, create the protected per-skill version tag and update the
    generated catalog.
 
 The contribution guide should make the minimal successful path shorter than the full
@@ -300,6 +310,8 @@ Phase 1 CI should enforce:
 - contract tests appropriate to the skill's declared risk;
 - version bump when a previously released package changes;
 - no reuse or movement of a protected release tag.
+- complete, unique bundle assignment for active skills and valid active replacements for
+  consolidation redirects.
 
 CI findings distinguish errors, warnings, and evidence that only a human or trusted
 external process can establish. A local validator must not pretend to prove namespace
@@ -385,8 +397,9 @@ The first catalog is static and Git-versioned, not a mandatory database service.
 Implemented outputs are:
 
 - `catalog/index.json` — machine-readable coordinates, versions, paths, package tree
-  digests, descriptions, research facets, status, and source information;
-- `catalog/README.md` — generated human index;
+  digests, descriptions, research facets, functional bundles, consolidation redirects,
+  status, and source information;
+- `catalog/README.md` — generated human index grouped by functional bundle;
 
 Planned additions are:
 

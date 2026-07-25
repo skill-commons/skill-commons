@@ -16,8 +16,11 @@ when the project begins accepting external contributions.
 3. Keep the portable `SKILL.md` useful without Commons-specific tooling.
 4. Include a package license and identify source, authorship, derivation, and intended
    use.
-5. Run the relevant checks.
-6. Open a pull request and complete its publication checklist.
+5. Assign the active skill to exactly one primary group in `bundles/index.yaml`.
+6. Explain why the workflow is not already covered by a broader canonical skill; merge
+   reusable guidance into that skill when it is only a variant.
+7. Run the relevant checks.
+8. Open a pull request and complete its publication checklist.
 
 ```bash
 uv sync --locked --all-groups
@@ -26,6 +29,9 @@ uv run skill-commons validate skills/<name> --profile commons-publication
 uv run pytest
 uv run ruff check .
 uv run ruff format --check .
+uv run skill-commons catalog \
+  --repository https://github.com/skill-commons/skill-commons \
+  --check
 ```
 
 Contributions must:
@@ -37,6 +43,24 @@ Contributions must:
   personal information;
 - keep generated fixtures source-pinned and reproducible;
 - preserve the separation between observed material and published Commons releases.
+
+## Curation
+
+The active tree favors one broad, maintained skill per capability. A fixed dataset
+sample, one figure style, one research topic, or one journal troubleshooting case should
+normally become an example or reference within a canonical skill, not a new package.
+
+When consolidating a published package:
+
+- merge only its reusable, accurate guidance;
+- bump the surviving package version when its bytes change;
+- record derivation and supersession in the surviving sidecar;
+- remove the redundant active directory;
+- add a coordinate-to-replacement entry under `consolidations` in
+  `bundles/index.yaml`.
+
+Git history preserves the removed source. Do not copy retired packages into another
+active-looking tree merely to preserve them.
 
 ## Released packages
 

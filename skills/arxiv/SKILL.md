@@ -1,8 +1,6 @@
 ---
 name: arxiv
-description: Search and retrieve academic papers from arXiv using the free REST API. Query by keyword,
-  author, category, or paper ID. Fetch abstracts, full PDFs, generate BibTeX, and explore citations via
-  Semantic Scholar.
+description: Search, read, cite, and monitor academic papers through arXiv and related public metadata services, including reusable topic alerts and verified BibTeX generation.
 license: MIT
 metadata:
   research-skill.manifest: research-skill.yaml
@@ -11,7 +9,9 @@ metadata:
 # arXiv Research
 
 ## When to Use
-Use this skill when the user needs to find, read, or cite academic papers. Tasks include: literature review, finding related work, checking citations, generating BibTeX, or extracting paper content.
+Use this skill when the user needs to find, read, cite, or monitor academic papers.
+Tasks include literature reviews, related-work searches, citation checks, verified
+BibTeX generation, and recurring topic scans.
 
 ## Procedure
 
@@ -132,6 +132,34 @@ Boolean: `all:A+ANDNOT+all:B`, `all:A+OR+all:B`
 | `sortOrder` | `ascending`, `descending` |
 | `max_results` | 1–30000 |
 
+## Reusable Topic Monitoring
+
+A literature monitor is a saved arXiv query plus optional state and scheduling, not a
+separate skill for each research topic. Start with the bundled script:
+
+```bash
+python3 scripts/arxiv_monitor.py \
+  --query '(all:"cold stream" OR all:"cold accretion")' \
+  --category astro-ph.GA \
+  --max-results 15 \
+  --state .cache/cold-streams-seen.json
+```
+
+The script prints a Markdown report and, when `--state` is supplied, reports only unseen
+paper versions before updating the local state file. Use `--json` for downstream
+processing. Construct a different query and state file for each topic.
+
+Before making a scan recurring:
+
+1. run the exact query once and inspect false positives and missed terminology;
+2. decide whether new versions of an already-seen paper should be treated as new;
+3. choose a user-approved state path and output/delivery mechanism;
+4. ask before creating or changing cron, CI, or client automation;
+5. keep the scheduled frequency compatible with arXiv rate limits.
+
+Keyword classification is triage, not scientific validation. Read the paper before
+reporting its claims, methods, or relevance as fact.
+
 ## Semantic Scholar (Citations)
 
 For citation counts and related papers (arXiv has no citation data):
@@ -159,6 +187,7 @@ curl -s -X POST "https://api.semanticscholar.org/recommendations/v1/papers/" \
 4. Read full paper: curl ar5iv HTML + parse locally (NOT the PDF)
 5. Find related work: Semantic Scholar references/citations
 6. Generate BibTeX: API metadata parsing
+7. Monitor when needed: save the generic query and state, then use a user-approved scheduler
 
 ## Rate Limits
 
@@ -176,6 +205,8 @@ curl -s -X POST "https://api.semanticscholar.org/recommendations/v1/papers/" \
 - ar5iv URL form is `https://ar5iv.labs.arxiv.org/html/<id>` (HTML), not `/pdf/<id>`.
 - Semantic Scholar is read-only — do not attempt to POST paper metadata without the recommendations endpoint.
 - Always check for withdrawn papers — summary field may contain withdrawal notices.
+- Topic queries can create both false positives and false negatives; review them
+  periodically rather than treating the monitor as exhaustive.
 
 ## Verification
 - Search returns ≥ 1 paper with title, authors, and arXiv ID.

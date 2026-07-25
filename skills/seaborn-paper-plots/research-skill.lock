@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/seaborn-paper-plots
-  version: 1.0.0
-manifest_digest: sha256:11130bd8c2e6b91089fe0ec646376399d153a9f254214987f89f40c5cb3d7ccc
+  version: 1.0.1
+manifest_digest: sha256:c8d5d3a60ea67f8402e6f48851ab4313308c7b82be7a9a2ef161799dc230fecb
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

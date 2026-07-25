@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: seaborn-paper-plots
-  version: 1.0.0
+  version: 1.0.1
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -57,7 +57,7 @@ relations:
   supersedes: []
   compatible_with: []
   related_to:
-  - skill:cmd-plotting
+  - skill:astro-catalog-plotting-cache
 compatibility:
   clients: []
   operating_systems:

@@ -20,6 +20,10 @@ Use this checklist before merging a new or changed published skill.
 - Safe isolated setup is described where non-standard dependencies are needed.
 - Network access, credentials, external side effects, and verification steps are clear.
 - Referenced files are bundled inside the complete package directory.
+- The capability is broad enough to justify independent discovery and is not merely a
+  fixed sample, plot style, topic query, or journal-specific troubleshooting fragment.
+- Reusable variants were merged into the strongest canonical skill rather than
+  published as near-duplicates.
 
 ## Structured metadata and risk
 
@@ -37,5 +41,7 @@ Use this checklist before merging a new or changed published skill.
 - Expected external-attestation warnings are supported by accountable review evidence.
 - Tests and contracts pass on the claimed target.
 - A changed released package has a new version.
+- Every active coordinate appears in exactly one primary functional bundle.
+- Removed duplicates have an explicit consolidation redirect to an active replacement.
 - The generated catalog is current.
 - The protected release tag will identify the exact reviewed commit and path.

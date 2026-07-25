@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/calculator
-  version: 1.0.0
-manifest_digest: sha256:f25d15e2f3414e027232d7791d55137f6db06a8531506aae1f828d24819792de
+  version: 1.0.1
+manifest_digest: sha256:a4816449e3c06f22e2ddc67464bf5cae3cefeeedf2405091985bf4bebedd0ffc
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

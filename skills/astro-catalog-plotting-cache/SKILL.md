@@ -175,6 +175,34 @@ repository or a fixed filesystem layout.
 6. **No cache readback.** Confirm files exist and can be loaded.
 7. **Datashader API drift.** Check the installed Datashader version for exact methods.
 
+## Style Modes
+
+Choose style from the destination rather than creating survey-specific plotting skills:
+
+- **Paper/review:** white background, restrained palette, explicit units, 300 DPI, and
+  vector output when practical.
+- **Talk/outreach:** high contrast, larger type and markers, fewer annotations, and a
+  slide-compatible background selected by the user.
+- **Diagnostic:** simplest plot that reveals schema, range, missing data, or selection
+  problems; do not polish before the data are trusted.
+
+Keep data retrieval independent from style. A Gaia or RAVE dataframe should use the same
+plotting and provenance machinery as any compatible catalog.
+
+## Contextual Layers
+
+Dust, survey footprints, image tiles, or model grids are optional contextual layers.
+Transform both the catalog points and the layer into the same coordinate system and
+projection before overlaying them. Do not map a longitude/latitude raster directly onto
+an unrelated Cartesian Galactic-plane plot. Record the layer source, version, units,
+download/cache path, coordinate frame, and transformation in figure provenance.
+
+## Datashader 0.19 Details
+
+For version-specific density-rendering behavior, read
+[`references/datashader-0.19.md`](references/datashader-0.19.md). Keep the main workflow
+version-agnostic and use the reference only when the installed API matches.
+
 ## Verification Checklist
 
 - [ ] Input cache exists and row count is known.

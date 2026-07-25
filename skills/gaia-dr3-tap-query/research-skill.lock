@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/gaia-dr3-tap-query
-  version: 2.1.0
-manifest_digest: sha256:378836f34d2c1441df4a8200d07a548d3af69be4919e6f4471fee2a1ad68c3aa
+  version: 3.0.0
+manifest_digest: sha256:983e86c8386299cf0959c536ccfa3aee67ea8470050e6306eebceefe44bba3b3
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

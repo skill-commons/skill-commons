@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: arxiv
-  version: 1.0.0
+  version: 2.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -24,6 +24,7 @@ research:
   - research
   methods:
   - literature-search
+  - literature-monitoring
   - citation-analysis
   - bibliographic-metadata-extraction
   software:
@@ -35,6 +36,7 @@ research:
   - Semantic Scholar
   intended_uses:
   - find-academic-papers
+  - monitor-research-topics
   - retrieve-paper-metadata
   - generate-bibtex-from-verified-metadata
   - inspect-citation-relations
@@ -46,6 +48,7 @@ research:
   - users-follow-source-service-terms-and-rate-limits
   known_failure_modes:
   - api-rate-limiting
+  - false-positive-or-missed-topic-match
   - withdrawn-or-revised-paper
   - ar5iv-rendering-unavailable
   - upstream-api-schema-change
@@ -53,16 +56,19 @@ research:
   - research
   - arxiv
   - literature
+  - monitoring
   - citations
   - bibtex
 relations:
   implements_tasks:
   - task:research/literature-discovery
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:cold-streams-monitoring
+  supersedes:
+  - skill:cold-streams-monitoring
   compatible_with: []
   related_to:
-  - skill:mnras-latex-portable
+  - skill:latex-research-paper
 compatibility:
   clients: []
   operating_systems:
@@ -105,6 +111,7 @@ capabilities:
   external_side_effects:
   - query-public-literature-services
   - write-downloaded-paper-html
+  - write-monitoring-state
   paid_services: []
 validation:
   contracts: []
@@ -119,7 +126,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -132,3 +139,8 @@ provenance:
     path: research/arxiv
     digest: sha256:05442e22a94024070848630b0bbfe9dbc83fdc1eaed3a9bbfa6df1a6bddd9822
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/cold-streams-monitoring
+    digest: sha256:9fea85e8fc04d9902864ee7e027ee43e11ff4e4a39cbe9360e5503a9297c5d5d
+    relation: derived-from

@@ -1,148 +1,158 @@
 ---
 name: latex-research-paper
-description: Generate complete, compilable LaTeX research papers in formal academic style with full section
-  structure, BibTeX references, and figure support.
+description: Draft, revise, merge, and verify LaTeX research papers or white papers, including bibliography management, scientific figures, and controlled compilation cycles.
 license: MIT
 metadata:
   research-skill.manifest: research-skill.yaml
 ---
 
-# LaTeX Research Paper Generator
+# LaTeX Research Paper
 
 ## When to Use
-Generate complete, compilable LaTeX research papers in formal academic style with full section structure, BibTeX references, and figure support.
 
-## Overview
-This skill contains a reusable operational workflow. Follow the existing task-specific steps and examples in the sections below.
+Use this skill for the complete authoring lifecycle of a scholarly LaTeX document:
 
-## Pitfalls
-- Do not hardcode credentials, tokens, or personal secrets.
-- Verify external service URLs, paths, and permissions before making changes.
-- Keep generated outputs reproducible and record input assumptions.
+- draft a paper or technical white paper from verified source material;
+- revise an existing manuscript for structure, clarity, or consistency;
+- merge several papers or Markdown sections into one coherent document;
+- add figures, tables, citations, and cross-references;
+- compile and inspect a reviewable PDF.
 
-## Verification
-- Confirm required inputs and credentials are available.
-- Run the smallest safe command or example before scaling up.
-- Check produced files, API responses, or plots before reporting success.
+Use `latex-journal-submission-package` after the manuscript is scientifically stable
+and needs journal adaptation, portability fixes, or a submission archive.
 
+## Non-Negotiable Research Rules
 
-## Trigger Conditions
-Use when the user asks to:
-- Write a research paper in LaTeX
-- Generate an academic manuscript
-- Create a full paper draft (not just a template)
-- Produce a compilable `.tex` document with all sections
+- Never invent authors, affiliations, citations, datasets, numerical results, or
+  scientific conclusions.
+- Use verified bibliographic metadata or an explicit `% TODO: verify citation`
+  placeholder.
+- Distinguish source claims from interpretation and label synthetic examples.
+- Preserve recoverability with version control or a reviewed backup before a major
+  rewrite.
 
-## Workflow
+## Choose the Authoring Mode
 
-### 1. Title Slug Derivation
-Convert the paper title into a directory name:
-- Lowercase all characters
-- Replace spaces with hyphens
-- Remove all special characters (retain only `[a-z0-9-]`)
+### New manuscript
 
-Create the project under a user-approved workspace path such as
-`<workspace>/<titleslug>/`.
+Create a project under a user-approved workspace path:
 
-### 2. Directory & File Creation
-Create the following structure:
-```
-<workspace>/<titleslug>/
+```text
+<article-slug>/
 ├── main.tex
 ├── references.bib
-└── figures/          (only if figures are needed)
+└── figures/
 ```
 
-### 3. LaTeX Document Structure (`main.tex`)
+Derive the slug from the title using lowercase ASCII letters, numbers, and hyphens.
+Draft only the sections supported by the available material. A conventional research
+paper may include title, abstract, introduction, related work, methods, results,
+discussion, conclusion, and references, but journal and disciplinary conventions take
+precedence.
 
-Use `\documentclass{article}` with these packages (minimum set):
+### Revision
+
+1. Read the complete manuscript and bibliography.
+2. Audit scientific support, structure, terminology, citations, figures, and build
+   warnings.
+3. Group edits into meaningful passes rather than treating an arbitrary iteration count
+   as a reason for repeated cosmetic rewrites.
+4. Use targeted edits for local changes. For a structural overhaul, rewrite the complete
+   file in one controlled update.
+5. Compile, inspect, and repeat only where the output reveals a real issue.
+
+Useful passes include:
+
+- scientific support and missing evidence;
+- document structure and argument flow;
+- terminology, notation, and prose consistency;
+- citations and bibliography;
+- figures, tables, captions, and cross-references;
+- compilation and final proofing.
+
+### Multi-source synthesis
+
+1. Read every relevant source completely.
+2. Map unique content, overlap, disagreements, and provenance.
+3. Design one outline around the target argument rather than concatenating sections.
+4. Deduplicate definitions, claims, citations, and figures.
+5. Write transitions that make the merged document coherent.
+6. Preserve source attribution and flag unresolved conflicts.
+
+Use a monolithic `main.tex` by default. Split into `sections/*.tex` only for a long
+document or genuine parallel authorship, and ensure every section is included with
+`\input{}` or `\include{}`.
+
+## Minimal Portable Preamble
+
+Start with only the packages the document uses:
+
 ```latex
-\usepackage{amsmath, amssymb}          % Math
-\usepackage{graphicx}                  % Figures
-\usepackage{hyperref}                  % Links
-\usepackage{booktabs}                  % Tables
-\usepackage{microtype}                 % Typography
-\usepackage{geometry}                  % Margins
-\geometry{margin=1in}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
 ```
 
-**Mandatory sections** (do NOT skip unless explicitly told otherwise):
-1. **Title** and **Author(s)** — use supplied information or a clearly marked placeholder
-2. **Abstract** — summarize supported material; mark unavailable results as TODOs
-3. **Introduction** — problem statement, motivation, contributions
-4. **Related Work** — survey of relevant literature (use `\cite{}` placeholders)
-5. **Methodology** — approach, methods, framework, or experiments
-6. **Results** — report supplied or computed findings; never invent outcomes
-7. **Discussion** — interpretation, limitations, implications
-8. **Conclusion** — summary, future work
-9. **References** — `\bibliographystyle{plain}` + `\bibliography{references}`
+Pick one bibliography system. For traditional BibTeX:
 
-### 4. Writing Style
-- Formal academic tone throughout
-- No conversational language, first-person plural preferred over first-person singular
-- Precise technical terminology
-- Logical flow between sections (explicit transitions)
-- Include equations where appropriate (use `equation` or `align` environments)
-- Include tables/figures when they add value (use `table`/`figure` environments with `\caption` and `\label`)
+```latex
+\bibliographystyle{plainnat}
+\bibliography{references}
+```
 
-### 5. Citations & Bibliography
-- Use `\cite{key}` throughout the text
-- Generate `references.bib` entries only from supplied or verified bibliographic metadata
-- Use `plain` bibliography style
-- If a needed reference is unavailable, use an explicit `% TODO: verify citation`
-  placeholder rather than plausible-looking metadata
+Do not mix this with `biblatex` commands in the same build.
 
-### 6. Figures & Tables
-- Place images in `figures/` subdirectory
-- Use placeholder paths: `\includegraphics{figures/plot1.png}`
-- Add `\caption{}` and `\label{}` to every figure and table
-- Reference figures/tables in text with `\ref{}`
+## Figures and Tables
 
-### 7. Compilation Verification
-After writing, compile to verify:
+- Generate data-backed figures from a standalone script where practical.
+- Use a non-interactive backend such as `matplotlib.use("Agg")`.
+- Prefer a white background, readable labels, explicit units, and at least 200 DPI for
+  raster review outputs.
+- Give every figure and table a caption and label, then reference it from the text.
+- Keep generation scripts next to the figures so the result can be reproduced.
+- Do not create a visual merely to satisfy a requested iteration count.
+
+## Compilation
+
+Inspect the available tools, then use `latexmk` when present:
+
 ```bash
-cd <workspace>/<titleslug>/
-rm -f main.aux main.log main.out main.toc main.bbl main.blg  # clean stale files first
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
-Fix any compilation errors. The document must compile cleanly.
 
-**Practical compilation pitfalls:**
-- **Missing images**: Always use `\usepackage[draft]{graphicx}` so missing image files fall back to draft boxes instead of fatal errors
-- **`\\textquote{}` is NOT standard LaTeX**: It requires the `csquotes` package. Use standard LaTeX ``quotes'' or `\\textit{}` for inline quotes
-- **At least 2 pdflatex passes + bibtex between them are required** for citations to resolve and cross-references to stabilize
-- **Clean stale aux files** before compiling to avoid phantom "undefined reference" warnings from old runs
+Traditional BibTeX fallback:
 
-### 7.1 Quality Checklist
-- [ ] Directory name correctly derived from title
-- [ ] All 9 mandatory sections present
-- [ ] Uses `draft` mode for graphicx (unless images are real files)
-- [ ] No undefined control sequences (verify `\\textquote` isn't used — replace with ``quotes'' or standard alternatives)
-- [ ] Compiles without errors (clean aux files → pdflatex → bibtex → pdflatex ×2)
-- [ ] Formal academic tone throughout
-- [ ] Citations in text match entries in `references.bib`
-- [ ] No author names, citations, datasets, numerical results, or conclusions were invented
-- [ ] Figures/tables have captions, labels, and are referenced in text
-- [ ] Equations properly formatted with LaTeX math environments
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+```
 
-### 7.2 Generating Diagrams for Papers
+Clean stale auxiliary files when they cause phantom references, but do not delete source
+or user-authored outputs. Read the log and distinguish fatal errors from cosmetic
+overfull/underfull-box warnings.
 
-When the user asks for architecture diagrams or figures:
+## Common Pitfalls
 
-1. **Generate with Python/matplotlib** (not as placeholder text):
-   - Write a standalone Python script in `figures/generate_<name>.py`
-   - Use `matplotlib.use('Agg')` (headless)
-   - Set `fig, ax = plt.subplots(..., facecolor=BG_COLOR)`
-   - Use `FancyBboxPatch` for cards — **CRITICAL: use `facecolor='none'` NOT `facecolor='transparent'`** — matplotlib's `colors.to_rgba` throws a ValueError on `'transparent'`
-   - Output to `figures/<name>.png` at 150 dpi
-   - Run the script with `python3` (not `python` — may not exist)
+- Reconstructing a manuscript from a partial read.
+- Leaving stale `sections/` files after moving to a monolithic document.
+- Duplicating packages or loading incompatible bibliography systems.
+- Treating placeholders as evidence.
+- Referencing figure files that do not exist.
+- Applying many fragile substitutions when a controlled rewrite is safer.
+- Compiling only once and reporting unresolved citations as finished.
 
-2. **Integrate into the paper**:
-   - Change `\usepackage[draft]{graphicx}` to `\usepackage{graphicx}` (remove draft mode)
-   - Use `\includegraphics[width=0.95\textwidth]{figures/<name>.png}`
-   - Compile again — the full chain: `rm -f main.{aux,log,out,toc,bbl,blg} && pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex`
+## Verification
 
-3. **BibTeX warnings**: `@misc` entries with URLs but no journal field are fine — BibTeX only warns (doesn't fail). Suppress by leaving journal out rather than adding fake data.
+- [ ] Every scientific claim, result, and citation is supported or clearly marked.
+- [ ] The manuscript structure matches the requested document type.
+- [ ] Bibliography commands and entries use one consistent system.
+- [ ] Figures and tables exist, have labels/captions, and are referenced.
+- [ ] The build completes without fatal errors.
+- [ ] Citations and cross-references stabilize after the required passes.
+- [ ] The PDF opens and key pages have been visually inspected.

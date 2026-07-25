@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: astro-catalog-plotting-cache
-  version: 1.0.0
+  version: 2.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -27,6 +27,8 @@ research:
   - density-rendering
   - reproducible-caching
   - sky-projection
+  - contextual-layer-overlay
+  - presentation-visualization
   software:
   - Dask
   - Datashader
@@ -38,6 +40,7 @@ research:
   - cache-plotting-inputs
   - create-publication-ready-catalog-plots
   - record-figure-provenance
+  - create-talk-ready-catalog-plots
   excluded_uses:
   - infer-scientific-conclusions-from-visualization-alone
   - publish-unreviewed-private-catalog-data
@@ -51,6 +54,7 @@ research:
   - incorrect-magnitude-axis-orientation
   - missing-or-nonfinite-columns
   - overplotting
+  - coordinate-frame-mismatch
   keywords:
   - astronomy
   - cache
@@ -62,12 +66,22 @@ research:
 relations:
   implements_tasks:
   - task:astronomy/catalog-visualization
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:cmd-plotting
+  - skill:datashader-019-pipeline
+  - skill:gaia-dr3-plot-with-dust
+  - skill:rave-dr6-public-talk-visualizations
+  supersedes:
+  - skill:cmd-plotting
+  - skill:datashader-019-pipeline
+  - skill:gaia-dr3-plot-with-dust
+  - skill:rave-dr6-public-talk-visualizations
   compatible_with: []
   related_to:
   - skill:tap-pyvo-adql-access
   - skill:data-aip-de-s3
+  - skill:gaia-dr3-tap-query
+  - skill:rave-dr6
 compatibility:
   clients: []
   operating_systems:
@@ -119,7 +133,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant
@@ -132,6 +146,26 @@ provenance:
     path: astronomy/astro-catalog-plotting-cache
     digest: sha256:f6eec57f7e8ed035b887be3f4df1e09db2b1b5f357c9109dede3b035c6e859a3
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/cmd-plotting
+    digest: sha256:b8477dbd2ee072b9d44142a76aa4b211d979375b802c18ecaec70c70fa97be1c
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: data-science/datashader-019-pipeline
+    digest: sha256:e5521e92a16031805755603b5ff0405d9d9c9872d85bc6ad724f5b4fbbe51622
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/gaia-dr3-plot-with-dust
+    digest: sha256:46c51e54444d15a447d041e07cb8ff40ede83b73d316637a8dbc56554de49d64
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-public-talk-visualizations
+    digest: sha256:b581cc7ef6c9dc0b0afa93a77846a19dd72b5e0ef92f34aab624553ee8b8d75e
+    relation: derived-from
 extensions:
   de.aip.ori:
     schema: urn:skill-commons:extension:de.aip.ori:1
@@ -147,7 +181,7 @@ extensions:
         - cache
         - provenance
         related_skill_candidates:
-        - astro-data-access-umbrella
-        - s3-parquet-astro-access
         - tap-pyvo-adql-access
-        - data-visualization-umbrella
+        - data-aip-de-s3
+        - gaia-dr3-tap-query
+        - rave-dr6

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import tempfile
 from pathlib import Path
 from typing import Any
@@ -11,7 +12,9 @@ from typing import Any
 from .io import json_safe, load_yaml_file, parse_skill, semantic_digest, sha256_bytes
 from .packer import SnapshotEntry, snapshot_tree
 
-CATALOG_SCHEMA_VERSION = "1.0"
+CATALOG_SCHEMA_VERSION = "1.1"
+BUNDLE_SCHEMA_VERSION = "1.0"
+BUNDLE_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
 def _require_mapping(value: Any, label: str) -> dict[str, Any]:
@@ -24,6 +27,104 @@ def _require_string(value: Any, label: str) -> str:
     if not isinstance(value, str) or not value.strip():
         raise ValueError(f"{label} must be a non-empty string")
     return value
+
+
+def _require_list(value: Any, label: str) -> list[Any]:
+    if not isinstance(value, list):
+        raise ValueError(f"{label} must be a list")
+    return value
+
+
+def _load_curation(
+    repository_root: Path,
+    active_coordinates: set[str],
+) -> tuple[list[dict[str, Any]], list[dict[str, str]], dict[str, dict[str, str]]]:
+    path = repository_root / "bundles" / "index.yaml"
+    if not path.is_file():
+        raise ValueError(f"bundle index does not exist: {path}")
+    source = _require_mapping(load_yaml_file(path), "bundles/index.yaml")
+    if source.get("schema_version") != BUNDLE_SCHEMA_VERSION:
+        raise ValueError(f"bundles/index.yaml schema_version must be {BUNDLE_SCHEMA_VERSION!r}")
+
+    bundles: list[dict[str, Any]] = []
+    bundle_ids: set[str] = set()
+    assigned: set[str] = set()
+    bundle_by_coordinate: dict[str, dict[str, str]] = {}
+    for index, raw_bundle in enumerate(_require_list(source.get("bundles"), "bundles")):
+        bundle = _require_mapping(raw_bundle, f"bundles/{index}")
+        bundle_id = _require_string(bundle.get("id"), f"bundles/{index}/id")
+        if not BUNDLE_ID_RE.fullmatch(bundle_id):
+            raise ValueError(f"bundle id is not a portable slug: {bundle_id!r}")
+        if bundle_id in bundle_ids:
+            raise ValueError(f"duplicate bundle id: {bundle_id}")
+        bundle_ids.add(bundle_id)
+        name = _require_string(bundle.get("name"), f"bundles/{index}/name")
+        description = _require_string(
+            bundle.get("description"),
+            f"bundles/{index}/description",
+        )
+        coordinates = [
+            _require_string(value, f"bundles/{index}/skills")
+            for value in _require_list(bundle.get("skills"), f"bundles/{index}/skills")
+        ]
+        if not coordinates:
+            raise ValueError(f"bundle {bundle_id!r} must contain at least one skill")
+        for coordinate in coordinates:
+            if coordinate not in active_coordinates:
+                raise ValueError(
+                    f"bundle {bundle_id!r} references unknown active skill: {coordinate}"
+                )
+            if coordinate in assigned:
+                raise ValueError(f"active skill appears in multiple bundles: {coordinate}")
+            assigned.add(coordinate)
+            bundle_by_coordinate[coordinate] = {"id": bundle_id, "name": name}
+        bundles.append(
+            {
+                "id": bundle_id,
+                "name": name,
+                "description": description,
+                "skills": coordinates,
+            }
+        )
+
+    missing = sorted(active_coordinates - assigned)
+    if missing:
+        raise ValueError(f"active skills missing from bundles: {', '.join(missing)}")
+
+    consolidations: list[dict[str, str]] = []
+    retired_coordinates: set[str] = set()
+    for index, raw_consolidation in enumerate(
+        _require_list(source.get("consolidations", []), "consolidations")
+    ):
+        consolidation = _require_mapping(raw_consolidation, f"consolidations/{index}")
+        coordinate = _require_string(
+            consolidation.get("coordinate"),
+            f"consolidations/{index}/coordinate",
+        )
+        replacement = _require_string(
+            consolidation.get("replacement"),
+            f"consolidations/{index}/replacement",
+        )
+        reason = _require_string(
+            consolidation.get("reason"),
+            f"consolidations/{index}/reason",
+        )
+        if coordinate in active_coordinates:
+            raise ValueError(f"consolidated skill is still active: {coordinate}")
+        if coordinate in retired_coordinates:
+            raise ValueError(f"duplicate consolidated skill: {coordinate}")
+        if replacement not in active_coordinates:
+            raise ValueError(f"consolidation replacement is not an active skill: {replacement}")
+        retired_coordinates.add(coordinate)
+        consolidations.append(
+            {
+                "coordinate": coordinate,
+                "replacement": replacement,
+                "reason": reason,
+            }
+        )
+
+    return bundles, consolidations, bundle_by_coordinate
 
 
 def package_tree_digest(entries: list[SnapshotEntry]) -> str:
@@ -113,10 +214,18 @@ def build_git_catalog(repository_root: Path, repository: str) -> dict[str, Any]:
     coordinates = [record["coordinate"] for record in records]
     if len(coordinates) != len(set(coordinates)):
         raise ValueError("catalog contains duplicate Commons coordinates")
+    bundles, consolidations, bundle_by_coordinate = _load_curation(
+        repository_root,
+        set(coordinates),
+    )
+    for record in records:
+        record["bundle"] = bundle_by_coordinate[record["coordinate"]]
     return json_safe(
         {
             "schema_version": CATALOG_SCHEMA_VERSION,
             "repository": repository,
+            "bundles": bundles,
+            "consolidations": consolidations,
             "skills": records,
         }
     )
@@ -141,17 +250,45 @@ def render_catalog_markdown(catalog: dict[str, Any]) -> str:
         "",
         "This index is generated from the complete, reviewed directories under "
         "[`skills/`](../skills/).",
+        "The functional bundles are curated in [`bundles/index.yaml`](../bundles/index.yaml). "
         "Git and the package directories remain authoritative.",
-        "",
-        "| Skill | Version | Description | Status |",
-        "|---|---:|---|---|",
     ]
-    for record in catalog["skills"]:
-        description = record["description"].replace("|", "\\|").replace("\n", " ")
-        lines.append(
-            f"| [`{record['coordinate']}`](../{record['path']}/) "
-            f"| `{record['version']}` | {description} | {record['status']} |"
+    records = {record["coordinate"]: record for record in catalog["skills"]}
+    for bundle in catalog["bundles"]:
+        lines.extend(
+            [
+                "",
+                f"## {bundle['name']}",
+                "",
+                bundle["description"],
+                "",
+                "| Skill | Version | Description |",
+                "|---|---:|---|",
+            ]
         )
+        for coordinate in bundle["skills"]:
+            record = records[coordinate]
+            description = record["description"].replace("|", "\\|").replace("\n", " ")
+            lines.append(
+                f"| [`{record['coordinate']}`](../{record['path']}/) "
+                f"| `{record['version']}` | {description} |"
+            )
+    if catalog["consolidations"]:
+        lines.extend(
+            [
+                "",
+                "## Consolidated skills",
+                "",
+                "These former package coordinates are preserved as redirects in the catalog and "
+                "in Git history; they are no longer independent skills.",
+                "",
+                "| Former skill | Use instead | Reason |",
+                "|---|---|---|",
+            ]
+        )
+        for item in catalog["consolidations"]:
+            reason = item["reason"].replace("|", "\\|").replace("\n", " ")
+            lines.append(f"| `{item['coordinate']}` | `{item['replacement']}` | {reason} |")
     lines.extend(
         [
             "",
