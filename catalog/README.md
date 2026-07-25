@@ -1,39 +1,78 @@
 # Skill catalog
 
 This index is generated from the complete, reviewed directories under [`skills/`](../skills/).
-Git and the package directories remain authoritative.
+The functional bundles are curated in [`bundles/index.yaml`](../bundles/index.yaml). Git and the package directories remain authoritative.
 
-| Skill | Version | Description | Status |
-|---|---:|---|---|
-| [`aip/arxiv`](../skills/arxiv/) | `1.0.0` | Search and retrieve academic papers from arXiv using the free REST API. Query by keyword, author, category, or paper ID. Fetch abstracts, full PDFs, generate BibTeX, and explore citations via Semantic Scholar. | active |
-| [`aip/astro-catalog-plotting-cache`](../skills/astro-catalog-plotting-cache/) | `1.0.0` | Use when turning astronomy catalog data into reproducible cached products and publication-ready plots, especially CMDs, RA/Dec maps, Galactic projections, hexbin density plots, Datashader outputs, and provenance-backed figure deliverables. | active |
-| [`aip/calculator`](../skills/calculator/) | `1.0.0` | Exact symbolic + numeric math with sympy/mpmath — derive formulas, evaluate constants, propagate errors, convert units. Use for ANY multi-step arithmetic or algebra instead of mental math. | active |
-| [`aip/cmd-plotting`](../skills/cmd-plotting/) | `1.0.0` | Generate astronomy colour-magnitude diagrams in Python with reproducible plotting choices. | active |
-| [`aip/cold-streams-monitoring`](../skills/cold-streams-monitoring/) | `1.0.0` | Automated arXiv monitoring for cold gas filament accretion in galaxy formation. Discovers new papers on cold mode accretion, cold flows, cosmological filaments, and related topics. Use for on-demand scans or recurring monitoring with the user's scheduler. | active |
-| [`aip/data-aip-de-s3`](../skills/data-aip-de-s3/) | `1.1.0` | Work with data.aip.de and S3-backed datasets using reproducible local caching, Dask-first reads for huge data, and plotting workflows that scale to large astronomy catalogs. | active |
-| [`aip/datashader-019-pipeline`](../skills/datashader-019-pipeline/) | `0.1.0` | Generate density plots (CMD, hexbin, 2D histograms) using datashader 0.19.0 with Dask for lazy data loading and matplotlib for final rendering. Handles the 0.19.0 API: no Canvas.hexbin(), no tf.to_rgba(), tf.shade() returns Image.to_pil(). | active |
-| [`aip/gaia-dr3-daiquiri-rest`](../skills/gaia-dr3-daiquiri-rest/) | `1.0.0` | FALLBACK Gaia access (prefer gaia-dr3-tap-query). Query Gaia DR3 at gaia.aip.de via its Daiquiri REST API for full-table COUNTs and very large async scans — CSRF handling, async jobs, queue names, JSON result fetching. Access 1.8 billion sources with ~153 columns. | active |
-| [`aip/gaia-dr3-plot-with-dust`](../skills/gaia-dr3-plot-with-dust/) | `2.0.0` | Retrieve nearby Gaia DR3 stars (via the AIP TAP service) and produce a two-panel research-paper figure — RA/Dec on the left, a Galactic XY projection overlaid with the SFD all-sky dust-extinction map on the right (dustmaps package). | active |
-| [`aip/gaia-dr3-tap-query`](../skills/gaia-dr3-tap-query/) | `2.1.0` | Query Gaia DR3 at gaia.aip.de via TAP/pyvo — the DEFAULT way to get Gaia data. ADQL queries, uniform random subsampling, Parquet caching, and ready-made sky / Galactic-XY plots. Access 1.8 billion sources. | active |
-| [`aip/hdf5-on-s3-cached`](../skills/hdf5-on-s3-cached/) | `1.0.0` | Access HDF5 files stored on S3 by creating a reliable local cache first, extracting reusable subsets, and converting repeated tabular work products to local Parquet. | active |
-| [`aip/iterative-paper-improvement`](../skills/iterative-paper-improvement/) | `2.0.0` | Structured multi-round improvement workflow for LaTeX academic papers — each round targets specific improvements (structure, prose, figures, compilation). Also covers merging multiple papers and multi-phase iterations (X figure rounds + Y text rounds). | active |
-| [`aip/latex-journal-submission-package`](../skills/latex-journal-submission-package/) | `1.0.0` | Convert a working LaTeX manuscript into a journal-style submission package with separate BibTeX, build helper, manifest, and zip archive; useful when TeX is unavailable locally. | active |
-| [`aip/latex-paper-iteration`](../skills/latex-paper-iteration/) | `2.0.0` | Iteratively improve LaTeX research papers — structural fixes, prose polishing, figure integration, compilation cycles. Also covers merging multiple papers into a unified manuscript. | active |
-| [`aip/latex-research-paper`](../skills/latex-research-paper/) | `0.1.0` | Generate complete, compilable LaTeX research papers in formal academic style with full section structure, BibTeX references, and figure support. | active |
-| [`aip/mnras-latex-compile-portability-fixes`](../skills/mnras-latex-compile-portability-fixes/) | `1.0.0` | Fix common MNRAS LaTeX portability issues on Ubuntu/Debian TeX Live installs, compile successfully, and package submission artifacts. | active |
-| [`aip/mnras-latex-portable`](../skills/mnras-latex-portable/) | `1.0.0` | Build and package an MNRAS LaTeX manuscript portably on Ubuntu, avoiding missing-font-package failures and fixing common two-column table issues. | active |
-| [`aip/mnras-latex-portable-build-and-package`](../skills/mnras-latex-portable-build-and-package/) | `1.0.0` | Build and package an MNRAS LaTeX manuscript portably on Ubuntu, avoiding missing-font-package failures and fixing common two-column table issues. | active |
-| [`aip/multi-section-latex-whitepaper`](../skills/multi-section-latex-whitepaper/) | `2.0.0` | Generate comprehensive LaTeX white papers from multiple sources — Markdown sections, existing papers, or user ideas. Converts and assembles into a single compiled PDF. | active |
-| [`aip/rave-dr6`](../skills/rave-dr6/) | `1.1.0` | Query the RAVE DR6 catalog at https://www.rave-survey.org/tap/ using pyvo (TAPService.run_sync). Access stellar parameters, Gaia cross-matches, distances, and Galactic coordinates (l, b). Includes galactic and equirectangular projection plotting recipes. | active |
-| [`aip/rave-dr6-nearest-100-plot`](../skills/rave-dr6-nearest-100-plot/) | `1.0.0` | Query the 100 nearest RAVE DR6 stars and generate two clear PNG plots: Galactic projection and RA/Dec scatter, with reproducible local parquet output. | active |
-| [`aip/rave-dr6-public-talk-visualizations`](../skills/rave-dr6-public-talk-visualizations/) | `1.0.0` | Turn a nearest-100 RAVE DR6 query into dark-theme, public-talk-ready PNG visualizations with clear titles, readable scaling, and presentation-friendly styling. | active |
-| [`aip/rave-dr6-recent-observations-plot`](../skills/rave-dr6-recent-observations-plot/) | `1.0.0` | Retrieve the most recent 100 entries from the RAVE DR6 `dr6_obsdata` table and generate a simple RA‑Dec scatter plot. Use an isolated Python environment and optionally use Astropy to derive Galactic coordinates. | active |
-| [`aip/rave-dr6-shboost-distance-query`](../skills/rave-dr6-shboost-distance-query/) | `0.1.0` | Query and crossmatch RAVE DR6 stars with SHboost24 Gaia source IDs to obtain distances and Galactocentric coordinates, then select and plot nearby matches. | active |
-| [`aip/rave-dr6-starhorse-access`](../skills/rave-dr6-starhorse-access/) | `1.0.0` | Query RAVE DR6 via TAP and crossmatch with SHboost24 distances for nearby star analysis. | active |
-| [`aip/s3-parquet-sampling`](../skills/s3-parquet-sampling/) | `1.1.0` | Sample or reduce massive Parquet datasets on S3 using local Parquet caching, Dask-first processing for large inputs, and hvPlot/Datashader for scalable scientific visualization. | active |
-| [`aip/s3-parquet-sampling-plot-cached`](../skills/s3-parquet-sampling-plot-cached/) | `1.0.0` | Efficiently sample a subset of a massive Parquet dataset stored on an S3‑compatible bucket, cache the sampled rows locally as a Parquet file for fast reuse, and produce high‑resolution PNG plots suitable for analysis and publication. | active |
-| [`aip/seaborn-paper-plots`](../skills/seaborn-paper-plots/) | `1.0.0` | Create clean seaborn/matplotlib plots suitable for papers, notes, and reproducible reports. | active |
-| [`aip/starhorse-access`](../skills/starhorse-access/) | `2.0.2` | Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP. | active |
-| [`aip/tap-pyvo-adql-access`](../skills/tap-pyvo-adql-access/) | `1.0.0` | Use when querying astronomy TAP services with ADQL through pyvo or curl, including service probes, metadata discovery, TOP-based queries, VOTable/FITS conversion, pandas/Parquet caching, and robust network fallbacks. | active |
+## General
+
+Broad research utilities that are useful across disciplines.
+
+| Skill | Version | Description |
+|---|---:|---|
+| [`aip/arxiv`](../skills/arxiv/) | `2.0.0` | Search, read, cite, and monitor academic papers through arXiv and related public metadata services, including reusable topic alerts and verified BibTeX generation. |
+| [`aip/calculator`](../skills/calculator/) | `1.0.1` | Exact symbolic + numeric math with sympy/mpmath — derive formulas, evaluate constants, propagate errors, convert units. Use for ANY multi-step arithmetic or algebra instead of mental math. |
+
+## LaTeX
+
+Authoring, revising, compiling, and packaging scholarly LaTeX manuscripts.
+
+| Skill | Version | Description |
+|---|---:|---|
+| [`aip/latex-research-paper`](../skills/latex-research-paper/) | `1.0.0` | Draft, revise, merge, and verify LaTeX research papers or white papers, including bibliography management, scientific figures, and controlled compilation cycles. |
+| [`aip/latex-journal-submission-package`](../skills/latex-journal-submission-package/) | `2.0.0` | Adapt a stable LaTeX manuscript to a journal, fix portable build problems, verify the result, and assemble a clean submission archive; includes MNRAS guidance. |
+
+## Astronomy
+
+Astronomy catalog access, survey-specific workflows, and scientific visualization.
+
+| Skill | Version | Description |
+|---|---:|---|
+| [`aip/tap-pyvo-adql-access`](../skills/tap-pyvo-adql-access/) | `1.0.0` | Use when querying astronomy TAP services with ADQL through pyvo or curl, including service probes, metadata discovery, TOP-based queries, VOTable/FITS conversion, pandas/Parquet caching, and robust network fallbacks. |
+| [`aip/gaia-dr3-tap-query`](../skills/gaia-dr3-tap-query/) | `3.0.0` | Query Gaia DR3 at gaia.aip.de through TAP/PyVO, with schema discovery, representative sampling, local caching, and a Daiquiri REST fallback for exceptional async jobs. |
+| [`aip/rave-dr6`](../skills/rave-dr6/) | `2.0.0` | Discover and query RAVE DR6 tables through its public TAP service, cache bounded results, and crossmatch RAVE sources with Gaia or StarHorse distance products. |
+| [`aip/starhorse-access`](../skills/starhorse-access/) | `2.0.2` | Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP. |
+| [`aip/astro-catalog-plotting-cache`](../skills/astro-catalog-plotting-cache/) | `2.0.0` | Use when turning astronomy catalog data into reproducible cached products and publication-ready plots, especially CMDs, RA/Dec maps, Galactic projections, hexbin density plots, Datashader outputs, and provenance-backed figure deliverables. |
+
+## Data
+
+Reproducible access to large research datasets and object storage.
+
+| Skill | Version | Description |
+|---|---:|---|
+| [`aip/data-aip-de-s3`](../skills/data-aip-de-s3/) | `2.0.0` | Access AIP and other S3-compatible research data with explicit authentication, column and row reduction, Dask-backed Parquet reads, and cache-first handling of large or non-columnar files. |
+
+## Visualization
+
+General-purpose publication and report graphics outside domain-specific workflows.
+
+| Skill | Version | Description |
+|---|---:|---|
+| [`aip/seaborn-paper-plots`](../skills/seaborn-paper-plots/) | `1.0.1` | Create clean seaborn/matplotlib plots suitable for papers, notes, and reproducible reports. |
+
+## Consolidated skills
+
+These former package coordinates are preserved as redirects in the catalog and in Git history; they are no longer independent skills.
+
+| Former skill | Use instead | Reason |
+|---|---|---|
+| `aip/cold-streams-monitoring` | `aip/arxiv` | A topic-specific arXiv query and scheduler wrapper is now covered by generic monitoring. |
+| `aip/iterative-paper-improvement` | `aip/latex-research-paper` | Its revision rounds duplicate the canonical manuscript authoring and revision workflow. |
+| `aip/latex-paper-iteration` | `aip/latex-research-paper` | Drafting, revision, merging, figures, and compile loops now live in one authoring skill. |
+| `aip/multi-section-latex-whitepaper` | `aip/latex-research-paper` | Multi-source synthesis is a mode of the canonical manuscript workflow. |
+| `aip/mnras-latex-compile-portability-fixes` | `aip/latex-journal-submission-package` | MNRAS portability fixes are journal-specific packaging guidance, not a separate task. |
+| `aip/mnras-latex-portable` | `aip/latex-journal-submission-package` | MNRAS build and package guidance is consolidated into the journal submission skill. |
+| `aip/mnras-latex-portable-build-and-package` | `aip/latex-journal-submission-package` | This package duplicated the canonical journal build and submission workflow. |
+| `aip/cmd-plotting` | `aip/astro-catalog-plotting-cache` | A CMD is one plot type already covered by the broader astronomy plotting skill. |
+| `aip/datashader-019-pipeline` | `aip/astro-catalog-plotting-cache` | Datashader is an implementation path within the broader large-catalog plotting workflow. |
+| `aip/gaia-dr3-daiquiri-rest` | `aip/gaia-dr3-tap-query` | Daiquiri REST is retained as a fallback mode of the canonical Gaia access skill. |
+| `aip/gaia-dr3-plot-with-dust` | `aip/astro-catalog-plotting-cache` | One Gaia sample and dust-overlay figure is too narrow to be an independent skill. |
+| `aip/rave-dr6-nearest-100-plot` | `aip/rave-dr6` | A fixed nearest-100 query is an example, not a distinct RAVE capability. |
+| `aip/rave-dr6-public-talk-visualizations` | `aip/astro-catalog-plotting-cache` | Presentation styling is a plotting choice independent of the RAVE data source. |
+| `aip/rave-dr6-recent-observations-plot` | `aip/rave-dr6` | A fixed newest-100 query and plot is covered by general RAVE querying and plotting. |
+| `aip/rave-dr6-shboost-distance-query` | `aip/rave-dr6` | The reusable RAVE-StarHorse crossmatch is now a reference inside the canonical RAVE skill. |
+| `aip/rave-dr6-starhorse-access` | `aip/rave-dr6` | This was a second version of the same RAVE-StarHorse crossmatch workflow. |
+| `aip/hdf5-on-s3-cached` | `aip/data-aip-de-s3` | Cache-first HDF5 handling is one format path within general object-store access. |
+| `aip/s3-parquet-sampling` | `aip/data-aip-de-s3` | Parquet projection, reduction, and caching are core object-store access operations. |
+| `aip/s3-parquet-sampling-plot-cached` | `aip/data-aip-de-s3` | Its S3 access is covered here; astronomy plotting belongs to the plotting skill. |
 
 Machine-readable metadata: [`index.json`](index.json).

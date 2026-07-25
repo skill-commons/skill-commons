@@ -1,0 +1,91 @@
+schema_version: "1.0"
+bundles:
+- id: general
+  name: General
+  description: Broad research utilities that are useful across disciplines.
+  skills:
+  - aip/arxiv
+  - aip/calculator
+- id: latex
+  name: LaTeX
+  description: Authoring, revising, compiling, and packaging scholarly LaTeX manuscripts.
+  skills:
+  - aip/latex-research-paper
+  - aip/latex-journal-submission-package
+- id: astronomy
+  name: Astronomy
+  description: Astronomy catalog access, survey-specific workflows, and scientific visualization.
+  skills:
+  - aip/tap-pyvo-adql-access
+  - aip/gaia-dr3-tap-query
+  - aip/rave-dr6
+  - aip/starhorse-access
+  - aip/astro-catalog-plotting-cache
+- id: data
+  name: Data
+  description: Reproducible access to large research datasets and object storage.
+  skills:
+  - aip/data-aip-de-s3
+- id: visualization
+  name: Visualization
+  description: General-purpose publication and report graphics outside domain-specific workflows.
+  skills:
+  - aip/seaborn-paper-plots
+consolidations:
+- coordinate: aip/cold-streams-monitoring
+  replacement: aip/arxiv
+  reason: A topic-specific arXiv query and scheduler wrapper is now covered by generic monitoring.
+- coordinate: aip/iterative-paper-improvement
+  replacement: aip/latex-research-paper
+  reason: Its revision rounds duplicate the canonical manuscript authoring and revision workflow.
+- coordinate: aip/latex-paper-iteration
+  replacement: aip/latex-research-paper
+  reason: Drafting, revision, merging, figures, and compile loops now live in one authoring skill.
+- coordinate: aip/multi-section-latex-whitepaper
+  replacement: aip/latex-research-paper
+  reason: Multi-source synthesis is a mode of the canonical manuscript workflow.
+- coordinate: aip/mnras-latex-compile-portability-fixes
+  replacement: aip/latex-journal-submission-package
+  reason: MNRAS portability fixes are journal-specific packaging guidance, not a separate task.
+- coordinate: aip/mnras-latex-portable
+  replacement: aip/latex-journal-submission-package
+  reason: MNRAS build and package guidance is consolidated into the journal submission skill.
+- coordinate: aip/mnras-latex-portable-build-and-package
+  replacement: aip/latex-journal-submission-package
+  reason: This package duplicated the canonical journal build and submission workflow.
+- coordinate: aip/cmd-plotting
+  replacement: aip/astro-catalog-plotting-cache
+  reason: A CMD is one plot type already covered by the broader astronomy plotting skill.
+- coordinate: aip/datashader-019-pipeline
+  replacement: aip/astro-catalog-plotting-cache
+  reason: Datashader is an implementation path within the broader large-catalog plotting workflow.
+- coordinate: aip/gaia-dr3-daiquiri-rest
+  replacement: aip/gaia-dr3-tap-query
+  reason: Daiquiri REST is retained as a fallback mode of the canonical Gaia access skill.
+- coordinate: aip/gaia-dr3-plot-with-dust
+  replacement: aip/astro-catalog-plotting-cache
+  reason: One Gaia sample and dust-overlay figure is too narrow to be an independent skill.
+- coordinate: aip/rave-dr6-nearest-100-plot
+  replacement: aip/rave-dr6
+  reason: A fixed nearest-100 query is an example, not a distinct RAVE capability.
+- coordinate: aip/rave-dr6-public-talk-visualizations
+  replacement: aip/astro-catalog-plotting-cache
+  reason: Presentation styling is a plotting choice independent of the RAVE data source.
+- coordinate: aip/rave-dr6-recent-observations-plot
+  replacement: aip/rave-dr6
+  reason: A fixed newest-100 query and plot is covered by general RAVE querying and plotting.
+- coordinate: aip/rave-dr6-shboost-distance-query
+  replacement: aip/rave-dr6
+  reason: The reusable RAVE-StarHorse crossmatch is now a reference inside the canonical RAVE skill.
+- coordinate: aip/rave-dr6-starhorse-access
+  replacement: aip/rave-dr6
+  reason: This was a second version of the same RAVE-StarHorse crossmatch workflow.
+- coordinate: aip/hdf5-on-s3-cached
+  replacement: aip/data-aip-de-s3
+  reason: Cache-first HDF5 handling is one format path within general object-store access.
+- coordinate: aip/s3-parquet-sampling
+  replacement: aip/data-aip-de-s3
+  reason: Parquet projection, reduction, and caching are core object-store access operations.
+- coordinate: aip/s3-parquet-sampling-plot-cached
+  replacement: aip/data-aip-de-s3
+  reason: Its S3 access is covered here; astronomy plotting belongs to the plotting skill.

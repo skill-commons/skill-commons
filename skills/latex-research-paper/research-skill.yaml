@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: latex-research-paper
-  version: 0.1.0
+  version: 1.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -24,6 +24,8 @@ research:
   - research-writing
   methods:
   - manuscript-drafting
+  - manuscript-revision
+  - multi-source-synthesis
   - bibliography-management
   - scientific-figure-generation
   - compilation-verification
@@ -36,6 +38,9 @@ research:
   - verified-bibliographic-metadata
   intended_uses:
   - draft-latex-research-paper
+  - revise-existing-manuscript
+  - merge-research-documents
+  - create-multi-section-whitepaper
   - structure-academic-manuscript
   - compile-reviewable-pdf
   excluded_uses:
@@ -50,21 +55,29 @@ research:
   - unresolved-citation
   - missing-figure
   - unsupported-scientific-claim
+  - source-provenance-lost-during-merge
   keywords:
   - latex
   - academic-writing
   - research-paper
+  - manuscript-revision
+  - whitepaper
   - bibtex
   - figures
 relations:
   implements_tasks:
   - task:research/latex-paper-drafting
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:latex-paper-iteration
+  - skill:iterative-paper-improvement
+  - skill:multi-section-latex-whitepaper
+  supersedes:
+  - skill:latex-paper-iteration
+  - skill:iterative-paper-improvement
+  - skill:multi-section-latex-whitepaper
   compatible_with: []
   related_to:
-  - skill:latex-paper-iteration
-  - skill:multi-section-latex-whitepaper
+  - skill:latex-journal-submission-package
 compatibility:
   clients: []
   operating_systems:
@@ -108,7 +121,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -121,3 +134,18 @@ provenance:
     path: research/latex-research-paper
     digest: sha256:415ad60e843d1dbcc9225b66fbd3843185246cf7aeb6b30580202a74526c4eec
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/latex-paper-iteration
+    digest: sha256:28464941df6fc9292ebab2dfc6fcb022ce2533081e4a4da23aa0761eaf5554aa
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/iterative-paper-improvement
+    digest: sha256:d7d0ba3a8797d1d0f0767598bc7c1ed623dbd6d9df22aa81d1b655d59a4731eb
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/multi-section-latex-whitepaper
+    digest: sha256:246adcd10a008f7e574ba10172118fefb68893da0c4624992e610f72678165dc
+    relation: derived-from

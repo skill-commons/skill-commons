@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/rave-dr6
-  version: 1.1.0
-manifest_digest: sha256:5b9595c5679c2ace98115d837c93b8847933f760bcf0cb1c26c2f39004633c60
+  version: 2.0.0
+manifest_digest: sha256:041c3b479b368fcb7a8d8cecdd147121efef6ac198f5920e7ff771bb4ca22516
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

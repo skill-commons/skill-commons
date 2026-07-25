@@ -1,7 +1,6 @@
 ---
 name: latex-journal-submission-package
-description: Convert a working LaTeX manuscript into a journal-style submission package with separate
-  BibTeX, build helper, manifest, and zip archive; useful when TeX is unavailable locally.
+description: Adapt a stable LaTeX manuscript to a journal, fix portable build problems, verify the result, and assemble a clean submission archive; includes MNRAS guidance.
 license: MIT
 metadata:
   research-skill.manifest: research-skill.yaml
@@ -9,176 +8,133 @@ metadata:
 
 # LaTeX Journal Submission Package
 
-## Overview
-This skill contains a reusable operational workflow. Follow the existing task-specific steps and examples in the sections below.
+## When to Use
 
-## Pitfalls
-- Do not hardcode credentials, tokens, or personal secrets.
-- Verify external service URLs, paths, and permissions before making changes.
-- Keep generated outputs reproducible and record input assumptions.
+Use this skill after a manuscript is scientifically stable and needs:
 
+- adaptation to a journal class or author instructions;
+- portable compilation on a clean environment;
+- bibliography and asset normalization;
+- a complete, reviewable submission directory and archive;
+- diagnosis of journal-specific layout or TeX package failures.
 
-Use this when a user has a working LaTeX manuscript and wants a cleaner, submission-style package (for example MNRAS), especially if the environment cannot compile TeX yet.
-
-## When to use
-- The manuscript exists as a single `.tex` file with inline bibliography.
-- The user wants a journal-adapted version or a submission-ready directory layout.
-- The machine may not have `pdflatex`, `latexmk`, or the journal class installed.
-- You still want to deliver a useful package: `main.tex`, `references.bib`, `compile.sh`, README, notes, zip.
-
-## Goal
-Produce:
-- a journal-formatted manuscript source (or adapted variant)
-- separate `references.bib`
-- helper build script
-- README with compile instructions
-- notes/manifest for provenance
-- zip archive for transfer
+Use `latex-research-paper` for drafting, merging, and substantive manuscript revision.
+This skill does not submit a manuscript or claim journal compliance on the user's behalf.
 
 ## Workflow
 
-### 1) Inspect the live environment first
-Always verify, do not assume:
-- OS and architecture
-- presence of `pdflatex`, `latexmk`, `kpsewhich`, `tectonic`
-- package manager availability
+### 1. Read current instructions and inspect the manuscript
 
-Example checks:
-```bash
-. /etc/os-release && echo "$PRETTY_NAME"
-uname -sr
-uname -m
-command -v apt
-command -v pdflatex
-command -v latexmk
-command -v kpsewhich
-command -v tectonic
-```
+Journal rules change. Check the current authoritative author instructions before choosing
+class options, word limits, bibliography style, figure formats, or archive contents.
+Then inventory:
 
-If TeX tools are missing, say so explicitly and continue packaging anyway.
+- the main TeX entry point and included section files;
+- bibliography system and database;
+- figures, tables, appendices, custom classes, styles, and fonts;
+- generated files that should not enter the submission;
+- available build tools (`latexmk`, `pdflatex`, `bibtex`, `biber`, `kpsewhich`).
 
-### 2) If targeting MNRAS, adapt the preamble and front matter
-A journal's requirements can change. Check the current author instructions before
-finalizing class options, front matter, and package contents.
+Do not install system packages without the user's approval.
 
-A practical starting point:
-```latex
-\documentclass[fleqn,usenatbib,useAMS]{mnras}
-```
-Typical useful packages:
-```latex
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{enumitem}
-\usepackage{xcolor}
-\usepackage{hyperref}
-```
-Add publisher-requested font packages only after confirming they are installed.
-Avoid `longtable` in the normal MNRAS two-column layout; prefer `table` or `table*`.
-Add MNRAS-style title, author, date, `\pubyear`, `\label{firstpage}`, `\pagerange`, `\maketitle`, abstract, and `keywords` environment.
+### 2. Work in a clean package directory
 
-### 3) Convert inline bibliography into BibTeX
-If the source uses `thebibliography`, extract each `\bibitem{key}` into BibTeX.
-
-Recommended approach:
-- Parse the inline bibliography programmatically.
-- For arXiv entries, query the arXiv API by ID to recover accurate author lists, title, year, and primary category.
-- Replace the inline bibliography in `main.tex` with:
-```latex
-\bibliographystyle{mnras}
-\bibliography{references}
-```
-
-### 4) Important arXiv metadata pitfall
-The arXiv API returns IDs like `2603.26953v1`, not bare `2603.26953`.
-When matching IDs, strip the version suffix with a regex like:
-```python
-re.sub(r'v\d+$', '', arxiv_id)
-```
-If bulk metadata lookup behaves inconsistently, fall back to one-ID-per-request. This worked reliably.
-
-### 5) Build the submission directory layout
-Recommended layout:
 ```text
-submission_package/
-  main.tex
-  references.bib
-  compile.sh
-  README.txt
-  figures/
-    README.txt
-  notes/
-    package_notes.txt
-    manifest.json
+submission-package/
+├── main.tex
+├── references.bib
+├── figures/
+├── compile.sh
+├── README.txt
+└── notes/
+    ├── manifest.json
+    └── package-notes.txt
 ```
 
-### 6) Include a compile helper
-Use:
+Copy only files required by the manuscript. Rewrite absolute paths and verify every
+`\input`, `\include`, `\includegraphics`, bibliography, class, and style reference.
+
+### 3. Normalize the bibliography
+
+Pick the system required by the journal. If converting an inline `thebibliography`,
+create real BibTeX entries from verified metadata rather than parsing prose into guessed
+fields. arXiv IDs returned by APIs may include version suffixes such as `v2`; normalize
+them only when matching records, and preserve the cited version when scientifically
+relevant.
+
+### 4. Add a portable build helper
+
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
 if command -v latexmk >/dev/null 2>&1; then
-  latexmk -pdf main.tex
+  latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 else
-  pdflatex main.tex
+  pdflatex -interaction=nonstopmode -halt-on-error main.tex
   bibtex main
-  pdflatex main.tex
-  pdflatex main.tex
+  pdflatex -interaction=nonstopmode -halt-on-error main.tex
+  pdflatex -interaction=nonstopmode -halt-on-error main.tex
 fi
 ```
-Make it executable.
 
-### 7) Include explicit README guidance
-Document:
-- what files are included
-- that the package was structurally prepared even if TeX is missing
-- what must be updated before submission (authors, affiliations, acknowledgements, figures)
-- how to compile locally
+Adapt the fallback for `biber` or another engine when the document requires it.
 
-### 8) Zip the package
-After generating all files, create a zip archive for easy delivery.
+### 5. Compile and classify failures
 
-## Ubuntu package requirements for actual compilation
-If the user asks what is needed to compile MNRAS on Ubuntu, check live first, then recommend:
-```bash
-sudo apt update && sudo apt install -y \
-  latexmk \
-  texlive-latex-base \
-  texlive-latex-extra \
-  texlive-fonts-recommended \
-  texlive-publishers
+Fix fatal problems first:
+
+- missing class, style, font, or figure files;
+- bibliography tools or databases not found;
+- undefined control sequences;
+- journal layout incompatibilities;
+- unresolved file paths.
+
+Treat overfull/underfull boxes and font substitutions as review items rather than
+automatically fatal errors. Re-run until citations and cross-references stabilize.
+If TeX is unavailable, still deliver the structurally checked package and report that
+PDF verification remains outstanding.
+
+### 6. Verify and archive
+
+- compile from the clean package directory, not the development tree;
+- inspect the PDF visually;
+- search logs for unresolved citations and references;
+- compare the archive file list with the manifest;
+- scan for credentials, private notes, local paths, and unrelated data;
+- create the zip only after the directory is complete.
+
+## MNRAS Portability Reference
+
+Treat these as known failure patterns, not a substitute for current MNRAS instructions.
+
+Start from the journal's current class guidance. A commonly used research layout is:
+
+```latex
+\documentclass[fleqn,usenatbib,useAMS]{mnras}
 ```
-Run installation only after the user approves system changes.
-Why:
-- `pdflatex` comes from TeX Live base stack
-- `latexmk` is the easiest build driver
-- `mnras.cls` is typically in `texlive-publishers`
 
-Nice-to-have but optional:
-```bash
-biber texlive-science
-```
+On minimal TeX Live installations:
 
-## Verification checklist
-Before finishing:
-- check brace balance and key environment balance in the generated `.tex`
-- verify `main.tex` references `references.bib`
-- inspect the first part of `references.bib`
-- search for bad placeholders like `Unknown`
-- confirm zip archive exists
+- `newtxtext`/`newtxmath` may be missing; remove optional font packages or install the
+  journal-supported dependency set with approval;
+- `longtable` does not work in normal two-column mode; use `table` for one column or
+  `table*` with `tabularx` for a readable full-width table;
+- do not resize tables until text becomes illegible;
+- use `\bibliographystyle{mnras}` with the journal's expected citation system.
 
-## What to tell the user
-If TeX is missing, clearly state:
-- the package is ready structurally
-- PDF generation is blocked only by missing TeX tooling
-- exact Ubuntu packages required to compile
+Before suggesting Ubuntu packages, inspect the environment. A typical approved install
+may include `latexmk`, `texlive-latex-base`, `texlive-latex-extra`,
+`texlive-fonts-recommended`, and `texlive-publishers`; package names and sufficiency can
+change.
 
-## Reusable lessons learned
-- Packaging is still useful even without compilation.
-- Separating bibliography and adding a build helper significantly improves handoff quality.
-- arXiv metadata recovery is worth doing because naive BibTeX extraction often leaves poor author/title fields.
-- For journal adaptation requests, deliver both the adapted `.tex` and a full package directory/zip, not just one file.
+## Verification Checklist
+
+- [ ] Current journal instructions were checked and recorded.
+- [ ] All included source, bibliography, figure, class, and style files are present.
+- [ ] The package compiles from its own clean directory, or the missing tool blocker is
+      explicit.
+- [ ] Citations and cross-references resolve.
+- [ ] Fatal errors are absent and remaining warnings were reviewed.
+- [ ] The PDF was visually inspected.
+- [ ] README and manifest describe contents, build command, and outstanding placeholders.
+- [ ] The archive contains no secrets, private notes, absolute paths, or unrelated files.

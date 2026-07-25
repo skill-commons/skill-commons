@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/data-aip-de-s3
-  version: 1.1.0
-manifest_digest: sha256:c2bdea92358852f02ed747ae4d0d187670416cad4ca4c870fec760a0ca2e843c
+  version: 2.0.0
+manifest_digest: sha256:738980be19abc979874ccac92242817fa238effdc77b987e177e0373afe5862c
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

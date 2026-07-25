@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: data-aip-de-s3
-  version: 1.1.0
+  version: 2.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -25,8 +25,10 @@ research:
   methods:
   - columnar-data-access
   - distributed-dataframe-analysis
+  - hdf5-cache-first-access
   - local-cache-construction
   - object-storage-access
+  - parquet-reduction
   software:
   - Dask
   - Datashader
@@ -39,6 +41,7 @@ research:
   - S3-compatible-object-storage
   intended_uses:
   - access-large-astronomy-datasets
+  - cache-remote-hdf5-before-analysis
   - cache-reusable-parquet-subsets
   - plot-large-catalogs
   excluded_uses:
@@ -54,6 +57,8 @@ research:
   - insufficient-local-storage
   - remote-schema-or-prefix-change
   - unbounded-eager-read
+  - nonrepresentative-sample
+  - stale-local-cache
   keywords:
   - astronomy
   - dask
@@ -65,11 +70,18 @@ research:
 relations:
   implements_tasks:
   - task:astronomy/s3-catalog-access
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:hdf5-on-s3-cached
+  - skill:s3-parquet-sampling
+  - skill:s3-parquet-sampling-plot-cached
+  supersedes:
+  - skill:hdf5-on-s3-cached
+  - skill:s3-parquet-sampling
+  - skill:s3-parquet-sampling-plot-cached
   compatible_with: []
   related_to:
   - skill:astro-catalog-plotting-cache
+  - skill:seaborn-paper-plots
 compatibility:
   clients: []
   operating_systems:
@@ -133,7 +145,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant
@@ -146,6 +158,21 @@ provenance:
     path: astronomy/data-aip-de-s3
     digest: sha256:7be230499845f10190f5cd79cb91e80bf737ead0f963e82db37be69df81a73e7
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/hdf5-on-s3-cached
+    digest: sha256:26bbc6284fd772b2826fcc2bd8ef8f0c905708dce836f957984d45733b6f9ab5
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/s3-parquet-sampling
+    digest: sha256:d203022513d9965f84216d516c96db622138bae2573fd7f23ca02b6b436c3600
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: python/s3-parquet-sampling-plot-cached
+    digest: sha256:878d1622483328b4710da120430ccec192d0e5ebf8e2270045ea1555d8f92912
+    relation: derived-from
 extensions:
   de.aip.ori:
     schema: urn:skill-commons:extension:de.aip.ori:1
@@ -162,7 +189,5 @@ extensions:
         - dask
         legacy_category: astronomy
         related_skill_candidates:
-        - shboost24-cmd
-        - s3-parquet-sampling
-        - hdf5-on-s3-cached
-        - dask-hvplot-datashader-scientific-plots
+        - astro-catalog-plotting-cache
+        - seaborn-paper-plots

@@ -23,9 +23,18 @@ def test_git_catalog_is_deterministic_and_records_published_skills() -> None:
 
     assert first == second
     assert first["repository"] == REPOSITORY
+    assert first["schema_version"] == "1.1"
     assert len(first["skills"]) == len(
         [path for path in (ROOT / "skills").iterdir() if path.is_dir()]
     )
+    assert len(first["skills"]) == 11
+    assert [bundle["name"] for bundle in first["bundles"]] == [
+        "General",
+        "LaTeX",
+        "Astronomy",
+        "Data",
+        "Visualization",
+    ]
     records = {record["coordinate"]: record for record in first["skills"]}
     skill = records["aip/starhorse-access"]
     assert skill["coordinate"] == "aip/starhorse-access"
@@ -33,8 +42,12 @@ def test_git_catalog_is_deterministic_and_records_published_skills() -> None:
     assert skill["path"] == "skills/starhorse-access"
     assert skill["release_tag"] == "skill/starhorse-access/v2.0.2"
     assert skill["tree_digest"].startswith("sha256:")
+    assert skill["bundle"] == {"id": "astronomy", "name": "Astronomy"}
     assert records["aip/tap-pyvo-adql-access"]["path"] == "skills/tap-pyvo-adql-access"
     assert records["aip/gaia-dr3-tap-query"]["path"] == "skills/gaia-dr3-tap-query"
+    assert {item["coordinate"]: item["replacement"] for item in first["consolidations"]}[
+        "aip/rave-dr6-nearest-100-plot"
+    ] == "aip/rave-dr6"
 
 
 def test_catalog_outputs_can_be_written_and_checked(tmp_path: Path) -> None:
@@ -73,12 +86,56 @@ def test_catalog_rejects_a_sidecar_name_that_differs_from_its_directory(
         destination = skill / path.relative_to(source)
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(path.read_bytes())
+    bundles = repository / "bundles"
+    bundles.mkdir()
+    (bundles / "index.yaml").write_text(
+        """schema_version: "1.0"
+bundles:
+- id: astronomy
+  name: Astronomy
+  description: Test bundle.
+  skills: [aip/starhorse-access]
+consolidations: []
+"""
+    )
     manifest = (skill / "research-skill.yaml").read_text()
     (skill / "research-skill.yaml").write_text(
         manifest.replace("name: starhorse-access", "name: wrong-name", 1)
     )
 
     with pytest.raises(ValueError, match="directory and package name differ"):
+        build_git_catalog(repository, REPOSITORY)
+
+
+def test_catalog_rejects_an_active_skill_in_multiple_bundles(tmp_path: Path) -> None:
+    repository = tmp_path / "repository"
+    skill = repository / "skills" / "starhorse-access"
+    skill.parent.mkdir(parents=True)
+    source = ROOT / "skills" / "starhorse-access"
+    for path in source.rglob("*"):
+        if path.is_dir():
+            continue
+        destination = skill / path.relative_to(source)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(path.read_bytes())
+    bundles = repository / "bundles"
+    bundles.mkdir()
+    (bundles / "index.yaml").write_text(
+        """schema_version: "1.0"
+bundles:
+- id: astronomy
+  name: Astronomy
+  description: First test bundle.
+  skills: [aip/starhorse-access]
+- id: duplicate
+  name: Duplicate
+  description: Second test bundle.
+  skills: [aip/starhorse-access]
+consolidations: []
+"""
+    )
+
+    with pytest.raises(ValueError, match="multiple bundles"):
         build_git_catalog(repository, REPOSITORY)
 
 

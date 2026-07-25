@@ -1,8 +1,8 @@
 schema_version: 0.1.0-draft
 package:
   coordinate: aip/astro-catalog-plotting-cache
-  version: 1.0.0
-manifest_digest: sha256:7e4756ded0f9ae870c2236e8111632977f3633b248356ab7557f3ad5de27aed9
+  version: 2.0.0
+manifest_digest: sha256:ce00d1befb5a6f49859709a5d727609b962209e14ce1d2a076281a90cc4847dd
 resolutions:
 - id: macos-arm64-cpython-3.12
   target:

@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: latex-journal-submission-package
-  version: 1.0.0
+  version: 2.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -25,6 +25,7 @@ research:
   methods:
   - journal-format-adaptation
   - bibliography-normalization
+  - latex-portability-debugging
   - submission-packaging
   - compilation-verification
   software:
@@ -38,6 +39,8 @@ research:
   - arXiv-metadata
   intended_uses:
   - prepare-journal-submission-package
+  - diagnose-portable-latex-build
+  - adapt-manuscript-to-mnras
   - separate-inline-bibliography
   - verify-portable-build-instructions
   excluded_uses:
@@ -50,6 +53,7 @@ research:
   known_failure_modes:
   - missing-journal-class
   - missing-tex-package
+  - incompatible-two-column-table
   - unresolved-bibliography
   - incomplete-submission-archive
   keywords:
@@ -57,15 +61,23 @@ research:
   - bibtex
   - journal-submission
   - manuscript
+  - mnras
+  - portability
   - packaging
 relations:
   implements_tasks:
   - task:research/journal-submission-packaging
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:mnras-latex-compile-portability-fixes
+  - skill:mnras-latex-portable
+  - skill:mnras-latex-portable-build-and-package
+  supersedes:
+  - skill:mnras-latex-compile-portability-fixes
+  - skill:mnras-latex-portable
+  - skill:mnras-latex-portable-build-and-package
   compatible_with: []
   related_to:
-  - skill:mnras-latex-portable
+  - skill:latex-research-paper
 compatibility:
   clients: []
   operating_systems:
@@ -123,7 +135,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -136,3 +148,18 @@ provenance:
     path: research/latex-journal-submission-package
     digest: sha256:ec98f3c4ab1f4f244bc87b4a2f217841436b930e40d8f0c238ec084b277c6f26
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/mnras-latex-compile-portability-fixes
+    digest: sha256:06ed9b88c29bbce85da1b8a998a4485f28cc567f00092c42ba410f532c2a4a0c
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/mnras-latex-portable
+    digest: sha256:ab0a00d74de3eeccb723c98c61e3a15de66922d35f9528c7fd7ede685da0b9d9
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: research/mnras-latex-portable-build-and-package
+    digest: sha256:244823d6ff01d0730cf9088bf78fbb4499f5e2f18d3cd0a43f6b5a2997095339
+    relation: derived-from

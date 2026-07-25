@@ -2,7 +2,7 @@ schema_version: 0.1.0-draft
 package:
   namespace: aip
   name: rave-dr6
-  version: 1.1.0
+  version: 2.0.0
   license: MIT
   source:
     repository: https://github.com/arm2arm/AstroAgentAssistant.git
@@ -24,6 +24,7 @@ research:
   - stellar-astrophysics
   methods:
   - catalog-query
+  - catalog-crossmatch
   - galactic-projection
   - sky-distribution-plotting
   - tap-query
@@ -35,9 +36,11 @@ research:
   data_sources:
   - RAVE-DR6
   - RAVE-TAP
+  - StarHorse
   intended_uses:
   - explore-rave-dr6-tables
   - query-stellar-parameters
+  - crossmatch-rave-with-distance-products
   - visualize-rave-sky-distributions
   excluded_uses:
   - derive-precision-distance-from-unfiltered-parallax
@@ -49,6 +52,8 @@ research:
   - scientific-selection-cuts-are-literature-anchored
   known_failure_modes:
   - invalid-or-inaccessible-table
+  - incompatible-gaia-source-identifiers
+  - crossmatch-duplication
   - negative-or-missing-parallax
   - tap-timeout
   - vosi-schema-drift
@@ -62,12 +67,20 @@ research:
 relations:
   implements_tasks:
   - task:astronomy/rave-dr6-query
-  derived_from: []
-  supersedes: []
+  derived_from:
+  - skill:rave-dr6-nearest-100-plot
+  - skill:rave-dr6-recent-observations-plot
+  - skill:rave-dr6-shboost-distance-query
+  - skill:rave-dr6-starhorse-access
+  supersedes:
+  - skill:rave-dr6-nearest-100-plot
+  - skill:rave-dr6-recent-observations-plot
+  - skill:rave-dr6-shboost-distance-query
+  - skill:rave-dr6-starhorse-access
   compatible_with: []
   related_to:
-  - skill:rave-dr6-nearest-100-plot
-  - skill:rave-dr6-public-talk-visualizations
+  - skill:astro-catalog-plotting-cache
+  - skill:starhorse-access
   - skill:tap-pyvo-adql-access
 compatibility:
   clients: []
@@ -124,7 +137,7 @@ license_evidence:
   applies_to:
   - '**'
 provenance:
-  origin: migrated
+  origin: derived
   source_state: active
   population_claims:
   - issuer: https://github.com/arm2arm/AstroAgentAssistant
@@ -137,6 +150,16 @@ provenance:
     path: astronomy/rave-dr6
     digest: sha256:736c2eaa2c041d5830fc92d49eb9a139984366e893df2b1729d3fd231b8f48c9
     relation: source
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-shboost-distance-query
+    digest: sha256:b77956980174ee78512ebfa6a322011e0ed84548435d6dcf7511b40ffd3e16af
+    relation: derived-from
+  - repository: https://github.com/arm2arm/AstroAgentAssistant.git
+    revision: 16b4fa2cfd3c5b6b674a750efc7b39a183b416cb
+    path: astronomy/rave-dr6-starhorse-access
+    digest: sha256:3bc319f4af286528380127d9e2b228dc7000b2eeb624b4e361993cc906d028d0
+    relation: derived-from
 extensions:
   de.aip.ori:
     schema: urn:skill-commons:extension:de.aip.ori:1
@@ -152,8 +175,6 @@ extensions:
         - pyvo
         legacy_category: astronomy
         related_skill_candidates:
-        - rave-dr6-nearest-100-plot
-        - rave-dr6-public-talk-visualizations
+        - astro-catalog-plotting-cache
         - gaia-dr3-tap-query
-        - shboost24-cmd
         - starhorse-access
