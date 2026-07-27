@@ -1,0 +1,172 @@
+schema_version: "1.0"
+registry: https://github.com/skill-commons/skill-commons
+provenance: https://github.com/skill-commons/curated-research-skills/blob/3530b84d27f5d29536cb44c6242ab91949963db0/PROVENANCE.md
+skills:
+- name: arxiv
+  description: Search, read, cite, and monitor papers through arXiv.
+  version: 2.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 5d0a099285a2106222936fb8fa9a90471c4cf476
+    path: skills/arxiv
+- name: calculator
+  description: Perform exact symbolic and numerical calculations.
+  version: 1.0.1
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: dc9e52092a4c771824d6d2f1dbf0a37ec0f7aa14
+    path: skills/calculator
+- name: latex-journal-submission-package
+  description: Build and verify portable LaTeX journal submissions.
+  version: 2.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 0cec09604db9c91c0b07f473e1fc0244121ef4ab
+    path: skills/latex-journal-submission-package
+- name: latex-research-paper
+  description: Draft, revise, and verify LaTeX research manuscripts.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 6f9299ee6d4ee9f5cbf1c038cc3bb8f800608a96
+    path: skills/latex-research-paper
+- name: astro-catalog-plotting-cache
+  description: Create cached, publication-ready astronomy catalog plots.
+  version: 2.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 5af9bafe312f15962c46dffbc7633526979cc14d
+    path: skills/astro-catalog-plotting-cache
+- name: gaia-dr3-tap-query
+  description: Query Gaia DR3 through AIP TAP and Daiquiri services.
+  version: 3.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 0ecdde856b6c66aca91c11853298d48ba7e0f562
+    path: skills/gaia-dr3-tap-query
+- name: rave-dr6
+  description: Query, cache, and crossmatch public RAVE DR6 data.
+  version: 2.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: f5bd6d7b891ece2b97419169f90a8e8140d3dac5
+    path: skills/rave-dr6
+- name: starhorse-access
+  description: Access StarHorse SHboost and SH21 catalog products.
+  version: 2.0.2
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 4165d54d25643ba5c226e2adb33b58681c609cef
+    path: skills/starhorse-access
+- name: tap-pyvo-adql-access
+  description: Query astronomy TAP services with PyVO and ADQL.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: ba5d8704fb0b3e4e67a3f34909bae72909abb0b2
+    path: skills/tap-pyvo-adql-access
+- name: data-aip-de-s3
+  description: Access and cache research data from S3-compatible stores.
+  version: 2.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: becfb9b3d3589d33f15bd64a4b87f7c1a1867fc7
+    path: skills/data-aip-de-s3
+- name: seaborn-paper-plots
+  description: Create reproducible publication plots with Seaborn.
+  version: 1.0.1
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 3530b84d27f5d29536cb44c6242ab91949963db0
+    tree: 43f721c1a248db68af2c576a35e9b61a4eb0a681
+    path: skills/seaborn-paper-plots
+consolidations:
+- name: cold-streams-monitoring
+  replacement: arxiv
+  reason: A topic-specific arXiv query and scheduler wrapper is covered by generic monitoring.
+- name: iterative-paper-improvement
+  replacement: latex-research-paper
+  reason: Its revision rounds duplicate the canonical manuscript workflow.
+- name: latex-paper-iteration
+  replacement: latex-research-paper
+  reason: Drafting, revision, merging, figures, and compile loops belong in one authoring skill.
+- name: multi-section-latex-whitepaper
+  replacement: latex-research-paper
+  reason: Multi-source synthesis is a mode of the canonical manuscript workflow.
+- name: mnras-latex-compile-portability-fixes
+  replacement: latex-journal-submission-package
+  reason: MNRAS portability fixes are packaging guidance, not a separate task.
+- name: mnras-latex-portable
+  replacement: latex-journal-submission-package
+  reason: MNRAS build guidance is consolidated into the journal submission skill.
+- name: mnras-latex-portable-build-and-package
+  replacement: latex-journal-submission-package
+  reason: This duplicated the canonical journal build and submission workflow.
+- name: cmd-plotting
+  replacement: astro-catalog-plotting-cache
+  reason: A color-magnitude diagram is one plot type in the broader astronomy plotting skill.
+- name: datashader-019-pipeline
+  replacement: astro-catalog-plotting-cache
+  reason: Datashader is one implementation path in the broader catalog plotting workflow.
+- name: gaia-dr3-daiquiri-rest
+  replacement: gaia-dr3-tap-query
+  reason: Daiquiri REST is retained as a fallback in the canonical Gaia access skill.
+- name: gaia-dr3-plot-with-dust
+  replacement: astro-catalog-plotting-cache
+  reason: One Gaia sample and dust-overlay figure is too narrow to be an independent skill.
+- name: rave-dr6-nearest-100-plot
+  replacement: rave-dr6
+  reason: A fixed nearest-100 query is an example, not a distinct RAVE capability.
+- name: rave-dr6-public-talk-visualizations
+  replacement: astro-catalog-plotting-cache
+  reason: Presentation styling is a plotting choice independent of the RAVE data source.
+- name: rave-dr6-recent-observations-plot
+  replacement: rave-dr6
+  reason: A fixed newest-100 query and plot is covered by general RAVE querying and plotting.
+- name: rave-dr6-shboost-distance-query
+  replacement: rave-dr6
+  reason: The reusable RAVE-StarHorse crossmatch is part of the canonical RAVE skill.
+- name: rave-dr6-starhorse-access
+  replacement: rave-dr6
+  reason: This was a second version of the same RAVE-StarHorse crossmatch workflow.
+- name: hdf5-on-s3-cached
+  replacement: data-aip-de-s3
+  reason: Cache-first HDF5 handling is one path within general object-store access.
+- name: s3-parquet-sampling
+  replacement: data-aip-de-s3
+  reason: Parquet projection, reduction, and caching are core object-store operations.
+- name: s3-parquet-sampling-plot-cached
+  replacement: data-aip-de-s3
+  reason: S3 access belongs here; astronomy plotting belongs in the plotting skill.

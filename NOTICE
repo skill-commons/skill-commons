@@ -1,5 +1,5 @@
-Skill Commons Phase 0 specification and reference tools.
+Skill Commons federated registry and reference catalog tools.
 
-The AstroAgentAssistant survey fixture contains Commons-created factual observations of
-a separately licensed public repository at a pinned commit. It does not copy skill bodies
-or claim ownership, publication authority, or licensing conclusions for upstream files.
+Registry records contain factual source coordinates and short editorial descriptions.
+The skill bodies, support files, authorship, and licensing remain in the canonical
+repositories identified by those records.

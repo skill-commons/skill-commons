@@ -5,8 +5,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - "skill/*/v*"
 
 permissions:
   contents: read
@@ -16,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: astral-sh/setup-uv@v6
         with:
           version: "0.10.12"
@@ -30,16 +26,7 @@ jobs:
           uv run ruff format --check .
       - name: Test
         run: uv run pytest
-      - name: Validate published skills
-        run: |
-          for skill in skills/*; do
-            uv run skill-commons validate "$skill" --profile agent-skills
-            uv run skill-commons validate "$skill" --profile commons-publication
-          done
       - name: Check generated catalog
-        run: >-
-          uv run skill-commons catalog
-          --repository https://github.com/skill-commons/skill-commons
-          --check
+        run: uv run skill-commons catalog --check
       - name: Build
         run: uv build --out-dir dist

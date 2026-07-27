@@ -1,0 +1,23 @@
+name: Upstream drift
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.10.12"
+          enable-cache: true
+      - name: Install
+        run: uv sync --locked --all-groups
+      - name: Compare registered skill trees with tracked branches
+        run: uv run skill-commons check-upstreams

@@ -1,0 +1,33 @@
+schema_version: "1.0"
+categories:
+- id: general
+  name: General
+  description: Literature discovery, monitoring, and scientific calculation.
+  skills:
+  - arxiv
+  - calculator
+- id: latex
+  name: LaTeX
+  description: Research-manuscript authoring, revision, compilation, and submission packaging.
+  skills:
+  - latex-journal-submission-package
+  - latex-research-paper
+- id: astronomy
+  name: Astronomy
+  description: Astronomy catalog access, survey-specific workflows, and scientific visualization.
+  skills:
+  - astro-catalog-plotting-cache
+  - gaia-dr3-tap-query
+  - rave-dr6
+  - starhorse-access
+  - tap-pyvo-adql-access
+- id: data
+  name: Data
+  description: Reproducible access to large research datasets and object storage.
+  skills:
+  - data-aip-de-s3
+- id: visualization
+  name: Visualization
+  description: General-purpose publication and report graphics.
+  skills:
+  - seaborn-paper-plots

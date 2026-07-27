@@ -4,19 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "research-skill-commons"
-version = "0.1.0.dev0"
-description = "Git-first hub and reference tooling for reusable research Agent Skills"
+version = "0.2.0"
+description = "Federated discovery catalog for research skills"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 authors = [{ name = "Skill Commons contributors" }]
 dependencies = [
-  "jsonschema>=4.23,<5",
-  "license-expression>=30.4,<31",
-  "packaging>=24,<27",
   "pyyaml>=6,<7",
-  "rfc8785==0.1.4",
-  "skills-ref==0.1.1",
 ]
 
 [project.scripts]
@@ -32,18 +27,7 @@ dev = [
 packages = ["src/skill_commons"]
 
 [tool.hatch.build.targets.sdist]
-exclude = [
-  "/.pytest_cache",
-  "/.ruff_cache",
-  "/.uv-cache",
-  "/.venv",
-  "/dist",
-  "/junit.xml",
-  "/warehouse",
-]
-
-[tool.hatch.build.targets.wheel.force-include]
-"schemas" = "skill_commons/schemas"
+exclude = ["/.pytest_cache", "/.ruff_cache", "/.uv-cache", "/.venv", "/dist", "/warehouse"]
 
 [tool.pytest.ini_options]
 addopts = "-ra"

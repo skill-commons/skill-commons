@@ -1,21 +1,21 @@
 {
-  "bundles": [
+  "categories": [
     {
-      "description": "Broad research utilities that are useful across disciplines.",
+      "description": "Literature discovery, monitoring, and scientific calculation.",
       "id": "general",
       "name": "General",
       "skills": [
-        "aip/arxiv",
-        "aip/calculator"
+        "arxiv",
+        "calculator"
       ]
     },
     {
-      "description": "Authoring, revising, compiling, and packaging scholarly LaTeX manuscripts.",
+      "description": "Research-manuscript authoring, revision, compilation, and submission packaging.",
       "id": "latex",
       "name": "LaTeX",
       "skills": [
-        "aip/latex-research-paper",
-        "aip/latex-journal-submission-package"
+        "latex-journal-submission-package",
+        "latex-research-paper"
       ]
     },
     {
@@ -23,11 +23,11 @@
       "id": "astronomy",
       "name": "Astronomy",
       "skills": [
-        "aip/tap-pyvo-adql-access",
-        "aip/gaia-dr3-tap-query",
-        "aip/rave-dr6",
-        "aip/starhorse-access",
-        "aip/astro-catalog-plotting-cache"
+        "astro-catalog-plotting-cache",
+        "gaia-dr3-tap-query",
+        "rave-dr6",
+        "starhorse-access",
+        "tap-pyvo-adql-access"
       ]
     },
     {
@@ -35,660 +35,360 @@
       "id": "data",
       "name": "Data",
       "skills": [
-        "aip/data-aip-de-s3"
+        "data-aip-de-s3"
       ]
     },
     {
-      "description": "General-purpose publication and report graphics outside domain-specific workflows.",
+      "description": "General-purpose publication and report graphics.",
       "id": "visualization",
       "name": "Visualization",
       "skills": [
-        "aip/seaborn-paper-plots"
+        "seaborn-paper-plots"
       ]
     }
   ],
   "consolidations": [
     {
-      "coordinate": "aip/cold-streams-monitoring",
-      "reason": "A topic-specific arXiv query and scheduler wrapper is now covered by generic monitoring.",
-      "replacement": "aip/arxiv"
+      "name": "cold-streams-monitoring",
+      "reason": "A topic-specific arXiv query and scheduler wrapper is covered by generic monitoring.",
+      "replacement": "arxiv"
     },
     {
-      "coordinate": "aip/iterative-paper-improvement",
-      "reason": "Its revision rounds duplicate the canonical manuscript authoring and revision workflow.",
-      "replacement": "aip/latex-research-paper"
+      "name": "iterative-paper-improvement",
+      "reason": "Its revision rounds duplicate the canonical manuscript workflow.",
+      "replacement": "latex-research-paper"
     },
     {
-      "coordinate": "aip/latex-paper-iteration",
-      "reason": "Drafting, revision, merging, figures, and compile loops now live in one authoring skill.",
-      "replacement": "aip/latex-research-paper"
+      "name": "latex-paper-iteration",
+      "reason": "Drafting, revision, merging, figures, and compile loops belong in one authoring skill.",
+      "replacement": "latex-research-paper"
     },
     {
-      "coordinate": "aip/multi-section-latex-whitepaper",
+      "name": "multi-section-latex-whitepaper",
       "reason": "Multi-source synthesis is a mode of the canonical manuscript workflow.",
-      "replacement": "aip/latex-research-paper"
+      "replacement": "latex-research-paper"
     },
     {
-      "coordinate": "aip/mnras-latex-compile-portability-fixes",
-      "reason": "MNRAS portability fixes are journal-specific packaging guidance, not a separate task.",
-      "replacement": "aip/latex-journal-submission-package"
+      "name": "mnras-latex-compile-portability-fixes",
+      "reason": "MNRAS portability fixes are packaging guidance, not a separate task.",
+      "replacement": "latex-journal-submission-package"
     },
     {
-      "coordinate": "aip/mnras-latex-portable",
-      "reason": "MNRAS build and package guidance is consolidated into the journal submission skill.",
-      "replacement": "aip/latex-journal-submission-package"
+      "name": "mnras-latex-portable",
+      "reason": "MNRAS build guidance is consolidated into the journal submission skill.",
+      "replacement": "latex-journal-submission-package"
     },
     {
-      "coordinate": "aip/mnras-latex-portable-build-and-package",
-      "reason": "This package duplicated the canonical journal build and submission workflow.",
-      "replacement": "aip/latex-journal-submission-package"
+      "name": "mnras-latex-portable-build-and-package",
+      "reason": "This duplicated the canonical journal build and submission workflow.",
+      "replacement": "latex-journal-submission-package"
     },
     {
-      "coordinate": "aip/cmd-plotting",
-      "reason": "A CMD is one plot type already covered by the broader astronomy plotting skill.",
-      "replacement": "aip/astro-catalog-plotting-cache"
+      "name": "cmd-plotting",
+      "reason": "A color-magnitude diagram is one plot type in the broader astronomy plotting skill.",
+      "replacement": "astro-catalog-plotting-cache"
     },
     {
-      "coordinate": "aip/datashader-019-pipeline",
-      "reason": "Datashader is an implementation path within the broader large-catalog plotting workflow.",
-      "replacement": "aip/astro-catalog-plotting-cache"
+      "name": "datashader-019-pipeline",
+      "reason": "Datashader is one implementation path in the broader catalog plotting workflow.",
+      "replacement": "astro-catalog-plotting-cache"
     },
     {
-      "coordinate": "aip/gaia-dr3-daiquiri-rest",
-      "reason": "Daiquiri REST is retained as a fallback mode of the canonical Gaia access skill.",
-      "replacement": "aip/gaia-dr3-tap-query"
+      "name": "gaia-dr3-daiquiri-rest",
+      "reason": "Daiquiri REST is retained as a fallback in the canonical Gaia access skill.",
+      "replacement": "gaia-dr3-tap-query"
     },
     {
-      "coordinate": "aip/gaia-dr3-plot-with-dust",
+      "name": "gaia-dr3-plot-with-dust",
       "reason": "One Gaia sample and dust-overlay figure is too narrow to be an independent skill.",
-      "replacement": "aip/astro-catalog-plotting-cache"
+      "replacement": "astro-catalog-plotting-cache"
     },
     {
-      "coordinate": "aip/rave-dr6-nearest-100-plot",
+      "name": "rave-dr6-nearest-100-plot",
       "reason": "A fixed nearest-100 query is an example, not a distinct RAVE capability.",
-      "replacement": "aip/rave-dr6"
+      "replacement": "rave-dr6"
     },
     {
-      "coordinate": "aip/rave-dr6-public-talk-visualizations",
+      "name": "rave-dr6-public-talk-visualizations",
       "reason": "Presentation styling is a plotting choice independent of the RAVE data source.",
-      "replacement": "aip/astro-catalog-plotting-cache"
+      "replacement": "astro-catalog-plotting-cache"
     },
     {
-      "coordinate": "aip/rave-dr6-recent-observations-plot",
+      "name": "rave-dr6-recent-observations-plot",
       "reason": "A fixed newest-100 query and plot is covered by general RAVE querying and plotting.",
-      "replacement": "aip/rave-dr6"
+      "replacement": "rave-dr6"
     },
     {
-      "coordinate": "aip/rave-dr6-shboost-distance-query",
-      "reason": "The reusable RAVE-StarHorse crossmatch is now a reference inside the canonical RAVE skill.",
-      "replacement": "aip/rave-dr6"
+      "name": "rave-dr6-shboost-distance-query",
+      "reason": "The reusable RAVE-StarHorse crossmatch is part of the canonical RAVE skill.",
+      "replacement": "rave-dr6"
     },
     {
-      "coordinate": "aip/rave-dr6-starhorse-access",
+      "name": "rave-dr6-starhorse-access",
       "reason": "This was a second version of the same RAVE-StarHorse crossmatch workflow.",
-      "replacement": "aip/rave-dr6"
+      "replacement": "rave-dr6"
     },
     {
-      "coordinate": "aip/hdf5-on-s3-cached",
-      "reason": "Cache-first HDF5 handling is one format path within general object-store access.",
-      "replacement": "aip/data-aip-de-s3"
+      "name": "hdf5-on-s3-cached",
+      "reason": "Cache-first HDF5 handling is one path within general object-store access.",
+      "replacement": "data-aip-de-s3"
     },
     {
-      "coordinate": "aip/s3-parquet-sampling",
-      "reason": "Parquet projection, reduction, and caching are core object-store access operations.",
-      "replacement": "aip/data-aip-de-s3"
+      "name": "s3-parquet-sampling",
+      "reason": "Parquet projection, reduction, and caching are core object-store operations.",
+      "replacement": "data-aip-de-s3"
     },
     {
-      "coordinate": "aip/s3-parquet-sampling-plot-cached",
-      "reason": "Its S3 access is covered here; astronomy plotting belongs to the plotting skill.",
-      "replacement": "aip/data-aip-de-s3"
+      "name": "s3-parquet-sampling-plot-cached",
+      "reason": "S3 access belongs here; astronomy plotting belongs in the plotting skill.",
+      "replacement": "data-aip-de-s3"
     }
   ],
-  "repository": "https://github.com/skill-commons/skill-commons",
-  "schema_version": "1.1",
+  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/3530b84d27f5d29536cb44c6242ab91949963db0/PROVENANCE.md",
+  "registry": "https://github.com/skill-commons/skill-commons",
+  "schema_version": "2.0",
   "skills": [
     {
-      "bundle": {
+      "category": {
         "id": "general",
         "name": "General"
       },
-      "compatibility": {
-        "architectures": [],
-        "operating_systems": [
-          "linux",
-          "macos"
-        ],
-        "python": ">=3.9"
+      "description": "Search, read, cite, and monitor papers through arXiv.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/arxiv",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/arxiv"
       },
-      "coordinate": "aip/arxiv",
-      "description": "Search, read, cite, and monitor academic papers through arXiv and related public metadata services, including reusable topic alerts and verified BibTeX generation.",
-      "license": "MIT",
       "name": "arxiv",
-      "path": "skills/arxiv",
-      "release_tag": "skill/arxiv/v2.0.0",
-      "research": {
-        "disciplines": [
-          "research"
-        ],
-        "keywords": [
-          "research",
-          "arxiv",
-          "literature",
-          "monitoring",
-          "citations",
-          "bibtex"
-        ],
-        "methods": [
-          "literature-search",
-          "literature-monitoring",
-          "citation-analysis",
-          "bibliographic-metadata-extraction"
-        ]
+      "source": {
+        "branch": "main",
+        "path": "skills/arxiv",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "5d0a099285a2106222936fb8fa9a90471c4cf476",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv"
       },
       "status": "active",
-      "tree_digest": "sha256:d8f296f6f0aaa890a231a794fb8bd0bbf4c51649804cc05cc50eb6b74ff0a650",
-      "upstream": {
-        "path": "research/arxiv",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
       "version": "2.0.0"
     },
     {
-      "bundle": {
-        "id": "astronomy",
-        "name": "Astronomy"
-      },
-      "compatibility": {
-        "architectures": [
-          "arm64"
-        ],
-        "operating_systems": [
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
-      },
-      "coordinate": "aip/astro-catalog-plotting-cache",
-      "description": "Use when turning astronomy catalog data into reproducible cached products and publication-ready plots, especially CMDs, RA/Dec maps, Galactic projections, hexbin density plots, Datashader outputs, and provenance-backed figure deliverables.",
-      "license": "MIT",
-      "name": "astro-catalog-plotting-cache",
-      "path": "skills/astro-catalog-plotting-cache",
-      "release_tag": "skill/astro-catalog-plotting-cache/v2.0.0",
-      "research": {
-        "disciplines": [
-          "astronomy"
-        ],
-        "keywords": [
-          "astronomy",
-          "cache",
-          "cmd",
-          "datashader",
-          "hexbin",
-          "plotting",
-          "provenance"
-        ],
-        "methods": [
-          "catalog-visualization",
-          "color-magnitude-diagram",
-          "density-rendering",
-          "reproducible-caching",
-          "sky-projection",
-          "contextual-layer-overlay",
-          "presentation-visualization"
-        ]
-      },
-      "status": "active",
-      "tree_digest": "sha256:f29736192acf6fa130d12f59f4c489766d40196711418a8b504420e20e4b5bfa",
-      "upstream": {
-        "path": "astronomy/astro-catalog-plotting-cache",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
-      "version": "2.0.0"
-    },
-    {
-      "bundle": {
+      "category": {
         "id": "general",
         "name": "General"
       },
-      "compatibility": {
-        "architectures": [
-          "arm64"
-        ],
-        "operating_systems": [
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Perform exact symbolic and numerical calculations.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/calculator",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/calculator"
       },
-      "coordinate": "aip/calculator",
-      "description": "Exact symbolic + numeric math with sympy/mpmath — derive formulas, evaluate constants, propagate errors, convert units. Use for ANY multi-step arithmetic or algebra instead of mental math.",
-      "license": "MIT",
       "name": "calculator",
-      "path": "skills/calculator",
-      "release_tag": "skill/calculator/v1.0.1",
-      "research": {
-        "disciplines": [
-          "mathematics",
-          "scientific-computing"
-        ],
-        "keywords": [
-          "calculation",
-          "sympy",
-          "mpmath",
-          "astropy",
-          "units"
-        ],
-        "methods": [
-          "symbolic-algebra",
-          "numerical-evaluation",
-          "uncertainty-propagation",
-          "unit-conversion"
-        ]
+      "source": {
+        "branch": "main",
+        "path": "skills/calculator",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "dc9e52092a4c771824d6d2f1dbf0a37ec0f7aa14",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator"
       },
       "status": "active",
-      "tree_digest": "sha256:055d34982d85e4faa3fdab7af094ebb239d029a35cb8ebee5ec4156f2b121059",
-      "upstream": {
-        "path": "python/calculator",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
       "version": "1.0.1"
     },
     {
-      "bundle": {
-        "id": "data",
-        "name": "Data"
+      "category": {
+        "id": "latex",
+        "name": "LaTeX"
       },
-      "compatibility": {
-        "architectures": [
-          "arm64"
-        ],
-        "operating_systems": [
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Build and verify portable LaTeX journal submissions.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/latex-journal-submission-package",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/latex-journal-submission-package"
       },
-      "coordinate": "aip/data-aip-de-s3",
-      "description": "Access AIP and other S3-compatible research data with explicit authentication, column and row reduction, Dask-backed Parquet reads, and cache-first handling of large or non-columnar files.",
-      "license": "MIT",
-      "name": "data-aip-de-s3",
-      "path": "skills/data-aip-de-s3",
-      "release_tag": "skill/data-aip-de-s3/v2.0.0",
-      "research": {
-        "disciplines": [
-          "astronomy",
-          "research-data-management"
-        ],
-        "keywords": [
-          "astronomy",
-          "dask",
-          "data-engineering",
-          "dataset",
-          "hdf5",
-          "parquet",
-          "s3"
-        ],
-        "methods": [
-          "columnar-data-access",
-          "distributed-dataframe-analysis",
-          "hdf5-cache-first-access",
-          "local-cache-construction",
-          "object-storage-access",
-          "parquet-reduction"
-        ]
+      "name": "latex-journal-submission-package",
+      "source": {
+        "branch": "main",
+        "path": "skills/latex-journal-submission-package",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "0cec09604db9c91c0b07f473e1fc0244121ef4ab",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package"
       },
       "status": "active",
-      "tree_digest": "sha256:da687728f55f006a3a51d3ef044911295c3655489d773d9985cb2eab28f4132f",
-      "upstream": {
-        "path": "astronomy/data-aip-de-s3",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
       "version": "2.0.0"
     },
     {
-      "bundle": {
+      "category": {
+        "id": "latex",
+        "name": "LaTeX"
+      },
+      "description": "Draft, revise, and verify LaTeX research manuscripts.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/latex-research-paper",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/latex-research-paper"
+      },
+      "name": "latex-research-paper",
+      "source": {
+        "branch": "main",
+        "path": "skills/latex-research-paper",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "6f9299ee6d4ee9f5cbf1c038cc3bb8f800608a96",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "compatibility": {
-        "architectures": [
-          "amd64",
-          "arm64"
-        ],
-        "operating_systems": [
-          "linux",
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Create cached, publication-ready astronomy catalog plots.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache"
       },
-      "coordinate": "aip/gaia-dr3-tap-query",
-      "description": "Query Gaia DR3 at gaia.aip.de through TAP/PyVO, with schema discovery, representative sampling, local caching, and a Daiquiri REST fallback for exceptional async jobs.",
-      "license": "MIT",
-      "name": "gaia-dr3-tap-query",
-      "path": "skills/gaia-dr3-tap-query",
-      "release_tag": "skill/gaia-dr3-tap-query/v3.0.0",
-      "research": {
-        "disciplines": [
-          "astronomy",
-          "galactic-astronomy"
-        ],
-        "keywords": [
-          "adql",
-          "astronomy",
-          "gaia-aip",
-          "gaia-dr3",
-          "pyvo",
-          "tap"
-        ],
-        "methods": [
-          "adql-query",
-          "asynchronous-query",
-          "catalog-access",
-          "daiquiri-rest-query",
-          "random-subsampling",
-          "scientific-visualization"
-        ]
+      "name": "astro-catalog-plotting-cache",
+      "source": {
+        "branch": "main",
+        "path": "skills/astro-catalog-plotting-cache",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "5af9bafe312f15962c46dffbc7633526979cc14d",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache"
       },
       "status": "active",
-      "tree_digest": "sha256:3c09422c0eca91fcb60ed89c5dee9e6c099d6d79262a1910beff20685f8aca98",
-      "upstream": {
-        "path": "astronomy/gaia-dr3-tap-query",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
+      "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "astronomy",
+        "name": "Astronomy"
       },
+      "description": "Query Gaia DR3 through AIP TAP and Daiquiri services.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/gaia-dr3-tap-query",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query"
+      },
+      "name": "gaia-dr3-tap-query",
+      "source": {
+        "branch": "main",
+        "path": "skills/gaia-dr3-tap-query",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "0ecdde856b6c66aca91c11853298d48ba7e0f562",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query"
+      },
+      "status": "active",
       "version": "3.0.0"
     },
     {
-      "bundle": {
-        "id": "latex",
-        "name": "LaTeX"
-      },
-      "compatibility": {
-        "architectures": [],
-        "operating_systems": [
-          "linux"
-        ],
-        "python": null
-      },
-      "coordinate": "aip/latex-journal-submission-package",
-      "description": "Adapt a stable LaTeX manuscript to a journal, fix portable build problems, verify the result, and assemble a clean submission archive; includes MNRAS guidance.",
-      "license": "MIT",
-      "name": "latex-journal-submission-package",
-      "path": "skills/latex-journal-submission-package",
-      "release_tag": "skill/latex-journal-submission-package/v2.0.0",
-      "research": {
-        "disciplines": [
-          "research-writing"
-        ],
-        "keywords": [
-          "latex",
-          "bibtex",
-          "journal-submission",
-          "manuscript",
-          "mnras",
-          "portability",
-          "packaging"
-        ],
-        "methods": [
-          "journal-format-adaptation",
-          "bibliography-normalization",
-          "latex-portability-debugging",
-          "submission-packaging",
-          "compilation-verification"
-        ]
-      },
-      "status": "active",
-      "tree_digest": "sha256:4d67bc5f71fc69b59018da77c7b63a4677194ba46585cad6115f903550d488fb",
-      "upstream": {
-        "path": "research/latex-journal-submission-package",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
-      "version": "2.0.0"
-    },
-    {
-      "bundle": {
-        "id": "latex",
-        "name": "LaTeX"
-      },
-      "compatibility": {
-        "architectures": [],
-        "operating_systems": [
-          "linux",
-          "macos"
-        ],
-        "python": null
-      },
-      "coordinate": "aip/latex-research-paper",
-      "description": "Draft, revise, merge, and verify LaTeX research papers or white papers, including bibliography management, scientific figures, and controlled compilation cycles.",
-      "license": "MIT",
-      "name": "latex-research-paper",
-      "path": "skills/latex-research-paper",
-      "release_tag": "skill/latex-research-paper/v1.0.0",
-      "research": {
-        "disciplines": [
-          "research-writing"
-        ],
-        "keywords": [
-          "latex",
-          "academic-writing",
-          "research-paper",
-          "manuscript-revision",
-          "whitepaper",
-          "bibtex",
-          "figures"
-        ],
-        "methods": [
-          "manuscript-drafting",
-          "manuscript-revision",
-          "multi-source-synthesis",
-          "bibliography-management",
-          "scientific-figure-generation",
-          "compilation-verification"
-        ]
-      },
-      "status": "active",
-      "tree_digest": "sha256:3ae4b5367284a72cc2df08b7670eab6d91d905fce8fc781ffd3f61fb845f4781",
-      "upstream": {
-        "path": "research/latex-research-paper",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
-      "version": "1.0.0"
-    },
-    {
-      "bundle": {
+      "category": {
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "compatibility": {
-        "architectures": [
-          "arm64"
-        ],
-        "operating_systems": [
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Query, cache, and crossmatch public RAVE DR6 data.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/rave-dr6",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/rave-dr6"
       },
-      "coordinate": "aip/rave-dr6",
-      "description": "Discover and query RAVE DR6 tables through its public TAP service, cache bounded results, and crossmatch RAVE sources with Gaia or StarHorse distance products.",
-      "license": "MIT",
       "name": "rave-dr6",
-      "path": "skills/rave-dr6",
-      "release_tag": "skill/rave-dr6/v2.0.0",
-      "research": {
-        "disciplines": [
-          "astronomy",
-          "stellar-astrophysics"
-        ],
-        "keywords": [
-          "astronomy",
-          "galactic-coordinates",
-          "pyvo",
-          "rave-dr6",
-          "stellar-parameters",
-          "tap"
-        ],
-        "methods": [
-          "catalog-query",
-          "catalog-crossmatch",
-          "galactic-projection",
-          "sky-distribution-plotting",
-          "tap-query"
-        ]
+      "source": {
+        "branch": "main",
+        "path": "skills/rave-dr6",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "f5bd6d7b891ece2b97419169f90a8e8140d3dac5",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6"
       },
       "status": "active",
-      "tree_digest": "sha256:fc1ca469c157fb72e4d0076ae66ea1fde7a14554d155d77276e741594ceb75db",
-      "upstream": {
-        "path": "astronomy/rave-dr6",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
       "version": "2.0.0"
     },
     {
-      "bundle": {
-        "id": "visualization",
-        "name": "Visualization"
-      },
-      "compatibility": {
-        "architectures": [
-          "arm64"
-        ],
-        "operating_systems": [
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
-      },
-      "coordinate": "aip/seaborn-paper-plots",
-      "description": "Create clean seaborn/matplotlib plots suitable for papers, notes, and reproducible reports.",
-      "license": "MIT",
-      "name": "seaborn-paper-plots",
-      "path": "skills/seaborn-paper-plots",
-      "release_tag": "skill/seaborn-paper-plots/v1.0.1",
-      "research": {
-        "disciplines": [
-          "data-science",
-          "scientific-communication"
-        ],
-        "keywords": [
-          "seaborn",
-          "matplotlib",
-          "publication",
-          "visualization"
-        ],
-        "methods": [
-          "statistical-visualization",
-          "publication-figure-preparation"
-        ]
-      },
-      "status": "active",
-      "tree_digest": "sha256:fac1a98d4e2d94534f4f4fcec75b955014916de5fc851724903befcc46b0efbb",
-      "upstream": {
-        "path": "python/seaborn-paper-plots",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
-      "version": "1.0.1"
-    },
-    {
-      "bundle": {
+      "category": {
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "compatibility": {
-        "architectures": [
-          "amd64"
-        ],
-        "operating_systems": [
-          "linux"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Access StarHorse SHboost and SH21 catalog products.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/starhorse-access",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/starhorse-access"
       },
-      "coordinate": "aip/starhorse-access",
-      "description": "Access StarHorse data products including SHboost-2024 and the SH21 EDR3 catalog via gaia.aip.de TAP.",
-      "license": "MIT",
       "name": "starhorse-access",
-      "path": "skills/starhorse-access",
-      "release_tag": "skill/starhorse-access/v2.0.2",
-      "research": {
-        "disciplines": [
-          "astronomy",
-          "stellar-astrophysics"
-        ],
-        "keywords": [
-          "starhorse",
-          "gaia-edr3",
-          "tap",
-          "parquet",
-          "stellar-parameters"
-        ],
-        "methods": [
-          "catalog-access",
-          "tap-query",
-          "parquet-analysis",
-          "color-magnitude-diagram"
-        ]
+      "source": {
+        "branch": "main",
+        "path": "skills/starhorse-access",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "4165d54d25643ba5c226e2adb33b58681c609cef",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access"
       },
       "status": "active",
-      "tree_digest": "sha256:1ca80a228ca3b80c42812619219477cb9b4241e9020f51e3e7a86a910b50b4b3",
-      "upstream": {
-        "path": "skills/starhorse-access",
-        "repository": "https://gitlab-p4n.aip.de/p4nreana/reana-env.git",
-        "revision": "5f1d331b106cc96b47f0633cddc94b05325b8b49"
-      },
       "version": "2.0.2"
     },
     {
-      "bundle": {
+      "category": {
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "compatibility": {
-        "architectures": [
-          "amd64",
-          "arm64"
-        ],
-        "operating_systems": [
-          "linux",
-          "macos"
-        ],
-        "python": ">=3.12,<3.13"
+      "description": "Query astronomy TAP services with PyVO and ADQL.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/tap-pyvo-adql-access",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/tap-pyvo-adql-access"
       },
-      "coordinate": "aip/tap-pyvo-adql-access",
-      "description": "Use when querying astronomy TAP services with ADQL through pyvo or curl, including service probes, metadata discovery, TOP-based queries, VOTable/FITS conversion, pandas/Parquet caching, and robust network fallbacks.",
-      "license": "MIT",
       "name": "tap-pyvo-adql-access",
-      "path": "skills/tap-pyvo-adql-access",
-      "release_tag": "skill/tap-pyvo-adql-access/v1.0.0",
-      "research": {
-        "disciplines": [
-          "astronomy"
-        ],
-        "keywords": [
-          "adql",
-          "astronomy",
-          "catalog",
-          "pyvo",
-          "tap",
-          "votable"
-        ],
-        "methods": [
-          "adql-query",
-          "catalog-access",
-          "metadata-discovery",
-          "result-caching"
-        ]
+      "source": {
+        "branch": "main",
+        "path": "skills/tap-pyvo-adql-access",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "ba5d8704fb0b3e4e67a3f34909bae72909abb0b2",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access"
       },
       "status": "active",
-      "tree_digest": "sha256:db23e5296ae07170388137c707c02e2f1dc0836ff41a9f74b28bbbd038b3a2da",
-      "upstream": {
-        "path": "astronomy/tap-pyvo-adql-access",
-        "repository": "https://github.com/arm2arm/AstroAgentAssistant.git",
-        "revision": "16b4fa2cfd3c5b6b674a750efc7b39a183b416cb"
-      },
       "version": "1.0.0"
+    },
+    {
+      "category": {
+        "id": "data",
+        "name": "Data"
+      },
+      "description": "Access and cache research data from S3-compatible stores.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/data-aip-de-s3",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/data-aip-de-s3"
+      },
+      "name": "data-aip-de-s3",
+      "source": {
+        "branch": "main",
+        "path": "skills/data-aip-de-s3",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "becfb9b3d3589d33f15bd64a4b87f7c1a1867fc7",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3"
+      },
+      "status": "active",
+      "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "visualization",
+        "name": "Visualization"
+      },
+      "description": "Create reproducible publication plots with Seaborn.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/seaborn-paper-plots",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/seaborn-paper-plots"
+      },
+      "name": "seaborn-paper-plots",
+      "source": {
+        "branch": "main",
+        "path": "skills/seaborn-paper-plots",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "tree": "43f721c1a248db68af2c576a35e9b61a4eb0a681",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots"
+      },
+      "status": "active",
+      "version": "1.0.1"
     }
   ]
 }

@@ -1,145 +1,102 @@
-# Open Research Skill Commons
+# Skill Commons
 
-Skill Commons is a public, Git-first hub for reusable research skills. Each published
-skill is a complete directory rooted at the open
-[Agent Skills](https://agentskills.io/) `SKILL.md` format, so a compatible agent can use
-the core workflow without Ori, a registry client, or vendor-specific packaging.
+Skill Commons is a federated discovery catalog for research skills. It records where each skill is maintained; it does not copy third-party skill content into this repository.
 
-**Git is canonical. Agent Skills is the portable interface.** Richer research,
-dependency, capability, provenance, and client metadata can live beside `SKILL.md` in
-`research-skill.yaml` and `research-skill.lock`.
+The canonical skill bytes, references, scripts, history, and updates remain in their source repositories. The first Commons-maintained source is the [`curated-research-skills`](https://github.com/skill-commons/curated-research-skills) Hermes tap.
 
-## Browse the skills
+## Use with Hermes
 
-The hub currently publishes 11 curated skills in five functional bundles. Similar,
-one-off, and superseded workflows are consolidated into broad canonical skills:
-
-| Bundle | Scope |
-|---|---|
-| General | Literature work and calculation |
-| LaTeX | Manuscript authoring, revision, compilation, and submission packaging |
-| Astronomy | TAP plus Gaia, RAVE, StarHorse, and catalog visualization |
-| Data | Large research data and S3-compatible object storage |
-| Visualization | General publication and report plots |
-
-Good starting points include:
-
-| Skill | Version | What it does |
-|---|---:|---|
-| [`aip/tap-pyvo-adql-access`](skills/tap-pyvo-adql-access/) | `1.0.0` | Run portable, provenance-aware TAP/ADQL queries with PyVO. |
-| [`aip/gaia-dr3-tap-query`](skills/gaia-dr3-tap-query/) | `3.0.0` | Query Gaia DR3 through TAP with a bounded Daiquiri REST fallback. |
-| [`aip/starhorse-access`](skills/starhorse-access/) | `2.0.2` | Access StarHorse SHboost-2024 and SH21 EDR3 data through public Parquet and AIP TAP services. |
-
-The generated [human catalog](catalog/README.md) and
-[machine-readable catalog](catalog/index.json) are derived views. The reviewed
-directories under [`skills/`](skills/) remain authoritative.
-The source-controlled [`bundles/index.yaml`](bundles/index.yaml) assigns every active
-skill to exactly one primary bundle and records redirects for consolidated coordinates.
-
-## Install a skill
-
-There is no universal Agent Skills installation command. Use the complete directory,
-including its references, scripts, contracts, and sidecars.
+Subscribe to the Commons-maintained tap:
 
 ```bash
-git clone https://github.com/skill-commons/skill-commons.git
-cd skill-commons
-git checkout skill/starhorse-access/v2.0.2
+hermes skills tap add skill-commons/curated-research-skills
+hermes skills search astronomy
 ```
 
-Then either:
+Every table below also gives the explicit direct-install command. Hermes installs from the source repository's current default branch and records its resolved source and content hash locally.
 
-- point your Agent Skills-compatible client at `skills/starhorse-access`;
-- copy or symlink that complete directory into the client's normal skills location; or
-- give a supporting client the repository, exact tag, and subdirectory.
+## Skills
 
-Read the skill before running it. The portable file describes prerequisites, requested
-network access, possible side effects, and verification steps. A client may add policy
-and dependency automation from the sidecar, but the sidecar does not itself grant
-permissions.
+### General
 
-## Contribute a skill
+Literature discovery, monitoring, and scientific calculation.
 
-The normal path is ordinary Git collaboration:
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`arxiv`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv) | `2.0.0` | Search, read, cite, and monitor papers through arXiv. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv) | `hermes skills install skill-commons/curated-research-skills/skills/arxiv` |
+| [`calculator`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator) | `1.0.1` | Perform exact symbolic and numerical calculations. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator) | `hermes skills install skill-commons/curated-research-skills/skills/calculator` |
 
-1. Fork this repository.
-2. Add one complete `skills/<name>/` directory.
-3. Start with a valid `SKILL.md` and license; add the Commons sidecar before curated
-   publication.
-4. Add the skill to one functional bundle in `bundles/index.yaml`; consolidate with an
-   existing skill instead if the proposed workflow is only a narrow variant.
-5. Run the local checks below.
-6. Open a pull request and complete the rights, attribution, redaction, and validation
-   checklist.
+### LaTeX
 
-Published versions are immutable. If released package bytes change, bump the version and
-create a new reviewed release. Never silently revise an existing release tag.
+Research-manuscript authoring, revision, compilation, and submission packaging.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[curator checklist](docs/curator-checklist.md) for the accountable review boundary.
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`latex-journal-submission-package`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package) | `2.0.0` | Build and verify portable LaTeX journal submissions. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package) | `hermes skills install skill-commons/curated-research-skills/skills/latex-journal-submission-package` |
+| [`latex-research-paper`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper) | `1.0.0` | Draft, revise, and verify LaTeX research manuscripts. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper) | `hermes skills install skill-commons/curated-research-skills/skills/latex-research-paper` |
 
-## Validate locally
+### Astronomy
 
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
+Astronomy catalog access, survey-specific workflows, and scientific visualization.
 
-```bash
-uv sync --locked --all-groups
-uv run ruff check .
-uv run ruff format --check .
-uv run pytest
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`astro-catalog-plotting-cache`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache) | `2.0.0` | Create cached, publication-ready astronomy catalog plots. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache) | `hermes skills install skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache` |
+| [`gaia-dr3-tap-query`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query) | `3.0.0` | Query Gaia DR3 through AIP TAP and Daiquiri services. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query) | `hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query` |
+| [`rave-dr6`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6) | `2.0.0` | Query, cache, and crossmatch public RAVE DR6 data. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6) | `hermes skills install skill-commons/curated-research-skills/skills/rave-dr6` |
+| [`starhorse-access`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access) | `2.0.2` | Access StarHorse SHboost and SH21 catalog products. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access) | `hermes skills install skill-commons/curated-research-skills/skills/starhorse-access` |
+| [`tap-pyvo-adql-access`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access) | `1.0.0` | Query astronomy TAP services with PyVO and ADQL. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access) | `hermes skills install skill-commons/curated-research-skills/skills/tap-pyvo-adql-access` |
 
-for skill in skills/*; do
-  uv run skill-commons validate "$skill" --profile agent-skills
-  uv run skill-commons validate "$skill" --profile commons-publication
-done
+### Data
 
-uv run skill-commons catalog \
-  --repository https://github.com/skill-commons/skill-commons \
-  --check
-```
+Reproducible access to large research datasets and object storage.
 
-Validation profiles answer different questions:
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`data-aip-de-s3`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3) | `2.0.0` | Access and cache research data from S3-compatible stores. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3) | `hermes skills install skill-commons/curated-research-skills/skills/data-aip-de-s3` |
 
-| Profile | Question |
-|---|---|
-| `agent-skills` | Is the portable `SKILL.md` valid under the public Agent Skills reference implementation? |
-| `ori-compatibility` | Can today's Ori/Hermes runtime preserve the declared behavior? |
-| `commons-publication` | Is the candidate locally ready for accountable Commons review? |
+### Visualization
 
-A local Commons validator intentionally warns when namespace control, publication rights,
-or reviewed redaction require human or institutional evidence. It must not manufacture a
-local pass for those claims.
+General-purpose publication and report graphics.
 
-## Repository layout
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`seaborn-paper-plots`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots) | `1.0.1` | Create reproducible publication plots with Seaborn. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots) | `hermes skills install skill-commons/curated-research-skills/skills/seaborn-paper-plots` |
 
-```text
-skills/                 Complete published skill directories
-bundles/                Curated functional groups and consolidation redirects
-catalog/                Generated human and machine indexes
-docs/                   Current architecture, contracts, and review guidance
-schemas/                Active sidecar, lock, extension, and capability contracts
-src/skill_commons/      Small reference validator, converter, packer, and catalog tool
-tests/                  Active contract and regression tests
-warehouse/              Inert Phase-0 designs, surveys, and optional OCI evidence
-```
+<details>
+<summary>Consolidated former skill names</summary>
 
-Material under [`warehouse/`](warehouse/) is preserved design history. It is excluded
-from the supported runtime, package build, catalog, and default CI surface.
+| Former skill | Use instead | Reason |
+|---|---|---|
+| `cold-streams-monitoring` | `arxiv` | A topic-specific arXiv query and scheduler wrapper is covered by generic monitoring. |
+| `iterative-paper-improvement` | `latex-research-paper` | Its revision rounds duplicate the canonical manuscript workflow. |
+| `latex-paper-iteration` | `latex-research-paper` | Drafting, revision, merging, figures, and compile loops belong in one authoring skill. |
+| `multi-section-latex-whitepaper` | `latex-research-paper` | Multi-source synthesis is a mode of the canonical manuscript workflow. |
+| `mnras-latex-compile-portability-fixes` | `latex-journal-submission-package` | MNRAS portability fixes are packaging guidance, not a separate task. |
+| `mnras-latex-portable` | `latex-journal-submission-package` | MNRAS build guidance is consolidated into the journal submission skill. |
+| `mnras-latex-portable-build-and-package` | `latex-journal-submission-package` | This duplicated the canonical journal build and submission workflow. |
+| `cmd-plotting` | `astro-catalog-plotting-cache` | A color-magnitude diagram is one plot type in the broader astronomy plotting skill. |
+| `datashader-019-pipeline` | `astro-catalog-plotting-cache` | Datashader is one implementation path in the broader catalog plotting workflow. |
+| `gaia-dr3-daiquiri-rest` | `gaia-dr3-tap-query` | Daiquiri REST is retained as a fallback in the canonical Gaia access skill. |
+| `gaia-dr3-plot-with-dust` | `astro-catalog-plotting-cache` | One Gaia sample and dust-overlay figure is too narrow to be an independent skill. |
+| `rave-dr6-nearest-100-plot` | `rave-dr6` | A fixed nearest-100 query is an example, not a distinct RAVE capability. |
+| `rave-dr6-public-talk-visualizations` | `astro-catalog-plotting-cache` | Presentation styling is a plotting choice independent of the RAVE data source. |
+| `rave-dr6-recent-observations-plot` | `rave-dr6` | A fixed newest-100 query and plot is covered by general RAVE querying and plotting. |
+| `rave-dr6-shboost-distance-query` | `rave-dr6` | The reusable RAVE-StarHorse crossmatch is part of the canonical RAVE skill. |
+| `rave-dr6-starhorse-access` | `rave-dr6` | This was a second version of the same RAVE-StarHorse crossmatch workflow. |
+| `hdf5-on-s3-cached` | `data-aip-de-s3` | Cache-first HDF5 handling is one path within general object-store access. |
+| `s3-parquet-sampling` | `data-aip-de-s3` | Parquet projection, reduction, and caching are core object-store operations. |
+| `s3-parquet-sampling-plot-cached` | `data-aip-de-s3` | S3 access belongs here; astronomy plotting belongs in the plotting skill. |
 
-## Architecture and governance
+</details>
 
-The current decision is documented in the
-[Git-first architecture](docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md). In brief:
+## How the registry works
 
-- this public GitHub repository is the canonical contribution and publication forge;
-- the private AIP GitLab project is a one-way institutional backup;
-- one package has one canonical source, and mirrors do not accept competing changes;
-- publication is explicit and human-accountable;
-- identity, license, integrity, security, scientific validity, reproducibility, and
-  maintenance remain separate evidence axes;
-- OCI is parked optional export technology, not a prerequisite or co-equal authority.
+- [`registry/index.yaml`](registry/index.yaml) records each canonical repository, path, tracked branch, last reviewed commit, and Git tree.
+- [`categories/index.yaml`](categories/index.yaml) supplies the human taxonomy. Categories are not Hermes installation units.
+- [`catalog/index.json`](catalog/index.json) is the generated machine view.
+- `skill-commons check-upstreams` compares the recorded directory trees with the tracked branches and reports upstream changes without copying them.
 
-## License
+The YAML files above are implementation data for this catalog, not a new skill-package standard. Source repositories use the formats understood by their clients; the Commons-maintained tap follows current Hermes conventions.
 
-Code and specification text are licensed under Apache-2.0. Individual skills carry their
-own license files and evidence.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) to register or update a source and [`docs/FEDERATED_REGISTRY.md`](docs/FEDERATED_REGISTRY.md) for the architecture.
