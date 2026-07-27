@@ -14,9 +14,11 @@ duplicated review, and ambiguous issue and pull-request locations.
 
 ## Decision
 
-`https://github.com/skill-commons/skill-commons` is the canonical public repository for
-source, contributions, issues, pull requests, protected release tags, and generated
-catalogs.
+The `skill-commons` GitHub organization is the canonical public forge. The
+`https://github.com/skill-commons/skill-commons` repository is canonical for registry
+metadata, categories, contributions, issues, pull requests, and generated catalogs.
+Skill content is canonical in the source repository named by each registry record, as
+refined by [ADR 0002](0002-federated-source-owned-skills.md).
 
 The existing AIP GitLab `physicsllm/skill-commons/spec` project is a private, one-way
 institutional backup. It does not accept independent package releases. Its four
@@ -26,9 +28,9 @@ preserved.
 ## Consequences
 
 - Public contributions use GitHub forks and pull requests.
-- Canonical Git identity is the GitHub repository, exact commit or protected tag, and
-  `skills/<name>` path.
+- Canonical skill identity is its registered source repository, exact commit, and
+  repository-relative directory.
 - The full pre-migration Git history is preserved.
-- Existing upstream provenance recorded inside migrated packages remains unchanged.
+- Commons-maintained skills may use a separate repository in the public organization.
 - A future forge move requires another recorded decision and one clearly designated
   authority.

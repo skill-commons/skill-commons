@@ -1,81 +1,97 @@
 # Contributing to Skill Commons
 
+Skill Commons is a registry, not a monorepo of copied skills. A skill remains in the
+repository where its maintainer develops, reviews, licenses, and versions it. This
+repository records the canonical location and builds human- and machine-readable
+discovery views.
+
 All changes require an accountable human reviewer. Agent assistance is welcome, but the
-human submitter remains responsible for correctness, provenance, safety, and the right to
-submit every included file.
+human submitter remains responsible for correctness, provenance, safety, and the right
+to publish the registered source.
 
-By contributing, you certify the Developer Certificate of Origin 1.1: the contribution
-was created by you or supplied under terms permitting submission, and you understand the
-project and its public history may retain it. Add `Signed-off-by: Name <email>` to commits
-when the project begins accepting external contributions.
+## Register a skill
 
-## Minimal contribution path
+1. Publish the complete skill in a public Git repository. Its directory must include a
+   Hermes-compatible `SKILL.md`; references, scripts, and other support files stay beside
+   it in that source repository.
+2. Prefer a broad, reusable workflow over a fixed query, one plot, or a narrow
+   troubleshooting recipe. If an active skill already covers the capability, improve
+   that upstream instead.
+3. Add one active record to [`registry/index.yaml`](registry/index.yaml), including:
+   the repository's canonical HTTPS URL, tracked branch, exact reviewed commit, exact
+   skill-directory Git tree, and repository-relative directory.
+4. Assign the skill to exactly one editorial category in
+   [`categories/index.yaml`](categories/index.yaml).
+5. Regenerate the catalog, run the checks below, and open a pull request.
 
-1. Fork the repository and create a focused branch.
-2. Add or update one complete `skills/<name>/` directory.
-3. Keep the portable `SKILL.md` useful without Commons-specific tooling.
-4. Include a package license and identify source, authorship, derivation, and intended
-   use.
-5. Assign the active skill to exactly one primary group in `bundles/index.yaml`.
-6. Explain why the workflow is not already covered by a broader canonical skill; merge
-   reusable guidance into that skill when it is only a variant.
-7. Run the relevant checks.
-8. Open a pull request and complete its publication checklist.
+For a skill maintained by Skill Commons, contribute it to
+[`skill-commons/curated-research-skills`](https://github.com/skill-commons/curated-research-skills)
+first. Register its reviewed source commit here only after the upstream change lands.
+
+For an independently maintained skill, do not copy its files here. The upstream
+maintainer keeps ownership and history; the registry entry points to that source.
+
+## Record an exact source
+
+Given a reviewed upstream commit and skill path:
+
+```bash
+git -C /path/to/upstream rev-parse HEAD
+git -C /path/to/upstream rev-parse HEAD:skills/example
+```
+
+Put the first value in `source.revision` and the second in `source.tree`. The commit
+creates a stable review link. The tree lets the drift checker distinguish an unrelated
+repository commit from an actual change to the skill directory.
+
+## Update a registered source
+
+When the tracked branch changes, run:
+
+```bash
+uv run skill-commons check-upstreams
+```
+
+- `current` means the pinned commit/tree and `SKILL.md` metadata were verified and the
+  skill directory is unchanged.
+- `changed` means a curator must review the new upstream skill tree before updating the
+  recorded commit and tree.
+- `missing` means the registered path no longer exists and the entry needs investigation.
+- `branch-mismatch` means the recorded branch is not the repository's current default
+  branch, so Hermes and the registry would follow different content.
+- Any `invalid-*` or `metadata-mismatch` result means the pinned source record cannot be
+  verified and must be corrected through review.
+
+Never update a recorded commit or tree merely to silence the check.
+
+## Consolidate or retire a skill
+
+The active catalog favors one strong skill per reusable capability. When one skill
+supersedes another, remove the retired active record, update its category, and add a
+`consolidations` entry pointing to the surviving skill. Do not copy retired content into
+this repository as an archive; upstream history and this registry's Git history preserve
+the record.
+
+## Local checks
+
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync --locked --all-groups
-uv run skill-commons validate skills/<name> --profile agent-skills
-uv run skill-commons validate skills/<name> --profile commons-publication
-uv run pytest
 uv run ruff check .
 uv run ruff format --check .
-uv run skill-commons catalog \
-  --repository https://github.com/skill-commons/skill-commons \
-  --check
+uv run pytest
+uv run skill-commons catalog --check
+uv run skill-commons check-upstreams
 ```
 
-Contributions must:
-
-- identify copied, generated, derived, and third-party material;
-- include applicable license and attribution evidence;
-- disclose material AI assistance in the pull request description;
-- contain no credentials, private prompts/transcripts, researcher data, or unapproved
-  personal information;
-- keep generated fixtures source-pinned and reproducible;
-- preserve the separation between observed material and published Commons releases.
-
-## Curation
-
-The active tree favors one broad, maintained skill per capability. A fixed dataset
-sample, one figure style, one research topic, or one journal troubleshooting case should
-normally become an example or reference within a canonical skill, not a new package.
-
-When consolidating a published package:
-
-- merge only its reusable, accurate guidance;
-- bump the surviving package version when its bytes change;
-- record derivation and supersession in the surviving sidecar;
-- remove the redundant active directory;
-- add a coordinate-to-replacement entry under `consolidations` in
-  `bundles/index.yaml`.
-
-Git history preserves the removed source. Do not copy retired packages into another
-active-looking tree merely to preserve them.
-
-## Released packages
-
-Released package bytes are immutable. Any content change requires a version bump and a
-new review. Release tags use:
-
-```text
-skill/<name>/v<version>
-```
-
-Do not move, recreate, or reuse a release tag for different content.
+The last command accesses the registered public Git repositories. The other checks are
+local and deterministic.
 
 ## Review boundary
 
-Automated checks can establish structural validity, deterministic bytes, and local
-contract results. They cannot establish the contributor's right to publish, institutional
-namespace control, scientific validity, or successful human redaction review. A curator
-must assess those claims using the [curator checklist](docs/curator-checklist.md).
+Automated checks establish registry consistency, safe source coordinates, deterministic
+generated views, and whether tracked directory trees changed. They cannot establish the
+right to publish, scientific validity, adequate redaction, or trustworthy upstream
+maintenance. A curator must assess those claims using the
+[`curator checklist`](docs/curator-checklist.md).
