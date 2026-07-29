@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "2.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 15
+    assert len(first["skills"]) == 17
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -81,6 +81,21 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     }
     for name, (category_id, tree) in expected_wave1.items():
         assert records[name]["category"]["id"] == category_id
+        assert records[name]["source"]["tree"] == tree
+
+    expected_wave2 = {
+        "research-paper-evidence-workflow": (
+            "general",
+            "e22a48e40523c6d2770d9258a5599da7d3d75e81",
+        ),
+        "reana-workflow-authoring": (
+            "scientific-computing",
+            "11c0977e59f7a2af9cda76d8f41aefcefe05ac3d",
+        ),
+    }
+    for name, (category_id, tree) in expected_wave2.items():
+        assert records[name]["category"]["id"] == category_id
+        assert records[name]["source"]["revision"] == ("8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e")
         assert records[name]["source"]["tree"] == tree
 
 

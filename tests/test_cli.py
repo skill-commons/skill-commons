@@ -21,13 +21,13 @@ def test_catalog_command_writes_and_checks_generated_views(tmp_path: Path, capsy
 
     assert main(["catalog", "--root", str(repository)]) == 0
     written = json.loads(capsys.readouterr().out)
-    assert written == {"skills": 15, "status": "written"}
+    assert written == {"skills": 17, "status": "written"}
     assert (repository / "README.md").is_file()
     assert (repository / "catalog" / "index.json").is_file()
 
     assert main(["catalog", "--root", str(repository), "--check"]) == 0
     current = json.loads(capsys.readouterr().out)
-    assert current == {"skills": 15, "status": "current"}
+    assert current == {"skills": 17, "status": "current"}
 
 
 def test_catalog_check_reports_stale_outputs(tmp_path: Path, capsys) -> None:

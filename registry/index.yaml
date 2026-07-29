@@ -1,6 +1,6 @@
 schema_version: "1.0"
 registry: https://github.com/skill-commons/skill-commons
-provenance: https://github.com/skill-commons/curated-research-skills/blob/38abb15a603dbc7a36efc83fcb82abe719c13ee8/PROVENANCE.md
+provenance: https://github.com/skill-commons/curated-research-skills/blob/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/PROVENANCE.md
 skills:
 - name: arxiv
   description: Search, read, cite, and monitor papers through arXiv.
@@ -22,6 +22,16 @@ skills:
     revision: 38abb15a603dbc7a36efc83fcb82abe719c13ee8
     tree: dc9e52092a4c771824d6d2f1dbf0a37ec0f7aa14
     path: skills/calculator
+- name: research-paper-evidence-workflow
+  description: Map research-paper claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e
+    tree: e22a48e40523c6d2770d9258a5599da7d3d75e81
+    path: skills/research-paper-evidence-workflow
 - name: rss-feed-monitor
   description: Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards.
   version: 2.0.0
@@ -142,6 +152,16 @@ skills:
     revision: 38abb15a603dbc7a36efc83fcb82abe719c13ee8
     tree: 125e2df89f58adc92bd6e5cf0f79d34a3561a60a
     path: skills/dt4acc-host-smoke-test
+- name: reana-workflow-authoring
+  description: Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e
+    tree: 11c0977e59f7a2af9cda76d8f41aefcefe05ac3d
+    path: skills/reana-workflow-authoring
 - name: python-library-docs-first
   description: Verify version-sensitive third-party Python APIs against authoritative documentation before writing, reviewing, fixing, or explaining code.
   version: 2.0.0
@@ -228,3 +248,27 @@ consolidations:
 - name: pandas-datashader-mcp-docs-first
   replacement: python-library-docs-first
   reason: pandas and Datashader documentation research is one use of the provider-neutral Python workflow.
+- name: research-paper-writing
+  replacement: research-paper-evidence-workflow
+  reason: Evidence mapping, completed-result synthesis, outlining, and claim review are maintained as a focused read-only workflow; operational project management and submission actions remain excluded.
+- name: reana-aip
+  replacement: reana-workflow-authoring
+  reason: Reusable local REANA authoring guidance is maintained without AIP-only endpoints, credentials, or remote operations.
+- name: reana-cmd-plot-workflow-external-script
+  replacement: reana-workflow-authoring
+  reason: An external-script plotting workflow is an example covered by the general Serial authoring workflow.
+- name: reana-dev-workflow-setup
+  replacement: reana-workflow-authoring
+  reason: Local workflow setup and validation belong in the canonical REANA authoring skill.
+- name: reana-run-script-with-workspace
+  replacement: reana-workflow-authoring
+  reason: Running a script against declared workspace inputs is a Serial authoring pattern, not a separate skill.
+- name: reana-serial-python
+  replacement: reana-workflow-authoring
+  reason: A Python Serial workflow is covered by the provider-neutral canonical authoring workflow.
+- name: reana-serial-python-analysis-template
+  replacement: reana-workflow-authoring
+  reason: The analysis template is consolidated into the general local scaffolding workflow.
+- name: reana-workflow-best-practices
+  replacement: reana-workflow-authoring
+  reason: REANA authoring best practices are maintained directly in the canonical workflow.

@@ -2,10 +2,11 @@ schema_version: "1.0"
 categories:
 - id: general
   name: General
-  description: Literature discovery, monitoring, and scientific calculation.
+  description: Literature discovery, evidence synthesis, monitoring, and scientific calculation.
   skills:
   - arxiv
   - calculator
+  - research-paper-evidence-workflow
   - rss-feed-monitor
 - id: latex
   name: LaTeX
@@ -38,6 +39,7 @@ categories:
   description: Simulation, validation, and reproducible scientific software workflows.
   skills:
   - dt4acc-host-smoke-test
+  - reana-workflow-authoring
 - id: software-development
   name: Software Development
   description: Documentation-grounded software development and library workflows.
