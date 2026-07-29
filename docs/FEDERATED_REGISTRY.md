@@ -54,7 +54,7 @@ No source change is copied or silently accepted by the registry.
 
 ## Commons-maintained source
 
-The initial 11 curated skills are maintained at
+The Commons-maintained curated collection is hosted at
 [`skill-commons/curated-research-skills`](https://github.com/skill-commons/curated-research-skills).
 Its flat `skills/<name>/SKILL.md` layout and root `skills.sh.json` follow current Hermes
 tap conventions. Future maintainers may register their own repositories instead of

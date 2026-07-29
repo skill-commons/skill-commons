@@ -40,25 +40,48 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "2.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 11
+    assert len(first["skills"]) == 15
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
         "Astronomy",
         "Data",
         "Visualization",
+        "Scientific Computing",
+        "Software Development",
     ]
     records = {record["name"]: record for record in first["skills"]}
     starhorse = records["starhorse-access"]
     assert starhorse["category"] == {"id": "astronomy", "name": "Astronomy"}
-    assert starhorse["source"]["revision"] == ("3530b84d27f5d29536cb44c6242ab91949963db0")
+    assert starhorse["source"]["revision"] == ("38abb15a603dbc7a36efc83fcb82abe719c13ee8")
     assert starhorse["source"]["path"] == "skills/starhorse-access"
     assert starhorse["source"]["url"].endswith(
-        "/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access"
+        "/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access"
     )
     assert starhorse["hermes"]["identifier"] == (
         "skill-commons/curated-research-skills/skills/starhorse-access"
     )
+    expected_wave1 = {
+        "large-tabular-visualization": (
+            "visualization",
+            "9907635e20d07c982a8761bff3882b06f2b902fd",
+        ),
+        "rss-feed-monitor": (
+            "general",
+            "cb59f3968c6bad42e21e076b3696d5395bb21087",
+        ),
+        "dt4acc-host-smoke-test": (
+            "scientific-computing",
+            "125e2df89f58adc92bd6e5cf0f79d34a3561a60a",
+        ),
+        "python-library-docs-first": (
+            "software-development",
+            "50d2b3d6d03c6ca8855bab0e2b563f1bbf5f3849",
+        ),
+    }
+    for name, (category_id, tree) in expected_wave1.items():
+        assert records[name]["category"]["id"] == category_id
+        assert records[name]["source"]["tree"] == tree
 
 
 def test_readme_contains_every_skill_description_source_and_install() -> None:

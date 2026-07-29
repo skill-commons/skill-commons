@@ -6,6 +6,7 @@ categories:
   skills:
   - arxiv
   - calculator
+  - rss-feed-monitor
 - id: latex
   name: LaTeX
   description: Research-manuscript authoring, revision, compilation, and submission packaging.
@@ -30,4 +31,15 @@ categories:
   name: Visualization
   description: General-purpose publication and report graphics.
   skills:
+  - large-tabular-visualization
   - seaborn-paper-plots
+- id: scientific-computing
+  name: Scientific Computing
+  description: Simulation, validation, and reproducible scientific software workflows.
+  skills:
+  - dt4acc-host-smoke-test
+- id: software-development
+  name: Software Development
+  description: Documentation-grounded software development and library workflows.
+  skills:
+  - python-library-docs-first

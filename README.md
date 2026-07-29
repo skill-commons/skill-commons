@@ -23,8 +23,9 @@ Literature discovery, monitoring, and scientific calculation.
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
-| [`arxiv`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv) | `2.0.0` | Search, read, cite, and monitor papers through arXiv. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv) | `hermes skills install skill-commons/curated-research-skills/skills/arxiv` |
-| [`calculator`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator) | `1.0.1` | Perform exact symbolic and numerical calculations. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator) | `hermes skills install skill-commons/curated-research-skills/skills/calculator` |
+| [`arxiv`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/arxiv) | `2.0.0` | Search, read, cite, and monitor papers through arXiv. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/arxiv) | `hermes skills install skill-commons/curated-research-skills/skills/arxiv` |
+| [`calculator`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator) | `1.0.1` | Perform exact symbolic and numerical calculations. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator) | `hermes skills install skill-commons/curated-research-skills/skills/calculator` |
+| [`rss-feed-monitor`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor) | `2.0.0` | Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor) | `hermes skills install skill-commons/curated-research-skills/skills/rss-feed-monitor` |
 
 ### LaTeX
 
@@ -32,8 +33,8 @@ Research-manuscript authoring, revision, compilation, and submission packaging.
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
-| [`latex-journal-submission-package`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package) | `2.0.0` | Build and verify portable LaTeX journal submissions. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package) | `hermes skills install skill-commons/curated-research-skills/skills/latex-journal-submission-package` |
-| [`latex-research-paper`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper) | `1.0.0` | Draft, revise, and verify LaTeX research manuscripts. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper) | `hermes skills install skill-commons/curated-research-skills/skills/latex-research-paper` |
+| [`latex-journal-submission-package`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-journal-submission-package) | `2.0.0` | Build and verify portable LaTeX journal submissions. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-journal-submission-package) | `hermes skills install skill-commons/curated-research-skills/skills/latex-journal-submission-package` |
+| [`latex-research-paper`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-research-paper) | `1.0.0` | Draft, revise, and verify LaTeX research manuscripts. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-research-paper) | `hermes skills install skill-commons/curated-research-skills/skills/latex-research-paper` |
 
 ### Astronomy
 
@@ -41,11 +42,11 @@ Astronomy catalog access, survey-specific workflows, and scientific visualizatio
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
-| [`astro-catalog-plotting-cache`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache) | `2.0.0` | Create cached, publication-ready astronomy catalog plots. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache) | `hermes skills install skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache` |
-| [`gaia-dr3-tap-query`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query) | `3.0.0` | Query Gaia DR3 through AIP TAP and Daiquiri services. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query) | `hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query` |
-| [`rave-dr6`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6) | `2.0.0` | Query, cache, and crossmatch public RAVE DR6 data. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6) | `hermes skills install skill-commons/curated-research-skills/skills/rave-dr6` |
-| [`starhorse-access`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access) | `2.0.2` | Access StarHorse SHboost and SH21 catalog products. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access) | `hermes skills install skill-commons/curated-research-skills/skills/starhorse-access` |
-| [`tap-pyvo-adql-access`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access) | `1.0.0` | Query astronomy TAP services with PyVO and ADQL. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access) | `hermes skills install skill-commons/curated-research-skills/skills/tap-pyvo-adql-access` |
+| [`astro-catalog-plotting-cache`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/astro-catalog-plotting-cache) | `2.0.0` | Create cached, publication-ready astronomy catalog plots. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/astro-catalog-plotting-cache) | `hermes skills install skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache` |
+| [`gaia-dr3-tap-query`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/gaia-dr3-tap-query) | `3.0.0` | Query Gaia DR3 through AIP TAP and Daiquiri services. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/gaia-dr3-tap-query) | `hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query` |
+| [`rave-dr6`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rave-dr6) | `2.0.0` | Query, cache, and crossmatch public RAVE DR6 data. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rave-dr6) | `hermes skills install skill-commons/curated-research-skills/skills/rave-dr6` |
+| [`starhorse-access`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access) | `2.0.2` | Access StarHorse SHboost and SH21 catalog products. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access) | `hermes skills install skill-commons/curated-research-skills/skills/starhorse-access` |
+| [`tap-pyvo-adql-access`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/tap-pyvo-adql-access) | `1.0.0` | Query astronomy TAP services with PyVO and ADQL. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/tap-pyvo-adql-access) | `hermes skills install skill-commons/curated-research-skills/skills/tap-pyvo-adql-access` |
 
 ### Data
 
@@ -53,7 +54,7 @@ Reproducible access to large research datasets and object storage.
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
-| [`data-aip-de-s3`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3) | `2.0.0` | Access and cache research data from S3-compatible stores. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3) | `hermes skills install skill-commons/curated-research-skills/skills/data-aip-de-s3` |
+| [`data-aip-de-s3`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/data-aip-de-s3) | `2.0.0` | Access and cache research data from S3-compatible stores. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/data-aip-de-s3) | `hermes skills install skill-commons/curated-research-skills/skills/data-aip-de-s3` |
 
 ### Visualization
 
@@ -61,7 +62,24 @@ General-purpose publication and report graphics.
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
-| [`seaborn-paper-plots`](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots) | `1.0.1` | Create reproducible publication plots with Seaborn. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots) | `hermes skills install skill-commons/curated-research-skills/skills/seaborn-paper-plots` |
+| [`large-tabular-visualization`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/large-tabular-visualization) | `2.0.0` | Build interpretable interactive or static visualizations from tabular data that is too dense or too large for ordinary point plotting. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/large-tabular-visualization) | `hermes skills install skill-commons/curated-research-skills/skills/large-tabular-visualization` |
+| [`seaborn-paper-plots`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/seaborn-paper-plots) | `1.0.1` | Create reproducible publication plots with Seaborn. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/seaborn-paper-plots) | `hermes skills install skill-commons/curated-research-skills/skills/seaborn-paper-plots` |
+
+### Scientific Computing
+
+Simulation, validation, and reproducible scientific software workflows.
+
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`dt4acc-host-smoke-test`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test) | `2.0.0` | Run a bounded, simulation-only host smoke test for local dt4acc, dt4acc-lib, and lat2db checkouts without facility services or containers. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test) | `hermes skills install skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test` |
+
+### Software Development
+
+Documentation-grounded software development and library workflows.
+
+| Skill | Version | Description | Source | Install |
+|---|---:|---|---|---|
+| [`python-library-docs-first`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/python-library-docs-first) | `2.0.0` | Verify version-sensitive third-party Python APIs against authoritative documentation before writing, reviewing, fixing, or explaining code. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/python-library-docs-first) | `hermes skills install skill-commons/curated-research-skills/skills/python-library-docs-first` |
 
 <details>
 <summary>Consolidated former skill names</summary>
@@ -87,6 +105,12 @@ General-purpose publication and report graphics.
 | `hdf5-on-s3-cached` | `data-aip-de-s3` | Cache-first HDF5 handling is one path within general object-store access. |
 | `s3-parquet-sampling` | `data-aip-de-s3` | Parquet projection, reduction, and caching are core object-store operations. |
 | `s3-parquet-sampling-plot-cached` | `data-aip-de-s3` | S3 access belongs here; astronomy plotting belongs in the plotting skill. |
+| `dask-hvplot-datashader-scientific-plots` | `large-tabular-visualization` | The implementation-specific plotting workflow is now maintained as a general large-table visualization skill. |
+| `blogwatcher` | `rss-feed-monitor` | RSS and Atom monitoring is maintained under a tool-independent task name. |
+| `dtwin-host-smoke-test` | `dt4acc-host-smoke-test` | The canonical name identifies the dt4acc stack and its simulation-only scope. |
+| `python-mcp-docs-first` | `python-library-docs-first` | Python documentation research no longer requires a specific MCP provider. |
+| `dask-mcp-docs-first` | `python-library-docs-first` | Dask documentation research is one use of the provider-neutral Python workflow. |
+| `pandas-datashader-mcp-docs-first` | `python-library-docs-first` | pandas and Datashader documentation research is one use of the provider-neutral Python workflow. |
 
 </details>
 
