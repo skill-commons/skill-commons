@@ -1,5 +1,128 @@
 # Skill Commons Git-first handoff memo
 
+## Current handoff update — 2026-07-30
+
+Read this section first. The remainder of this file is the preserved 2026-07-23
+historical handoff and no longer describes the active repository layout.
+
+### Current architecture and repository state
+
+Skill Commons is now a federated, metadata-only registry:
+
+- [`skill-commons/curated-research-skills`](https://github.com/skill-commons/curated-research-skills)
+  (CRS) is the canonical Hermes tap for skills curated and maintained by Skill Commons.
+- [`skill-commons/skill-commons`](https://github.com/skill-commons/skill-commons) is the
+  central discovery registry. It records immutable reviewed source commits and
+  skill-directory Git trees; it does not copy skill contents.
+- `arm2arm/AstroAgentAssistant` (AAA) is a historical source for the AIP workflows being
+  consolidated. Do not open routine curation PRs there: curate the reusable result into
+  CRS and preserve exact provenance.
+- Categories are browsing metadata, not Hermes bundles or installation units.
+- The older schemas, packer, OCI work, and copied-skill implementation remain inert under
+  `warehouse/`.
+
+Merged state:
+
+| Repository | Reviewed main commit | State |
+|---|---|---|
+| CRS | `8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e` | Waves 1 and 2 merged; 17 active skills |
+| Central registry | `4210f88` | Both waves registered; 17 upstream records current |
+| AAA candidate audit | `ef78afcf1412575dd23e8e88c01dbf50b8b02836` | Original 28-candidate decision baseline |
+| AAA sources used by merged waves | `16b4fa2cfd3c5b6b674a750efc7b39a183b416cb` | Pinned in CRS provenance |
+
+AAA has changed after the audit baseline. Treat later commits as new input requiring
+review; never advance provenance merely because AAA `main` moved.
+
+### Completed conditional-candidate waves
+
+Wave 1 produced four canonical CRS skills:
+
+- `large-tabular-visualization`
+- `rss-feed-monitor`
+- `dt4acc-host-smoke-test`
+- `python-library-docs-first`
+
+Wave 2 produced two canonical CRS skills:
+
+- `research-paper-evidence-workflow`
+- `reana-workflow-authoring`
+
+These names are also active in the central registry. Their predecessor names are
+consolidation redirects, not separate skills waiting to be ported.
+
+### Remaining standalone skills awaiting modification
+
+The original 28 conditional candidates now reduce to **three possible standalone
+skills**. All three remain blocked. Do not copy their current AAA directories into CRS.
+
+| Proposed CRS skill | AAA inputs to review | Required modification before a CRS port |
+|---|---|---|
+| `reana-operator` | `reana-workflows/reana-client-config`, `reana-workflows/reana-client-failover`, `reana-workflows/reana-operator` | Separate remote operation from the completed local-only `reana-workflow-authoring`; begin read-only; use secure credential discovery; redact logs; replace unrestricted command forwarding with an allowlist; remove or tightly isolate the read/write Docker fallback; pin the client image; show server, inventory, image, resources, workflow name, and outputs before any upload or run; require explicit confirmation for every external write or computation start; add mocked and forward tests. |
+| `drphub-products` | `astronomy/drphub-cards` | Build and test a small client against an explicit API contract; make reads the default; store JWT/service credentials outside plaintext project files; redact owner UUIDs, ORCIDs, private metadata, and audit data; reject mutable `HEAD` and tag-only runtime identities; repair ETag/idempotency handling; provide dry-run previews; require confirmation for create, patch, delete, clone, publish, review, share, or batch mutation. |
+| `dt4acc-operations` | `science/dt4acc-container-troubleshooting`, `science/dtwin-epics-runbook`, `science/dtwin-setup` | Default to simulation and fail closed on unknown networks; clearly distinguish simulated PVs from live facility control; add facility/network allowlists and a separate live-system opt-in; pin repositories, images, system packages, and Python dependencies; scope privileged container/fakeroot steps; replace broad `fuser`/`pkill -9` cleanup; snapshot and restore any mutable state; fix and execute-test the Apptainer path; add safe rollback and end-to-end simulation tests. |
+
+Recommended order is `reana-operator` read-only functionality first,
+`drphub-products` read-only functionality second, and `dt4acc-operations` last. Mutating
+features may remain out of the first CRS versions even when the read-only cores are ready.
+
+### Remaining merge-only curation
+
+The following are **not** new standalone skills:
+
+| AAA inputs | Destination | Required action |
+|---|---|---|
+| `astronomy/rave-dr6-3d-animation`, `astronomy/rave-dr6-3d-public-animation` | Existing CRS `astro-catalog-plotting-cache` | Salvage only the generic, data-source-independent Matplotlib animation pattern after tests. Do not copy either data recipe: one requests CSV and parses it as VOTable; the other mixes Gaia data into a purported RAVE workflow. |
+
+This is an optional enrichment PR to CRS. It should not increase the active skill count.
+
+### Explicitly excluded from the port queue
+
+Do not turn these into CRS skills unless a future curator reopens the decision with new
+evidence:
+
+- `astronomy/astro-data-access-umbrella` — category/router concept, not a skill.
+- `research/2026-agentic-astronomy-literature` — warehouse-only snapshot.
+- `reana-workflows/reana-cmd-plot-workflow` — restricted source; a
+  credential-looking literal was found during review. Never reproduce it. Confirm
+  revocation independently before using any related credential.
+- `reana-workflows/reana-shboost24` — restricted, AIP-specific operational example.
+- `science/dtwin-burnin-tests` — unsafe for curation until repeated PV writes have robust
+  targeting, snapshot, restore, rollback, and simulation-only tests.
+
+The seven REANA authoring examples already consolidated into
+`reana-workflow-authoring`, the three MCP-docs variants consolidated into
+`python-library-docs-first`, and the other Wave 1 predecessors are also not pending
+ports.
+
+### Required workflow for the next Codex session
+
+1. Pull both public repositories and verify their current `main` commits.
+2. Work on source content in CRS, not in the central registry and not by copying an AAA
+   directory unchanged.
+3. Curate one canonical capability at a time. Preserve the AAA commit and input paths in
+   `PROVENANCE.md`.
+4. Remove provider assumptions from the core workflow. Put an AIP adapter in a reference
+   only when it is safe, necessary, and clearly labeled.
+5. Never copy credential literals, private endpoints presented as public defaults,
+   mutable runtime defaults, destructive cleanup commands, or unrestricted external-write
+   recipes.
+6. Keep read-only and local-only behavior as the default. Treat credentials, facility
+   access, submissions, remote compute, uploads, mutations, and process control as
+   separately gated capabilities.
+7. Validate the complete skill directory, run repository tests, add focused safety
+   regression tests, and forward-test the skill without live credentials or production
+   systems.
+8. Open a CRS pull request and obtain human review. Do not update the central registry
+   before the CRS PR is merged.
+9. After merge, add or update the central registry record using the immutable CRS merge
+   commit and exact skill-directory Git tree; regenerate README/catalog and run the live
+   upstream checker.
+
+The next session should not interpret “blocked” as “copy now and document the risk.”
+Modification and executable safeguards are prerequisites for publication.
+
+---
+
 > **Historical handoff:** This memo captured the 2026-07-23 transition. Current
 > architecture and repository status live in
 > [`SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md`](../../docs/SKILL_COMMONS_GIT_FIRST_ARCHITECTURE.md)
