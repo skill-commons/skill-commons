@@ -6,7 +6,8 @@
       "name": "General",
       "skills": [
         "arxiv",
-        "calculator"
+        "calculator",
+        "rss-feed-monitor"
       ]
     },
     {
@@ -43,7 +44,24 @@
       "id": "visualization",
       "name": "Visualization",
       "skills": [
+        "large-tabular-visualization",
         "seaborn-paper-plots"
+      ]
+    },
+    {
+      "description": "Simulation, validation, and reproducible scientific software workflows.",
+      "id": "scientific-computing",
+      "name": "Scientific Computing",
+      "skills": [
+        "dt4acc-host-smoke-test"
+      ]
+    },
+    {
+      "description": "Documentation-grounded software development and library workflows.",
+      "id": "software-development",
+      "name": "Software Development",
+      "skills": [
+        "python-library-docs-first"
       ]
     }
   ],
@@ -142,9 +160,39 @@
       "name": "s3-parquet-sampling-plot-cached",
       "reason": "S3 access belongs here; astronomy plotting belongs in the plotting skill.",
       "replacement": "data-aip-de-s3"
+    },
+    {
+      "name": "dask-hvplot-datashader-scientific-plots",
+      "reason": "The implementation-specific plotting workflow is now maintained as a general large-table visualization skill.",
+      "replacement": "large-tabular-visualization"
+    },
+    {
+      "name": "blogwatcher",
+      "reason": "RSS and Atom monitoring is maintained under a tool-independent task name.",
+      "replacement": "rss-feed-monitor"
+    },
+    {
+      "name": "dtwin-host-smoke-test",
+      "reason": "The canonical name identifies the dt4acc stack and its simulation-only scope.",
+      "replacement": "dt4acc-host-smoke-test"
+    },
+    {
+      "name": "python-mcp-docs-first",
+      "reason": "Python documentation research no longer requires a specific MCP provider.",
+      "replacement": "python-library-docs-first"
+    },
+    {
+      "name": "dask-mcp-docs-first",
+      "reason": "Dask documentation research is one use of the provider-neutral Python workflow.",
+      "replacement": "python-library-docs-first"
+    },
+    {
+      "name": "pandas-datashader-mcp-docs-first",
+      "reason": "pandas and Datashader documentation research is one use of the provider-neutral Python workflow.",
+      "replacement": "python-library-docs-first"
     }
   ],
-  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/3530b84d27f5d29536cb44c6242ab91949963db0/PROVENANCE.md",
+  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/38abb15a603dbc7a36efc83fcb82abe719c13ee8/PROVENANCE.md",
   "registry": "https://github.com/skill-commons/skill-commons",
   "schema_version": "2.0",
   "skills": [
@@ -163,9 +211,9 @@
         "branch": "main",
         "path": "skills/arxiv",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "5d0a099285a2106222936fb8fa9a90471c4cf476",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/arxiv"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/arxiv"
       },
       "status": "active",
       "version": "2.0.0"
@@ -185,12 +233,34 @@
         "branch": "main",
         "path": "skills/calculator",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "dc9e52092a4c771824d6d2f1dbf0a37ec0f7aa14",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/calculator"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator"
       },
       "status": "active",
       "version": "1.0.1"
+    },
+    {
+      "category": {
+        "id": "general",
+        "name": "General"
+      },
+      "description": "Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/rss-feed-monitor",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/rss-feed-monitor"
+      },
+      "name": "rss-feed-monitor",
+      "source": {
+        "branch": "main",
+        "path": "skills/rss-feed-monitor",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
+        "tree": "cb59f3968c6bad42e21e076b3696d5395bb21087",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor"
+      },
+      "status": "active",
+      "version": "2.0.0"
     },
     {
       "category": {
@@ -207,9 +277,9 @@
         "branch": "main",
         "path": "skills/latex-journal-submission-package",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "0cec09604db9c91c0b07f473e1fc0244121ef4ab",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-journal-submission-package"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-journal-submission-package"
       },
       "status": "active",
       "version": "2.0.0"
@@ -229,9 +299,9 @@
         "branch": "main",
         "path": "skills/latex-research-paper",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "6f9299ee6d4ee9f5cbf1c038cc3bb8f800608a96",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/latex-research-paper"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/latex-research-paper"
       },
       "status": "active",
       "version": "1.0.0"
@@ -251,9 +321,9 @@
         "branch": "main",
         "path": "skills/astro-catalog-plotting-cache",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "5af9bafe312f15962c46dffbc7633526979cc14d",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/astro-catalog-plotting-cache"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/astro-catalog-plotting-cache"
       },
       "status": "active",
       "version": "2.0.0"
@@ -273,9 +343,9 @@
         "branch": "main",
         "path": "skills/gaia-dr3-tap-query",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "0ecdde856b6c66aca91c11853298d48ba7e0f562",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/gaia-dr3-tap-query"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/gaia-dr3-tap-query"
       },
       "status": "active",
       "version": "3.0.0"
@@ -295,9 +365,9 @@
         "branch": "main",
         "path": "skills/rave-dr6",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "f5bd6d7b891ece2b97419169f90a8e8140d3dac5",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/rave-dr6"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rave-dr6"
       },
       "status": "active",
       "version": "2.0.0"
@@ -317,9 +387,9 @@
         "branch": "main",
         "path": "skills/starhorse-access",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "4165d54d25643ba5c226e2adb33b58681c609cef",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/starhorse-access"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access"
       },
       "status": "active",
       "version": "2.0.2"
@@ -339,9 +409,9 @@
         "branch": "main",
         "path": "skills/tap-pyvo-adql-access",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "ba5d8704fb0b3e4e67a3f34909bae72909abb0b2",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/tap-pyvo-adql-access"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/tap-pyvo-adql-access"
       },
       "status": "active",
       "version": "1.0.0"
@@ -361,9 +431,31 @@
         "branch": "main",
         "path": "skills/data-aip-de-s3",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "becfb9b3d3589d33f15bd64a4b87f7c1a1867fc7",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/data-aip-de-s3"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/data-aip-de-s3"
+      },
+      "status": "active",
+      "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "visualization",
+        "name": "Visualization"
+      },
+      "description": "Build interpretable interactive or static visualizations from tabular data that is too dense or too large for ordinary point plotting.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/large-tabular-visualization",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/large-tabular-visualization"
+      },
+      "name": "large-tabular-visualization",
+      "source": {
+        "branch": "main",
+        "path": "skills/large-tabular-visualization",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
+        "tree": "9907635e20d07c982a8761bff3882b06f2b902fd",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/large-tabular-visualization"
       },
       "status": "active",
       "version": "2.0.0"
@@ -383,12 +475,56 @@
         "branch": "main",
         "path": "skills/seaborn-paper-plots",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "3530b84d27f5d29536cb44c6242ab91949963db0",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "43f721c1a248db68af2c576a35e9b61a4eb0a681",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/3530b84d27f5d29536cb44c6242ab91949963db0/skills/seaborn-paper-plots"
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/seaborn-paper-plots"
       },
       "status": "active",
       "version": "1.0.1"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Run a bounded, simulation-only host smoke test for local dt4acc, dt4acc-lib, and lat2db checkouts without facility services or containers.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test"
+      },
+      "name": "dt4acc-host-smoke-test",
+      "source": {
+        "branch": "main",
+        "path": "skills/dt4acc-host-smoke-test",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
+        "tree": "125e2df89f58adc92bd6e5cf0f79d34a3561a60a",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test"
+      },
+      "status": "active",
+      "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "software-development",
+        "name": "Software Development"
+      },
+      "description": "Verify version-sensitive third-party Python APIs against authoritative documentation before writing, reviewing, fixing, or explaining code.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/python-library-docs-first",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/python-library-docs-first"
+      },
+      "name": "python-library-docs-first",
+      "source": {
+        "branch": "main",
+        "path": "skills/python-library-docs-first",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
+        "tree": "50d2b3d6d03c6ca8855bab0e2b563f1bbf5f3849",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/python-library-docs-first"
+      },
+      "status": "active",
+      "version": "2.0.0"
     }
   ]
 }
