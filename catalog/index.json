@@ -1,12 +1,13 @@
 {
   "categories": [
     {
-      "description": "Literature discovery, monitoring, and scientific calculation.",
+      "description": "Literature discovery, evidence synthesis, monitoring, and scientific calculation.",
       "id": "general",
       "name": "General",
       "skills": [
         "arxiv",
         "calculator",
+        "research-paper-evidence-workflow",
         "rss-feed-monitor"
       ]
     },
@@ -53,7 +54,8 @@
       "id": "scientific-computing",
       "name": "Scientific Computing",
       "skills": [
-        "dt4acc-host-smoke-test"
+        "dt4acc-host-smoke-test",
+        "reana-workflow-authoring"
       ]
     },
     {
@@ -190,9 +192,49 @@
       "name": "pandas-datashader-mcp-docs-first",
       "reason": "pandas and Datashader documentation research is one use of the provider-neutral Python workflow.",
       "replacement": "python-library-docs-first"
+    },
+    {
+      "name": "research-paper-writing",
+      "reason": "Evidence mapping, completed-result synthesis, outlining, and claim review are maintained as a focused read-only workflow; operational project management and submission actions remain excluded.",
+      "replacement": "research-paper-evidence-workflow"
+    },
+    {
+      "name": "reana-aip",
+      "reason": "Reusable local REANA authoring guidance is maintained without AIP-only endpoints, credentials, or remote operations.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-cmd-plot-workflow-external-script",
+      "reason": "An external-script plotting workflow is an example covered by the general Serial authoring workflow.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-dev-workflow-setup",
+      "reason": "Local workflow setup and validation belong in the canonical REANA authoring skill.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-run-script-with-workspace",
+      "reason": "Running a script against declared workspace inputs is a Serial authoring pattern, not a separate skill.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-serial-python",
+      "reason": "A Python Serial workflow is covered by the provider-neutral canonical authoring workflow.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-serial-python-analysis-template",
+      "reason": "The analysis template is consolidated into the general local scaffolding workflow.",
+      "replacement": "reana-workflow-authoring"
+    },
+    {
+      "name": "reana-workflow-best-practices",
+      "reason": "REANA authoring best practices are maintained directly in the canonical workflow.",
+      "replacement": "reana-workflow-authoring"
     }
   ],
-  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/38abb15a603dbc7a36efc83fcb82abe719c13ee8/PROVENANCE.md",
+  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/PROVENANCE.md",
   "registry": "https://github.com/skill-commons/skill-commons",
   "schema_version": "2.0",
   "skills": [
@@ -239,6 +281,28 @@
       },
       "status": "active",
       "version": "1.0.1"
+    },
+    {
+      "category": {
+        "id": "general",
+        "name": "General"
+      },
+      "description": "Map research-paper claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/research-paper-evidence-workflow",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/research-paper-evidence-workflow"
+      },
+      "name": "research-paper-evidence-workflow",
+      "source": {
+        "branch": "main",
+        "path": "skills/research-paper-evidence-workflow",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e",
+        "tree": "e22a48e40523c6d2770d9258a5599da7d3d75e81",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/research-paper-evidence-workflow"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {
@@ -503,6 +567,28 @@
       },
       "status": "active",
       "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/reana-workflow-authoring",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-workflow-authoring"
+      },
+      "name": "reana-workflow-authoring",
+      "source": {
+        "branch": "main",
+        "path": "skills/reana-workflow-authoring",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e",
+        "tree": "11c0977e59f7a2af9cda76d8f41aefcefe05ac3d",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/reana-workflow-authoring"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {

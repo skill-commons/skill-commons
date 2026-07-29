@@ -19,12 +19,13 @@ Every table below also gives the explicit direct-install command. Hermes install
 
 ### General
 
-Literature discovery, monitoring, and scientific calculation.
+Literature discovery, evidence synthesis, monitoring, and scientific calculation.
 
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
 | [`arxiv`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/arxiv) | `2.0.0` | Search, read, cite, and monitor papers through arXiv. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/arxiv) | `hermes skills install skill-commons/curated-research-skills/skills/arxiv` |
 | [`calculator`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator) | `1.0.1` | Perform exact symbolic and numerical calculations. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator) | `hermes skills install skill-commons/curated-research-skills/skills/calculator` |
+| [`research-paper-evidence-workflow`](https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/research-paper-evidence-workflow) | `1.0.0` | Map research-paper claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/research-paper-evidence-workflow) | `hermes skills install skill-commons/curated-research-skills/skills/research-paper-evidence-workflow` |
 | [`rss-feed-monitor`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor) | `2.0.0` | Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor) | `hermes skills install skill-commons/curated-research-skills/skills/rss-feed-monitor` |
 
 ### LaTeX
@@ -72,6 +73,7 @@ Simulation, validation, and reproducible scientific software workflows.
 | Skill | Version | Description | Source | Install |
 |---|---:|---|---|---|
 | [`dt4acc-host-smoke-test`](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test) | `2.0.0` | Run a bounded, simulation-only host smoke test for local dt4acc, dt4acc-lib, and lat2db checkouts without facility services or containers. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test) | `hermes skills install skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test` |
+| [`reana-workflow-authoring`](https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/reana-workflow-authoring) | `1.0.0` | Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow. | [pinned source](https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/reana-workflow-authoring) | `hermes skills install skill-commons/curated-research-skills/skills/reana-workflow-authoring` |
 
 ### Software Development
 
@@ -111,6 +113,14 @@ Documentation-grounded software development and library workflows.
 | `python-mcp-docs-first` | `python-library-docs-first` | Python documentation research no longer requires a specific MCP provider. |
 | `dask-mcp-docs-first` | `python-library-docs-first` | Dask documentation research is one use of the provider-neutral Python workflow. |
 | `pandas-datashader-mcp-docs-first` | `python-library-docs-first` | pandas and Datashader documentation research is one use of the provider-neutral Python workflow. |
+| `research-paper-writing` | `research-paper-evidence-workflow` | Evidence mapping, completed-result synthesis, outlining, and claim review are maintained as a focused read-only workflow; operational project management and submission actions remain excluded. |
+| `reana-aip` | `reana-workflow-authoring` | Reusable local REANA authoring guidance is maintained without AIP-only endpoints, credentials, or remote operations. |
+| `reana-cmd-plot-workflow-external-script` | `reana-workflow-authoring` | An external-script plotting workflow is an example covered by the general Serial authoring workflow. |
+| `reana-dev-workflow-setup` | `reana-workflow-authoring` | Local workflow setup and validation belong in the canonical REANA authoring skill. |
+| `reana-run-script-with-workspace` | `reana-workflow-authoring` | Running a script against declared workspace inputs is a Serial authoring pattern, not a separate skill. |
+| `reana-serial-python` | `reana-workflow-authoring` | A Python Serial workflow is covered by the provider-neutral canonical authoring workflow. |
+| `reana-serial-python-analysis-template` | `reana-workflow-authoring` | The analysis template is consolidated into the general local scaffolding workflow. |
+| `reana-workflow-best-practices` | `reana-workflow-authoring` | REANA authoring best practices are maintained directly in the canonical workflow. |
 
 </details>
 
