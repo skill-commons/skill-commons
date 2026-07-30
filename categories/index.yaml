@@ -28,6 +28,7 @@ categories:
   description: Reproducible access to large research datasets and object storage.
   skills:
   - data-aip-de-s3
+  - drphub-products
 - id: visualization
   name: Visualization
   description: General-purpose publication and report graphics.
@@ -39,6 +40,8 @@ categories:
   description: Simulation, validation, and reproducible scientific software workflows.
   skills:
   - dt4acc-host-smoke-test
+  - dt4acc-operations
+  - reana-operator
   - reana-workflow-authoring
 - id: software-development
   name: Software Development

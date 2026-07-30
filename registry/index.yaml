@@ -1,6 +1,6 @@
 schema_version: "1.0"
 registry: https://github.com/skill-commons/skill-commons
-provenance: https://github.com/skill-commons/curated-research-skills/blob/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/PROVENANCE.md
+provenance: https://github.com/skill-commons/curated-research-skills/blob/d5f096ee426dbbbea885bfb5199e8b7070960a1a/PROVENANCE.md
 skills:
 - name: arxiv
   description: Search, read, cite, and monitor papers through arXiv.
@@ -122,6 +122,16 @@ skills:
     revision: 38abb15a603dbc7a36efc83fcb82abe719c13ee8
     tree: becfb9b3d3589d33f15bd64a4b87f7c1a1867fc7
     path: skills/data-aip-de-s3
+- name: drphub-products
+  description: Inspect Digital Research Product Hub health, API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: d5f096ee426dbbbea885bfb5199e8b7070960a1a
+    tree: cf1f55bbc120383e1313a6f9bbcf24a69dbfc3bb
+    path: skills/drphub-products
 - name: large-tabular-visualization
   description: Build interpretable interactive or static visualizations from tabular data that is too dense or too large for ordinary point plotting.
   version: 2.0.0
@@ -152,6 +162,26 @@ skills:
     revision: 38abb15a603dbc7a36efc83fcb82abe719c13ee8
     tree: 125e2df89f58adc92bd6e5cf0f79d34a3561a60a
     path: skills/dt4acc-host-smoke-test
+- name: dt4acc-operations
+  description: Preflight, plan, start, inspect, and stop a local dt4acc simulation packaged as an already-built, digest-pinned Apptainer SIF. Use when an operator needs a bounded simulation IOC lifecycle with exact source/build provenance, a clean child environment, no host or facility network, content-bound start/stop confirmation, and exact owned-process cleanup. This first CRS version never builds or pulls images, connects to facility services, accesses live PVs, imports MongoDB data, or performs PV writes.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: d5f096ee426dbbbea885bfb5199e8b7070960a1a
+    tree: d1c9da7dbf3a344786604d06677d69ca97378f98
+    path: skills/dt4acc-operations
+- name: reana-operator
+  description: Inspect an authenticated REANA service through a fixed read-only command allowlist, including connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This first CRS version never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: d5f096ee426dbbbea885bfb5199e8b7070960a1a
+    tree: 53e58285d6b0b689c9e571d8108e762f467d03b9
+    path: skills/reana-operator
 - name: reana-workflow-authoring
   description: Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.
   version: 1.0.0

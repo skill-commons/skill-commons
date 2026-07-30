@@ -37,7 +37,8 @@
       "id": "data",
       "name": "Data",
       "skills": [
-        "data-aip-de-s3"
+        "data-aip-de-s3",
+        "drphub-products"
       ]
     },
     {
@@ -55,6 +56,8 @@
       "name": "Scientific Computing",
       "skills": [
         "dt4acc-host-smoke-test",
+        "dt4acc-operations",
+        "reana-operator",
         "reana-workflow-authoring"
       ]
     },
@@ -234,7 +237,7 @@
       "replacement": "reana-workflow-authoring"
     }
   ],
-  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/PROVENANCE.md",
+  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/d5f096ee426dbbbea885bfb5199e8b7070960a1a/PROVENANCE.md",
   "registry": "https://github.com/skill-commons/skill-commons",
   "schema_version": "2.0",
   "skills": [
@@ -504,6 +507,28 @@
     },
     {
       "category": {
+        "id": "data",
+        "name": "Data"
+      },
+      "description": "Inspect Digital Research Product Hub health, API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/drphub-products",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/drphub-products"
+      },
+      "name": "drphub-products",
+      "source": {
+        "branch": "main",
+        "path": "skills/drphub-products",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
+        "tree": "cf1f55bbc120383e1313a6f9bbcf24a69dbfc3bb",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/drphub-products"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
         "id": "visualization",
         "name": "Visualization"
       },
@@ -567,6 +592,50 @@
       },
       "status": "active",
       "version": "2.0.0"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Preflight, plan, start, inspect, and stop a local dt4acc simulation packaged as an already-built, digest-pinned Apptainer SIF. Use when an operator needs a bounded simulation IOC lifecycle with exact source/build provenance, a clean child environment, no host or facility network, content-bound start/stop confirmation, and exact owned-process cleanup. This first CRS version never builds or pulls images, connects to facility services, accesses live PVs, imports MongoDB data, or performs PV writes.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/dt4acc-operations",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-operations"
+      },
+      "name": "dt4acc-operations",
+      "source": {
+        "branch": "main",
+        "path": "skills/dt4acc-operations",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
+        "tree": "d1c9da7dbf3a344786604d06677d69ca97378f98",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/dt4acc-operations"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Inspect an authenticated REANA service through a fixed read-only command allowlist, including connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This first CRS version never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/reana-operator",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-operator"
+      },
+      "name": "reana-operator",
+      "source": {
+        "branch": "main",
+        "path": "skills/reana-operator",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
+        "tree": "53e58285d6b0b689c9e571d8108e762f467d03b9",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/reana-operator"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {
