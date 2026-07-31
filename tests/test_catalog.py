@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "2.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 20
+    assert len(first["skills"]) == 22
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -115,6 +115,15 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     for name, (category_id, tree) in expected_wave3.items():
         assert records[name]["category"]["id"] == category_id
         assert records[name]["source"]["revision"] == ("d5f096ee426dbbbea885bfb5199e8b7070960a1a")
+        assert records[name]["source"]["tree"] == tree
+
+    expected_wave4 = {
+        "jubik-bootstrap": "be5008c4d907fc09f7979b6df53a5130ca867821",
+        "nifty-re-variational-inference": "eb2bd3b810e3060aa197d99794785021d4196670",
+    }
+    for name, tree in expected_wave4.items():
+        assert records[name]["category"]["id"] == "scientific-computing"
+        assert records[name]["source"]["revision"] == ("4f63c019b3d05fe72501c706fbe69d105f9fb643")
         assert records[name]["source"]["tree"] == tree
 
 
