@@ -1,6 +1,6 @@
 schema_version: "1.0"
 registry: https://github.com/skill-commons/skill-commons
-provenance: https://github.com/skill-commons/curated-research-skills/blob/d5f096ee426dbbbea885bfb5199e8b7070960a1a/PROVENANCE.md
+provenance: https://github.com/skill-commons/curated-research-skills/blob/4f63c019b3d05fe72501c706fbe69d105f9fb643/PROVENANCE.md
 skills:
 - name: arxiv
   description: Search, read, cite, and monitor papers through arXiv.
@@ -172,6 +172,26 @@ skills:
     revision: d5f096ee426dbbbea885bfb5199e8b7070960a1a
     tree: d1c9da7dbf3a344786604d06677d69ca97378f98
     path: skills/dt4acc-operations
+- name: jubik-bootstrap
+  description: Preflight, plan, create, and diagnose a pinned J-UBIK core environment with an isolated lock-backed, wheel-only workflow and a genuine synthetic SkyModel smoke test. Use when a researcher is blocked on J-UBIK installation, JAX/NIFTy compatibility, environment configuration, artifact provenance, or core readiness. This skill proves only the CPU core; it never claims JWST, Chandra, or eROSITA adapter readiness, downloads calibration or observation data, invokes instrument software, or runs research inference.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 4f63c019b3d05fe72501c706fbe69d105f9fb643
+    tree: be5008c4d907fc09f7979b6df53a5130ca867821
+    path: skills/jubik-bootstrap
+- name: nifty-re-variational-inference
+  description: Build, run, and validate bounded Bayesian variational-inference workflows with the JAX-based NIFTy.re API. Use when a researcher needs to formulate priors, a response and likelihood, prove a NIFTy.re installation against an analytic posterior, run a small CPU pilot, inspect optimizer and sampling evidence, or prepare a reproducible inference handoff. Do not use this skill to bootstrap J-UBIK, configure telescope instruments, certify an arbitrary scientific model from one successful run, or launch unbounded production inference.
+  version: 1.0.0
+  status: active
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 4f63c019b3d05fe72501c706fbe69d105f9fb643
+    tree: eb2bd3b810e3060aa197d99794785021d4196670
+    path: skills/nifty-re-variational-inference
 - name: reana-operator
   description: Inspect an authenticated REANA service through a fixed read-only command allowlist, including connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This first CRS version never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.
   version: 1.0.0

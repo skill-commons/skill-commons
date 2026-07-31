@@ -57,6 +57,8 @@
       "skills": [
         "dt4acc-host-smoke-test",
         "dt4acc-operations",
+        "jubik-bootstrap",
+        "nifty-re-variational-inference",
         "reana-operator",
         "reana-workflow-authoring"
       ]
@@ -237,7 +239,7 @@
       "replacement": "reana-workflow-authoring"
     }
   ],
-  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/d5f096ee426dbbbea885bfb5199e8b7070960a1a/PROVENANCE.md",
+  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/4f63c019b3d05fe72501c706fbe69d105f9fb643/PROVENANCE.md",
   "registry": "https://github.com/skill-commons/skill-commons",
   "schema_version": "2.0",
   "skills": [
@@ -611,6 +613,50 @@
         "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
         "tree": "d1c9da7dbf3a344786604d06677d69ca97378f98",
         "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/dt4acc-operations"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Preflight, plan, create, and diagnose a pinned J-UBIK core environment with an isolated lock-backed, wheel-only workflow and a genuine synthetic SkyModel smoke test. Use when a researcher is blocked on J-UBIK installation, JAX/NIFTy compatibility, environment configuration, artifact provenance, or core readiness. This skill proves only the CPU core; it never claims JWST, Chandra, or eROSITA adapter readiness, downloads calibration or observation data, invokes instrument software, or runs research inference.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/jubik-bootstrap",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/jubik-bootstrap"
+      },
+      "name": "jubik-bootstrap",
+      "source": {
+        "branch": "main",
+        "path": "skills/jubik-bootstrap",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "4f63c019b3d05fe72501c706fbe69d105f9fb643",
+        "tree": "be5008c4d907fc09f7979b6df53a5130ca867821",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/4f63c019b3d05fe72501c706fbe69d105f9fb643/skills/jubik-bootstrap"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
+        "id": "scientific-computing",
+        "name": "Scientific Computing"
+      },
+      "description": "Build, run, and validate bounded Bayesian variational-inference workflows with the JAX-based NIFTy.re API. Use when a researcher needs to formulate priors, a response and likelihood, prove a NIFTy.re installation against an analytic posterior, run a small CPU pilot, inspect optimizer and sampling evidence, or prepare a reproducible inference handoff. Do not use this skill to bootstrap J-UBIK, configure telescope instruments, certify an arbitrary scientific model from one successful run, or launch unbounded production inference.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/nifty-re-variational-inference",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/nifty-re-variational-inference"
+      },
+      "name": "nifty-re-variational-inference",
+      "source": {
+        "branch": "main",
+        "path": "skills/nifty-re-variational-inference",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "4f63c019b3d05fe72501c706fbe69d105f9fb643",
+        "tree": "eb2bd3b810e3060aa197d99794785021d4196670",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/4f63c019b3d05fe72501c706fbe69d105f9fb643/skills/nifty-re-variational-inference"
       },
       "status": "active",
       "version": "1.0.0"
