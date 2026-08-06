@@ -29,7 +29,8 @@
         "gaia-dr3-tap-query",
         "rave-dr6",
         "starhorse-access",
-        "tap-pyvo-adql-access"
+        "tap-pyvo-adql-access",
+        "vamdc"
       ]
     },
     {
@@ -689,6 +690,49 @@
         "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
         "tree": "ba5d8704fb0b3e4e67a3f34909bae72909abb0b2",
         "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/tap-pyvo-adql-access"
+      },
+      "status": "active",
+      "version": "1.0.0"
+    },
+    {
+      "category": {
+        "id": "astronomy",
+        "name": "Astronomy"
+      },
+      "description": "Query atomic and molecular spectroscopic data using the pyVAMDC command-line tool. Provides access to VAMDC (Virtual Atomic and Molecular Data Centre) infrastructure for retrieving spectral lines, species metadata, node information, and RADEX molecular collision data. Use this skill to fetch spectroscopic data from various databases, discover available species, count results before downloading, or obtain collision rate files for radiative transfer modelling.",
+      "hermes": {
+        "identifier": "VAMDC/pyVAMDC/skill",
+        "install": "hermes skills install VAMDC/pyVAMDC/skill"
+      },
+      "name": "vamdc",
+      "review": {
+        "assessed_at": "2026-08-06",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-vamdc-community.md",
+        "evidence": {
+          "maintenance": "maintainer-confirmed",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "tested",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific validation across VAMDC nodes and returned datasets is not claimed.",
+          "The tested install used Python 3.11 with a current range-based dependency resolution; no committed cross-platform lock is provided.",
+          "Results depend on remote VAMDC node availability and node-reported truncation metadata."
+        ],
+        "maturity": "community",
+        "policy": "skill-commons-review-v1"
+      },
+      "source": {
+        "branch": "main",
+        "path": "skill",
+        "repository": "https://github.com/VAMDC/pyVAMDC",
+        "revision": "bfefc812782d055c5f54c6105a394d6d34e13815",
+        "tree": "7db98d33cc99a8ae220f1585f69d49d15a04bf4c",
+        "url": "https://github.com/VAMDC/pyVAMDC/tree/bfefc812782d055c5f54c6105a394d6d34e13815/skill"
       },
       "status": "active",
       "version": "1.0.0"
