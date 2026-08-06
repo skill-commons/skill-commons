@@ -1,6 +1,6 @@
 # Skill Commons Git-first handoff memo
 
-## Current handoff update — 2026-08-01
+## Current handoff update — 2026-08-06
 
 Read this section first. The remainder of this file is the preserved 2026-07-23
 historical handoff and no longer describes the active repository layout.
@@ -14,6 +14,11 @@ Skill Commons is now a federated, metadata-only registry:
 - [`skill-commons/skill-commons`](https://github.com/skill-commons/skill-commons) is the
   central discovery registry. It records immutable reviewed source commits and
   skill-directory Git trees; it does not copy skill contents.
+- Independently maintained repositories can remain canonical. The first completed
+  example is [`VAMDC/pyVAMDC`](https://github.com/VAMDC/pyVAMDC); the registry points
+  directly to its exact `skill/` tree rather than copying it into CRS.
+- Every active record now includes `community`, `reviewed`, or `curated` review maturity,
+  scoped evidence, and explicit limitations under `skill-commons-review-v1`.
 - `arm2arm/AstroAgentAssistant` (AAA) is historical input. The reviewed AAA curation
   program is complete; do not treat later AAA changes as an automatic port queue.
 - Categories are browsing metadata, not Hermes bundles or installation units.
@@ -22,17 +27,108 @@ Skill Commons is now a federated, metadata-only registry:
 
 Merged state:
 
-| Repository | Reviewed main commit | State |
+| Repository | Reviewed revision | State |
 |---|---|---|
 | CRS | `4f63c019b3d05fe72501c706fbe69d105f9fb643` | All curation waves merged; 22 active skills |
-| Central registry | `0896b36aad3eba6b0bed68537c80dfc66d506997` | All 22 records registered; 33 consolidation redirects |
+| Central registry | `cb355bbbd820265645062ddbd6fd52bc83e0e2cf` | 23 active records; review maturity and evidence implemented; `vamdc` registered; 33 consolidation redirects |
+| pyVAMDC registered source | commit `bfefc812782d055c5f54c6105a394d6d34e13815`; tree `7db98d33cc99a8ae220f1585f69d49d15a04bf4c` | First independently maintained `community` entry |
 | AAA candidate audit | `ef78afcf1412575dd23e8e88c01dbf50b8b02836` | Original 28-candidate decision baseline |
 | AAA sources used by the main waves | `16b4fa2cfd3c5b6b674a750efc7b39a183b416cb` | Pinned in CRS provenance |
 | Later AAA J-UBIK/NIFTy input | `fade33165867df7012a71703fa43bb62766e6c06` | Reviewed separately and pinned in CRS provenance |
-| Ori architecture handoff | `dbb55ea` in `physicsllm/c.1/drp-hermes` | Implemented architecture and achievement summary added; stale material archived |
+| Ori architecture handoff | `e016e1273fb02a906f1c660fe86e611a12eba3b1` in [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1) | Claude-facing review maturity, first external intake, and Ori integration guidance updated; MR open and ready to merge at handoff time |
 
 AAA has changed after the audit baseline. Treat later commits as new input requiring
 review; never advance provenance merely because AAA `main` moved.
+
+### Review maturity and admission policy
+
+Central registry pull request
+[`skill-commons/skill-commons#10`](https://github.com/skill-commons/skill-commons/pull/10)
+implemented the active review model:
+
+- `community` passed the admission floor in a maintainer-supported canonical source;
+- `reviewed` adds accountable complete-tree technical review and proportionate
+  operational evidence;
+- `curated` adds deliberate editorial/safety curation, a continuing steward, and
+  repeatable regression or contract evidence.
+
+`unreviewed` remains intake state and is not active in the catalog. Maturity is bound to
+one exact repository/revision/path/tree and is not a universal trust score, scientific
+certificate, or runtime authorization. Keep provenance, rights, security, operability,
+scientific validity, reproducibility, maintenance, capabilities, and limitations as
+separate evidence. Any skill-tree change requires a new decision; the same tree can be
+promoted later if stronger independent evidence is added.
+
+The hard admission floor remains: maintainer-confirmed canonical publication authority;
+clear authorship, derivation, attribution, and licensing; exact Git identity; a complete
+installable directory; disclosed tools, network, credentials, writes, side effects, and
+verification; redaction with no secrets/private material; and no known critical unsafe
+default or deceptive scientific claim. Lockfiles, whole-repository lint, broad platform
+coverage, comprehensive tests, independent scientific reproduction, and perfect network
+containment improve evidence but are not universal gates.
+
+The existing 22 CRS entries were explicitly seeded as `curated` based on the completed
+curation program. That decision does not newly claim independent scientific reproduction
+for every skill.
+
+### Community announcement and external-skill intake
+
+Tom announced Skill Commons to the IVOA `ai-interop` mailing list on 2026-08-04 while
+the community discussion about MCP and agent skills was active. The announcement:
+
+- led with Skill Commons as a community-led registry that works with the AI agents the
+  community chooses;
+- linked to [`skill-commons/skill-commons`](https://github.com/skill-commons/skill-commons);
+- introduced Ori as AIP's research assistant and noted briefly that it uses a locally
+  hosted open-source LLM;
+- used Ori research screenshots as supporting examples, not as the main subject; and
+- stated that an attempt was already under way to intake the ESO skills.
+
+Use Tom's full affiliation in external communication: **the Leibniz Institute for
+Astrophysics Potsdam (AIP)**. His public identity reference is
+[`aip.de/en/members/tiantian-tong`](https://www.aip.de/en/members/tiantian-tong/).
+
+Two maintainer-first onboarding invitations were initiated; one is complete and one
+remains open:
+
+| Candidate source | Review baseline | Public contact | Current state |
+|---|---|---|---|
+| [`szampier/skills`](https://github.com/szampier/skills) | `dbedc67de5eea2cc12d36fc259fa9d51d9aa0e82` | [Issue #1](https://github.com/szampier/skills/issues/1) | Awaiting Stefano's response |
+| [`VAMDC/pyVAMDC`](https://github.com/VAMDC/pyVAMDC) | merge commit `bfefc812782d055c5f54c6105a394d6d34e13815`; `skill/` tree `7db98d33cc99a8ae220f1585f69d49d15a04bf4c` | [Issue #10](https://github.com/VAMDC/pyVAMDC/issues/10) | **Completed:** upstream merged; exact source registered at `community`; central registry CI passed and merged |
+
+For `szampier/skills`, the proposed first demo intake is limited to `eso-tap-obs` and
+`eso-tap-cat`. They appear well suited as independently maintained Astronomy skills, but
+Tom is not a contributor to that repository. Do not copy, fork, or register them before
+the maintainer responds. A 2026-08-06 re-audit found repository-level MIT licensing, clear
+Git authorship, complete self-contained directories, read-only ESO/SIMBAD network use,
+and successful bounded live checks. Do not require duplicate per-skill version/author/
+license fields, a lockfile, or an upstream test suite merely for `community` admission.
+If Stefano agrees, offer only proportionate polish: correct the erroneous radius
+conversion (`0.1° = 6 arcmin`, not `0.016667°`), prefer bounded/failure-aware `curl` with
+safe URL encoding, and clarify `MAXREC=200` truncation. Leave `astroquery-eso` and
+`edps-workflow` for later, separate review. Do not imply official ESO endorsement unless
+ESO explicitly provides it.
+
+For `VAMDC/pyVAMDC`, Carlo Maria Zwölf confirmed the repository as the canonical home and
+the maintainers addressed the original installation, EUPL, metadata, timeout/cache,
+testing, and provenance findings. The focused follow-up
+[`VAMDC/pyVAMDC#11`](https://github.com/VAMDC/pyVAMDC/pull/11) made `skill/`
+self-contained and agent-neutral, aligned authorship, and required an explicit user
+choice plus `PARTIAL RESULT` disclosure for accepted truncation. Normal successful CLI
+behavior was unchanged. The exact merged checkout installed cleanly on Python 3.11; all
+21 tests and the focused Ruff check passed. Central registry pull request
+[`skill-commons/skill-commons#11`](https://github.com/skill-commons/skill-commons/pull/11)
+then registered the immutable commit/path/tree at `community`, with limitations for
+cross-node scientific validation, range-based dependency resolution, and remote-node
+availability/truncation metadata. Registry CI passed after one GitHub-hosted runner
+acquisition retry; the first attempt executed zero steps and was not a code failure.
+
+The intended onboarding sequence for either external source is: receive maintainer
+interest and confirm the canonical repository; agree on scope; make and test changes
+upstream; obtain the upstream merge; then register the exact merged commit, path, and Git
+tree in the central metadata catalog. Do not copy the skills into CRS merely to accelerate
+the demonstration. If no reply arrives promptly, community outreach may continue, but
+silence is not permission to register or modify their work.
 
 ### Completed curation waves
 
@@ -109,18 +205,24 @@ ports.
    human-approved merges before acting.
 2. Read the implemented Commons/Ori architecture in
    [`NEW_SKILL_COMMONS_ARCHITECTURE.md`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/blob/main/docs/NEW_SKILL_COMMONS_ARCHITECTURE.md).
+   At handoff time the 2026-08-06 update is in
+   [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1);
+   verify whether it merged before relying on `main`.
 3. Do not scout AAA for more ports unless Tom explicitly opens a new audit. The completed
    disposition is the default decision.
 4. The next high-value work is Ori integration: consume the CRS tap, add registry-aware
-   discovery, retain and verify source commit/path/tree, preserve complete skill
-   directories, protect local divergence, and map named secret requirements to trusted
-   per-user environment injection.
+   discovery across CRS and independent repositories, retain and verify source
+   commit/path/tree, surface maturity/evidence/limitations without turning them into
+   permission, preserve complete skill directories, protect local divergence, and map
+   named secret requirements to trusted per-user environment injection.
 5. Keep OCI, mandatory Commons sidecars, a custom registry service, and automatic AAA sync
    parked. The active interfaces are Git, Hermes, `SKILL.md`, `skills.sh.json`, and the
    metadata-only catalog.
 6. If a genuinely new skill or update is requested, change the canonical source first,
    test and merge it, then register the exact merged commit and directory tree. Never
    advance a registry record merely because its upstream branch moved.
+7. For `szampier/skills`, wait for Stefano's explicit response. If positive, use the
+   reduced, proportionate scope above and target `community`; silence is not permission.
 
 The complete achievement summary, security boundary, and Claude/Ori implementation order
 now live in the drp-hermes document above. This handoff should remain short and operational;
