@@ -38,7 +38,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     second = build_catalog(ROOT)
 
     assert first == second
-    assert first["schema_version"] == "2.0"
+    assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
     assert len(first["skills"]) == 22
     assert [category["name"] for category in first["categories"]] == [
@@ -61,6 +61,10 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert starhorse["hermes"]["identifier"] == (
         "skill-commons/curated-research-skills/skills/starhorse-access"
     )
+    assert starhorse["review"]["maturity"] == "curated"
+    assert starhorse["review"]["policy"] == "skill-commons-review-v1"
+    assert starhorse["review"]["decision"] == ("registry/reviews/2026-08-06-crs-seed.md")
+    assert starhorse["review"]["evidence"]["scientific_validity"] == ("scope-documented")
     expected_wave1 = {
         "large-tabular-visualization": (
             "visualization",
@@ -136,6 +140,8 @@ def test_readme_contains_every_skill_description_source_and_install() -> None:
         assert record["description"] in readme
         assert record["source"]["url"] in readme
         assert record["hermes"]["install"] in readme
+        assert record["review"]["maturity"] in readme
+        assert record["review"]["decision"] in readme
 
 
 def test_generated_outputs_can_be_written_and_checked(tmp_path: Path) -> None:
@@ -207,6 +213,80 @@ def test_catalog_rejects_duplicate_name_and_source(tmp_path: Path) -> None:
     registry["skills"].append(duplicate_source)
     _write_yaml(path, registry)
     with pytest.raises(ValueError, match="duplicate canonical source"):
+        build_catalog(repository)
+
+
+def test_catalog_rejects_unreviewed_active_skill(tmp_path: Path) -> None:
+    repository = _repository(tmp_path)
+    path = repository / "registry" / "index.yaml"
+    registry = _yaml(path)
+    registry["skills"][0]["review"]["maturity"] = "unreviewed"
+    _write_yaml(path, registry)
+
+    with pytest.raises(ValueError, match="community, curated, reviewed"):
+        build_catalog(repository)
+
+
+def test_catalog_rejects_incomplete_or_unknown_review_evidence(tmp_path: Path) -> None:
+    repository = _repository(tmp_path)
+    path = repository / "registry" / "index.yaml"
+    registry = _yaml(path)
+    evidence = registry["skills"][0]["review"]["evidence"]
+    del evidence["rights"]
+    evidence["popularity"] = "high"
+    _write_yaml(path, registry)
+
+    with pytest.raises(ValueError, match="evidence must contain exactly"):
+        build_catalog(repository)
+
+
+def test_catalog_rejects_unquoted_review_date(tmp_path: Path) -> None:
+    repository = _repository(tmp_path)
+    path = repository / "registry" / "index.yaml"
+    text = path.read_text(encoding="utf-8").replace(
+        'assessed_at: "2026-07-28"',
+        "assessed_at: 2026-07-28",
+        1,
+    )
+    path.write_text(text, encoding="utf-8")
+
+    with pytest.raises(ValueError, match="assessed_at must be a non-empty string"):
+        build_catalog(repository)
+
+
+@pytest.mark.parametrize(
+    "decision",
+    [
+        "../reviews/decision.md",
+        "registry/reviews/nested/decision.md",
+        "registry/reviews/missing.md",
+        r"registry\reviews\decision.md",
+    ],
+)
+def test_catalog_rejects_unsafe_or_missing_review_decision(
+    tmp_path: Path,
+    decision: str,
+) -> None:
+    repository = _repository(tmp_path)
+    path = repository / "registry" / "index.yaml"
+    registry = _yaml(path)
+    registry["skills"][0]["review"]["decision"] = decision
+    _write_yaml(path, registry)
+
+    with pytest.raises(ValueError, match="decision must"):
+        build_catalog(repository)
+
+
+def test_catalog_requires_limitations_for_unassessed_evidence(tmp_path: Path) -> None:
+    repository = _repository(tmp_path)
+    path = repository / "registry" / "index.yaml"
+    registry = _yaml(path)
+    review = registry["skills"][0]["review"]
+    review["evidence"]["scientific_validity"] = "not-assessed"
+    review["limitations"] = []
+    _write_yaml(path, registry)
+
+    with pytest.raises(ValueError, match="must explain unassessed or stale evidence"):
         build_catalog(repository)
 
 

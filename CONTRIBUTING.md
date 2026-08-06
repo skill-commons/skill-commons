@@ -18,22 +18,30 @@ to publish the registered source.
    troubleshooting recipe. If an active skill already covers the capability, improve
    that upstream instead.
 3. Add one active record to [`registry/index.yaml`](registry/index.yaml), including:
-   the repository's canonical HTTPS URL, tracked branch, exact reviewed commit, exact
-   skill-directory Git tree, and repository-relative directory.
+   the repository's canonical HTTPS URL, tracked branch, exact assessed commit, exact
+   skill-directory Git tree, repository-relative directory, and registry-owned review
+   summary. Link the rationale under `registry/reviews/`.
 4. Assign the skill to exactly one editorial category in
    [`categories/index.yaml`](categories/index.yaml).
 5. Regenerate the catalog, run the checks below, and open a pull request.
 
+Every active skill must pass the admission floor in
+[`ADR 0003`](docs/adr/0003-review-maturity-and-evidence.md). Review maturity is assigned
+under that named policy and records `community`, `reviewed`, or `curated`; it is not
+inferred from the source organization and does not grant runtime permission. Lockfiles,
+repository-wide lint, broad platform coverage, comprehensive tests, and independent
+scientific reproduction improve evidence but are not universal admission requirements.
+
 For a skill maintained by Skill Commons, contribute it to
 [`skill-commons/curated-research-skills`](https://github.com/skill-commons/curated-research-skills)
-first. Register its reviewed source commit here only after the upstream change lands.
+first. Register its assessed source commit here only after the upstream change lands.
 
 For an independently maintained skill, do not copy its files here. The upstream
 maintainer keeps ownership and history; the registry entry points to that source.
 
 ## Record an exact source
 
-Given a reviewed upstream commit and skill path:
+Given an assessed upstream commit and skill path:
 
 ```bash
 git -C /path/to/upstream rev-parse HEAD
@@ -63,6 +71,8 @@ uv run skill-commons check-upstreams
   verified and must be corrected through review.
 
 Never update a recorded commit or tree merely to silence the check.
+The existing review decision remains bound to its exact tree; a changed tree requires a
+new assessment and decision even when its maturity stays the same.
 
 ## Consolidate or retire a skill
 

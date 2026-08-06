@@ -1,11 +1,26 @@
-schema_version: "1.0"
+schema_version: "2.0"
 registry: https://github.com/skill-commons/skill-commons
-provenance: https://github.com/skill-commons/curated-research-skills/blob/4f63c019b3d05fe72501c706fbe69d105f9fb643/PROVENANCE.md
 skills:
 - name: arxiv
   description: Search, read, cite, and monitor papers through arXiv.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -16,6 +31,22 @@ skills:
   description: Perform exact symbolic and numerical calculations.
   version: 1.0.1
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -26,6 +57,22 @@ skills:
   description: Map research-paper claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-30"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -36,6 +83,22 @@ skills:
   description: Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-29"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -46,6 +109,22 @@ skills:
   description: Build and verify portable LaTeX journal submissions.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -56,6 +135,22 @@ skills:
   description: Draft, revise, and verify LaTeX research manuscripts.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -66,6 +161,22 @@ skills:
   description: Create cached, publication-ready astronomy catalog plots.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -76,6 +187,22 @@ skills:
   description: Query Gaia DR3 through AIP TAP and Daiquiri services.
   version: 3.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -86,6 +213,22 @@ skills:
   description: Query, cache, and crossmatch public RAVE DR6 data.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -96,6 +239,22 @@ skills:
   description: Access StarHorse SHboost and SH21 catalog products.
   version: 2.0.2
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -106,6 +265,22 @@ skills:
   description: Query astronomy TAP services with PyVO and ADQL.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -116,6 +291,22 @@ skills:
   description: Access and cache research data from S3-compatible stores.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -126,6 +317,22 @@ skills:
   description: Inspect Digital Research Product Hub health, API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-30"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -136,6 +343,22 @@ skills:
   description: Build interpretable interactive or static visualizations from tabular data that is too dense or too large for ordinary point plotting.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-29"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -146,6 +369,22 @@ skills:
   description: Create reproducible publication plots with Seaborn.
   version: 1.0.1
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-28"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -156,6 +395,22 @@ skills:
   description: Run a bounded, simulation-only host smoke test for local dt4acc, dt4acc-lib, and lat2db checkouts without facility services or containers.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-29"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -166,6 +421,22 @@ skills:
   description: Preflight, plan, start, inspect, and stop a local dt4acc simulation packaged as an already-built, digest-pinned Apptainer SIF. Use when an operator needs a bounded simulation IOC lifecycle with exact source/build provenance, a clean child environment, no host or facility network, content-bound start/stop confirmation, and exact owned-process cleanup. This first CRS version never builds or pulls images, connects to facility services, accesses live PVs, imports MongoDB data, or performs PV writes.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-30"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -176,6 +447,22 @@ skills:
   description: Preflight, plan, create, and diagnose a pinned J-UBIK core environment with an isolated lock-backed, wheel-only workflow and a genuine synthetic SkyModel smoke test. Use when a researcher is blocked on J-UBIK installation, JAX/NIFTy compatibility, environment configuration, artifact provenance, or core readiness. This skill proves only the CPU core; it never claims JWST, Chandra, or eROSITA adapter readiness, downloads calibration or observation data, invokes instrument software, or runs research inference.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-31"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -186,6 +473,22 @@ skills:
   description: Build, run, and validate bounded Bayesian variational-inference workflows with the JAX-based NIFTy.re API. Use when a researcher needs to formulate priors, a response and likelihood, prove a NIFTy.re installation against an analytic posterior, run a small CPU pilot, inspect optimizer and sampling evidence, or prepare a reproducible inference handoff. Do not use this skill to bootstrap J-UBIK, configure telescope instruments, certify an arbitrary scientific model from one successful run, or launch unbounded production inference.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-31"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -196,6 +499,22 @@ skills:
   description: Inspect an authenticated REANA service through a fixed read-only command allowlist, including connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This first CRS version never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-30"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -206,6 +525,22 @@ skills:
   description: Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.
   version: 1.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-30"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
@@ -216,6 +551,22 @@ skills:
   description: Verify version-sensitive third-party Python APIs against authoritative documentation before writing, reviewing, fixing, or explaining code.
   version: 2.0.0
   status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-07-29"
+    decision: registry/reviews/2026-08-06-crs-seed.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: active
+    limitations:
+    - Independent scientific reproduction is not claimed by this maturity decision.
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
