@@ -35,7 +35,7 @@ Merged state:
 | AAA candidate audit | `ef78afcf1412575dd23e8e88c01dbf50b8b02836` | Original 28-candidate decision baseline |
 | AAA sources used by the main waves | `16b4fa2cfd3c5b6b674a750efc7b39a183b416cb` | Pinned in CRS provenance |
 | Later AAA J-UBIK/NIFTy input | `fade33165867df7012a71703fa43bb62766e6c06` | Reviewed separately and pinned in CRS provenance |
-| Ori architecture handoff | `e016e1273fb02a906f1c660fe86e611a12eba3b1` in [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1) | Claude-facing review maturity, first external intake, and Ori integration guidance updated; MR open and ready to merge at handoff time |
+| Ori architecture handoff | merge commit `66759f5` (content commit `e016e1273fb02a906f1c660fe86e611a12eba3b1`) in [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1) | Claude-facing review maturity, first external intake, and Ori integration guidance merged to `main` |
 
 AAA has changed after the audit baseline. Treat later commits as new input requiring
 review; never advance provenance merely because AAA `main` moved.
@@ -205,9 +205,9 @@ ports.
    human-approved merges before acting.
 2. Read the implemented Commons/Ori architecture in
    [`NEW_SKILL_COMMONS_ARCHITECTURE.md`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/blob/main/docs/NEW_SKILL_COMMONS_ARCHITECTURE.md).
-   At handoff time the 2026-08-06 update is in
-   [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1);
-   verify whether it merged before relying on `main`.
+   The 2026-08-06 update merged through
+   [`drp-hermes!1`](https://gitlab-p4n.aip.de/physicsllm/c.1/drp-hermes/-/merge_requests/1)
+   as merge commit `66759f5`.
 3. Do not scout AAA for more ports unless Tom explicitly opens a new audit. The completed
    disposition is the default decision.
 4. The next high-value work is Ori integration: consume the CRS tap, add registry-aware
