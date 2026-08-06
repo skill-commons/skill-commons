@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 22
+    assert len(first["skills"]) == 23
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -65,6 +65,13 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert starhorse["review"]["policy"] == "skill-commons-review-v1"
     assert starhorse["review"]["decision"] == ("registry/reviews/2026-08-06-crs-seed.md")
     assert starhorse["review"]["evidence"]["scientific_validity"] == ("scope-documented")
+    vamdc = records["vamdc"]
+    assert vamdc["category"] == {"id": "astronomy", "name": "Astronomy"}
+    assert vamdc["review"]["maturity"] == "community"
+    assert vamdc["review"]["evidence"]["maintenance"] == "maintainer-confirmed"
+    assert vamdc["source"]["revision"] == ("bfefc812782d055c5f54c6105a394d6d34e13815")
+    assert vamdc["source"]["tree"] == ("7db98d33cc99a8ae220f1585f69d49d15a04bf4c")
+    assert vamdc["source"]["path"] == "skill"
     expected_wave1 = {
         "large-tabular-visualization": (
             "visualization",

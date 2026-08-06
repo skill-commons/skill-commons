@@ -287,6 +287,34 @@ skills:
     revision: 38abb15a603dbc7a36efc83fcb82abe719c13ee8
     tree: ba5d8704fb0b3e4e67a3f34909bae72909abb0b2
     path: skills/tap-pyvo-adql-access
+- name: vamdc
+  description: Query atomic and molecular spectroscopic data using the pyVAMDC command-line tool. Provides access to VAMDC (Virtual Atomic and Molecular Data Centre) infrastructure for retrieving spectral lines, species metadata, node information, and RADEX molecular collision data. Use this skill to fetch spectroscopic data from various databases, discover available species, count results before downloading, or obtain collision rate files for radiative transfer modelling.
+  version: 1.0.0
+  status: active
+  review:
+    maturity: community
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-08-06"
+    decision: registry/reviews/2026-08-06-vamdc-community.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: tested
+      maintenance: maintainer-confirmed
+    limitations:
+    - Independent scientific validation across VAMDC nodes and returned datasets is not claimed.
+    - The tested install used Python 3.11 with a current range-based dependency resolution; no committed cross-platform lock is provided.
+    - Results depend on remote VAMDC node availability and node-reported truncation metadata.
+  source:
+    repository: https://github.com/VAMDC/pyVAMDC
+    branch: main
+    revision: bfefc812782d055c5f54c6105a394d6d34e13815
+    tree: 7db98d33cc99a8ae220f1585f69d49d15a04bf4c
+    path: skill
 - name: data-aip-de-s3
   description: Access and cache research data from S3-compatible stores.
   version: 2.0.0
