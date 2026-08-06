@@ -8,12 +8,15 @@
 
 - [ ] The registered repository is the maintainer's canonical public source.
 - [ ] The complete skill, references, scripts, license, and history remain upstream.
-- [ ] The observed commit and directory tree match the reviewed source.
+- [ ] The registered commit and directory tree match the assessed source.
 - [ ] The `SKILL.md` follows current Hermes conventions.
 - [ ] Network access, credentials, external writes, and other material risks were reviewed.
 - [ ] The skill is broad enough for independent discovery and is not a near-duplicate.
 - [ ] The skill appears in exactly one category.
 - [ ] Publication rights, attribution, licensing, and redaction were reviewed.
+- [ ] The skill passes the ADR 0003 admission floor.
+- [ ] Maturity, evidence facets, limitations, and the decision rationale are accurate for
+      this exact tree and do not imply runtime authorization or scientific certification.
 
 ## Verification
 

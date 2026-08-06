@@ -6,24 +6,52 @@ import json
 import os
 import re
 import tempfile
+from datetime import date
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
 from .io import json_safe, load_yaml_file
 
-REGISTRY_SCHEMA_VERSION = "1.0"
+REGISTRY_SCHEMA_VERSION = "2.0"
 CATEGORY_SCHEMA_VERSION = "1.0"
-CATALOG_SCHEMA_VERSION = "2.0"
+CATALOG_SCHEMA_VERSION = "3.0"
 NAME_RE = re.compile(r"[a-z][a-z0-9_-]{0,63}")
 RESERVED_NAMES = {"index", "readme", "skill", "unnamed-skill"}
 CATEGORY_ID_RE = re.compile(r"[a-z0-9][a-z0-9-]{0,63}")
+REVIEW_SLUG_RE = re.compile(r"[a-z0-9][a-z0-9._/-]{0,127}")
+REVIEW_DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
+REVIEW_DECISION_RE = re.compile(r"registry/reviews/[A-Za-z0-9][A-Za-z0-9._-]{0,127}\.md")
 GIT_SHA_RE = re.compile(r"[0-9a-f]{40}")
 BRANCH_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._/-]{0,254}")
 SOURCE_PATH_RE = re.compile(r"[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*")
 GITHUB_REPOSITORY_RE = re.compile(
     r"https://github\.com/([A-Za-z0-9](?:[A-Za-z0-9-]{0,38}))/([A-Za-z0-9._-]{1,100})"
 )
+REVIEW_KEYS = {
+    "maturity",
+    "policy",
+    "authority",
+    "assessed_at",
+    "decision",
+    "evidence",
+    "limitations",
+}
+REVIEW_MATURITIES = {"community", "reviewed", "curated"}
+REVIEW_EVIDENCE_VALUES = {
+    "provenance": {"verified"},
+    "rights": {"reviewed"},
+    "security": {"reviewed", "tested"},
+    "operability": {"documented", "tested"},
+    "scientific_validity": {
+        "not-assessed",
+        "scope-documented",
+        "domain-reviewed",
+        "independently-reproduced",
+    },
+    "reproducibility": {"not-assessed", "documented", "tested", "locked-and-tested"},
+    "maintenance": {"maintainer-confirmed", "active", "stale"},
+}
 
 
 def _mapping(value: Any, context: str) -> dict[str, Any]:
@@ -89,13 +117,107 @@ def _sha(value: Any, context: str) -> str:
     return sha
 
 
+def _review_slug(value: Any, context: str) -> str:
+    slug = _string(value, context)
+    if not REVIEW_SLUG_RE.fullmatch(slug) or ".." in slug or "//" in slug:
+        raise ValueError(f"{context} must be a portable review identifier")
+    return slug
+
+
+def _review_date(value: Any, context: str) -> str:
+    assessed_at = _string(value, context)
+    if not REVIEW_DATE_RE.fullmatch(assessed_at):
+        raise ValueError(f"{context} must be a quoted YYYY-MM-DD date")
+    try:
+        date.fromisoformat(assessed_at)
+    except ValueError as error:
+        raise ValueError(f"{context} must be a valid calendar date") from error
+    return assessed_at
+
+
+def _review_decision(value: Any, context: str, repository_root: Path) -> str:
+    decision = _string(value, context)
+    if not REVIEW_DECISION_RE.fullmatch(decision):
+        raise ValueError(f"{context} must be a safe registry/reviews/*.md path")
+    decision_path = repository_root / decision
+    reviews_root = (repository_root / "registry" / "reviews").resolve(strict=True)
+    if decision_path.is_symlink() or not decision_path.is_file():
+        raise ValueError(f"{context} must identify an existing regular review decision")
+    if decision_path.resolve().parent != reviews_root:
+        raise ValueError(f"{context} must remain directly under registry/reviews")
+    return decision
+
+
+def _load_review(
+    value: Any,
+    context: str,
+    repository_root: Path,
+) -> dict[str, Any]:
+    review = _mapping(value, context)
+    unknown_keys = set(review) - REVIEW_KEYS
+    missing_keys = REVIEW_KEYS - set(review)
+    if unknown_keys or missing_keys:
+        raise ValueError(
+            f"{context} must contain exactly {', '.join(sorted(REVIEW_KEYS))}; "
+            f"unknown={sorted(unknown_keys)}, missing={sorted(missing_keys)}"
+        )
+
+    maturity = _string(review.get("maturity"), f"{context}/maturity")
+    if maturity not in REVIEW_MATURITIES:
+        raise ValueError(
+            f"{context}/maturity must be one of {', '.join(sorted(REVIEW_MATURITIES))}"
+        )
+
+    evidence = _mapping(review.get("evidence"), f"{context}/evidence")
+    expected_facets = set(REVIEW_EVIDENCE_VALUES)
+    unknown_facets = set(evidence) - expected_facets
+    missing_facets = expected_facets - set(evidence)
+    if unknown_facets or missing_facets:
+        raise ValueError(
+            f"{context}/evidence must contain exactly {', '.join(sorted(expected_facets))}; "
+            f"unknown={sorted(unknown_facets)}, missing={sorted(missing_facets)}"
+        )
+    normalized_evidence: dict[str, str] = {}
+    for facet, allowed in REVIEW_EVIDENCE_VALUES.items():
+        result = _string(evidence.get(facet), f"{context}/evidence/{facet}")
+        if result not in allowed:
+            raise ValueError(
+                f"{context}/evidence/{facet} must be one of {', '.join(sorted(allowed))}"
+            )
+        normalized_evidence[facet] = result
+
+    limitations = [
+        _string(item, f"{context}/limitations/{index}")
+        for index, item in enumerate(_list(review.get("limitations"), f"{context}/limitations"))
+    ]
+    if len(limitations) != len(set(limitations)):
+        raise ValueError(f"{context}/limitations must not contain duplicates")
+    if (
+        "not-assessed" in normalized_evidence.values()
+        or normalized_evidence["maintenance"] == "stale"
+    ) and not limitations:
+        raise ValueError(f"{context}/limitations must explain unassessed or stale evidence")
+
+    return {
+        "maturity": maturity,
+        "policy": _review_slug(review.get("policy"), f"{context}/policy"),
+        "authority": _review_slug(review.get("authority"), f"{context}/authority"),
+        "assessed_at": _review_date(review.get("assessed_at"), f"{context}/assessed_at"),
+        "decision": _review_decision(
+            review.get("decision"),
+            f"{context}/decision",
+            repository_root,
+        ),
+        "evidence": normalized_evidence,
+        "limitations": limitations,
+    }
+
+
 def _load_registry(repository_root: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     source = _mapping(load_yaml_file(repository_root / "registry" / "index.yaml"), "registry")
     if source.get("schema_version") != REGISTRY_SCHEMA_VERSION:
         raise ValueError(f"registry/index.yaml schema_version must be {REGISTRY_SCHEMA_VERSION!r}")
     registry_url, _, _ = _github_repository(source.get("registry"), "registry/registry")
-    provenance = _string(source.get("provenance"), "registry/provenance")
-
     records: list[dict[str, Any]] = []
     names: set[str] = set()
     locations: set[tuple[str, str]] = set()
@@ -147,6 +269,11 @@ def _load_registry(repository_root: Path) -> tuple[dict[str, Any], list[dict[str
                     f"registry/skills/{index}/version",
                 ),
                 "status": status,
+                "review": _load_review(
+                    record.get("review"),
+                    f"registry/skills/{index}/review",
+                    repository_root,
+                ),
                 "source": {
                     "repository": repository,
                     "branch": branch,
@@ -192,7 +319,6 @@ def _load_registry(repository_root: Path) -> tuple[dict[str, Any], list[dict[str
         )
     metadata = {
         "registry": registry_url,
-        "provenance": provenance,
         "consolidations": consolidations,
     }
     return metadata, records
@@ -277,7 +403,6 @@ def build_catalog(repository_root: Path) -> dict[str, Any]:
         {
             "schema_version": CATALOG_SCHEMA_VERSION,
             "registry": metadata["registry"],
-            "provenance": metadata["provenance"],
             "categories": categories,
             "consolidations": metadata["consolidations"],
             "skills": records,
@@ -324,6 +449,10 @@ def render_readme(catalog: dict[str, Any]) -> str:
         "from the source repository's current default branch and records its resolved "
         "source and content hash locally.",
         "",
+        "Review maturity summarizes accountable assessment under a named policy. It is "
+        "not a global trust badge, scientific-validity claim, or runtime authorization. "
+        "See [ADR 0003](docs/adr/0003-review-maturity-and-evidence.md).",
+        "",
         "## Skills",
     ]
     records = {record["name"]: record for record in catalog["skills"]}
@@ -335,16 +464,18 @@ def render_readme(catalog: dict[str, Any]) -> str:
                 "",
                 category["description"],
                 "",
-                "| Skill | Version | Description | Source | Install |",
-                "|---|---:|---|---|---|",
+                "| Skill | Version | Review | Description | Source | Install |",
+                "|---|---:|---|---|---|---|",
             ]
         )
         for skill_name in category["skills"]:
             record = records[skill_name]
             description = record["description"].replace("|", "\\|")
+            review = record["review"]
             lines.append(
                 f"| [`{skill_name}`]({record['source']['url']}) "
-                f"| `{record['version']}` | {description} "
+                f"| `{record['version']}` "
+                f"| [`{review['maturity']}`]({review['decision']}) | {description} "
                 f"| [pinned source]({record['source']['url']}) "
                 f"| `{record['hermes']['install']}` |"
             )

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "research-skill-commons"
-version = "0.2.0"
+version = "0.3.0"
 description = "Federated discovery catalog for research skills"
 readme = "README.md"
 requires-python = ">=3.11"

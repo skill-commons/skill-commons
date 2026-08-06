@@ -10,7 +10,7 @@ Use this checklist before merging a new or changed registry record.
 - The registered path contains the complete skill, including every referenced file.
 - The submitter or upstream maintainer has the right to publish the material.
 - Authorship, derivation, licensing, and attribution are clear at the source.
-- The reviewed commit and directory Git tree exactly match the registry record.
+- The assessed commit and directory Git tree exactly match the registry record.
 - The tracked branch is the repository's default branch used by Hermes installation.
 
 ## Skill quality
@@ -29,6 +29,13 @@ Use this checklist before merging a new or changed registry record.
 
 - The active name and canonical `(repository, path)` are unique.
 - The source repository, branch, revision, tree, and path are exact.
+- The skill passes the ADR 0003 admission floor.
+- Review maturity is an accountable human decision under the named policy, not a value
+  inferred from repository membership or test results.
+- The evidence facets and limitations describe what was actually assessed without
+  treating software success as scientific validation.
+- The review decision exists under `registry/reviews/` and remains bound to this exact
+  source tree.
 - The skill appears in exactly one category.
 - A replacement exists for every new consolidation redirect.
 - `skill-commons catalog --check` and the test suite pass.

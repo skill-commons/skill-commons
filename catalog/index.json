@@ -239,9 +239,8 @@
       "replacement": "reana-workflow-authoring"
     }
   ],
-  "provenance": "https://github.com/skill-commons/curated-research-skills/blob/4f63c019b3d05fe72501c706fbe69d105f9fb643/PROVENANCE.md",
   "registry": "https://github.com/skill-commons/skill-commons",
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "skills": [
     {
       "category": {
@@ -254,6 +253,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/arxiv"
       },
       "name": "arxiv",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/arxiv",
@@ -276,6 +294,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/calculator"
       },
       "name": "calculator",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/calculator",
@@ -298,6 +335,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/research-paper-evidence-workflow"
       },
       "name": "research-paper-evidence-workflow",
+      "review": {
+        "assessed_at": "2026-07-30",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/research-paper-evidence-workflow",
@@ -320,6 +376,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/rss-feed-monitor"
       },
       "name": "rss-feed-monitor",
+      "review": {
+        "assessed_at": "2026-07-29",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/rss-feed-monitor",
@@ -342,6 +417,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/latex-journal-submission-package"
       },
       "name": "latex-journal-submission-package",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/latex-journal-submission-package",
@@ -364,6 +458,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/latex-research-paper"
       },
       "name": "latex-research-paper",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/latex-research-paper",
@@ -386,6 +499,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/astro-catalog-plotting-cache"
       },
       "name": "astro-catalog-plotting-cache",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/astro-catalog-plotting-cache",
@@ -408,6 +540,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query"
       },
       "name": "gaia-dr3-tap-query",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/gaia-dr3-tap-query",
@@ -430,6 +581,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/rave-dr6"
       },
       "name": "rave-dr6",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/rave-dr6",
@@ -452,6 +622,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/starhorse-access"
       },
       "name": "starhorse-access",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/starhorse-access",
@@ -474,6 +663,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/tap-pyvo-adql-access"
       },
       "name": "tap-pyvo-adql-access",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/tap-pyvo-adql-access",
@@ -496,6 +704,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/data-aip-de-s3"
       },
       "name": "data-aip-de-s3",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/data-aip-de-s3",
@@ -518,6 +745,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/drphub-products"
       },
       "name": "drphub-products",
+      "review": {
+        "assessed_at": "2026-07-30",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/drphub-products",
@@ -540,6 +786,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/large-tabular-visualization"
       },
       "name": "large-tabular-visualization",
+      "review": {
+        "assessed_at": "2026-07-29",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/large-tabular-visualization",
@@ -562,6 +827,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/seaborn-paper-plots"
       },
       "name": "seaborn-paper-plots",
+      "review": {
+        "assessed_at": "2026-07-28",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/seaborn-paper-plots",
@@ -584,6 +868,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test"
       },
       "name": "dt4acc-host-smoke-test",
+      "review": {
+        "assessed_at": "2026-07-29",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/dt4acc-host-smoke-test",
@@ -606,6 +909,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-operations"
       },
       "name": "dt4acc-operations",
+      "review": {
+        "assessed_at": "2026-07-30",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/dt4acc-operations",
@@ -628,6 +950,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/jubik-bootstrap"
       },
       "name": "jubik-bootstrap",
+      "review": {
+        "assessed_at": "2026-07-31",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/jubik-bootstrap",
@@ -650,6 +991,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/nifty-re-variational-inference"
       },
       "name": "nifty-re-variational-inference",
+      "review": {
+        "assessed_at": "2026-07-31",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/nifty-re-variational-inference",
@@ -672,6 +1032,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-operator"
       },
       "name": "reana-operator",
+      "review": {
+        "assessed_at": "2026-07-30",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/reana-operator",
@@ -694,6 +1073,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-workflow-authoring"
       },
       "name": "reana-workflow-authoring",
+      "review": {
+        "assessed_at": "2026-07-30",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/reana-workflow-authoring",
@@ -716,6 +1114,25 @@
         "install": "hermes skills install skill-commons/curated-research-skills/skills/python-library-docs-first"
       },
       "name": "python-library-docs-first",
+      "review": {
+        "assessed_at": "2026-07-29",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "documented",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Independent scientific reproduction is not claimed by this maturity decision."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
       "source": {
         "branch": "main",
         "path": "skills/python-library-docs-first",
