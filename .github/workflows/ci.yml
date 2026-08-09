@@ -14,19 +14,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect documentation-only update
+        id: changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          docs_only=true
+          has_changes=false
+
+          while IFS= read -r changed_path; do
+            [ -n "$changed_path" ] || continue
+            has_changes=true
+            case "$changed_path" in
+              *.md | *.mdx | docs/*) ;;
+              *) docs_only=false ;;
+            esac
+          done < <(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+
+          if [ "$has_changes" = false ]; then
+            docs_only=false
+          fi
+
+          echo "docs_only=$docs_only" >> "$GITHUB_OUTPUT"
       - uses: astral-sh/setup-uv@v6
+        if: steps.changes.outputs.docs_only != 'true'
         with:
           version: "0.10.12"
           enable-cache: true
       - name: Install
+        if: steps.changes.outputs.docs_only != 'true'
         run: uv sync --locked --all-groups
       - name: Lint
+        if: steps.changes.outputs.docs_only != 'true'
         run: |
           uv run ruff check .
           uv run ruff format --check .
       - name: Test
+        if: steps.changes.outputs.docs_only != 'true'
         run: uv run pytest
       - name: Check generated catalog
+        if: steps.changes.outputs.docs_only != 'true'
         run: uv run skill-commons catalog --check
       - name: Build
+        if: steps.changes.outputs.docs_only != 'true'
         run: uv build --out-dir dist
