@@ -67,66 +67,6 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert vamdc["source"]["revision"] == ("bfefc812782d055c5f54c6105a394d6d34e13815")
     assert vamdc["source"]["tree"] == ("7db98d33cc99a8ae220f1585f69d49d15a04bf4c")
     assert vamdc["source"]["path"] == "skill"
-    expected_wave1 = {
-        "rss-feed-monitor": (
-            "general",
-            "cb59f3968c6bad42e21e076b3696d5395bb21087",
-        ),
-        "dt4acc-host-smoke-test": (
-            "scientific-computing",
-            "125e2df89f58adc92bd6e5cf0f79d34a3561a60a",
-        ),
-        "python-library-docs-first": (
-            "software-development",
-            "50d2b3d6d03c6ca8855bab0e2b563f1bbf5f3849",
-        ),
-    }
-    for name, (category_id, tree) in expected_wave1.items():
-        assert records[name]["category"]["id"] == category_id
-        assert records[name]["source"]["tree"] == tree
-
-    expected_wave2 = {
-        "research-paper-evidence-workflow": (
-            "general",
-            "e22a48e40523c6d2770d9258a5599da7d3d75e81",
-        ),
-        "reana-workflow-authoring": (
-            "scientific-computing",
-            "11c0977e59f7a2af9cda76d8f41aefcefe05ac3d",
-        ),
-    }
-    for name, (category_id, tree) in expected_wave2.items():
-        assert records[name]["category"]["id"] == category_id
-        assert records[name]["source"]["revision"] == ("8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e")
-        assert records[name]["source"]["tree"] == tree
-
-    expected_wave3 = {
-        "drphub-products": (
-            "data",
-            "cf1f55bbc120383e1313a6f9bbcf24a69dbfc3bb",
-        ),
-        "dt4acc-operations": (
-            "scientific-computing",
-            "d1c9da7dbf3a344786604d06677d69ca97378f98",
-        ),
-        "reana-operator": (
-            "scientific-computing",
-            "53e58285d6b0b689c9e571d8108e762f467d03b9",
-        ),
-    }
-    for name, (category_id, tree) in expected_wave3.items():
-        assert records[name]["category"]["id"] == category_id
-        assert records[name]["source"]["revision"] == ("d5f096ee426dbbbea885bfb5199e8b7070960a1a")
-        assert records[name]["source"]["tree"] == tree
-
-    expected_wave4 = {
-        "jubik-bootstrap": "be5008c4d907fc09f7979b6df53a5130ca867821",
-        "nifty-re-variational-inference": "eb2bd3b810e3060aa197d99794785021d4196670",
-    }
-    for name, tree in expected_wave4.items():
-        assert records[name]["category"]["id"] == "scientific-computing"
-        assert records[name]["source"]["revision"] == ("4f63c019b3d05fe72501c706fbe69d105f9fb643")
-        assert records[name]["source"]["tree"] == tree
 
 
 def test_catalog_records_crs_python_environment_update() -> None:
@@ -154,11 +94,6 @@ def test_catalog_records_crs_python_environment_update() -> None:
             "3.0.1",
             "astronomy",
             "41f7ba8c0479e421f32d48fd7c8ad0b0dd2c09af",
-        ),
-        "large-tabular-visualization": (
-            "2.0.1",
-            "visualization",
-            "3c282a30589a4d5570c8c30f9cdcf247e4f8a2cb",
         ),
         "rave-dr6": (
             "2.0.1",
@@ -198,6 +133,109 @@ def test_catalog_records_crs_python_environment_update() -> None:
         assert record["review"]["decision"] == decision
         assert any(
             "transitive dependencies are not locked" in limitation
+            for limitation in record["review"]["limitations"]
+        )
+
+
+def test_catalog_records_crs_hermes_selection_lead_update() -> None:
+    catalog = build_catalog(ROOT)
+    revision = "dccccb8a1bb3926de04e00e630d0a455cc9579a9"
+    repository = "https://github.com/skill-commons/curated-research-skills"
+    decision = "registry/reviews/2026-08-11-crs-hermes-selection-leads.md"
+    expected = {
+        "drphub-products": (
+            "1.0.1",
+            "data",
+            "dbb4356b6ab299ab177f3d4f66c0a41fcd78629d",
+            "Inspect Digital Research Product Hub products and health.",
+        ),
+        "dt4acc-host-smoke-test": (
+            "2.0.1",
+            "scientific-computing",
+            "5efbf09fd153539add371201fd8e2de251103bf5",
+            "Smoke-test local dt4acc checkouts without any containers.",
+        ),
+        "dt4acc-operations": (
+            "1.0.1",
+            "scientific-computing",
+            "2b4377cf1b9c75be692ae7b3631117b16bbac8f4",
+            "Operate local dt4acc simulations from digest-pinned SIFs.",
+        ),
+        "jubik-bootstrap": (
+            "1.0.1",
+            "scientific-computing",
+            "816e1e48f21a7b9adf0c2f2a3f04b676cd03a6ef",
+            "Bootstrap a pinned J-UBIK CPU core and verify readiness.",
+        ),
+        "large-tabular-visualization": (
+            "2.0.2",
+            "visualization",
+            "90bad822b9cd3b05748cf51e1e9b0bbd5e8773a1",
+            "Visualize large tabular data with hvPlot and Datashader.",
+        ),
+        "nifty-re-variational-inference": (
+            "1.0.1",
+            "scientific-computing",
+            "44e43748e039251818b60f3a8706eb767f2f1c87",
+            "Run bounded Bayesian variational inference with NIFTy.re.",
+        ),
+        "python-library-docs-first": (
+            "2.0.1",
+            "software-development",
+            "77bb31cb83e9d3ec0ed531aecaa4db8da8e5fe9a",
+            "Verify Python APIs against version-matched documentation.",
+        ),
+        "reana-operator": (
+            "1.0.1",
+            "scientific-computing",
+            "10247fefc562cbebe5f3169a1d3e837af315e1e8",
+            "Inspect remote REANA workflows using read-only commands.",
+        ),
+        "reana-workflow-authoring": (
+            "1.0.1",
+            "scientific-computing",
+            "777eca16d210c1f222de4b85374330d95e24f18f",
+            "Author and validate local REANA Serial workflow projects.",
+        ),
+        "research-paper-evidence-workflow": (
+            "1.0.1",
+            "general",
+            "101363fc87305fc256d7d0df8599262190cd05b9",
+            "Map research-paper claims to evidence; audit draft scope.",
+        ),
+        "rss-feed-monitor": (
+            "2.0.1",
+            "general",
+            "8140059b198afe0666c7315fb3c4539b541f97a4",
+            "Monitor RSS and Atom feeds in an isolated local database.",
+        ),
+    }
+    records = {
+        record["name"]: record
+        for record in catalog["skills"]
+        if record["source"]["repository"] == repository and record["source"]["revision"] == revision
+    }
+
+    assert {
+        name: (
+            record["version"],
+            record["category"]["id"],
+            record["source"]["tree"],
+            record["description"].split(". ", 1)[0] + ".",
+        )
+        for name, record in records.items()
+    } == expected
+    for name, record in records.items():
+        selection_lead = expected[name][3]
+        assert len(selection_lead) <= 57
+        assert record["description"].startswith(selection_lead)
+        assert record["source"]["path"] == f"skills/{name}"
+        assert record["source"]["url"].endswith(f"/tree/{revision}/skills/{name}")
+        assert record["review"]["maturity"] == "curated"
+        assert record["review"]["assessed_at"] == "2026-08-11"
+        assert record["review"]["decision"] == decision
+        assert any(
+            "advisory lead check does not guarantee model selection" in limitation
             for limitation in record["review"]["limitations"]
         )
 
