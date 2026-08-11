@@ -331,16 +331,16 @@
         "id": "general",
         "name": "General"
       },
-      "description": "Map research-paper claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes.",
+      "description": "Map research-paper claims to evidence; audit draft scope. Map claims to supplied evidence, synthesize completed results, construct an evidence-backed outline, and audit a draft for traceability, numeric fidelity, scope, and overclaiming. Use when notes, tables, figures, result files, or a manuscript need a claim-evidence matrix, results narrative, outline, or evidence-focused review. Do not use to design or run experiments, retrieve citations, format or compile LaTeX, manage projects, submit or promote papers, or perform external writes.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/research-paper-evidence-workflow",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/research-paper-evidence-workflow"
       },
       "name": "research-paper-evidence-workflow",
       "review": {
-        "assessed_at": "2026-07-30",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -351,7 +351,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -360,28 +361,28 @@
         "branch": "main",
         "path": "skills/research-paper-evidence-workflow",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e",
-        "tree": "e22a48e40523c6d2770d9258a5599da7d3d75e81",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/research-paper-evidence-workflow"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "101363fc87305fc256d7d0df8599262190cd05b9",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/research-paper-evidence-workflow"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "general",
         "name": "General"
       },
-      "description": "Track public RSS or Atom feeds in an isolated local database, scan for new articles, and manage read state with explicit mutation safeguards.",
+      "description": "Monitor RSS and Atom feeds in an isolated local database. Scan for new articles and manage read state with explicit mutation safeguards.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/rss-feed-monitor",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/rss-feed-monitor"
       },
       "name": "rss-feed-monitor",
       "review": {
-        "assessed_at": "2026-07-29",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -392,7 +393,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -401,12 +403,12 @@
         "branch": "main",
         "path": "skills/rss-feed-monitor",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "cb59f3968c6bad42e21e076b3696d5395bb21087",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rss-feed-monitor"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "8140059b198afe0666c7315fb3c4539b541f97a4",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/rss-feed-monitor"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
@@ -790,16 +792,16 @@
         "id": "data",
         "name": "Data"
       },
-      "description": "Inspect Digital Research Product Hub health, API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.",
+      "description": "Inspect Digital Research Product Hub products and health. Report API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/drphub-products",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/drphub-products"
       },
       "name": "drphub-products",
       "review": {
-        "assessed_at": "2026-07-30",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -810,7 +812,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -819,19 +822,19 @@
         "branch": "main",
         "path": "skills/drphub-products",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
-        "tree": "cf1f55bbc120383e1313a6f9bbcf24a69dbfc3bb",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/drphub-products"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "dbb4356b6ab299ab177f3d4f66c0a41fcd78629d",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/drphub-products"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "visualization",
         "name": "Visualization"
       },
-      "description": "Build interpretable interactive or static visualizations from tabular data that is too dense or too large for ordinary point plotting.",
+      "description": "Visualize large tabular data with hvPlot and Datashader. Build interpretable interactive or static plots for datasets too dense or too large for ordinary point plotting.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/large-tabular-visualization",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/large-tabular-visualization"
@@ -840,7 +843,7 @@
       "review": {
         "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -853,7 +856,8 @@
         "limitations": [
           "Independent scientific reproduction is not claimed by this maturity decision.",
           "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time.",
-          "The synthetic hvPlot and Datashader smoke was verified on macOS ARM64 with CPython 3.12.4; it does not establish cross-platform behavior or scientific validity for research data."
+          "The synthetic hvPlot and Datashader smoke was verified on macOS ARM64 with CPython 3.12.4; it does not establish cross-platform behavior or scientific validity for research data.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -862,12 +866,12 @@
         "branch": "main",
         "path": "skills/large-tabular-visualization",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
-        "tree": "3c282a30589a4d5570c8c30f9cdcf247e4f8a2cb",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/large-tabular-visualization"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "90bad822b9cd3b05748cf51e1e9b0bbd5e8773a1",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/large-tabular-visualization"
       },
       "status": "active",
-      "version": "2.0.1"
+      "version": "2.0.2"
     },
     {
       "category": {
@@ -916,16 +920,16 @@
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Run a bounded, simulation-only host smoke test for local dt4acc, dt4acc-lib, and lat2db checkouts without facility services or containers.",
+      "description": "Smoke-test local dt4acc checkouts without any containers. Run a bounded, simulation-only host check for dt4acc, dt4acc-lib, and lat2db without facility services.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-host-smoke-test"
       },
       "name": "dt4acc-host-smoke-test",
       "review": {
-        "assessed_at": "2026-07-29",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -936,7 +940,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -945,28 +950,28 @@
         "branch": "main",
         "path": "skills/dt4acc-host-smoke-test",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "125e2df89f58adc92bd6e5cf0f79d34a3561a60a",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/dt4acc-host-smoke-test"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "5efbf09fd153539add371201fd8e2de251103bf5",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/dt4acc-host-smoke-test"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Preflight, plan, start, inspect, and stop a local dt4acc simulation packaged as an already-built, digest-pinned Apptainer SIF. Use when an operator needs a bounded simulation IOC lifecycle with exact source/build provenance, a clean child environment, no host or facility network, content-bound start/stop confirmation, and exact owned-process cleanup. This first CRS version never builds or pulls images, connects to facility services, accesses live PVs, imports MongoDB data, or performs PV writes.",
+      "description": "Operate local dt4acc simulations from digest-pinned SIFs. Preflight, plan, start, inspect, and stop a simulation packaged as an already-built Apptainer SIF. Use when an operator needs a bounded simulation IOC lifecycle with exact source/build provenance, a clean child environment, no host or facility network, content-bound start/stop confirmation, and exact owned-process cleanup. This CRS skill never builds or pulls images, connects to facility services, accesses live PVs, imports MongoDB data, or performs PV writes.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/dt4acc-operations",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/dt4acc-operations"
       },
       "name": "dt4acc-operations",
       "review": {
-        "assessed_at": "2026-07-30",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -977,7 +982,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -986,28 +992,28 @@
         "branch": "main",
         "path": "skills/dt4acc-operations",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
-        "tree": "d1c9da7dbf3a344786604d06677d69ca97378f98",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/dt4acc-operations"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "2b4377cf1b9c75be692ae7b3631117b16bbac8f4",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/dt4acc-operations"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Preflight, plan, create, and diagnose a pinned J-UBIK core environment with an isolated lock-backed, wheel-only workflow and a genuine synthetic SkyModel smoke test. Use when a researcher is blocked on J-UBIK installation, JAX/NIFTy compatibility, environment configuration, artifact provenance, or core readiness. This skill proves only the CPU core; it never claims JWST, Chandra, or eROSITA adapter readiness, downloads calibration or observation data, invokes instrument software, or runs research inference.",
+      "description": "Bootstrap a pinned J-UBIK CPU core and verify readiness. Preflight, plan, create, and diagnose its environment with an isolated lock-backed, wheel-only workflow and a genuine synthetic SkyModel smoke test. Use when a researcher is blocked on J-UBIK installation, JAX/NIFTy compatibility, environment configuration, artifact provenance, or core readiness. This skill proves only the CPU core; it never claims JWST, Chandra, or eROSITA adapter readiness, downloads calibration or observation data, invokes instrument software, or runs research inference.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/jubik-bootstrap",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/jubik-bootstrap"
       },
       "name": "jubik-bootstrap",
       "review": {
-        "assessed_at": "2026-07-31",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -1018,7 +1024,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -1027,28 +1034,28 @@
         "branch": "main",
         "path": "skills/jubik-bootstrap",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "4f63c019b3d05fe72501c706fbe69d105f9fb643",
-        "tree": "be5008c4d907fc09f7979b6df53a5130ca867821",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/4f63c019b3d05fe72501c706fbe69d105f9fb643/skills/jubik-bootstrap"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "816e1e48f21a7b9adf0c2f2a3f04b676cd03a6ef",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/jubik-bootstrap"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Build, run, and validate bounded Bayesian variational-inference workflows with the JAX-based NIFTy.re API. Use when a researcher needs to formulate priors, a response and likelihood, prove a NIFTy.re installation against an analytic posterior, run a small CPU pilot, inspect optimizer and sampling evidence, or prepare a reproducible inference handoff. Do not use this skill to bootstrap J-UBIK, configure telescope instruments, certify an arbitrary scientific model from one successful run, or launch unbounded production inference.",
+      "description": "Run bounded Bayesian variational inference with NIFTy.re. Build and validate workflows with the JAX-based NIFTy.re API. Use when a researcher needs to formulate priors, a response and likelihood, prove a NIFTy.re installation against an analytic posterior, run a small CPU pilot, inspect optimizer and sampling evidence, or prepare a reproducible inference handoff. Do not use this skill to bootstrap J-UBIK, configure telescope instruments, certify an arbitrary scientific model from one successful run, or launch unbounded production inference.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/nifty-re-variational-inference",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/nifty-re-variational-inference"
       },
       "name": "nifty-re-variational-inference",
       "review": {
-        "assessed_at": "2026-07-31",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -1059,7 +1066,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -1068,28 +1076,28 @@
         "branch": "main",
         "path": "skills/nifty-re-variational-inference",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "4f63c019b3d05fe72501c706fbe69d105f9fb643",
-        "tree": "eb2bd3b810e3060aa197d99794785021d4196670",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/4f63c019b3d05fe72501c706fbe69d105f9fb643/skills/nifty-re-variational-inference"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "44e43748e039251818b60f3a8706eb767f2f1c87",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/nifty-re-variational-inference"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Inspect an authenticated REANA service through a fixed read-only command allowlist, including connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This first CRS version never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.",
+      "description": "Inspect remote REANA workflows using read-only commands. Use a fixed allowlist against an authenticated service to report connectivity, cluster information, workflow inventory, status, redacted logs, workspace files, and disk usage. Use when a user wants to diagnose or review remote REANA state after a local workflow has been authored. This CRS skill never uploads, creates, starts, stops, deletes, downloads, shares, or otherwise mutates a workflow.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/reana-operator",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-operator"
       },
       "name": "reana-operator",
       "review": {
-        "assessed_at": "2026-07-30",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -1100,7 +1108,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -1109,28 +1118,28 @@
         "branch": "main",
         "path": "skills/reana-operator",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "d5f096ee426dbbbea885bfb5199e8b7070960a1a",
-        "tree": "53e58285d6b0b689c9e571d8108e762f467d03b9",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/d5f096ee426dbbbea885bfb5199e8b7070960a1a/skills/reana-operator"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "10247fefc562cbebe5f3169a1d3e837af315e1e8",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/reana-operator"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "scientific-computing",
         "name": "Scientific Computing"
       },
-      "description": "Scaffold, edit, and conservatively validate provider-neutral local REANA Serial workflow projects, including reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.",
+      "description": "Author and validate local REANA Serial workflow projects. Scaffold and edit provider-neutral projects while checking reana.yaml structure, declared inputs and outputs, runtime-image reproducibility, path containment, symlinks, and accidental secrets. Use when a user asks to create or review a local REANA workflow definition before operational handoff. This skill never authenticates, contacts a REANA server or registry, uploads, submits, starts, monitors, downloads, or mutates a remote workflow.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/reana-workflow-authoring",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/reana-workflow-authoring"
       },
       "name": "reana-workflow-authoring",
       "review": {
-        "assessed_at": "2026-07-30",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -1141,7 +1150,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -1150,28 +1160,28 @@
         "branch": "main",
         "path": "skills/reana-workflow-authoring",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e",
-        "tree": "11c0977e59f7a2af9cda76d8f41aefcefe05ac3d",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/8a2b3fa36e89b51517d9efccf2bbcea6ab6c1e4e/skills/reana-workflow-authoring"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "777eca16d210c1f222de4b85374330d95e24f18f",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/reana-workflow-authoring"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
         "id": "software-development",
         "name": "Software Development"
       },
-      "description": "Verify version-sensitive third-party Python APIs against authoritative documentation before writing, reviewing, fixing, or explaining code.",
+      "description": "Verify Python APIs against version-matched documentation. Check version-sensitive third-party APIs against authoritative documentation before writing, reviewing, fixing, or explaining code.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/python-library-docs-first",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/python-library-docs-first"
       },
       "name": "python-library-docs-first",
       "review": {
-        "assessed_at": "2026-07-29",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-hermes-selection-leads.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -1182,7 +1192,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Hermes currently truncates descriptions to a 57-character selection surface plus an ellipsis; the advisory lead check does not guarantee model selection or behavior in other clients."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -1191,12 +1202,12 @@
         "branch": "main",
         "path": "skills/python-library-docs-first",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "50d2b3d6d03c6ca8855bab0e2b563f1bbf5f3849",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/python-library-docs-first"
+        "revision": "dccccb8a1bb3926de04e00e630d0a455cc9579a9",
+        "tree": "77bb31cb83e9d3ec0ed531aecaa4db8da8e5fe9a",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/dccccb8a1bb3926de04e00e630d0a455cc9579a9/skills/python-library-docs-first"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     }
   ]
 }
