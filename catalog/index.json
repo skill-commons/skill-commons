@@ -296,9 +296,9 @@
       },
       "name": "calculator",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -309,7 +309,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -318,12 +319,12 @@
         "branch": "main",
         "path": "skills/calculator",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "dc9e52092a4c771824d6d2f1dbf0a37ec0f7aa14",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/calculator"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "6cca9161ab486fc1d156b29bdfc77381bf5be001",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/calculator"
       },
       "status": "active",
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "category": {
@@ -501,9 +502,9 @@
       },
       "name": "astro-catalog-plotting-cache",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -514,7 +515,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -523,12 +525,12 @@
         "branch": "main",
         "path": "skills/astro-catalog-plotting-cache",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "5af9bafe312f15962c46dffbc7633526979cc14d",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/astro-catalog-plotting-cache"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "5cf29a2fb99eb5a37bc634adfd10fd8473b0e5dd",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/astro-catalog-plotting-cache"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
@@ -542,9 +544,9 @@
       },
       "name": "gaia-dr3-tap-query",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -555,7 +557,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -564,12 +567,12 @@
         "branch": "main",
         "path": "skills/gaia-dr3-tap-query",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "0ecdde856b6c66aca91c11853298d48ba7e0f562",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/gaia-dr3-tap-query"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "41f7ba8c0479e421f32d48fd7c8ad0b0dd2c09af",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/gaia-dr3-tap-query"
       },
       "status": "active",
-      "version": "3.0.0"
+      "version": "3.0.1"
     },
     {
       "category": {
@@ -583,9 +586,9 @@
       },
       "name": "rave-dr6",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -596,7 +599,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -605,12 +609,12 @@
         "branch": "main",
         "path": "skills/rave-dr6",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "f5bd6d7b891ece2b97419169f90a8e8140d3dac5",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/rave-dr6"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "0ea4a9465df0e67e66a97d3b762a623ec158e654",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/rave-dr6"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
@@ -624,9 +628,9 @@
       },
       "name": "starhorse-access",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -637,7 +641,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -646,12 +651,12 @@
         "branch": "main",
         "path": "skills/starhorse-access",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "4165d54d25643ba5c226e2adb33b58681c609cef",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "7a01d8773322cd90be85dcd4dfd66d76cdc93e58",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/starhorse-access"
       },
       "status": "active",
-      "version": "2.0.2"
+      "version": "2.0.3"
     },
     {
       "category": {
@@ -665,9 +670,9 @@
       },
       "name": "tap-pyvo-adql-access",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -678,7 +683,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -687,12 +693,12 @@
         "branch": "main",
         "path": "skills/tap-pyvo-adql-access",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "ba5d8704fb0b3e4e67a3f34909bae72909abb0b2",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/tap-pyvo-adql-access"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "16605f835e35c0186e99f762daee5daedeff0df3",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/tap-pyvo-adql-access"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {
@@ -749,9 +755,9 @@
       },
       "name": "data-aip-de-s3",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -762,7 +768,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -771,12 +778,12 @@
         "branch": "main",
         "path": "skills/data-aip-de-s3",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "becfb9b3d3589d33f15bd64a4b87f7c1a1867fc7",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/data-aip-de-s3"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "781fd0f4671557bffab222bb5a1ea2213ec43117",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/data-aip-de-s3"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
@@ -831,9 +838,9 @@
       },
       "name": "large-tabular-visualization",
       "review": {
-        "assessed_at": "2026-07-29",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -844,7 +851,9 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time.",
+          "The synthetic hvPlot and Datashader smoke was verified on macOS ARM64 with CPython 3.12.4; it does not establish cross-platform behavior or scientific validity for research data."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -853,12 +862,12 @@
         "branch": "main",
         "path": "skills/large-tabular-visualization",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "9907635e20d07c982a8761bff3882b06f2b902fd",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/large-tabular-visualization"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "3c282a30589a4d5570c8c30f9cdcf247e4f8a2cb",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/large-tabular-visualization"
       },
       "status": "active",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "category": {
@@ -872,9 +881,9 @@
       },
       "name": "seaborn-paper-plots",
       "review": {
-        "assessed_at": "2026-07-28",
+        "assessed_at": "2026-08-11",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-06-crs-seed.md",
+        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -885,7 +894,8 @@
           "security": "reviewed"
         },
         "limitations": [
-          "Independent scientific reproduction is not claimed by this maturity decision."
+          "Independent scientific reproduction is not claimed by this maturity decision.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -894,12 +904,12 @@
         "branch": "main",
         "path": "skills/seaborn-paper-plots",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "38abb15a603dbc7a36efc83fcb82abe719c13ee8",
-        "tree": "43f721c1a248db68af2c576a35e9b61a4eb0a681",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/seaborn-paper-plots"
+        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
+        "tree": "17f845f49c24513c22c47e0caba5f8359852cdf7",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/seaborn-paper-plots"
       },
       "status": "active",
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "category": {

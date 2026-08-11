@@ -53,17 +53,12 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     records = {record["name"]: record for record in first["skills"]}
     starhorse = records["starhorse-access"]
     assert starhorse["category"] == {"id": "astronomy", "name": "Astronomy"}
-    assert starhorse["source"]["revision"] == ("38abb15a603dbc7a36efc83fcb82abe719c13ee8")
     assert starhorse["source"]["path"] == "skills/starhorse-access"
-    assert starhorse["source"]["url"].endswith(
-        "/tree/38abb15a603dbc7a36efc83fcb82abe719c13ee8/skills/starhorse-access"
-    )
     assert starhorse["hermes"]["identifier"] == (
         "skill-commons/curated-research-skills/skills/starhorse-access"
     )
     assert starhorse["review"]["maturity"] == "curated"
     assert starhorse["review"]["policy"] == "skill-commons-review-v1"
-    assert starhorse["review"]["decision"] == ("registry/reviews/2026-08-06-crs-seed.md")
     assert starhorse["review"]["evidence"]["scientific_validity"] == ("scope-documented")
     vamdc = records["vamdc"]
     assert vamdc["category"] == {"id": "astronomy", "name": "Astronomy"}
@@ -73,10 +68,6 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert vamdc["source"]["tree"] == ("7db98d33cc99a8ae220f1585f69d49d15a04bf4c")
     assert vamdc["source"]["path"] == "skill"
     expected_wave1 = {
-        "large-tabular-visualization": (
-            "visualization",
-            "9907635e20d07c982a8761bff3882b06f2b902fd",
-        ),
         "rss-feed-monitor": (
             "general",
             "cb59f3968c6bad42e21e076b3696d5395bb21087",
@@ -136,6 +127,79 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
         assert records[name]["category"]["id"] == "scientific-computing"
         assert records[name]["source"]["revision"] == ("4f63c019b3d05fe72501c706fbe69d105f9fb643")
         assert records[name]["source"]["tree"] == tree
+
+
+def test_catalog_records_crs_python_environment_update() -> None:
+    catalog = build_catalog(ROOT)
+    revision = "74a11aaad374108c60162e879390ee3604efddd1"
+    repository = "https://github.com/skill-commons/curated-research-skills"
+    decision = "registry/reviews/2026-08-11-crs-python-environments.md"
+    expected = {
+        "astro-catalog-plotting-cache": (
+            "2.0.1",
+            "astronomy",
+            "5cf29a2fb99eb5a37bc634adfd10fd8473b0e5dd",
+        ),
+        "calculator": (
+            "1.0.2",
+            "general",
+            "6cca9161ab486fc1d156b29bdfc77381bf5be001",
+        ),
+        "data-aip-de-s3": (
+            "2.0.1",
+            "data",
+            "781fd0f4671557bffab222bb5a1ea2213ec43117",
+        ),
+        "gaia-dr3-tap-query": (
+            "3.0.1",
+            "astronomy",
+            "41f7ba8c0479e421f32d48fd7c8ad0b0dd2c09af",
+        ),
+        "large-tabular-visualization": (
+            "2.0.1",
+            "visualization",
+            "3c282a30589a4d5570c8c30f9cdcf247e4f8a2cb",
+        ),
+        "rave-dr6": (
+            "2.0.1",
+            "astronomy",
+            "0ea4a9465df0e67e66a97d3b762a623ec158e654",
+        ),
+        "seaborn-paper-plots": (
+            "1.0.2",
+            "visualization",
+            "17f845f49c24513c22c47e0caba5f8359852cdf7",
+        ),
+        "starhorse-access": (
+            "2.0.3",
+            "astronomy",
+            "7a01d8773322cd90be85dcd4dfd66d76cdc93e58",
+        ),
+        "tap-pyvo-adql-access": (
+            "1.0.1",
+            "astronomy",
+            "16605f835e35c0186e99f762daee5daedeff0df3",
+        ),
+    }
+    records = {
+        record["name"]: record
+        for record in catalog["skills"]
+        if record["source"]["repository"] == repository and record["source"]["revision"] == revision
+    }
+
+    assert {
+        name: (record["version"], record["category"]["id"], record["source"]["tree"])
+        for name, record in records.items()
+    } == expected
+    for name, record in records.items():
+        assert record["source"]["path"] == f"skills/{name}"
+        assert record["source"]["url"].endswith(f"/tree/{revision}/skills/{name}")
+        assert record["review"]["assessed_at"] == "2026-08-11"
+        assert record["review"]["decision"] == decision
+        assert any(
+            "transitive dependencies are not locked" in limitation
+            for limitation in record["review"]["limitations"]
+        )
 
 
 def test_readme_contains_every_skill_description_source_and_install() -> None:
