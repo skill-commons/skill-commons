@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 23
+    assert len(first["skills"]) == 24
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -171,6 +171,30 @@ def test_catalog_records_gaia_rave_spectrum_update() -> None:
             "Live spectrum checks cover one demonstration" in limitation
             for limitation in record["review"]["limitations"]
         )
+
+
+def test_catalog_records_pepsi_spectra_source_and_scoped_review() -> None:
+    records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
+    pepsi = records["pepsi-spectra"]
+    revision = "5e368912f83725338ee6835076beb8304824baeb"
+    assert pepsi["version"] == "1.0.0"
+    assert pepsi["description"] == "Retrieve and plot public PEPSI stellar spectra."
+    assert pepsi["category"] == {"id": "astronomy", "name": "Astronomy"}
+    assert pepsi["source"]["repository"] == (
+        "https://github.com/skill-commons/curated-research-skills"
+    )
+    assert pepsi["source"]["branch"] == "main"
+    assert pepsi["source"]["revision"] == revision
+    assert pepsi["source"]["path"] == "skills/pepsi-spectra"
+    assert pepsi["source"]["tree"] == "2d524aaac026be4f9d8c28dfa59ce65a372fd881"
+    assert pepsi["source"]["url"].endswith(f"/tree/{revision}/skills/pepsi-spectra")
+    review = pepsi["review"]
+    assert review["maturity"] == "curated"
+    assert review["assessed_at"] == "2026-09-06"
+    assert review["decision"] == "registry/reviews/2026-09-06-pepsi-spectra.md"
+    assert review["evidence"]["scientific_validity"] == "scope-documented"
+    assert any("Mask polarity is undocumented" in item for item in review["limitations"])
+    assert any("transitive dependencies are not locked" in item for item in review["limitations"])
 
 
 def test_catalog_records_crs_hermes_selection_lead_update() -> None:

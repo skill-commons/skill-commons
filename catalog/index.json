@@ -27,6 +27,7 @@
       "skills": [
         "astro-catalog-plotting-cache",
         "gaia-dr3-tap-query",
+        "pepsi-spectra",
         "rave-dr6",
         "starhorse-access",
         "tap-pyvo-adql-access",
@@ -577,6 +578,51 @@
       },
       "status": "active",
       "version": "3.1.1"
+    },
+    {
+      "category": {
+        "id": "astronomy",
+        "name": "Astronomy"
+      },
+      "description": "Retrieve and plot public PEPSI stellar spectra.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/pepsi-spectra",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/pepsi-spectra"
+      },
+      "name": "pepsi-spectra",
+      "review": {
+        "assessed_at": "2026-09-06",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-09-06-pepsi-spectra.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "tested",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Scope is the public Paper II cont_v2 normalized stellar atlas, not all PEPSI releases or raw-data reduction.",
+          "Mask polarity is undocumented. Only the observed uniform raw byte 0x01 state is supported, without mask-based exclusion; other or mixed states are refused.",
+          "Live science execution covers 18 Sco and Arcturus on macOS ARM64 with isolated CPython 3.12.4; survey-wide and cross-platform scientific validation are not claimed.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time.",
+          "Independent scientific reproduction and a dataset-specific open redistribution license are not claimed. The skill MIT license does not cover downloaded spectra."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
+      "source": {
+        "branch": "main",
+        "path": "skills/pepsi-spectra",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "5e368912f83725338ee6835076beb8304824baeb",
+        "tree": "2d524aaac026be4f9d8c28dfa59ce65a372fd881",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/5e368912f83725338ee6835076beb8304824baeb/skills/pepsi-spectra"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {
