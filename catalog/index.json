@@ -539,16 +539,16 @@
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "description": "Query Gaia DR3 through AIP TAP and Daiquiri services.",
+      "description": "Query Gaia DR3 catalogs and spectra at AIP.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/gaia-dr3-tap-query",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/gaia-dr3-tap-query"
       },
       "name": "gaia-dr3-tap-query",
       "review": {
-        "assessed_at": "2026-08-11",
+        "assessed_at": "2026-09-05",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
+        "decision": "registry/reviews/2026-09-05-gaia-rave-spectra.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -560,7 +560,9 @@
         },
         "limitations": [
           "Independent scientific reproduction is not claimed by this maturity decision.",
-          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time.",
+          "Live spectrum checks cover one demonstration source on macOS ARM64 with isolated CPython 3.12.4, not every source, platform, archive access path, or Ori shared environment.",
+          "Sampled XP and RVS are supported directly; continuous XP reconstruction and the authenticated Simple Join Service fallback were not exercised by this assessment."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -569,28 +571,28 @@
         "branch": "main",
         "path": "skills/gaia-dr3-tap-query",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
-        "tree": "41f7ba8c0479e421f32d48fd7c8ad0b0dd2c09af",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/gaia-dr3-tap-query"
+        "revision": "607b1963d4ea0def94de8e259f5a7315f2e54aa5",
+        "tree": "2fd8e4fdde6a8c599f9dd9487204c62e75b89460",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/607b1963d4ea0def94de8e259f5a7315f2e54aa5/skills/gaia-dr3-tap-query"
       },
       "status": "active",
-      "version": "3.0.1"
+      "version": "3.1.1"
     },
     {
       "category": {
         "id": "astronomy",
         "name": "Astronomy"
       },
-      "description": "Query, cache, and crossmatch public RAVE DR6 data.",
+      "description": "Query and plot public RAVE DR6 spectra and catalogs.",
       "hermes": {
         "identifier": "skill-commons/curated-research-skills/skills/rave-dr6",
         "install": "hermes skills install skill-commons/curated-research-skills/skills/rave-dr6"
       },
       "name": "rave-dr6",
       "review": {
-        "assessed_at": "2026-08-11",
+        "assessed_at": "2026-09-05",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-08-11-crs-python-environments.md",
+        "decision": "registry/reviews/2026-09-05-gaia-rave-spectra.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -602,7 +604,9 @@
         },
         "limitations": [
           "Independent scientific reproduction is not claimed by this maturity decision.",
-          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time."
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; pip and uv may resolve different environments across platforms or time.",
+          "Live spectrum checks cover one demonstration observation on macOS ARM64 with isolated CPython 3.12.4, not every observation, platform, or Ori shared environment.",
+          "RAVE FITS headers do not declare SPECSYS; the documented rest-frame air-wavelength interpretation retains its provenance caveat. Cached helper runs still query TAP metadata."
         ],
         "maturity": "curated",
         "policy": "skill-commons-review-v1"
@@ -611,12 +615,12 @@
         "branch": "main",
         "path": "skills/rave-dr6",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "74a11aaad374108c60162e879390ee3604efddd1",
-        "tree": "0ea4a9465df0e67e66a97d3b762a623ec158e654",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/74a11aaad374108c60162e879390ee3604efddd1/skills/rave-dr6"
+        "revision": "607b1963d4ea0def94de8e259f5a7315f2e54aa5",
+        "tree": "47b11565545857c2478f5137b0f0f4aefabd738b",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/607b1963d4ea0def94de8e259f5a7315f2e54aa5/skills/rave-dr6"
       },
       "status": "active",
-      "version": "2.0.1"
+      "version": "2.1.1"
     },
     {
       "category": {

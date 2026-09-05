@@ -90,16 +90,6 @@ def test_catalog_records_crs_python_environment_update() -> None:
             "data",
             "781fd0f4671557bffab222bb5a1ea2213ec43117",
         ),
-        "gaia-dr3-tap-query": (
-            "3.0.1",
-            "astronomy",
-            "41f7ba8c0479e421f32d48fd7c8ad0b0dd2c09af",
-        ),
-        "rave-dr6": (
-            "2.0.1",
-            "astronomy",
-            "0ea4a9465df0e67e66a97d3b762a623ec158e654",
-        ),
         "seaborn-paper-plots": (
             "1.0.2",
             "visualization",
@@ -133,6 +123,52 @@ def test_catalog_records_crs_python_environment_update() -> None:
         assert record["review"]["decision"] == decision
         assert any(
             "transitive dependencies are not locked" in limitation
+            for limitation in record["review"]["limitations"]
+        )
+
+
+def test_catalog_records_gaia_rave_spectrum_update() -> None:
+    catalog = build_catalog(ROOT)
+    revision = "607b1963d4ea0def94de8e259f5a7315f2e54aa5"
+    repository = "https://github.com/skill-commons/curated-research-skills"
+    decision = "registry/reviews/2026-09-05-gaia-rave-spectra.md"
+    expected = {
+        "gaia-dr3-tap-query": (
+            "3.1.1",
+            "2fd8e4fdde6a8c599f9dd9487204c62e75b89460",
+            "Query Gaia DR3 catalogs and spectra at AIP.",
+        ),
+        "rave-dr6": (
+            "2.1.1",
+            "47b11565545857c2478f5137b0f0f4aefabd738b",
+            "Query and plot public RAVE DR6 spectra and catalogs.",
+        ),
+    }
+    records = {
+        record["name"]: record
+        for record in catalog["skills"]
+        if record["source"]["repository"] == repository and record["source"]["revision"] == revision
+    }
+
+    assert {
+        name: (record["version"], record["source"]["tree"], record["description"])
+        for name, record in records.items()
+    } == expected
+    for name, record in records.items():
+        assert record["source"]["branch"] == "main"
+        assert record["source"]["path"] == f"skills/{name}"
+        assert record["source"]["url"].endswith(f"/tree/{revision}/skills/{name}")
+        assert record["category"] == {"id": "astronomy", "name": "Astronomy"}
+        assert record["review"]["maturity"] == "curated"
+        assert record["review"]["assessed_at"] == "2026-09-05"
+        assert record["review"]["decision"] == decision
+        assert record["review"]["evidence"]["scientific_validity"] == "scope-documented"
+        assert any(
+            "transitive dependencies are not locked" in limitation
+            for limitation in record["review"]["limitations"]
+        )
+        assert any(
+            "Live spectrum checks cover one demonstration" in limitation
             for limitation in record["review"]["limitations"]
         )
 
