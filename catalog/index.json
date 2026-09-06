@@ -26,6 +26,7 @@
       "name": "Astronomy",
       "skills": [
         "astro-catalog-plotting-cache",
+        "coseecat",
         "gaia-dr3-tap-query",
         "pepsi-spectra",
         "rave-dr6",
@@ -534,6 +535,51 @@
       },
       "status": "active",
       "version": "2.0.1"
+    },
+    {
+      "category": {
+        "id": "astronomy",
+        "name": "Astronomy"
+      },
+      "description": "Query solar electron events and plots from CoSEE-Cat.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/coseecat",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/coseecat"
+      },
+      "name": "coseecat",
+      "review": {
+        "assessed_at": "2026-09-06",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-09-06-coseecat.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "tested",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Scope is public CoSEE-Cat DR1 summaries and published diagnostic PNGs, not raw instrument reduction, real-time space weather, or movie retrieval.",
+          "Independent technical reproduction checks catalogue arithmetic and replay, not the original instrument reductions, event associations, or causal interpretations. Plot availability does not imply usable measurements in every panel.",
+          "Live execution covers two event bundles and the 303-row rise-time sample on macOS ARM64 with isolated CPython 3.12.4, not every event or platform.",
+          "Direct Python requirements are pinned, but transitive dependencies are not locked; cross-platform bit-identical rendering is not claimed.",
+          "The helper refuses redirects and ignores ambient proxy/netrc configuration. The catalogue CC0 declaration is not extended to separately hosted movies or the skill MIT code."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
+      "source": {
+        "branch": "main",
+        "path": "skills/coseecat",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "684f4e5301123cc614082373dea304c1fdf43937",
+        "tree": "3236a546c437d66022b3dc7597e3940b2cd3c123",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/684f4e5301123cc614082373dea304c1fdf43937/skills/coseecat"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {

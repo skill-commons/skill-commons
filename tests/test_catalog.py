@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 24
+    assert len(first["skills"]) == 25
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -171,6 +171,25 @@ def test_catalog_records_gaia_rave_spectrum_update() -> None:
             "Live spectrum checks cover one demonstration" in limitation
             for limitation in record["review"]["limitations"]
         )
+
+
+def test_catalog_records_coseecat_exact_source_and_scoped_review() -> None:
+    records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
+    record = records["coseecat"]
+    assert record["version"] == "1.0.0"
+    assert record["description"] == "Query solar electron events and plots from CoSEE-Cat."
+    assert record["category"] == {"id": "astronomy", "name": "Astronomy"}
+    source = record["source"]
+    assert source["repository"] == "https://github.com/skill-commons/curated-research-skills"
+    assert source["branch"] == "main"
+    assert source["revision"] == "684f4e5301123cc614082373dea304c1fdf43937"
+    assert source["tree"] == "3236a546c437d66022b3dc7597e3940b2cd3c123"
+    assert source["path"] == "skills/coseecat"
+    assert record["review"]["maturity"] == "curated"
+    assert record["review"]["decision"] == "registry/reviews/2026-09-06-coseecat.md"
+    assert record["review"]["evidence"]["scientific_validity"] == "scope-documented"
+    assert record["review"]["evidence"]["reproducibility"] == "tested"
+    assert record["review"]["limitations"]
 
 
 def test_catalog_records_pepsi_spectra_source_and_scoped_review() -> None:
