@@ -187,6 +187,36 @@ skills:
     revision: 74a11aaad374108c60162e879390ee3604efddd1
     tree: 5cf29a2fb99eb5a37bc634adfd10fd8473b0e5dd
     path: skills/astro-catalog-plotting-cache
+- name: coseecat
+  description: Query solar electron events and plots from CoSEE-Cat.
+  version: 1.0.0
+  status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-09-06"
+    decision: registry/reviews/2026-09-06-coseecat.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: tested
+      maintenance: active
+    limitations:
+    - Scope is public CoSEE-Cat DR1 summaries and published diagnostic PNGs, not raw instrument reduction, real-time space weather, or movie retrieval.
+    - Independent technical reproduction checks catalogue arithmetic and replay, not the original instrument reductions, event associations, or causal interpretations. Plot availability does not imply usable measurements in every panel.
+    - Live execution covers two event bundles and the 303-row rise-time sample on macOS ARM64 with isolated CPython 3.12.4, not every event or platform.
+    - Direct Python requirements are pinned, but transitive dependencies are not locked; cross-platform bit-identical rendering is not claimed.
+    - The helper refuses redirects and ignores ambient proxy/netrc configuration. The catalogue CC0 declaration is not extended to separately hosted movies or the skill MIT code.
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: 684f4e5301123cc614082373dea304c1fdf43937
+    tree: 3236a546c437d66022b3dc7597e3940b2cd3c123
+    path: skills/coseecat
 - name: gaia-dr3-tap-query
   description: Query Gaia DR3 catalogs and spectra at AIP.
   version: 3.1.1
