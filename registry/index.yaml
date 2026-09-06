@@ -414,6 +414,35 @@ skills:
     revision: 74a11aaad374108c60162e879390ee3604efddd1
     tree: 781fd0f4671557bffab222bb5a1ea2213ec43117
     path: skills/data-aip-de-s3
+- name: drphub-cards
+  description: Manage and publish DRP Hub research products via REST. Supports full CRUD, clone, maturity, publish, audit, lineage, human-review, bookmarks, likes, sharing, and SSE event streaming against the production API at drp-term.kube.aip.de/api/v1/.
+  version: 2.1.3
+  status: active
+  review:
+    maturity: community
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: '2026-09-06'
+    decision: registry/reviews/2026-09-06-drphub-cards.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: documented
+      maintenance: maintainer-confirmed
+    limitations:
+    - Authenticated production CRUD, publishing, human-review, social operations, and SSE were not exercised; offline examples and public health/OpenAPI reads do not establish end-to-end demo readiness.
+    - The skill is instruction-based and authoring-capable; its helpers do not enforce user authorization, product ownership, or scientific attestation. These depend on the executing agent, user scope, and server policy.
+    - API schemas, sidecar tables, historical REANA image examples, and external services can change independently of the pinned skill tree; no server/schema snapshot or cross-platform runtime lock is bundled.
+    - No independent technical-review procedure or scientific reproduction is claimed; community maturity is an admission decision, not runtime permission.
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: b6d62b41f4ba9bc7a2355f1f38ec0a3071a7fac5
+    tree: 9ed2b00b8ffcd23815bd9b1028f42f5c659cbce3
+    path: skills/drphub-cards
 - name: drphub-products
   description: Inspect Digital Research Product Hub products and health. Report API capabilities, product summaries, maturity, and lineage through a bounded read-only REST client. Use when a user needs to diagnose a DRP Hub endpoint, search or inspect products, verify immutable Git and image identities, or review maturity and clone relationships without creating, changing, publishing, sharing, reviewing, or deleting remote data.
   version: 1.0.1

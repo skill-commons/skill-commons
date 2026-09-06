@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 25
+    assert len(first["skills"]) == 26
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -523,3 +523,19 @@ def test_catalog_output_rejects_nonfinite_values() -> None:
 
     with pytest.raises(ValueError, match="non-finite"):
         catalog_json_bytes(catalog)
+
+
+def test_catalog_records_drphub_cards_exact_source_and_admission_scope() -> None:
+    records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
+    record = records["drphub-cards"]
+    assert record["version"] == "2.1.3"
+    assert record["category"] == {"id": "data", "name": "Data"}
+    assert record["source"]["revision"] == "b6d62b41f4ba9bc7a2355f1f38ec0a3071a7fac5"
+    assert record["source"]["tree"] == "9ed2b00b8ffcd23815bd9b1028f42f5c659cbce3"
+    assert record["source"]["path"] == "skills/drphub-cards"
+    assert record["review"]["maturity"] == "community"
+    assert record["review"]["decision"] == "registry/reviews/2026-09-06-drphub-cards.md"
+    assert record["review"]["limitations"]
+    assert records["drphub-products"]["source"]["tree"] == (
+        "dbb4356b6ab299ab177f3d4f66c0a41fcd78629d"
+    )
