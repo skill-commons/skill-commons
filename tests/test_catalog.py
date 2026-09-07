@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 26
+    assert len(first["skills"]) == 27
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
