@@ -246,6 +246,36 @@ skills:
     revision: 607b1963d4ea0def94de8e259f5a7315f2e54aa5
     tree: 2fd8e4fdde6a8c599f9dd9487204c62e75b89460
     path: skills/gaia-dr3-tap-query
+- name: muse-science-products
+  description: Plot published MUSE maps and H II region measurements.
+  version: 1.0.0
+  status: active
+  review:
+    maturity: curated
+    policy: skill-commons-review-v1
+    authority: skill-commons
+    assessed_at: "2026-09-07"
+    decision: registry/reviews/2026-09-07-muse-science-products.md
+    evidence:
+      provenance: verified
+      rights: reviewed
+      security: reviewed
+      operability: tested
+      scientific_validity: scope-documented
+      reproducibility: tested
+      maintenance: active
+    limitations:
+    - Scope is the public AIP MUSE science release, with seven pinned Orion and Antennae products; raw reduction, cube extraction, and new physical inference are excluded.
+    - Independent technical checks verify published values, selections, units, WCS, and local replay; they do not independently validate the original instrument reduction, diagnostics, or catalogue completeness.
+    - Orion exact-zero velocity masking is a documented footprint assumption. Antennae narrow-band normalization remains unresolved, so the default uses the verified Gaussian-fit map.
+    - Fresh execution covers both workflows on macOS ARM64 with isolated CPython 3.12.4. Direct dependencies are pinned, but transitive dependencies and cross-platform rendering are not locked.
+    - PNGs were visually inspected and standalone HTML statically checked; browser-rendered HTML QA was unavailable. The helper refuses redirects and ignores ambient proxy/netrc configuration.
+  source:
+    repository: https://github.com/skill-commons/curated-research-skills
+    branch: main
+    revision: c8942427e748dedfc6ee158363d9c7766086c04b
+    tree: 99b689dc4fe41320134f2957c9bacac95a43bd49
+    path: skills/muse-science-products
 - name: pepsi-spectra
   description: Retrieve and plot public PEPSI stellar spectra.
   version: 1.0.0
