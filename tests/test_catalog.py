@@ -195,8 +195,8 @@ def test_catalog_records_coseecat_exact_source_and_scoped_review() -> None:
 def test_catalog_records_pepsi_spectra_source_and_scoped_review() -> None:
     records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
     pepsi = records["pepsi-spectra"]
-    revision = "5e368912f83725338ee6835076beb8304824baeb"
-    assert pepsi["version"] == "1.0.0"
+    revision = "02a9fea5f86d520f33416f62bc6254349d309cc0"
+    assert pepsi["version"] == "1.0.1"
     assert pepsi["description"] == "Retrieve and plot public PEPSI stellar spectra."
     assert pepsi["category"] == {"id": "astronomy", "name": "Astronomy"}
     assert pepsi["source"]["repository"] == (
@@ -205,12 +205,12 @@ def test_catalog_records_pepsi_spectra_source_and_scoped_review() -> None:
     assert pepsi["source"]["branch"] == "main"
     assert pepsi["source"]["revision"] == revision
     assert pepsi["source"]["path"] == "skills/pepsi-spectra"
-    assert pepsi["source"]["tree"] == "2d524aaac026be4f9d8c28dfa59ce65a372fd881"
+    assert pepsi["source"]["tree"] == "cdaccd2dfceb315e7491fe4bc2c87368d1089447"
     assert pepsi["source"]["url"].endswith(f"/tree/{revision}/skills/pepsi-spectra")
     review = pepsi["review"]
     assert review["maturity"] == "curated"
-    assert review["assessed_at"] == "2026-09-06"
-    assert review["decision"] == "registry/reviews/2026-09-06-pepsi-spectra.md"
+    assert review["assessed_at"] == "2026-09-07"
+    assert review["decision"] == "registry/reviews/2026-09-07-pepsi-line-references.md"
     assert review["evidence"]["scientific_validity"] == "scope-documented"
     assert any("Mask polarity is undocumented" in item for item in review["limitations"])
     assert any("transitive dependencies are not locked" in item for item in review["limitations"])
