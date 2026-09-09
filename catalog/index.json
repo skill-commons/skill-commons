@@ -26,6 +26,7 @@
       "name": "Astronomy",
       "skills": [
         "astro-catalog-plotting-cache",
+        "cluster-cmd-isochrone-fit",
         "coseecat",
         "gaia-dr3-tap-query",
         "muse-science-products",
@@ -537,6 +538,51 @@
       },
       "status": "active",
       "version": "2.0.1"
+    },
+    {
+      "category": {
+        "id": "astronomy",
+        "name": "Astronomy"
+      },
+      "description": "Fit cluster CMD ages with stellar-evolution isochrones.",
+      "hermes": {
+        "identifier": "skill-commons/curated-research-skills/skills/cluster-cmd-isochrone-fit",
+        "install": "hermes skills install skill-commons/curated-research-skills/skills/cluster-cmd-isochrone-fit"
+      },
+      "name": "cluster-cmd-isochrone-fit",
+      "review": {
+        "assessed_at": "2026-09-09",
+        "authority": "skill-commons",
+        "decision": "registry/reviews/2026-09-09-cluster-cmd-isochrone-fit.md",
+        "evidence": {
+          "maintenance": "active",
+          "operability": "tested",
+          "provenance": "verified",
+          "reproducibility": "tested",
+          "rights": "reviewed",
+          "scientific_validity": "scope-documented",
+          "security": "reviewed"
+        },
+        "limitations": [
+          "Robust geometric fitting and conditional star bootstraps are not a normalized population likelihood, posterior, or total age confidence interval.",
+          "The PARSEC adapter uses nonrotating 1.2S models and OBC constant solar extinction coefficients in Gaia EDR3 Vega bands; model physics, calibration, differential extinction, and realistic binary or field populations remain unmodelled.",
+          "M67 is a reproducible public-data example with independently declared selections and nuisance assumptions; its inferred age is conditional and is not a literature target or independent validation of stellar physics.",
+          "Live retrieval and plotting were exercised on macOS ARM64 CPython 3.12; Linux CI exercises offline scientific contracts. Direct pins are not transitive locks, and cross-platform byte-identical rendering is not claimed.",
+          "Downloaded model and catalogue data retain their providers' terms and are not bundled. Public HTTPS retrieval requires no credentials; network environments requiring proxies need a separately adapted access recipe."
+        ],
+        "maturity": "curated",
+        "policy": "skill-commons-review-v1"
+      },
+      "source": {
+        "branch": "main",
+        "path": "skills/cluster-cmd-isochrone-fit",
+        "repository": "https://github.com/skill-commons/curated-research-skills",
+        "revision": "2e6762a0da8316e1995c872d49193cd770a42761",
+        "tree": "9da93a128e70ce0efdec34d6984abbd6d0ff0a3b",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/2e6762a0da8316e1995c872d49193cd770a42761/skills/cluster-cmd-isochrone-fit"
+      },
+      "status": "active",
+      "version": "1.0.0"
     },
     {
       "category": {

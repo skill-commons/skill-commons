@@ -40,7 +40,7 @@ def test_catalog_is_deterministic_and_records_federated_skills() -> None:
     assert first == second
     assert first["schema_version"] == "3.0"
     assert first["registry"] == "https://github.com/skill-commons/skill-commons"
-    assert len(first["skills"]) == 27
+    assert len(first["skills"]) == 28
     assert [category["name"] for category in first["categories"]] == [
         "General",
         "LaTeX",
@@ -539,3 +539,16 @@ def test_catalog_records_drphub_cards_exact_source_and_admission_scope() -> None
     assert records["drphub-products"]["source"]["tree"] == (
         "dbb4356b6ab299ab177f3d4f66c0a41fcd78629d"
     )
+
+
+def test_catalog_records_reviewed_cmd_fitting_source() -> None:
+    records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
+    cmd = records["cluster-cmd-isochrone-fit"]
+    assert cmd["version"] == "1.0.0"
+    assert cmd["category"] == {"id": "astronomy", "name": "Astronomy"}
+    assert cmd["source"]["revision"] == "2e6762a0da8316e1995c872d49193cd770a42761"
+    assert cmd["source"]["tree"] == "9da93a128e70ce0efdec34d6984abbd6d0ff0a3b"
+    assert cmd["source"]["path"] == "skills/cluster-cmd-isochrone-fit"
+    assert cmd["review"]["maturity"] == "curated"
+    assert cmd["review"]["evidence"]["scientific_validity"] == "scope-documented"
+    assert cmd["review"]["decision"] == ("registry/reviews/2026-09-09-cluster-cmd-isochrone-fit.md")
