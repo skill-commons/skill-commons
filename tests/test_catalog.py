@@ -544,11 +544,13 @@ def test_catalog_records_drphub_cards_exact_source_and_admission_scope() -> None
 def test_catalog_records_reviewed_cmd_fitting_source() -> None:
     records = {record["name"]: record for record in build_catalog(ROOT)["skills"]}
     cmd = records["cluster-cmd-isochrone-fit"]
-    assert cmd["version"] == "1.0.0"
+    assert cmd["version"] == "1.0.1"
     assert cmd["category"] == {"id": "astronomy", "name": "Astronomy"}
-    assert cmd["source"]["revision"] == "2e6762a0da8316e1995c872d49193cd770a42761"
-    assert cmd["source"]["tree"] == "9da93a128e70ce0efdec34d6984abbd6d0ff0a3b"
+    assert cmd["source"]["revision"] == "425cb21b31ee8c648e978ca345e2c19675f3a642"
+    assert cmd["source"]["tree"] == "ebb2d3846d3bd3a66be2be50c62378badd2cd2c9"
     assert cmd["source"]["path"] == "skills/cluster-cmd-isochrone-fit"
     assert cmd["review"]["maturity"] == "curated"
     assert cmd["review"]["evidence"]["scientific_validity"] == "scope-documented"
-    assert cmd["review"]["decision"] == ("registry/reviews/2026-09-09-cluster-cmd-isochrone-fit.md")
+    assert cmd["review"]["decision"] == (
+        "registry/reviews/2026-09-12-cluster-cmd-isochrone-fit-1.0.1.md"
+    )
