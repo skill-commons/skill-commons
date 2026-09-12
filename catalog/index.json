@@ -551,9 +551,9 @@
       },
       "name": "cluster-cmd-isochrone-fit",
       "review": {
-        "assessed_at": "2026-09-09",
+        "assessed_at": "2026-09-12",
         "authority": "skill-commons",
-        "decision": "registry/reviews/2026-09-09-cluster-cmd-isochrone-fit.md",
+        "decision": "registry/reviews/2026-09-12-cluster-cmd-isochrone-fit-1.0.1.md",
         "evidence": {
           "maintenance": "active",
           "operability": "tested",
@@ -577,12 +577,12 @@
         "branch": "main",
         "path": "skills/cluster-cmd-isochrone-fit",
         "repository": "https://github.com/skill-commons/curated-research-skills",
-        "revision": "2e6762a0da8316e1995c872d49193cd770a42761",
-        "tree": "9da93a128e70ce0efdec34d6984abbd6d0ff0a3b",
-        "url": "https://github.com/skill-commons/curated-research-skills/tree/2e6762a0da8316e1995c872d49193cd770a42761/skills/cluster-cmd-isochrone-fit"
+        "revision": "425cb21b31ee8c648e978ca345e2c19675f3a642",
+        "tree": "ebb2d3846d3bd3a66be2be50c62378badd2cd2c9",
+        "url": "https://github.com/skill-commons/curated-research-skills/tree/425cb21b31ee8c648e978ca345e2c19675f3a642/skills/cluster-cmd-isochrone-fit"
       },
       "status": "active",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "category": {

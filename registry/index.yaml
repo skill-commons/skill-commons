@@ -189,14 +189,14 @@ skills:
     path: skills/astro-catalog-plotting-cache
 - name: cluster-cmd-isochrone-fit
   description: Fit cluster CMD ages with stellar-evolution isochrones.
-  version: 1.0.0
+  version: 1.0.1
   status: active
   review:
     maturity: curated
     policy: skill-commons-review-v1
     authority: skill-commons
-    assessed_at: "2026-09-09"
-    decision: registry/reviews/2026-09-09-cluster-cmd-isochrone-fit.md
+    assessed_at: "2026-09-12"
+    decision: registry/reviews/2026-09-12-cluster-cmd-isochrone-fit-1.0.1.md
     evidence:
       provenance: verified
       rights: reviewed
@@ -214,8 +214,8 @@ skills:
   source:
     repository: https://github.com/skill-commons/curated-research-skills
     branch: main
-    revision: 2e6762a0da8316e1995c872d49193cd770a42761
-    tree: 9da93a128e70ce0efdec34d6984abbd6d0ff0a3b
+    revision: 425cb21b31ee8c648e978ca345e2c19675f3a642
+    tree: ebb2d3846d3bd3a66be2be50c62378badd2cd2c9
     path: skills/cluster-cmd-isochrone-fit
 - name: coseecat
   description: Query solar electron events and plots from CoSEE-Cat.
